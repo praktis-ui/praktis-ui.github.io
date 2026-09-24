@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-BZJXY1be.js";function r(e){return e&&a.isValidElement(e)&&e.type===a.Fragment}function i(e,t){return o(e,e,t)}var a,o;function s(){return(s=t((()=>{a=e(n()),o=(e,t,n)=>a.isValidElement(e)?a.cloneElement(e,typeof n==`function`?n(e.props||{}):n):t})))()}export{s as n,r,i as t};

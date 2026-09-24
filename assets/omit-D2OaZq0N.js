@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";function t(e,t){var n=Object.assign({},e);return Array.isArray(t)&&t.forEach(function(e){delete n[e]}),n}function n(){return(n=e((()=>{})))()}export{t as n,n as t};

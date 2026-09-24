@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t;function n(){return(n=e((()=>{t=[`blue`,`purple`,`cyan`,`green`,`magenta`,`pink`,`red`,`orange`,`yellow`,`volcano`,`geekblue`,`lime`,`gold`]})))()}export{n,t};
