@@ -924,6 +924,11 @@
           "id": "ui-kit-button--danger-states",
           "name": "Danger States",
           "snippet": "const DangerStates = () => <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>\n    <div style={{ display: 'flex', gap: 12 }}>\n        <Button size=\"middle\" disabled={false} variant=\"secondary\" danger>Default</Button>\n        <Button size=\"middle\" disabled={false} variant=\"stroke\" danger>Default</Button>\n        <Button size=\"middle\" disabled={false} variant=\"link\" danger>Default</Button>\n    </div>\n    <div style={{ display: 'flex', gap: 12 }}>\n        <Button size=\"middle\" variant=\"secondary\" danger disabled>Disabled</Button>\n        <Button size=\"middle\" variant=\"stroke\" danger disabled>Disabled</Button>\n        <Button size=\"middle\" variant=\"link\" danger disabled>Disabled</Button>\n    </div>\n</div>;"
+        },
+        {
+          "id": "ui-kit-button--loading",
+          "name": "Загрузка",
+          "snippet": "const Loading = () => <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n    <SaveDemo />\n    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>\n        <Button size=\"middle\" disabled={false} variant=\"primary\" loading>Primary</Button>\n        <Button size=\"middle\" disabled={false} variant=\"secondary\" loading>Secondary</Button>\n        <Button size=\"middle\" disabled={false} variant=\"stroke\" loading>Stroke</Button>\n        <Button size=\"middle\" disabled={false} variant=\"link\" loading>Link</Button>\n        <Button size=\"middle\" disabled={false} variant=\"secondary\" danger loading>Danger</Button>\n    </div>\n    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>\n        <Button disabled={false} variant=\"primary\" size=\"small\" loading>Small</Button>\n        <Button disabled={false} variant=\"primary\" size=\"large\" loading>Large</Button>\n        <Button\n            size=\"middle\"\n            disabled={false}\n            variant=\"secondary\"\n            icon={<IconPlus size={buttonIconSize} />}\n            loading>{null}</Button>\n        <Button\n            size=\"middle\"\n            disabled={false}\n            variant=\"stroke\"\n            icon={<IconEdit size={buttonIconSize} />}\n            loading>С иконкой</Button>\n    </div>\n</div>;"
         }
       ],
       "import": "import { Button, IconEdit, IconPlus, IconSearch, IconTrash } from 'praktis-ui-kit';"
@@ -2098,6 +2103,13 @@
               "name": "ReactNode"
             },
             "description": "Текст под полем — показывается только при status=\"error\". Обрезается эллипсисом с тултипом,\n если не помещается (Figma: «Правила импутов»)."
+          },
+          "loading": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт загрузка (проверка значения, подгрузка данных) — спиннер справа в поле. Печатать можно.\nВ Figma у полей загрузки нет — спиннер тот же, что у Select в загрузке."
           }
         },
         "composes": [
@@ -2174,6 +2186,11 @@
           "id": "ui-kit-input--long-error-message",
           "name": "Long Error Message",
           "snippet": "const LongErrorMessage = () => <Input\n    placeholder=\"Field content\"\n    size=\"m\"\n    label=\"Имя\"\n    required\n    disabled={false}\n    errorMessage=\"Не можем принять некоторые символы - удалите их немедленно\"\n    status=\"error\"\n    defaultValue=\"Field content\" />;"
+        },
+        {
+          "id": "ui-kit-input--loading",
+          "name": "Загрузка",
+          "snippet": "const Loading = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>\n    <CheckDemo />\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: 300 }}>\n      <Input size=\"m\" defaultValue=\"7801234567\" loading />\n      <Input size=\"s\" defaultValue=\"7801234567\" loading />\n    </div>\n  </div>\n);"
         }
       ],
       "import": "import { IconSearch, Input } from 'praktis-ui-kit';\nimport { IconSearch } from '../../icons';"
@@ -2240,6 +2257,13 @@
               "name": "ReactNode"
             },
             "description": ""
+          },
+          "loading": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт загрузка (проверка значения, подгрузка данных) — спиннер справа в поле. Печатать можно.\nВ Figma у полей загрузки нет — спиннер тот же, что у Select в загрузке."
           }
         },
         "composes": [
@@ -2281,6 +2305,11 @@
           "id": "ui-kit-inputpassword--disabled",
           "name": "Disabled",
           "snippet": "const Disabled = () => <InputPassword\n    placeholder=\"Input password\"\n    size=\"m\"\n    label=\"Label\"\n    required\n    disabled\n    defaultValue=\"Motherlode\" />;"
+        },
+        {
+          "id": "ui-kit-inputpassword--loading",
+          "name": "Загрузка",
+          "snippet": "const Loading = () => <InputPassword\n    placeholder=\"Input password\"\n    size=\"m\"\n    label=\"Label\"\n    required\n    loading\n    defaultValue=\"secret-password\" />;"
         }
       ],
       "import": "import { InputPassword } from 'praktis-ui-kit';"
@@ -2348,6 +2377,17 @@
             },
             "description": ""
           },
+          "loading": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт поиск — спиннер вместо лупы на кнопке, повторный поиск (Enter, кнопка) не запускается.\nКак loading у antd Input.Search, но спиннер кита (тот же, что у Select в загрузке).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
           "allowClear": {
             "defaultValue": {
               "value": "true",
@@ -2402,6 +2442,11 @@
           "id": "ui-kit-inputsearch--allow-clear",
           "name": "Allow Clear",
           "snippet": "const AllowClear = () => <InputSearch size=\"m\" label={undefined} required defaultValue=\"Field content\" />;"
+        },
+        {
+          "id": "ui-kit-inputsearch--loading",
+          "name": "Загрузка",
+          "snippet": "const Loading = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>\n    <SearchDemo />\n    <div style={{ width: 300 }}>\n      <InputSearch defaultValue=\"Договор поставки\" loading />\n    </div>\n  </div>\n);"
         }
       ],
       "import": "import { InputSearch } from 'praktis-ui-kit';"
@@ -4274,6 +4319,71 @@
       ],
       "import": "import { SideMenu, SideMenuItem } from 'praktis-ui-kit';"
     },
+    "ui-kit-spinner": {
+      "id": "ui-kit-spinner",
+      "name": "Spinner",
+      "path": "./src/components/Spinner/Spinner.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Spinner",
+        "definedInFile": "./src/components/Spinner/Spinner.tsx",
+        "actualName": "Spinner",
+        "exportName": "Spinner",
+        "props": {
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "18",
+              "computed": false
+            }
+          },
+          "tone": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'accent' | 'current'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'accent'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'current'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'accent'",
+              "computed": false
+            }
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-spinner--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Spinner tone=\"accent\" size={18} />;"
+        },
+        {
+          "id": "ui-kit-spinner--tones",
+          "name": "Цвет: accent и current",
+          "snippet": "const Tones = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'center', fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#7e7e7e' }}>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center' }}>\n      <Spinner /> accent\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#41484a' }}>\n      <Spinner tone=\"current\" size={14} /> current на светлом\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#ffffff', background: '#3c83f6', padding: '8px 12px', borderRadius: 6 }}>\n      <Spinner tone=\"current\" size={14} /> current на синем\n    </span>\n  </div>\n);"
+        }
+      ],
+      "import": "import { Spinner } from 'praktis-ui-kit';"
+    },
     "ui-kit-surface": {
       "id": "ui-kit-surface",
       "name": "Surface",
@@ -5431,6 +5541,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 1559
+    "durationMs": 1511
   }
 }

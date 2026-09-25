@@ -1,0 +1,1 @@
+:root{--spinner-track:#b1cdfb;--spinner-arc:#689ff8}._spinner_1suyo_6{flex-shrink:0;animation:.8s linear infinite _kit-spin_1suyo_1}@keyframes _kit-spin_1suyo_1{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){._spinner_1suyo_6{animation-duration:2.4s}}
