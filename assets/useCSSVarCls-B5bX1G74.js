@@ -1,1 +1,0 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{r as t,t as n}from"./useToken-CPqMvEYo.js";var r;function i(){return(i=e((()=>{n(),r=e=>{let[,,,,n]=t();return n?`${e}-css-var`:``}})))()}export{r as n,i as t};

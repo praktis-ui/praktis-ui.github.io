@@ -200,6 +200,309 @@
       ],
       "import": "import { Alert, Button } from 'praktis-ui-kit';"
     },
+    "ui-kit-applayout": {
+      "id": "ui-kit-applayout",
+      "name": "AppLayout",
+      "path": "./src/components/AppLayout/AppLayout.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "AppLayout",
+        "definedInFile": "./src/components/AppLayout/AppLayout.tsx",
+        "actualName": "AppLayout",
+        "exportName": "AppLayout",
+        "props": {
+          "menu": {
+            "required": true,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "SideMenuEntry"
+                }
+              ],
+              "raw": "SideMenuEntry[]"
+            },
+            "description": "Разделы сервиса — пункты как у SideMenu (key, label, icon 16, count, children)."
+          },
+          "activeKey": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Текущий раздел."
+          },
+          "onNavigate": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(key: string) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "string"
+                    },
+                    "name": "key"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "variant": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "AppLayoutVariant | 'auto'",
+              "elements": [
+                {
+                  "name": "union",
+                  "raw": "'top' | 'side'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'top'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'side'"
+                    }
+                  ]
+                },
+                {
+                  "name": "literal",
+                  "value": "'auto'"
+                }
+              ]
+            },
+            "description": "Структура. По умолчанию — по количеству пунктов (`pickLayoutVariant`).",
+            "defaultValue": {
+              "value": "'auto'",
+              "computed": false
+            }
+          },
+          "logo": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'praktis' | 'praktis-ru' | 'setl-group' | 'icona'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'praktis'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'praktis-ru'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'setl-group'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'icona'"
+                }
+              ]
+            },
+            "description": "Логотип — в шапке."
+          },
+          "moduleName": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Название модуля: в шапке рядом с логотипом («ПИР») или заголовком бокового меню («Моя компания»)."
+          },
+          "onModuleClick": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "menuFooterItems": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "SideMenuEntry"
+                }
+              ],
+              "raw": "SideMenuEntry[]"
+            },
+            "description": "Боковое меню: нижние пункты под чертой (Техподдержка)."
+          },
+          "defaultMenuCollapsed": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Боковое меню свёрнуто с самого начала."
+          },
+          "actions": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Шапка — HeaderButton (уведомления, задачи, загрузки)."
+          },
+          "appButton": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Шапка — HeaderAppButton."
+          },
+          "account": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Шапка — HeaderAccount. Есть всегда."
+          },
+          "breadcrumbs": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "BreadcrumbItem"
+                }
+              ],
+              "raw": "BreadcrumbItem[]"
+            },
+            "description": ""
+          },
+          "footer": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Подвал — AppFooter."
+          },
+          "children": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Содержимое: PageHeader, вкладки, подложки Surface — через 16."
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-applayout--menu-in-header",
+          "name": "Меню в шапке (3 пункта) — ПИР",
+          "snippet": "const MenuInHeader = () => <PirPage />;"
+        },
+        {
+          "id": "ui-kit-applayout--side-menu",
+          "name": "Боковое меню (8 пунктов) — Моя компания",
+          "snippet": "const SideMenu = () => <CompanyPage />;"
+        },
+        {
+          "id": "ui-kit-applayout--auto",
+          "name": "Сам выбирает по числу пунктов",
+          "snippet": "const Auto = ({ count }) => {\n  const menu = COMPANY_MENU.slice(0, count);\n  return <CompanyPage key={`${count}-${pickLayoutVariant(menu)}`} menu={menu} />;\n};"
+        }
+      ],
+      "import": "import {\n  AppFooter,\n  AppLayout,\n  Button,\n  HeaderAccount,\n  HeaderAppButton,\n  HeaderButton,\n  IconAddCircle,\n  IconApps,\n  IconButton,\n  IconEdit,\n  IconFilter,\n  InputSearch,\n  PageHeader,\n  Surface,\n  Table,\n  TableCell,\n  TableTags,\n  Tabs,\n  TasksIcon,\n} from 'praktis-ui-kit';\nimport { Typography } from 'antd';"
+    },
+    "ui-kit-avatar": {
+      "id": "ui-kit-avatar",
+      "name": "Avatar",
+      "path": "./src/components/Avatar/Avatar.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Avatar",
+        "definedInFile": "./src/components/Avatar/Avatar.tsx",
+        "actualName": "Avatar",
+        "exportName": "Avatar",
+        "props": {
+          "name": {
+            "required": true,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Имя — из него берутся инициалы («Иванов Антон» → «ИА») и подпись для экранного диктора."
+          },
+          "src": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Фото. Не передано — инициалы."
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'s' | 'm' | 'l'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'l'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'m'",
+              "computed": false
+            }
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-avatar--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Avatar name=\"Иванов Антон\" size=\"m\" />;"
+        },
+        {
+          "id": "ui-kit-avatar--sizes",
+          "name": "Инициалы и фото, все размеры",
+          "snippet": "const Sizes = () => (\n  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>\n    {(['s', 'm', 'l'] as const).map((s) => (\n      <Avatar key={s} name=\"Иванов Антон\" size={s} />\n    ))}\n    {(['s', 'm', 'l'] as const).map((s) => (\n      <Avatar key={'p' + s} name=\"Иванов Антон\" size={s} src={PHOTO} />\n    ))}\n  </div>\n);"
+        }
+      ],
+      "import": "import { Avatar } from 'praktis-ui-kit';"
+    },
     "ui-kit-bubble": {
       "id": "ui-kit-bubble",
       "name": "Bubble",
@@ -1456,6 +1759,172 @@
         }
       ],
       "import": "import { FunctionButton, IconArrowRight, IconDownload2 } from 'praktis-ui-kit';"
+    },
+    "ui-kit-header-header": {
+      "id": "ui-kit-header-header",
+      "name": "Header",
+      "path": "./src/components/Header/Header.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Header",
+        "definedInFile": "./src/components/Header/Header.tsx",
+        "actualName": "Header",
+        "exportName": "Header",
+        "props": {
+          "logo": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'praktis' | 'praktis-ru' | 'setl-group' | 'icona'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'praktis'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'praktis-ru'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'setl-group'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'icona'"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "moduleName": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "onModuleClick": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Нажатие на название модуля рядом с логотипом (обычно — на главную модуля)."
+          },
+          "menu": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Пункты меню — HeaderMenuItem."
+          },
+          "actions": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Кнопки справа — HeaderButton."
+          },
+          "appButton": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Круглая кнопка — HeaderAppButton."
+          },
+          "account": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Кабинет — HeaderAccount. Есть всегда."
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-header-header--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live\n    logo=\"setl-group\"\n    withModuleName\n    withMenu\n    withActions\n    withAppButton\n    compactAccount={false} />;"
+        },
+        {
+          "id": "ui-kit-header-header--with-logo",
+          "name": "Логотип + название модуля (Type=Logo)",
+          "snippet": "const WithLogo = () => <Live withActions={false} withAppButton={false} />;"
+        },
+        {
+          "id": "ui-kit-header-header--name-only",
+          "name": "Только название (Type=Name, логотип в боковом меню)",
+          "snippet": "const NameOnly = () => <Live logo=\"нет\" withActions={false} withAppButton={false} />;"
+        },
+        {
+          "id": "ui-kit-header-header--everything",
+          "name": "Всё сразу",
+          "snippet": "const Everything = () => <Live />;"
+        },
+        {
+          "id": "ui-kit-header-header--minimal",
+          "name": "Минимум: только кабинет",
+          "snippet": "const Minimal = () => <Live logo=\"нет\" withModuleName={false} withMenu={false} withActions={false} withAppButton={false} />;"
+        },
+        {
+          "id": "ui-kit-header-header--tablet",
+          "name": "Узкий кабинет (планшет)",
+          "snippet": "const Tablet = () => <Live compactAccount withActions={false} />;"
+        }
+      ],
+      "import": "import {\n  CloudIcon,\n  Header,\n  HeaderAccount,\n  HeaderAppButton,\n  HeaderButton,\n  HeaderMenuItem,\n  IconBookmark,\n  IconBuilding05,\n  Modal,\n  TasksIcon,\n} from 'praktis-ui-kit';"
+    },
+    "ui-kit-header-части": {
+      "id": "ui-kit-header-части",
+      "name": "Части",
+      "path": "./src/components/Header/HeaderParts.stories.tsx",
+      "jsDocTags": {},
+      "error": {
+        "name": "No component found",
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  19 | `;\n  20 |\n> 21 | const meta = {\n     | ^\n  22 |   title: 'UI Kit/Header/Части',\n  23 |   parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n  24 |   // Меню кабинета — выпадающий список: в Docs без запаса высоты он обрезается (гайд 2)\n\n./src/components/Header/HeaderParts.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState, type ReactNode } from 'react';\nimport { IconBookmark, IconBuilding05 } from '../../icons';\nimport { ACCOUNT_MENU } from './headerStoryData';\nimport { CloudIcon, HeaderAccount, HeaderAppButton, HeaderButton, HeaderLogo, HeaderMenuItem, TasksIcon } from './HeaderParts';\n\nconst componentDescription = `\nМолекулы шапки — живут только в ней. Источник — Figma UI Kit «Практис», node 986:1967.\n\n- **HeaderMenuItem** — пункт меню: иконка 20 + текст 16; наведение — голубая полоска снизу,\n  текущий раздел — синяя; точка-метка — **Bulb** кита: зелёная «есть новое», красная «нужно действие»;\n  счётчик (\\`count\\`) — тот же Bulb, синий, после текста (как в боковом меню).\n- **HeaderButton** — уведомления, задачи, «Загрузки», доп. кнопки: 49×49, с подписью — шире;\n  счётчик зелёный или красный; у «Загрузок» — крутилка и ошибка.\n- **HeaderAppButton** — единственная круглая кнопка, привлекает внимание, открывает спецмодалку.\n- **HeaderAccount** — кабинет: аватар, имя, организация; открывает меню (DropdownMenu кита).\n  Узкий вариант (планшет) — только аватар.\n- **HeaderLogo** — Praktis, Praktis RU, Setl Group, Айкона; в тёмной теме сама берёт тёмную версию из макета.\n`;\n\nconst meta = {\n  title: 'UI Kit/Header/Части',\n  parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n  // Меню кабинета — выпадающий список: в Docs без запаса высоты он обрезается (гайд 2)\n  decorators: [(Story) => <div style={{ minHeight: 340 }}><Story /></div>],\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nconst Row = ({ children, label }: { children: ReactNode; label: string }) => (\n  <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr', alignItems: 'center', gap: 16, fontFamily: 'Inter, sans-serif' }}>\n    <span style={{ fontSize: 12, color: '#7e7e7e' }}>{label}</span>\n    <div style={{ display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>{children}</div>\n  </div>\n);\n\nexport const MenuItems: Story = {\n  name: 'HeaderMenuItem',\n  parameters: { docs: { description: { story: 'Клик — пункт становится текущим. Наведение — голубая полоска.' } } },\n  render: () => <MenuDemo />,\n};\n\nfunction MenuDemo() {\n  const [active, setActive] = useState('objects');\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>\n      <Row label=\"клик — текущий\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Объекты\" active={active === 'objects'} onClick={() => setActive('objects')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Задачи\" active={active === 'tasks'} onClick={() => setActive('tasks')} />\n        <HeaderMenuItem label=\"Без иконки\" active={active === 'plain'} onClick={() => setActive('plain')} />\n      </Row>\n      <Row label=\"точки-метки\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Есть новое\" dot=\"green\" active={active === 'new'} onClick={() => setActive('new')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Нужно действие\" dot=\"red\" active={active === 'todo'} onClick={() => setActive('todo')} />\n      </Row>\n      <Row label=\"счётчик\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Заявки\" count={3} active={active === 'req'} onClick={() => setActive('req')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Тендеры\" count=\"99+\" active={active === 'tenders'} onClick={() => setActive('tenders')} />\n      </Row>\n    </div>\n  );\n}\n\nexport const Buttons: Story = {\n  name: 'HeaderButton',\n  parameters: { docs: { description: { story: 'Пустая, со счётчиком «есть новое» (зелёный) и «важное» (красный); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.' } } },\n  render: () => <ButtonsDemo />,\n};\n\nfunction ButtonsDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  const click = (s: string) => () => setLast(s);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n      <Row label=\"без подписи\">\n        <HeaderButton label=\"Уведомления\" onClick={click('пустая')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" onClick={click('счётчик зелёный')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" countColor=\"red\" onClick={click('счётчик красный')} />\n      </Row>\n      <Row label=\"с подписью\">\n        <HeaderButton label=\"Уведомления\" showLabel onClick={click('пустая с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" onClick={click('зелёный с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" countColor=\"red\" onClick={click('красный с подписью')} />\n      </Row>\n      <Row label=\"задачи\">\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} onClick={click('задачи')} />\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} count=\"3\" onClick={click('задачи со счётчиком')} />\n        <HeaderButton label=\"Задачи\" showLabel icon={<TasksIcon />} count=\"3\" onClick={click('задачи с подписью')} />\n      </Row>\n      <Row label=\"«Загрузки»\">\n        <HeaderButton label=\"Загрузки\" icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка без подписи')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"error\" onClick={click('ошибка загрузки')} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif', minHeight: 15 }}>{last ? `Нажато: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const AppButton: Story = {\n  name: 'HeaderAppButton',\n  parameters: { docs: { description: { story: 'Наведение и нажатие — голубой темнее. Неактивная — серая.' } } },\n  render: () => (\n    <Row label=\"обычная / неактивная\">\n      <HeaderAppButton label=\"Все сервисы\" />\n      <HeaderAppButton label=\"Все сервисы\" disabled />\n    </Row>\n  ),\n};\n\nexport const Account: Story = {\n  name: 'HeaderAccount',\n  parameters: { docs: { description: { story: 'Клик — меню кабинета. Длинное имя обрезается отточием. Узкий вариант — только аватар.' } } },\n  render: () => <AccountDemo />,\n};\n\nfunction AccountDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: 360 }}>\n      <Row label=\"обычный / длинное имя / узкий\">\n        <HeaderAccount name=\"Иванов Антон\" job=\"ООО “Сетл Тех”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Константинопольский Константин\" job=\"ООО “Охушки эти воробушки”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Иванов Антон\" compact menu={ACCOUNT_MENU} onMenuClick={setLast} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif' }}>{last ? `Выбрано в меню: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const Logos: Story = {\n  name: 'HeaderLogo',\n  parameters: { docs: { description: { story: 'Переключи тему в тулбаре — логотипы сменятся на тёмную версию.' } } },\n  render: () => (\n    <Row label=\"praktis / praktis-ru / setl-group / icona\">\n      <HeaderLogo type=\"praktis\" />\n      <HeaderLogo type=\"praktis-ru\" />\n      <HeaderLogo type=\"setl-group\" />\n      <HeaderLogo type=\"icona\" />\n    </Row>\n  ),\n};\n"
+      },
+      "stories": [
+        {
+          "id": "ui-kit-header-части--menu-items",
+          "name": "HeaderMenuItem",
+          "snippet": "const MenuItems = () => <MenuDemo />;"
+        },
+        {
+          "id": "ui-kit-header-части--buttons",
+          "name": "HeaderButton",
+          "snippet": "const Buttons = () => <ButtonsDemo />;"
+        },
+        {
+          "id": "ui-kit-header-части--app-button",
+          "name": "HeaderAppButton",
+          "snippet": "const AppButton = () => (\n  <Row label=\"обычная / неактивная\">\n    <HeaderAppButton label=\"Все сервисы\" />\n    <HeaderAppButton label=\"Все сервисы\" disabled />\n  </Row>\n);"
+        },
+        {
+          "id": "ui-kit-header-части--account",
+          "name": "HeaderAccount",
+          "snippet": "const Account = () => <AccountDemo />;"
+        },
+        {
+          "id": "ui-kit-header-части--logos",
+          "name": "HeaderLogo",
+          "snippet": "const Logos = () => (\n  <Row label=\"praktis / praktis-ru / setl-group / icona\">\n    <HeaderLogo type=\"praktis\" />\n    <HeaderLogo type=\"praktis-ru\" />\n    <HeaderLogo type=\"setl-group\" />\n    <HeaderLogo type=\"icona\" />\n  </Row>\n);"
+        }
+      ],
+      "import": "import {\n  CloudIcon,\n  HeaderAccount,\n  HeaderAppButton,\n  HeaderButton,\n  HeaderLogo,\n  HeaderMenuItem,\n  IconBookmark,\n  IconBuilding05,\n  TasksIcon,\n} from 'praktis-ui-kit';"
     },
     "ui-kit-iconbutton": {
       "id": "ui-kit-iconbutton",
@@ -3422,6 +3891,512 @@
       ],
       "import": "import { ShahmatkaTableCorner, ShahmatkaWorkRow } from 'praktis-ui-kit';"
     },
+    "ui-kit-sidemenu-sidebar": {
+      "id": "ui-kit-sidemenu-sidebar",
+      "name": "SideBar",
+      "path": "./src/components/SideMenu/SideBar.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "SideBar",
+        "definedInFile": "./src/components/SideMenu/SideBar.tsx",
+        "actualName": "SideBar",
+        "exportName": "SideBar",
+        "props": {
+          "logo": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'praktis' | 'praktis-ru' | 'setl-group' | 'icona'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'praktis'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'praktis-ru'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'setl-group'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'icona'"
+                }
+              ]
+            },
+            "description": "Логотип — HeaderLogo кита (тот же набор, что в шапке)."
+          },
+          "title": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Название кабинета («Личный кабинет контрагента») — вместо логотипа или рядом с ним."
+          },
+          "footerItems": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "SideMenuEntry"
+                }
+              ],
+              "raw": "SideMenuEntry[]"
+            },
+            "description": "Нижние пункты под чертой (Техподдержка и всё, что не относится к основному меню)."
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "collapsed": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Веб: свёрнута (72, только иконки). Не передано — панель помнит сама."
+          },
+          "defaultCollapsed": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": ""
+          },
+          "onCollapsedChange": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(collapsed: boolean) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "boolean"
+                    },
+                    "name": "collapsed"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "open": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Мобильная: открыта ли."
+          },
+          "onClose": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Мобильная: закрыть (крестик, Esc, клик по затемнению)."
+          },
+          "account": {
+            "required": false,
+            "tsType": {
+              "name": "SideBarAccount"
+            },
+            "description": "Мобильная: плашка кабинета внизу."
+          },
+          "getContainer": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "HTMLElement | (() => HTMLElement) | false",
+              "elements": [
+                {
+                  "name": "HTMLElement"
+                },
+                {
+                  "name": "unknown"
+                },
+                {
+                  "name": "literal",
+                  "value": "false"
+                }
+              ]
+            },
+            "description": "Мобильная: куда вставить панель — как у antd Drawer."
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-sidemenu-sidebar--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live\n    logo=\"setl-group\"\n    title=\"\"\n    defaultCollapsed={false}\n    multiline={false}\n    withFooter />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidebar--collapsed",
+          "name": "Свёрнутая: раскрытие по наведению",
+          "snippet": "const Collapsed = () => <Live defaultCollapsed />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidebar--with-title",
+          "name": "Название кабинета вместо логотипа",
+          "snippet": "const WithTitle = () => <Live logo=\"нет\" title=\"Личный кабинет контрагента\" />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidebar--many-items",
+          "name": "Много пунктов",
+          "snippet": "const ManyItems = () => <Live items={MANY_ITEMS} />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidebar--mobile",
+          "name": "Мобильная",
+          "snippet": "const Mobile = () => <MobileLive\n    logo=\"setl-group\"\n    title=\"\"\n    defaultCollapsed={false}\n    multiline={false}\n    withFooter />;"
+        }
+      ],
+      "import": "import { Button, DropdownMenuItem, IconBurgerMenu, Modal, SideBar } from 'praktis-ui-kit';"
+    },
+    "ui-kit-sidemenu-sidemenu": {
+      "id": "ui-kit-sidemenu-sidemenu",
+      "name": "SideMenu",
+      "path": "./src/components/SideMenu/SideMenu.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "SideMenu",
+        "definedInFile": "./src/components/SideMenu/SideMenu.tsx",
+        "actualName": "SideMenu",
+        "exportName": "SideMenu",
+        "props": {
+          "items": {
+            "required": true,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "SideMenuEntry"
+                }
+              ],
+              "raw": "SideMenuEntry[]"
+            },
+            "description": ""
+          },
+          "selectedKey": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Текущий раздел (ключ пункта). Не передан — меню помнит выбор само."
+          },
+          "defaultSelectedKey": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          },
+          "onSelect": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(key: string) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "string"
+                    },
+                    "name": "key"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "openKeys": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "string"
+                }
+              ],
+              "raw": "string[]"
+            },
+            "description": "Раскрытые группы. Не переданы — меню помнит само."
+          },
+          "defaultOpenKeys": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "string"
+                }
+              ],
+              "raw": "string[]"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            }
+          },
+          "onOpenChange": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(keys: string[]) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "string"
+                        }
+                      ],
+                      "raw": "string[]"
+                    },
+                    "name": "keys"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "collapsed": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Свёрнутое меню — только иконки (в макете Turn = On).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "multiline": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Текст пунктов в несколько строк вместо одной с отточием; пункт растёт, не меньше 46.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-sidemenu-sidemenu--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live collapsed={false} multiline={false} />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidemenu--multiline",
+          "name": "В одну строку / в несколько",
+          "snippet": "const Multiline = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>\n    <Live />\n    <Live multiline />\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidemenu--collapsed",
+          "name": "Свёрнутое меню",
+          "snippet": "const Collapsed = () => <Live collapsed />;"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidemenu--item-states",
+          "name": "SideMenuItem: все варианты",
+          "snippet": "const ItemStates = () => (\n  <div style={{ display: 'grid', gridTemplateColumns: '80px repeat(3, 268px 40px)', gap: '12px 16px', alignItems: 'center', fontFamily: 'Inter, sans-serif' }}>\n    <span />\n    {TYPES.flatMap((t) => [\n      <span key={t} style={{ fontSize: 12, color: '#7e7e7e' }}>{t}</span>,\n      <span key={t + 'c'} />,\n    ])}\n    {STATES.map((st) => (\n      <div key={st} style={{ display: 'contents' }}>\n        <span style={{ fontSize: 12, color: '#7e7e7e' }}>{st}</span>\n        {TYPES.flatMap((t) =>\n          [false, true].map((collapsed) => (\n            <SideMenuItem\n              key={t + collapsed}\n              type={t}\n              label=\"Аккредитации\"\n              icon={I(IconAccreditations)}\n              collapsed={collapsed}\n              selected={st === 'selected'}\n              disabled={st === 'disabled'}\n              forceHover={st === 'hover'}\n              open={t === 'group' && st === 'selected'}\n            />\n          )),\n        )}\n      </div>\n    ))}\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-sidemenu-sidemenu--item-count",
+          "name": "SideMenuItem: счётчик",
+          "snippet": "const ItemCount = () => (\n  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>\n    <div style={{ width: 268 }}>\n      <SideMenuItem label=\"Тендеры\" icon={I(IconTenders)} count=\"99+\" />\n    </div>\n    <SideMenuItem label=\"Тендеры\" icon={I(IconTenders)} count=\"99+\" collapsed />\n  </div>\n);"
+        }
+      ],
+      "import": "import { SideMenu, SideMenuItem } from 'praktis-ui-kit';"
+    },
+    "ui-kit-surface": {
+      "id": "ui-kit-surface",
+      "name": "Surface",
+      "path": "./src/components/Surface/Surface.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Surface",
+        "definedInFile": "./src/components/Surface/Surface.tsx",
+        "actualName": "Surface",
+        "exportName": "Surface",
+        "props": {
+          "on": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'grey' | 'white'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'grey'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'white'"
+                }
+              ]
+            },
+            "description": "На каком фоне лежит подложка. По умолчанию — цвет родительской подложки (или серая страница)."
+          },
+          "level": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "1 | 2 | 3",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "1"
+                },
+                {
+                  "name": "literal",
+                  "value": "2"
+                },
+                {
+                  "name": "literal",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Уровень вложенности: 1 — крупный блок лейаута (20), 2 — объект внутри (12), 3 — глубже (6). По умолчанию — родительский + 1."
+          },
+          "bordered": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Обводка — только по запросу дизайна.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "padding": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Внутренний отступ, px. По умолчанию по уровню: 24 / 16 / 12."
+          },
+          "as": {
+            "required": false,
+            "tsType": {
+              "name": "ElementType"
+            },
+            "description": "HTML-тег: section, article, aside… По умолчанию div.",
+            "defaultValue": {
+              "value": "'div'",
+              "computed": false
+            }
+          },
+          "children": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          }
+        },
+        "composes": [
+          "HTMLAttributes"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-surface--playground",
+          "name": "Playground",
+          "snippet": "const Playground = args => <Page tone={args.on ?? 'grey'}><Surface>Подложка</Surface></Page>;"
+        },
+        {
+          "id": "ui-kit-surface--nesting",
+          "name": "Вложение — правила срабатывают сами",
+          "snippet": "const Nesting = () => (\n  <Page>\n    <Surface>\n      <p style={text}>Уровень 1 — белая, скругление 20, отступ 24</p>\n      <div style={{ height: 16 }} />\n      <Surface>\n        <p style={text}>Уровень 2 — серая, 12, отступ 16</p>\n        <div style={{ height: 12 }} />\n        <Surface>\n          <p style={text}>Уровень 3 — белая, 6, отступ 12</p>\n        </Surface>\n      </Surface>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-surface--gap",
+          "name": "Между подложками — 16",
+          "snippet": "const Gap = () => (\n  <Page>\n    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>\n      <Surface><p style={text}>Блок</p></Surface>\n      <Surface><p style={text}>Блок</p></Surface>\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-surface--on-white",
+          "name": "На белом фоне",
+          "snippet": "const OnWhite = () => (\n  <Page tone=\"white\">\n    <Surface on=\"white\" level={2}><p style={text}>Серая подложка на белом, уровень 2</p></Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-surface--bordered",
+          "name": "С обводкой — только по запросу",
+          "snippet": "const Bordered = () => (\n  <Page>\n    <Surface bordered><p style={text}>Обводка border/cards — только если её попросили в макете</p></Surface>\n  </Page>\n);"
+        }
+      ],
+      "import": "import { Surface } from 'praktis-ui-kit';"
+    },
     "ui-kit-table-table": {
       "id": "ui-kit-table-table",
       "name": "Table",
@@ -4456,6 +5431,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 993
+    "durationMs": 1559
   }
 }
