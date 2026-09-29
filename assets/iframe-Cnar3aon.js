@@ -1,1 +1,0 @@
-import{t as e}from"./iframe-CIL0Is-L.js";e();

@@ -2276,6 +2276,137 @@
       ],
       "import": "import { Checkbox, Radio, Switch } from 'praktis-ui-kit';"
     },
+    "ui-kit-textarea": {
+      "id": "ui-kit-textarea",
+      "name": "TextArea",
+      "path": "./src/components/Input/TextArea.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "TextArea",
+        "definedInFile": "./src/components/Input/TextArea.tsx",
+        "actualName": "TextArea",
+        "exportName": "TextArea",
+        "props": {
+          "label": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Подпись над полем. Не передана — поле без подписи."
+          },
+          "required": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Красная звёздочка у подписи."
+          },
+          "infoText": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Текст подсказки у значка «i» рядом с подписью."
+          },
+          "errorMessage": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Текст под полем — только при status=\"error\"."
+          },
+          "maxRows": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "После скольких строк поле перестаёт расти и прокручивается. По умолчанию растёт без предела."
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-textarea--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (a) => (\n  <Box>\n    <Field {...(a as Args)} />\n  </Box>\n);"
+        },
+        {
+          "id": "ui-kit-textarea--bare",
+          "name": "Без подписи",
+          "snippet": "const Bare = (a) => (\n  <Box>\n    <Field {...(a as Args)} />\n  </Box>\n);"
+        },
+        {
+          "id": "ui-kit-textarea--with-and-without",
+          "name": "С подписью и без",
+          "snippet": "const WithAndWithout = () => (\n  <Box>\n    <TextArea label=\"Комментарий\" required infoText=\"Увидят все участники согласования\" placeholder=\"Опишите замечание\" />\n    <TextArea placeholder=\"Опишите замечание\" />\n  </Box>\n);"
+        },
+        {
+          "id": "ui-kit-textarea--states",
+          "name": "Состояния",
+          "snippet": "const States = () => (\n  <Box>\n    <TextArea label=\"Пустое\" required infoText=\"Подсказка\" placeholder=\"Example\" />\n    <TextArea label=\"Заполненное\" required defaultValue=\"Example\" />\n    <TextArea label=\"Отключено\" required disabled placeholder=\"Example\" />\n    <TextArea label=\"С ошибкой\" required status=\"error\" errorMessage=\"Поле обязательно для заполнения\" placeholder=\"Example\" />\n  </Box>\n);"
+        },
+        {
+          "id": "ui-kit-textarea--grow",
+          "name": "Растёт по мере ввода",
+          "snippet": "const Grow = () => <GrowStory />;"
+        }
+      ],
+      "import": "import { TextArea } from 'praktis-ui-kit';"
+    },
+    "ui-kit-breadcrumbs": {
+      "id": "ui-kit-breadcrumbs",
+      "name": "Breadcrumbs",
+      "path": "./src/components/Breadcrumbs/Breadcrumbs.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Breadcrumbs",
+        "definedInFile": "./src/components/Breadcrumbs/Breadcrumbs.tsx",
+        "actualName": "Breadcrumbs",
+        "exportName": "Breadcrumbs",
+        "props": {
+          "items": {
+            "required": true,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "BreadcrumbItem"
+                }
+              ],
+              "raw": "BreadcrumbItem[]"
+            },
+            "description": ""
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-breadcrumbs--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Breadcrumbs\n    items={[\n      { label: 'Объекты', href: '#' },\n      { label: 'Многоквартирный дом со встроенными помещениями', href: '#' },\n      { label: 'Доступы' },\n    ]} />;"
+        },
+        {
+          "id": "ui-kit-breadcrumbs--variants",
+          "name": "Варианты",
+          "snippet": "const Variants = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 24, fontFamily: 'Inter, sans-serif' }}>\n    <div>\n      <div style={{ fontSize: 12, color: '#66788c', marginBottom: 8 }}>Две крошки</div>\n      <Breadcrumbs items={[{ label: 'Объекты', href: '#' }, { label: 'ЖК «Чистое небо»' }]} />\n    </div>\n    <div>\n      <div style={{ fontSize: 12, color: '#66788c', marginBottom: 8 }}>Длинные — отточие и тултип, не шире 230</div>\n      <Breadcrumbs\n        items={[\n          { label: 'Объекты', href: '#' },\n          { label: 'Многоквартирный дом со встроенными помещениями и подземной автостоянкой', href: '#' },\n          { label: 'Железобетонные конструкции корпус 1, секции 1–4' },\n        ]}\n      />\n    </div>\n    <div>\n      <div style={{ fontSize: 12, color: '#66788c', marginBottom: 8 }}>Кнопки вместо ссылок (onClick)</div>\n      <Breadcrumbs items={[{ label: 'Проекты', onClick: () => {} }, { label: 'Шаблоны', onClick: () => {} }, { label: 'Шаблон РД' }]} />\n    </div>\n    <div style={{ width: 360 }}>\n      <div style={{ fontSize: 12, color: '#66788c', marginBottom: 8 }}>Узко — переносятся</div>\n      <Breadcrumbs\n        items={[\n          { label: 'Объекты', href: '#' },\n          { label: 'ЖК «Чистое небо»', href: '#' },\n          { label: 'Корпус 1', href: '#' },\n          { label: 'Документы' },\n        ]}\n      />\n    </div>\n  </div>\n);"
+        }
+      ],
+      "import": "import { Breadcrumbs } from 'praktis-ui-kit';"
+    },
     "ui-kit-bubble": {
       "id": "ui-kit-bubble",
       "name": "Bubble",
@@ -4207,9 +4338,19 @@
           "id": "ui-kit-table-table--rows-reorder",
           "name": "Перестановка строк",
           "snippet": "const RowsReorder = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>\n    <ReorderDemo />\n    <ReorderDemo size=\"small\" withSelection />\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-table-table--with-search-example",
+          "name": "Пример: поиск, кнопки, таблица, страницы",
+          "snippet": "const WithSearchExample = () => <SearchTableDemo />;"
+        },
+        {
+          "id": "ui-kit-table-table--in-frame",
+          "name": "Во фрейме: сотни строк без страниц",
+          "snippet": "const InFrame = () => <FrameDemo />;"
         }
       ],
-      "import": "import { IconButton, IconTrash, Table, TableCell, TableTags, Tag } from 'praktis-ui-kit';"
+      "import": "import {\n  Button,\n  IconAddCircle,\n  IconButton,\n  IconExport,\n  IconTrash,\n  InputSearch,\n  Table,\n  TableCell,\n  TableTags,\n  Tag,\n} from 'praktis-ui-kit';"
     },
     "ui-kit-table-cell": {
       "id": "ui-kit-table-cell",
@@ -7483,6 +7624,57 @@
       ],
       "import": "import { Spinner } from 'praktis-ui-kit';"
     },
+    "ui-kit-shahmatka-ks-cell": {
+      "id": "ui-kit-shahmatka-ks-cell",
+      "name": "Cell",
+      "path": "./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx",
+      "jsDocTags": {},
+      "error": {
+        "name": "No component found",
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  34 | };\n  35 |\n> 36 | const meta = {\n     | ^\n  37 |   title: 'UI Kit/Продуктовые блоки/Shahmatka КС/Cell',\n  38 |   id: 'ui-kit-shahmatka-ks-cell',\n  39 |   parameters: { layout: 'padded', docs: { description: { component: description } } },\n\n./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState, type ReactNode } from 'react';\nimport { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from './ShahmatkaKsCell';\nimport '../../theme/figma-colors.css';\n\nconst description = `\nЯчейка шахматки **КС**. Источник — Figma UI Kit «Практис», **shahmatka__job** (node 935:4681), и описание\nячеек в файле «Автоматизация КС». 98×48, цвета — переменные Figma \\`shahmatka/*\\`.\n\nЯчейке передаются проценты по акту — цвет, заливку и число она считает сама:\n\n| Проп | Что | Как видно |\n|---|---|---|\n| \\`previous\\` | принято в прошлых актах | зелёная штриховка сверху (фон green/200, линии green/320 3px шагом 6) — только в следующих актах |\n| \\`declared\\` | заявлено подрядчиком в этом акте | — |\n| \\`accepted\\` | принято заказчиком в этом акте (не передано — ещё не решал) | зелёный; остаток заявленного — красный |\n| \\`awaiting\\` | сколько сейчас ждёт решения | жёлтый |\n| \\`icona\\` / \\`idReady\\` / \\`comment\\` | часть из Айконы / документы по ИД готовы / есть комментарий | ICONA справа, ID слева, голубой градиент со значком |\n| \\`empty\\` | работ на локации не будет | белая, без обводки |\n\nСверху вниз: серый остаток → штриховка (принято ранее) → зелёный → жёлтый → красный — чем ниже, тем новее; строго по процентам от высоты.\n**Подсказка по наведению** — \\`details\\`: Айкона (\\`icona\\`, %), ручной ввод, последние комментарии подрядчика\nи заказчика; «Заявлено» и «Принято» ячейка берёт из своих процентов. Данные обычно приходят с сервера при\nнаведении: \\`onDetailsOpen\\` — запросить, \\`detailsLoading\\` — крутилка, пока идёт запрос. См. «Подсказка».\n\n**Число:** пока что-то ждёт решения — сколько заявлено («50»); всё решено — «принято / заявлено»\n(«25 / 50», «50 / 50»). Цвет одинаков для всех ролей. Наведение — голубая обводка.\n`;\n\ntype Args = Required<Pick<ShahmatkaKsCellProps, 'previous' | 'declared' | 'icona' | 'idReady' | 'comment' | 'empty'>> & {\n  decided: boolean;\n  accepted: number;\n  awaiting: number;\n};\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka КС/Cell',\n  id: 'ui-kit-shahmatka-ks-cell',\n  parameters: { layout: 'padded', docs: { description: { component: description } } },\n  tags: ['autodocs'],\n  argTypes: {\n    previous: { control: { type: 'range', min: 0, max: 100, step: 5 }, name: 'принято ранее, %' },\n    declared: { control: { type: 'range', min: 0, max: 100, step: 5 }, name: 'заявлено, %' },\n    decided: { control: 'boolean', name: 'заказчик решал' },\n    accepted: { control: { type: 'range', min: 0, max: 100, step: 5 }, name: 'принято, %', if: { arg: 'decided' } },\n    awaiting: { control: { type: 'range', min: 0, max: 100, step: 5 }, name: 'ждёт решения, %', if: { arg: 'decided' } },\n    icona: { control: 'boolean' },\n    idReady: { control: 'boolean', name: 'ID готовы' },\n    comment: { control: 'boolean', name: 'комментарий' },\n    empty: { control: 'boolean', name: 'работ не будет' },\n  },\n  args: { previous: 0, declared: 50, decided: true, accepted: 25, awaiting: 0, icona: true, idReady: false, comment: false, empty: false },\n} satisfies Meta<Args>;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nexport const Playground: Story = {\n  render: ({ decided, accepted, awaiting, ...rest }: Partial<Args>) => (\n    <ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() => {}} />\n  ),\n};\n\nconst label = { fontFamily: 'Inter, sans-serif', fontSize: 12, lineHeight: 1.2, color: 'var(--text-black-secondary)' } as const;\n\nfunction Grid({ rows, columns }: { rows: [string, (extra: Partial<ShahmatkaKsCellProps>) => ReactNode][]; columns: [string, Partial<ShahmatkaKsCellProps>][] }) {\n  return (\n    <div style={{ display: 'grid', gridTemplateColumns: `160px repeat(${columns.length}, 98px)`, gap: '12px 16px', alignItems: 'center' }}>\n      <span />\n      {columns.map(([c]) => (\n        <span key={c} style={label}>\n          {c}\n        </span>\n      ))}\n      {rows.map(([r, cell]) => [\n        <span key={r} style={label}>\n          {r}\n        </span>,\n        ...columns.map(([c, extra]) => <div key={r + c}>{cell(extra)}</div>),\n      ])}\n    </div>\n  );\n}\n\nexport const States: Story = {\n  name: 'Состояния',\n  parameters: { docs: { description: { story: 'Как набор в Figma: статус × обычная / ICONA / комментарий / ID. Все ячейки — с наведением.' } } },\n  render: () => (\n    <Grid\n      columns={[\n        ['обычная', {}],\n        ['ICONA', { icona: true }],\n        ['комментарий', { comment: true, icona: true }],\n        ['ID готовы', { idReady: true, icona: true }],\n      ]}\n      rows={[\n        ['Работ не будет', (x) => <ShahmatkaKsCell empty {...x} />],\n        ['Объём не вносили', (x) => <ShahmatkaKsCell {...x} comment={false} onClick={() => {}} />],\n        ['Заявлено 50, ждёт решения', (x) => <ShahmatkaKsCell declared={50} {...x} onClick={() => {}} />],\n        ['Заявлено 100, ждёт решения', (x) => <ShahmatkaKsCell declared={100} {...x} onClick={() => {}} />],\n        ['Принято всё: 50 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() => {}} />],\n        ['Принято часть: 25 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() => {}} />],\n        ['Не принято: 0 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() => {}} />],\n        ['Принято ранее 40 + заявлено 30', (x) => <ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() => {}} />],\n        ['Принято ранее 40, в этом акте 20 / 40', (x) => <ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() => {}} />],\n        ['Все цвета: ранее 20, принято 30, ждёт 20, не принято 10', (x) => <ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() => {}} />],\n        ['Принято ранее 100', (x) => <ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() => {}} />],\n      ]}\n    />\n  ),\n};\n\n// Шаги согласования — одна ячейка, данные меняются\nconst FLOW: [string, ShahmatkaKsCellProps][] = [\n  ['Акт 1. Подрядчик заявил 100 %', { declared: 100, icona: true }],\n  ['Заказчик принял 50 — остаток красный', { declared: 100, accepted: 50, icona: true }],\n  ['Подрядчик повторно подал отклонённые 50', { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true }],\n  ['Заказчик принял ещё 25', { declared: 100, accepted: 75, icona: true, comment: true }],\n  ['Акт 2. Всё принятое раньше — штриховкой', { previous: 75, icona: true }],\n  ['Подрядчик заявил оставшиеся 25', { previous: 75, declared: 25, icona: true }],\n  ['Заказчик принял всё: 25 / 25', { previous: 75, declared: 25, accepted: 25, icona: true, idReady: true }],\n];\n\nfunction FlowDemo() {\n  const [step, setStep] = useState(0);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n      {FLOW.map(([text, props], i) => (\n        <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 16, opacity: i <= step ? 1 : 0.35 }}>\n          <ShahmatkaKsCell {...props} onClick={() => setStep(i)} />\n          <span style={{ ...label, fontSize: 14, color: 'var(--text-black-primary)' }}>{text}</span>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport const Flow: Story = {\n  name: 'Путь согласования',\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'Одна работа на одной локации от заявки до следующего акта. В одном акте штриховки нет — только жёлтый, зелёный и красный. Штриховка появляется в следующем акте: туда тянется всё принятое раньше.',\n      },\n    },\n  },\n  render: () => <FlowDemo />,\n};\n\n// Подсказка: данные как из базы — приходят через 600 мс после первого наведения, потом берутся из памяти\nconst TIP_CASES: [string, ShahmatkaKsCellProps, ShahmatkaKsDetails][] = [\n  ['Заявлено, ждёт решения', { declared: 50 }, {}],\n  ['Айкона + ручной ввод, комментарий подрядчика', { declared: 100, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: 'Ну пожалуйста' }],\n  ['Заказчик не принял всё, с комментарием', { declared: 50, accepted: 0, comment: true }, { customerComment: 'Вот вообще ты не сделал 50' }],\n  ['Айкона, заказчик принял часть', { declared: 100, accepted: 75, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: 'Ну пожалуйста', customerComment: 'Ладно, но нет' }],\n  ['Следующий акт: принято ранее', { previous: 40, declared: 40, accepted: 20 }, { customerComment: 'Остальное после исполнительной' }],\n];\n\nconst fetchDetails = (i: number) => new Promise<ShahmatkaKsDetails>((ok) => setTimeout(() => ok(TIP_CASES[i][2]), 600));\n\nfunction TooltipDemo() {\n  const [data, setData] = useState<Record<number, ShahmatkaKsDetails>>({});\n  const [loading, setLoading] = useState<Record<number, boolean>>({});\n  const load = (i: number) => {\n    if (data[i] || loading[i]) return;\n    setLoading((l) => ({ ...l, [i]: true }));\n    fetchDetails(i).then((d) => {\n      setData((x) => ({ ...x, [i]: d }));\n      setLoading((l) => ({ ...l, [i]: false }));\n    });\n  };\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n      {TIP_CASES.map(([text, props], i) => (\n        <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>\n          <ShahmatkaKsCell {...props} onClick={() => {}} details={data[i]} detailsLoading={loading[i]} onDetailsOpen={() => load(i)} />\n          <span style={{ ...label, fontSize: 14, color: 'var(--text-black-primary)' }}>{text}</span>\n        </div>\n      ))}\n    </div>\n  );\n}\n\nexport const Tooltip: Story = {\n  name: 'Подсказка',\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'Наведите на ячейку. Первый раз данные «идут с сервера» 600 мс — в подсказке крутилка, дальше берутся из памяти. Сверху — что заявил подрядчик и его комментарий, под линией — что принял заказчик и его комментарий. Комментарий — только последний, вся переписка — в модалке.',\n      },\n    },\n  },\n  render: () => <TooltipDemo />,\n};\n"
+      },
+      "stories": [
+        {
+          "id": "ui-kit-shahmatka-ks-cell--playground",
+          "name": "Playground",
+          "snippet": "const Playground = ({ decided, accepted, awaiting, ...rest }: Partial<Args>) => (\n  <ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() => {}} />\n);"
+        },
+        {
+          "id": "ui-kit-shahmatka-ks-cell--states",
+          "name": "Состояния",
+          "snippet": "const States = () => (\n  <Grid\n    columns={[\n      ['обычная', {}],\n      ['ICONA', { icona: true }],\n      ['комментарий', { comment: true, icona: true }],\n      ['ID готовы', { idReady: true, icona: true }],\n    ]}\n    rows={[\n      ['Работ не будет', (x) => <ShahmatkaKsCell empty {...x} />],\n      ['Объём не вносили', (x) => <ShahmatkaKsCell {...x} comment={false} onClick={() => {}} />],\n      ['Заявлено 50, ждёт решения', (x) => <ShahmatkaKsCell declared={50} {...x} onClick={() => {}} />],\n      ['Заявлено 100, ждёт решения', (x) => <ShahmatkaKsCell declared={100} {...x} onClick={() => {}} />],\n      ['Принято всё: 50 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() => {}} />],\n      ['Принято часть: 25 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() => {}} />],\n      ['Не принято: 0 / 50', (x) => <ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() => {}} />],\n      ['Принято ранее 40 + заявлено 30', (x) => <ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() => {}} />],\n      ['Принято ранее 40, в этом акте 20 / 40', (x) => <ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() => {}} />],\n      ['Все цвета: ранее 20, принято 30, ждёт 20, не принято 10', (x) => <ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() => {}} />],\n      ['Принято ранее 100', (x) => <ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() => {}} />],\n    ]}\n  />\n);"
+        },
+        {
+          "id": "ui-kit-shahmatka-ks-cell--flow",
+          "name": "Путь согласования",
+          "snippet": "const Flow = () => <FlowDemo />;"
+        },
+        {
+          "id": "ui-kit-shahmatka-ks-cell--tooltip",
+          "name": "Подсказка",
+          "snippet": "const Tooltip = () => <TooltipDemo />;"
+        }
+      ],
+      "import": "import { ShahmatkaKsCell } from 'praktis-ui-kit';"
+    },
+    "ui-kit-shahmatka-ks-table": {
+      "id": "ui-kit-shahmatka-ks-table",
+      "name": "Example",
+      "path": "./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx",
+      "jsDocTags": {},
+      "error": {
+        "name": "No component found",
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  24 | `;\n  25 |\n> 26 | const meta = {\n     | ^\n  27 |   title: 'UI Kit/Продуктовые блоки/Shahmatka КС/Example',\n  28 |   id: 'ui-kit-shahmatka-ks-table',\n  29 |   parameters: { layout: 'padded', docs: { description: { component: description } } },\n\n./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState } from 'react';\nimport { BubbleTabs, type BubbleItem } from '../Bubble/Bubble';\nimport { Surface } from '../Surface/Surface';\nimport { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from './ShahmatkaKsCell';\nimport { ShahmatkaTable, type ShahmatkaTableRow } from './ShahmatkaTable';\nimport '../../theme/figma-colors.css';\n\nconst description = `\nШахматка **КС** на экране акта, собранная из частей кита — так же, как шахматка ИД:\n\n- **BubbleTabs** — корпуса и секции. Секций много — ряд уходит вбок без полосы прокрутки, тянется мышкой\n  (\\`overflow=\"scroll\"\\`).\n- **ShahmatkaTable** + **ShahmatkaKsCell** — таблица. Слева только названия СТК (\\`contractor: null\\`), строки\n  48 — как ячейки КС; шапка локаций — как у ИД, 68, название до 3 строк. При прокрутке вбок закреплён\n  список СТК, вниз — шапка.\n\n**ShahmatkaTable** — общая таблица для ИД и КС: \\`locations\\`, \\`rows\\`, \\`renderCell(row, location)\\`,\n\\`rowHeight\\` (ИД 68, КС 48), \\`headerHeight\\` (68), \\`maxHeight\\`.\n\nНаведение — подсказка ячейки, данные «с сервера» (400 мс при первом наведении, потом из памяти).\n\nДанные примерные: при переключении корпуса или секции таблица меняется.\n`;\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka КС/Example',\n  id: 'ui-kit-shahmatka-ks-table',\n  parameters: { layout: 'padded', docs: { description: { component: description } } },\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nconst BUILDINGS: BubbleItem[] = Array.from({ length: 4 }, (_, i) => ({ key: `b${i + 1}`, label: `Корпус ${i + 1}` }));\nconst SECTIONS: BubbleItem[] = Array.from({ length: 12 }, (_, i) => ({ key: `s${i + 1}`, label: `Секция ${Math.floor(i / 4) + 1}.${(i % 4) + 1}` }));\n\nconst LOCATIONS = ['Подвал', ...Array.from({ length: 16 }, (_, i) => `Этаж ${i + 1}`), 'Кровля', 'Фасад лицевой, очень длинное название'].map((label) => ({ key: label, label }));\n\ninterface Row extends ShahmatkaTableRow {\n  seed: number;\n}\n\nconst ROWS: Row[] = [\n  'СТК Основание под бетонную подготовку',\n  'СТК Бетонная подготовка',\n  'СТК Котлован',\n  'СТК Утепление наружных стен',\n  'Комплекс монтажных работ благоустройства площадки',\n  'Кабели магистральные (стояки) АППЗ',\n  'Комплекс работ по установке оконечного оборудования',\n  'Монтаж приёмо-контрольного оборудования',\n  'Датчики автономные (монтаж закладных)',\n  'Установка оборудования в квартирах',\n  'Монтаж оборудования диспетчерской',\n  'Кладка наружных стен',\n].map((title, i) => ({ key: `r${i}`, title, contractor: null, seed: i * 7 + 3 }));\n\n// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции\nconst CELLS: ShahmatkaKsCellProps[] = [\n  { empty: true },\n  {},\n  {},\n  { icona: true },\n  { declared: 50 },\n  { declared: 100, icona: true },\n  { declared: 100, accepted: 100 },\n  { declared: 50, accepted: 50, idReady: true },\n  { declared: 70, accepted: 35, icona: true },\n  { declared: 50, accepted: 0, comment: true },\n  { declared: 100, accepted: 50, comment: true, icona: true },\n  { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true },\n  { previous: 50, declared: 30, icona: true },\n  { previous: 40, declared: 40, accepted: 20 },\n  { previous: 100, idReady: true },\n];\nconst cellFor = (row: Row, locIndex: number, building: string, section: string) => {\n  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;\n  // ближе к верхним этажам — больше пустых: работы идут снизу\n  return locIndex > 11 && n % 3 ? CELLS[1] : CELLS[n % CELLS.length];\n};\n\n// «Сервер»: подсказку ячейки отдаёт через 400 мс; экран запрашивает её при первом наведении и хранит\nconst COMMENTS = ['Ну пожалуйста', 'Доделали после проверки', 'Вот вообще не сделано', 'Ладно, но нет'];\nconst detailsFor = (cell: ShahmatkaKsCellProps, n: number): ShahmatkaKsDetails => {\n  const act = cell.icona ? Math.round(((cell.declared ?? 0) * 0.5) / 5) * 5 : 0;\n  return {\n    icona: cell.icona ? act : undefined,\n    manual: (cell.declared ?? 0) - act,\n    contractorComment: cell.comment ? COMMENTS[n % 2] : undefined,\n    customerComment: cell.comment && cell.accepted !== undefined ? COMMENTS[2 + (n % 2)] : undefined,\n  };\n};\n\nfunction Screen() {\n  const [building, setBuilding] = useState('b1');\n  const [section, setSection] = useState('s1');\n  const [log, setLog] = useState('Наведите на ячейку — подсказка; нажмите — процентовка');\n  const [details, setDetails] = useState<Record<string, ShahmatkaKsDetails>>({});\n  const [loading, setLoading] = useState<Record<string, boolean>>({});\n  const load = (key: string, cell: ShahmatkaKsCellProps, n: number) => {\n    if (details[key] || loading[key]) return;\n    setLoading((l) => ({ ...l, [key]: true }));\n    setTimeout(() => {\n      setDetails((d) => ({ ...d, [key]: detailsFor(cell, n) }));\n      setLoading((l) => ({ ...l, [key]: false }));\n    }, 400);\n  };\n\n  return (\n    <div style={{ padding: 24, background: 'var(--bg-grey-page-full)', borderRadius: 12 }}>\n      <Surface>\n        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n          <BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=\"Корпус\" />\n          <BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=\"scroll\" aria-label=\"Секция\" />\n        </div>\n        <div style={{ marginTop: 24 }}>\n          <ShahmatkaTable\n            locations={LOCATIONS}\n            rows={ROWS}\n            rowHeight={48}\n            maxHeight={420}\n            renderCell={(row, loc) => {\n              const i = LOCATIONS.findIndex((l) => l.key === loc.key);\n              const cell = cellFor(row, i, building, section);\n              const where = `${BUILDINGS.find((b) => b.key === building)?.label}, ${SECTIONS.find((s) => s.key === section)?.label} — «${row.title}», ${loc.label}`;\n              const key = `${building}/${section}/${row.key}/${loc.key}`;\n              return (\n                <ShahmatkaKsCell\n                  {...cell}\n                  onClick={cell.empty ? undefined : () => setLog(`Открыли бы процентовку: ${where}`)}\n                  details={details[key]}\n                  detailsLoading={loading[key]}\n                  onDetailsOpen={() => load(key, cell, row.seed + i)}\n                />\n              );\n            }}\n          />\n        </div>\n        <p style={{ margin: '12px 0 0', fontFamily: 'Inter, sans-serif', fontSize: 14, color: 'var(--text-grey-secondary)' }}>{log}</p>\n      </Surface>\n    </div>\n  );\n}\n\nexport const Example: Story = {\n  name: 'Экран акта',\n  render: () => <Screen />,\n};\n"
+      },
+      "stories": [
+        {
+          "id": "ui-kit-shahmatka-ks-table--example",
+          "name": "Экран акта",
+          "snippet": "const Example = () => <Screen />;"
+        }
+      ],
+      "import": "import { BubbleTabs, ShahmatkaKsCell, ShahmatkaTable, Surface } from 'praktis-ui-kit';"
+    },
     "ui-kit-shahmatka-cell": {
       "id": "ui-kit-shahmatka-cell",
       "name": "ShahmatkaCell",
@@ -7532,7 +7724,7 @@
         {
           "id": "ui-kit-shahmatka-cell--hover",
           "name": "Hover",
-          "snippet": "const Hover = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontFamily: 'Inter, sans-serif', fontSize: 14, color: '#41484a' }}>\n    <p style={{ margin: 0 }}>Наведите курсор на ячейки — у «пустой» (нет работ) ховера нет, у остальных есть.</p>\n    <div style={{ display: 'flex', gap: 8 }}>\n      <ShahmatkaCell variant=\"empty\" />\n      <ShahmatkaCell variant=\"quadrants\" date=\"done\" materials=\"required\" protocols=\"done\" schemes=\"required\" />\n      <ShahmatkaCell variant=\"awaiting-signature\" />\n      <ShahmatkaCell variant=\"signed\" />\n    </div>\n  </div>\n);"
+          "snippet": "const Hover = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontFamily: 'Inter, sans-serif', fontSize: 14, color: 'var(--text-black-primary)' }}>\n    <p style={{ margin: 0 }}>Наведите курсор на ячейки — у белой (работ не будет) ховера нет, у остальных есть — голубая обводка.</p>\n    <div style={{ display: 'flex', gap: 8 }}>\n      <ShahmatkaCell variant=\"empty\" />\n      <ShahmatkaCell variant=\"quadrants\" date=\"done\" materials=\"required\" protocols=\"done\" schemes=\"required\" />\n      <ShahmatkaCell variant=\"awaiting-signature\" />\n      <ShahmatkaCell variant=\"signed\" />\n    </div>\n  </div>\n);"
         }
       ],
       "import": "import { ShahmatkaCell } from 'praktis-ui-kit';"
@@ -7544,16 +7736,16 @@
       "jsDocTags": {},
       "error": {
         "name": "No component found",
-        "message": "We could not detect the component from your story file. Specify meta.component.\n  50 | ];\n  51 |\n> 52 | const meta = {\n     | ^\n  53 |   title: 'UI Kit/Продуктовые блоки/Shahmatka/Example',\n  54 |   id: 'ui-kit-shahmatka-example',\n  55 | } satisfies Meta;\n\n./src/components/Shahmatka/ShahmatkaExample.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { Fragment } from 'react';\nimport { ShahmatkaCell, type ShahmatkaCellProps } from './ShahmatkaCell';\nimport { ShahmatkaLocationHeader } from './ShahmatkaLocationHeader';\nimport { ShahmatkaTableCorner, ShahmatkaWorkRow } from './ShahmatkaWorkRow';\n\n// Пример сборки — как компоненты шахматки используются вместе. Это НЕ отдельный компонент\n// ShahmatkaTable (закрепление шапки/колонки при горизонтальном скролле здесь не сделано) —\n// просто демонстрация раскладки. Собрать в реальный компонент таблицы — следующий шаг, когда понадобится.\n\nconst locations = ['Подвал', 'Этаж 1', 'Котлован', 'Фасад Торцевой'];\n\ninterface ExampleRow {\n  contractor?: string;\n  title: string;\n  cells: ShahmatkaCellProps[];\n}\n\nconst rows: ExampleRow[] = [\n  {\n    contractor: 'ООО \"Ромашка\"',\n    title: 'Бетонирование монолитных перекрытий',\n    cells: [\n      { variant: 'empty' },\n      { variant: 'quadrants', date: 'done', materials: 'required', protocols: 'done', schemes: 'required' },\n      { variant: 'awaiting-signature' },\n      { variant: 'empty' },\n    ],\n  },\n  {\n    contractor: 'ООО \"Ромашка\"',\n    title: 'СТК Кабели магистральные (стояки) АППЗ',\n    cells: [\n      { variant: 'awaiting-other-signature' },\n      { variant: 'awaiting-signature' },\n      { variant: 'empty' },\n      { variant: 'remarks' },\n    ],\n  },\n  {\n    contractor: 'Подрядчик не назначен',\n    title: 'СТК Монтаж приемо-контрольного оборудования',\n    cells: [\n      { variant: 'quadrants', date: 'pending', materials: 'pending', protocols: 'pending', schemes: 'pending' },\n      { variant: 'quadrants', date: 'pending', materials: 'pending', protocols: 'pending', schemes: 'pending' },\n      { variant: 'awaiting-other-signature' },\n      { variant: 'empty' },\n    ],\n  },\n];\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka/Example',\n  id: 'ui-kit-shahmatka-example',\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj;\n\nexport const MiniTable: Story = {\n  render: () => (\n    <div\n      style={{\n        display: 'grid',\n        gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,\n        gap: 4,\n      }}\n    >\n      <ShahmatkaTableCorner />\n      {locations.map((label) => (\n        <ShahmatkaLocationHeader key={label} label={label} />\n      ))}\n\n      {rows.map((row) => (\n        <Fragment key={row.title}>\n          <ShahmatkaWorkRow contractor={row.contractor} title={row.title} />\n          {row.cells.map((cell, i) => (\n            <ShahmatkaCell\n              key={locations[i]}\n              {...cell}\n              onClick={() => console.log('open act details:', row.title, locations[i])}\n            />\n          ))}\n        </Fragment>\n      ))}\n    </div>\n  ),\n};\n"
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  22 | `;\n  23 |\n> 24 | const meta = {\n     | ^\n  25 |   title: 'UI Kit/Продуктовые блоки/Shahmatka ID/Example',\n  26 |   id: 'ui-kit-shahmatka-example',\n  27 |   parameters: { layout: 'padded', docs: { description: { component: description } } },\n\n./src/components/Shahmatka/ShahmatkaExample.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState } from 'react';\nimport { IconFatAngleArrowDown, IconFatAngleArrowUp } from '../../icons/fat';\nimport { BubbleTabs, type BubbleItem } from '../Bubble/Bubble';\nimport { FunctionButton } from '../FunctionButton/FunctionButton';\nimport { Surface } from '../Surface/Surface';\nimport { ShahmatkaCell, type ShahmatkaCellProps } from './ShahmatkaCell';\nimport { ShahmatkaLegend } from './ShahmatkaLegend';\nimport { ShahmatkaTable, type ShahmatkaTableRow } from './ShahmatkaTable';\n\nconst description = `\nШахматка **ИД** на экране «Выполненные работы», собранная из частей кита:\n\n- **BubbleTabs** — корпуса и секции (вместо сегментированного переключателя). Секций много — ряд\n  уходит вбок без полосы прокрутки, тянется мышкой (\\`overflow=\"scroll\"\\`). Оранжевая точка — в корпусе\n  или секции требуется действие (\\`isNew\\` + \\`newColor=\"orange\"\\`, цвет по правилу Bulb).\n- **FunctionButton** со стрелкой Fat — «Посмотреть легенду», раскрывает **ShahmatkaLegend**.\n- **ShahmatkaTable** + **ShahmatkaCell** — таблица: при прокрутке вбок закреплён список СТК, вниз —\n  шапка локаций. Строки 68.\n\nДанные примерные: при переключении корпуса или секции таблица меняется.\n`;\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka ID/Example',\n  id: 'ui-kit-shahmatka-example',\n  parameters: { layout: 'padded', docs: { description: { component: description } } },\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\n// Оранжевая точка — «требуется действие» (правило Bulb)\nconst BUILDINGS: BubbleItem[] = Array.from({ length: 5 }, (_, i) => ({\n  key: `b${i + 1}`,\n  label: `Корпус ${i + 1}`,\n  isNew: i === 0,\n  newColor: 'orange',\n}));\nconst SECTIONS: BubbleItem[] = Array.from({ length: 14 }, (_, i) => ({\n  key: `s${i + 1}`,\n  label: `Секция ${i + 1}`,\n  isNew: i === 1 || i === 3,\n  newColor: 'orange',\n}));\n\nconst LOCATIONS = [\n  'Подвал',\n  'Этаж 1',\n  'Котлован',\n  'Этаж 3',\n  'Фасад торцевой',\n  'Этаж 5',\n  'Фасад лицевой 9',\n  'Очень длинное тестовое название локации',\n  ...Array.from({ length: 7 }, (_, i) => `Этаж ${i + 8}`),\n].map((label) => ({ key: label, label }));\n\ninterface Row extends ShahmatkaTableRow {\n  seed: number;\n}\n\nconst ROWS: Row[] = [\n  ['ООО «Ромашка»', 'СТК Комплекс монтажных работ благоустройства площадки'],\n  ['ООО «Ромашка»', 'СТК Бетонирование монолитных перекрытий'],\n  ['ООО «Ромашка»', 'СТК Кабели магистральные (стояки) АППЗ'],\n  ['Подрядчик не назначен', 'СТК Комплекс работ по установке оконечного оборудования'],\n  ['Подрядчик не назначен', 'СТК Монтаж приёмо-контрольного оборудования'],\n  ['ООО «Ромашка»', 'СТК Датчики автономные (монтаж закладных)'],\n  ['ООО «Ромашка»', 'СТК Установка оборудования в квартирах'],\n  ['ООО «Ромашка»', 'СТК Монтаж оборудования диспетчерской'],\n].map(([contractor, title], i) => ({ key: String(i), contractor, title, seed: i * 7 + 3 }));\n\n// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции\nconst CELLS: ShahmatkaCellProps[] = [\n  { variant: 'empty' },\n  { variant: 'empty' },\n  { variant: 'quadrants', date: 'pending', materials: 'pending', protocols: 'pending', schemes: 'pending' },\n  { variant: 'quadrants', date: 'pending', materials: 'pending', protocols: 'pending' },\n  { variant: 'quadrants', date: 'required', materials: 'required', protocols: 'required', schemes: 'required' },\n  { variant: 'quadrants', date: 'done', materials: 'required', protocols: 'done', schemes: 'required' },\n  { variant: 'quadrants', date: 'done', materials: 'done', protocols: 'done', schemes: 'done' },\n  { variant: 'awaiting-signature' },\n  { variant: 'awaiting-other-signature' },\n  { variant: 'remarks' },\n  { variant: 'signed' },\n  { variant: 'quadrants', date: 'pending', materials: 'pending', protocols: 'pending', schemes: 'pending' },\n];\nconst cellFor = (row: Row, locIndex: number, building: string, section: string): ShahmatkaCellProps => {\n  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;\n  return CELLS[n % CELLS.length];\n};\n\nfunction Screen() {\n  const [building, setBuilding] = useState('b1');\n  const [section, setSection] = useState('s1');\n  const [legend, setLegend] = useState(false);\n  const [log, setLog] = useState('Нажмите на ячейку');\n\n  return (\n    <div style={{ padding: 24, background: 'var(--surface-grey, #f5f8fb)', borderRadius: 12 }}>\n      <Surface>\n        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n          <BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=\"Корпус\" />\n          <BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=\"scroll\" aria-label=\"Секция\" />\n        </div>\n\n        <div style={{ marginTop: 24 }}>\n          <FunctionButton\n            icon={legend ? <IconFatAngleArrowUp /> : <IconFatAngleArrowDown />}\n            iconPosition=\"end\"\n            onClick={() => setLegend((v) => !v)}\n            aria-expanded={legend}\n          >\n            {legend ? 'Скрыть легенду' : 'Посмотреть легенду'}\n          </FunctionButton>\n          {legend && (\n            <div style={{ marginTop: 12 }}>\n              <ShahmatkaLegend />\n            </div>\n          )}\n        </div>\n\n        <div style={{ marginTop: 16 }}>\n          <ShahmatkaTable\n            locations={LOCATIONS}\n            rows={ROWS}\n            maxHeight={420}\n            renderCell={(row, loc) => {\n              const i = LOCATIONS.findIndex((l) => l.key === loc.key);\n              const cell = cellFor(row, i, building, section);\n              return (\n                <ShahmatkaCell\n                  {...cell}\n                  onClick={() => setLog(`${BUILDINGS.find((b) => b.key === building)?.label}, ${SECTIONS.find((s) => s.key === section)?.label} — «${row.title}», ${loc.label}`)}\n                />\n              );\n            }}\n          />\n        </div>\n        <p style={{ margin: '12px 0 0', fontFamily: 'Inter, sans-serif', fontSize: 14, color: 'var(--text-grey-secondary)' }}>{log}</p>\n      </Surface>\n    </div>\n  );\n}\n\nexport const MiniTable: Story = {\n  name: 'Экран «Выполненные работы»',\n  render: () => <Screen />,\n};\n"
       },
       "stories": [
         {
           "id": "ui-kit-shahmatka-example--mini-table",
-          "name": "Mini Table",
-          "snippet": "const MiniTable = () => (\n  <div\n    style={{\n      display: 'grid',\n      gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,\n      gap: 4,\n    }}\n  >\n    <ShahmatkaTableCorner />\n    {locations.map((label) => (\n      <ShahmatkaLocationHeader key={label} label={label} />\n    ))}\n\n    {rows.map((row) => (\n      <Fragment key={row.title}>\n        <ShahmatkaWorkRow contractor={row.contractor} title={row.title} />\n        {row.cells.map((cell, i) => (\n          <ShahmatkaCell\n            key={locations[i]}\n            {...cell}\n            onClick={() => console.log('open act details:', row.title, locations[i])}\n          />\n        ))}\n      </Fragment>\n    ))}\n  </div>\n);"
+          "name": "Экран «Выполненные работы»",
+          "snippet": "const MiniTable = () => <Screen />;"
         }
       ],
-      "import": "import { Fragment } from 'react';\nimport { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, ShahmatkaWorkRow } from 'praktis-ui-kit';"
+      "import": "import {\n  BubbleTabs,\n  FunctionButton,\n  IconFatAngleArrowDown,\n  IconFatAngleArrowUp,\n  ShahmatkaCell,\n  ShahmatkaLegend,\n  ShahmatkaTable,\n  Surface,\n} from 'praktis-ui-kit';"
     },
     "ui-kit-shahmatka-legend": {
       "id": "ui-kit-shahmatka-legend",
@@ -7596,6 +7788,17 @@
               "name": "string"
             },
             "description": ""
+          },
+          "lines": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Сколько строк названия помещается: ИД — 3 (по умолчанию), КС — 2.",
+            "defaultValue": {
+              "value": "3",
+              "computed": false
+            }
           }
         }
       },
@@ -7713,7 +7916,7 @@
       "jsDocTags": {},
       "error": {
         "name": "No component found",
-        "message": "We could not detect the component from your story file. Specify meta.component.\n  102 | }\n  103 |\n> 104 | const meta = {\n      | ^\n  105 |   title: 'UI Kit/Продуктовые блоки/Shahmatka/Tokens',\n  106 |   id: 'ui-kit-shahmatka-tokens',\n  107 | } satisfies Meta;\n\n./src/components/Shahmatka/ShahmatkaTokens.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport { ShahmatkaLegend } from './ShahmatkaLegend';\n\n// Поверхность для совместной донастройки тёмной темы шахматки вместе с Анастасией:\n// переключаем тумблер ☀️/🌙 в тулбаре Storybook и смотрим, как меняются все токены разом.\n// Значения читаются через getComputedStyle в рантайме (не захардкожены в JSX), чтобы карточка\n// никогда не разъезжалась с реальным shahmatka.tokens.css.\n\ninterface TokenDef {\n  name: string;\n  kind: 'fill' | 'text';\n}\n\nconst groups: Array<{ title: string; tokens: TokenDef[] }> = [\n  {\n    title: 'Нейтральные и структура',\n    tokens: [\n      { name: '--shahmatka-border', kind: 'fill' },\n      { name: '--shahmatka-text', kind: 'text' },\n      { name: '--shahmatka-header-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-empty-bg', kind: 'fill' },\n      { name: '--shahmatka-row-bg', kind: 'fill' },\n      { name: '--shahmatka-badge-bg', kind: 'fill' },\n      { name: '--shahmatka-badge-text', kind: 'text' },\n      { name: '--shahmatka-legend-bg', kind: 'fill' },\n    ],\n  },\n  {\n    title: 'Статус-заливки',\n    tokens: [\n      { name: '--shahmatka-cell-pending-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-required-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-done-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-awaiting-signature-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-awaiting-other-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-remarks-bg', kind: 'fill' },\n    ],\n  },\n  {\n    title: 'Акцент',\n    tokens: [\n      { name: '--shahmatka-cell-awaiting-other-border', kind: 'fill' },\n      { name: '--shahmatka-hover-border', kind: 'fill' },\n    ],\n  },\n];\n\nfunction Swatch({ name, kind }: TokenDef) {\n  const ref = useRef<HTMLDivElement>(null);\n  const [value, setValue] = useState('');\n\n  // Без dependency array: перечитывает значение при каждом ре-рендере, в том числе после\n  // переключения темы тулбаром Storybook (у которого меняется только data-theme на предке,\n  // сам этот компонент не размонтируется — эффект с [] тут просто не увидел бы новое значение).\n  useLayoutEffect(() => {\n    if (ref.current) {\n      setValue(getComputedStyle(ref.current).getPropertyValue(name).trim());\n    }\n  });\n\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>\n      {kind === 'fill' ? (\n        <div\n          ref={ref}\n          style={{\n            width: 40,\n            height: 40,\n            borderRadius: 6,\n            flexShrink: 0,\n            border: '1px solid rgba(128,128,128,0.25)',\n            background: `var(${name})`,\n          }}\n        />\n      ) : (\n        <div\n          ref={ref}\n          style={{\n            width: 40,\n            height: 40,\n            borderRadius: 6,\n            flexShrink: 0,\n            display: 'flex',\n            alignItems: 'center',\n            justifyContent: 'center',\n            border: '1px solid rgba(128,128,128,0.25)',\n            fontFamily: 'Inter, sans-serif',\n            fontSize: 14,\n            color: `var(${name})`,\n          }}\n        >\n          Аа\n        </div>\n      )}\n      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, fontFamily: 'Inter, sans-serif' }}>\n        <code style={{ fontSize: 12.5 }}>{name}</code>\n        <code style={{ fontSize: 12, opacity: 0.6 }}>{value || '…'}</code>\n      </div>\n    </div>\n  );\n}\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka/Tokens',\n  id: 'ui-kit-shahmatka-tokens',\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj;\n\nexport const Reference: Story = {\n  render: () => (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>\n      <ShahmatkaLegend />\n      <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>\n        {groups.map((group) => (\n          <div key={group.title} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n            <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 0.5 }}>\n              {group.title}\n            </div>\n            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>\n              {group.tokens.map((token) => (\n                <Swatch key={token.name} {...token} />\n              ))}\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  ),\n};\n"
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  102 | }\n  103 |\n> 104 | const meta = {\n      | ^\n  105 |   title: 'UI Kit/Продуктовые блоки/Shahmatka ID/Tokens',\n  106 |   id: 'ui-kit-shahmatka-tokens',\n  107 | } satisfies Meta;\n\n./src/components/Shahmatka/ShahmatkaTokens.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport { ShahmatkaLegend } from './ShahmatkaLegend';\n\n// Поверхность для совместной донастройки тёмной темы шахматки вместе с Анастасией:\n// переключаем тумблер ☀️/🌙 в тулбаре Storybook и смотрим, как меняются все токены разом.\n// Значения читаются через getComputedStyle в рантайме (не захардкожены в JSX), чтобы карточка\n// никогда не разъезжалась с реальным shahmatka.tokens.css.\n\ninterface TokenDef {\n  name: string;\n  kind: 'fill' | 'text';\n}\n\nconst groups: Array<{ title: string; tokens: TokenDef[] }> = [\n  {\n    title: 'Нейтральные и структура',\n    tokens: [\n      { name: '--shahmatka-border', kind: 'fill' },\n      { name: '--shahmatka-text', kind: 'text' },\n      { name: '--shahmatka-header-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-empty-bg', kind: 'fill' },\n      { name: '--shahmatka-row-bg', kind: 'fill' },\n      { name: '--shahmatka-badge-bg', kind: 'fill' },\n      { name: '--shahmatka-badge-text', kind: 'text' },\n      { name: '--shahmatka-legend-bg', kind: 'fill' },\n    ],\n  },\n  {\n    title: 'Статус-заливки',\n    tokens: [\n      { name: '--shahmatka-cell-pending-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-required-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-done-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-awaiting-signature-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-awaiting-other-bg', kind: 'fill' },\n      { name: '--shahmatka-cell-remarks-bg', kind: 'fill' },\n    ],\n  },\n  {\n    title: 'Акцент',\n    tokens: [\n      { name: '--shahmatka-cell-awaiting-other-border', kind: 'fill' },\n      { name: '--shahmatka-hover-border', kind: 'fill' },\n    ],\n  },\n];\n\nfunction Swatch({ name, kind }: TokenDef) {\n  const ref = useRef<HTMLDivElement>(null);\n  const [value, setValue] = useState('');\n\n  // Без dependency array: перечитывает значение при каждом ре-рендере, в том числе после\n  // переключения темы тулбаром Storybook (у которого меняется только data-theme на предке,\n  // сам этот компонент не размонтируется — эффект с [] тут просто не увидел бы новое значение).\n  useLayoutEffect(() => {\n    if (ref.current) {\n      setValue(getComputedStyle(ref.current).getPropertyValue(name).trim());\n    }\n  });\n\n  return (\n    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>\n      {kind === 'fill' ? (\n        <div\n          ref={ref}\n          style={{\n            width: 40,\n            height: 40,\n            borderRadius: 6,\n            flexShrink: 0,\n            border: '1px solid rgba(128,128,128,0.25)',\n            background: `var(${name})`,\n          }}\n        />\n      ) : (\n        <div\n          ref={ref}\n          style={{\n            width: 40,\n            height: 40,\n            borderRadius: 6,\n            flexShrink: 0,\n            display: 'flex',\n            alignItems: 'center',\n            justifyContent: 'center',\n            border: '1px solid rgba(128,128,128,0.25)',\n            fontFamily: 'Inter, sans-serif',\n            fontSize: 14,\n            color: `var(${name})`,\n          }}\n        >\n          Аа\n        </div>\n      )}\n      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, fontFamily: 'Inter, sans-serif' }}>\n        <code style={{ fontSize: 12.5 }}>{name}</code>\n        <code style={{ fontSize: 12, opacity: 0.6 }}>{value || '…'}</code>\n      </div>\n    </div>\n  );\n}\n\nconst meta = {\n  title: 'UI Kit/Продуктовые блоки/Shahmatka ID/Tokens',\n  id: 'ui-kit-shahmatka-tokens',\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj;\n\nexport const Reference: Story = {\n  render: () => (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>\n      <ShahmatkaLegend />\n      <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>\n        {groups.map((group) => (\n          <div key={group.title} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>\n            <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase', opacity: 0.5 }}>\n              {group.title}\n            </div>\n            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>\n              {group.tokens.map((token) => (\n                <Swatch key={token.name} {...token} />\n              ))}\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  ),\n};\n"
       },
       "stories": [
         {
@@ -7740,9 +7943,18 @@
           "contractor": {
             "required": false,
             "tsType": {
-              "name": "string"
+              "name": "union",
+              "raw": "string | null",
+              "elements": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "null"
+                }
+              ]
             },
-            "description": "",
+            "description": "Подрядчик — плашка над названием. `null` — без плашки (шахматка КС: только название СТК).",
             "defaultValue": {
               "value": "'Подрядчик не назначен'",
               "computed": false
@@ -7784,6 +7996,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 1861
+    "durationMs": 2276
   }
 }

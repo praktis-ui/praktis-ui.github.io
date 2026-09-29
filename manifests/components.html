@@ -620,13 +620,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">7/60 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">60/60 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/60 without API description</a><span class="filter-pill ok" aria-disabled="true">315 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/315 incomplete snippets</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">9/64 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">64/64 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/64 without API description</a><span class="filter-pill ok" aria-disabled="true">329 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/329 incomplete snippets</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.9s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.3s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -1170,6 +1170,141 @@ src?: string</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-breadcrumbs"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Breadcrumbs">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Breadcrumbs</h2>
+      <div class="badges">
+        <label for="c-3-ui-kit-breadcrumbs-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-3-ui-kit-breadcrumbs-info" class="badge info as-toggle">1 info</label>
+        <label for="c-3-ui-kit-breadcrumbs-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Breadcrumbs/Breadcrumbs.stories.tsx">ui-kit-breadcrumbs · ./src/components/Breadcrumbs/Breadcrumbs.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-3-ui-kit-breadcrumbs-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-3-ui-kit-breadcrumbs-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-3-ui-kit-breadcrumbs-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">2 prop types</span>
+            </div>
+            <pre><code>Component: src/components/Breadcrumbs/Breadcrumbs.tsx::Breadcrumbs</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>className?: string
+
+items: BreadcrumbItem[]</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Breadcrumbs } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;Breadcrumbs
+    items={[
+      { label: &#39;Объекты&#39;, href: &#39;#&#39; },
+      { label: &#39;Многоквартирный дом со встроенными помещениями&#39;, href: &#39;#&#39; },
+      { label: &#39;Доступы&#39; },
+    ]} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Варианты</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Variants = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 24, fontFamily: &#39;Inter, sans-serif&#39; }}&gt;
+    &lt;div&gt;
+      &lt;div style={{ fontSize: 12, color: &#39;#66788c&#39;, marginBottom: 8 }}&gt;Две крошки&lt;/div&gt;
+      &lt;Breadcrumbs items={[{ label: &#39;Объекты&#39;, href: &#39;#&#39; }, { label: &#39;ЖК «Чистое небо»&#39; }]} /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style={{ fontSize: 12, color: &#39;#66788c&#39;, marginBottom: 8 }}&gt;Длинные — отточие и тултип, не шире 230&lt;/div&gt;
+      &lt;Breadcrumbs
+        items={[
+          { label: &#39;Объекты&#39;, href: &#39;#&#39; },
+          { label: &#39;Многоквартирный дом со встроенными помещениями и подземной автостоянкой&#39;, href: &#39;#&#39; },
+          { label: &#39;Железобетонные конструкции корпус 1, секции 1–4&#39; },
+        ]}
+      /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div style={{ fontSize: 12, color: &#39;#66788c&#39;, marginBottom: 8 }}&gt;Кнопки вместо ссылок (onClick)&lt;/div&gt;
+      &lt;Breadcrumbs items={[{ label: &#39;Проекты&#39;, onClick: () =&gt; {} }, { label: &#39;Шаблоны&#39;, onClick: () =&gt; {} }, { label: &#39;Шаблон РД&#39; }]} /&gt;
+    &lt;/div&gt;
+    &lt;div style={{ width: 360 }}&gt;
+      &lt;div style={{ fontSize: 12, color: &#39;#66788c&#39;, marginBottom: 8 }}&gt;Узко — переносятся&lt;/div&gt;
+      &lt;Breadcrumbs
+        items={[
+          { label: &#39;Объекты&#39;, href: &#39;#&#39; },
+          { label: &#39;ЖК «Чистое небо»&#39;, href: &#39;#&#39; },
+          { label: &#39;Корпус 1&#39;, href: &#39;#&#39; },
+          { label: &#39;Документы&#39; },
+        ]}
+      /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-bubble"
   class="card 
   no-error
@@ -1184,9 +1319,9 @@ src?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Bubble</h2>
       <div class="badges">
-        <label for="c-3-ui-kit-bubble-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-3-ui-kit-bubble-info" class="badge info as-toggle">1 info</label>
-        <label for="c-3-ui-kit-bubble-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-4-ui-kit-bubble-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-4-ui-kit-bubble-info" class="badge info as-toggle">1 info</label>
+        <label for="c-4-ui-kit-bubble-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -1199,11 +1334,11 @@ src?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-3-ui-kit-bubble-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-3-ui-kit-bubble-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-4-ui-kit-bubble-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-4-ui-kit-bubble-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-3-ui-kit-bubble-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-4-ui-kit-bubble-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1432,9 +1567,9 @@ size?: &#39;xs&#39; | &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Bulb</h2>
       <div class="badges">
-        <label for="c-4-ui-kit-bulb-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-4-ui-kit-bulb-info" class="badge info as-toggle">1 info</label>
-        <label for="c-4-ui-kit-bulb-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-5-ui-kit-bulb-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-5-ui-kit-bulb-info" class="badge info as-toggle">1 info</label>
+        <label for="c-5-ui-kit-bulb-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -1447,11 +1582,11 @@ size?: &#39;xs&#39; | &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-4-ui-kit-bulb-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-4-ui-kit-bulb-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-5-ui-kit-bulb-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-5-ui-kit-bulb-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-4-ui-kit-bulb-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-5-ui-kit-bulb-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1631,9 +1766,9 @@ size?: &#39;default&#39; | &#39;small&#39; = &#39;default&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Button</h2>
       <div class="badges">
-        <label for="c-5-ui-kit-button-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-5-ui-kit-button-info" class="badge info as-toggle">1 info</label>
-        <label for="c-5-ui-kit-button-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-6-ui-kit-button-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-6-ui-kit-button-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-ui-kit-button-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -1646,11 +1781,11 @@ size?: &#39;default&#39; | &#39;small&#39; = &#39;default&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-5-ui-kit-button-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-5-ui-kit-button-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-6-ui-kit-button-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-ui-kit-button-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-5-ui-kit-button-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-6-ui-kit-button-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -1893,9 +2028,9 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Card</h2>
       <div class="badges">
-        <label for="c-6-ui-kit-card-props" class="badge ok as-toggle">17 prop types</label>
-        <label for="c-6-ui-kit-card-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-ui-kit-card-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-7-ui-kit-card-props" class="badge ok as-toggle">17 prop types</label>
+        <label for="c-7-ui-kit-card-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-ui-kit-card-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -1908,11 +2043,11 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-6-ui-kit-card-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-ui-kit-card-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-ui-kit-card-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-ui-kit-card-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-6-ui-kit-card-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-7-ui-kit-card-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2112,6 +2247,348 @@ tags?: ReactNode</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-shahmatka-ks-cell"
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Cell">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> Cell</h2>
+      <div class="badges">
+        <label for="c-8-ui-kit-shahmatka-ks-cell-err" class="badge err as-toggle">API error</label>
+        <label for="c-8-ui-kit-shahmatka-ks-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-8-ui-kit-shahmatka-ks-cell-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx">ui-kit-shahmatka-ks-cell · ./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-8-ui-kit-shahmatka-ks-cell-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-8-ui-kit-shahmatka-ks-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-ui-kit-shahmatka-ks-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  34 | };
+  35 |
+&gt; 36 | const meta = {
+     | ^
+  37 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Cell&#39;,
+  38 |   id: &#39;ui-kit-shahmatka-ks-cell&#39;,
+  39 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useState, type ReactNode } from &#39;react&#39;;
+import { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from &#39;./ShahmatkaKsCell&#39;;
+import &#39;../../theme/figma-colors.css&#39;;
+
+const description = `
+Ячейка шахматки **КС**. Источник — Figma UI Kit «Практис», **shahmatka__job** (node 935:4681), и описание
+ячеек в файле «Автоматизация КС». 98×48, цвета — переменные Figma \`shahmatka/*\`.
+
+Ячейке передаются проценты по акту — цвет, заливку и число она считает сама:
+
+| Проп | Что | Как видно |
+|---|---|---|
+| \`previous\` | принято в прошлых актах | зелёная штриховка сверху (фон green/200, линии green/320 3px шагом 6) — только в следующих актах |
+| \`declared\` | заявлено подрядчиком в этом акте | — |
+| \`accepted\` | принято заказчиком в этом акте (не передано — ещё не решал) | зелёный; остаток заявленного — красный |
+| \`awaiting\` | сколько сейчас ждёт решения | жёлтый |
+| \`icona\` / \`idReady\` / \`comment\` | часть из Айконы / документы по ИД готовы / есть комментарий | ICONA справа, ID слева, голубой градиент со значком |
+| \`empty\` | работ на локации не будет | белая, без обводки |
+
+Сверху вниз: серый остаток → штриховка (принято ранее) → зелёный → жёлтый → красный — чем ниже, тем новее; строго по процентам от высоты.
+**Подсказка по наведению** — \`details\`: Айкона (\`icona\`, %), ручной ввод, последние комментарии подрядчика
+и заказчика; «Заявлено» и «Принято» ячейка берёт из своих процентов. Данные обычно приходят с сервера при
+наведении: \`onDetailsOpen\` — запросить, \`detailsLoading\` — крутилка, пока идёт запрос. См. «Подсказка».
+
+**Число:** пока что-то ждёт решения — сколько заявлено («50»); всё решено — «принято / заявлено»
+(«25 / 50», «50 / 50»). Цвет одинаков для всех ролей. Наведение — голубая обводка.
+`;
+
+type Args = Required&lt;Pick&lt;ShahmatkaKsCellProps, &#39;previous&#39; | &#39;declared&#39; | &#39;icona&#39; | &#39;idReady&#39; | &#39;comment&#39; | &#39;empty&#39;&gt;&gt; &amp; {
+  decided: boolean;
+  accepted: number;
+  awaiting: number;
+};
+
+const meta = {
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Cell&#39;,
+  id: &#39;ui-kit-shahmatka-ks-cell&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+  argTypes: {
+    previous: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;принято ранее, %&#39; },
+    declared: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;заявлено, %&#39; },
+    decided: { control: &#39;boolean&#39;, name: &#39;заказчик решал&#39; },
+    accepted: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;принято, %&#39;, if: { arg: &#39;decided&#39; } },
+    awaiting: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;ждёт решения, %&#39;, if: { arg: &#39;decided&#39; } },
+    icona: { control: &#39;boolean&#39; },
+    idReady: { control: &#39;boolean&#39;, name: &#39;ID готовы&#39; },
+    comment: { control: &#39;boolean&#39;, name: &#39;комментарий&#39; },
+    empty: { control: &#39;boolean&#39;, name: &#39;работ не будет&#39; },
+  },
+  args: { previous: 0, declared: 50, decided: true, accepted: 25, awaiting: 0, icona: true, idReady: false, comment: false, empty: false },
+} satisfies Meta&lt;Args&gt;;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+export const Playground: Story = {
+  render: ({ decided, accepted, awaiting, ...rest }: Partial&lt;Args&gt;) =&gt; (
+    &lt;ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() =&gt; {}} /&gt;
+  ),
+};
+
+const label = { fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 12, lineHeight: 1.2, color: &#39;var(--text-black-secondary)&#39; } as const;
+
+function Grid({ rows, columns }: { rows: [string, (extra: Partial&lt;ShahmatkaKsCellProps&gt;) =&gt; ReactNode][]; columns: [string, Partial&lt;ShahmatkaKsCellProps&gt;][] }) {
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: `160px repeat(${columns.length}, 98px)`, gap: &#39;12px 16px&#39;, alignItems: &#39;center&#39; }}&gt;
+      &lt;span /&gt;
+      {columns.map(([c]) =&gt; (
+        &lt;span key={c} style={label}&gt;
+          {c}
+        &lt;/span&gt;
+      ))}
+      {rows.map(([r, cell]) =&gt; [
+        &lt;span key={r} style={label}&gt;
+          {r}
+        &lt;/span&gt;,
+        ...columns.map(([c, extra]) =&gt; &lt;div key={r + c}&gt;{cell(extra)}&lt;/div&gt;),
+      ])}
+    &lt;/div&gt;
+  );
+}
+
+export const States: Story = {
+  name: &#39;Состояния&#39;,
+  parameters: { docs: { description: { story: &#39;Как набор в Figma: статус × обычная / ICONA / комментарий / ID. Все ячейки — с наведением.&#39; } } },
+  render: () =&gt; (
+    &lt;Grid
+      columns={[
+        [&#39;обычная&#39;, {}],
+        [&#39;ICONA&#39;, { icona: true }],
+        [&#39;комментарий&#39;, { comment: true, icona: true }],
+        [&#39;ID готовы&#39;, { idReady: true, icona: true }],
+      ]}
+      rows={[
+        [&#39;Работ не будет&#39;, (x) =&gt; &lt;ShahmatkaKsCell empty {...x} /&gt;],
+        [&#39;Объём не вносили&#39;, (x) =&gt; &lt;ShahmatkaKsCell {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+        [&#39;Заявлено 50, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Заявлено 100, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={100} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято всё: 50 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято часть: 25 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Не принято: 0 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 40 + заявлено 30&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 40, в этом акте 20 / 40&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Все цвета: ранее 20, принято 30, ждёт 20, не принято 10&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 100&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+      ]}
+    /&gt;
+  ),
+};
+
+// Шаги согласования — одна ячейка, данные меняются
+const FLOW: [string, ShahmatkaKsCellProps][] = [
+  [&#39;Акт 1. Подрядчик заявил 100 %&#39;, { declared: 100, icona: true }],
+  [&#39;Заказчик принял 50 — остаток красный&#39;, { declared: 100, accepted: 50, icona: true }],
+  [&#39;Подрядчик повторно подал отклонённые 50&#39;, { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true }],
+  [&#39;Заказчик принял ещё 25&#39;, { declared: 100, accepted: 75, icona: true, comment: true }],
+  [&#39;Акт 2. Всё принятое раньше — штриховкой&#39;, { previous: 75, icona: true }],
+  [&#39;Подрядчик заявил оставшиеся 25&#39;, { previous: 75, declared: 25, icona: true }],
+  [&#39;Заказчик принял всё: 25 / 25&#39;, { previous: 75, declared: 25, accepted: 25, icona: true, idReady: true }],
+];
+
+function FlowDemo() {
+  const [step, setStep] = useState(0);
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+      {FLOW.map(([text, props], i) =&gt; (
+        &lt;div key={text} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 16, opacity: i &lt;= step ? 1 : 0.35 }}&gt;
+          &lt;ShahmatkaKsCell {...props} onClick={() =&gt; setStep(i)} /&gt;
+          &lt;span style={{ ...label, fontSize: 14, color: &#39;var(--text-black-primary)&#39; }}&gt;{text}&lt;/span&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Flow: Story = {
+  name: &#39;Путь согласования&#39;,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          &#39;Одна работа на одной локации от заявки до следующего акта. В одном акте штриховки нет — только жёлтый, зелёный и красный. Штриховка появляется в следующем акте: туда тянется всё принятое раньше.&#39;,
+      },
+    },
+  },
+  render: () =&gt; &lt;FlowDemo /&gt;,
+};
+
+// Подсказка: данные как из базы — приходят через 600 мс после первого наведения, потом берутся из памяти
+const TIP_CASES: [string, ShahmatkaKsCellProps, ShahmatkaKsDetails][] = [
+  [&#39;Заявлено, ждёт решения&#39;, { declared: 50 }, {}],
+  [&#39;Айкона + ручной ввод, комментарий подрядчика&#39;, { declared: 100, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: &#39;Ну пожалуйста&#39; }],
+  [&#39;Заказчик не принял всё, с комментарием&#39;, { declared: 50, accepted: 0, comment: true }, { customerComment: &#39;Вот вообще ты не сделал 50&#39; }],
+  [&#39;Айкона, заказчик принял часть&#39;, { declared: 100, accepted: 75, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: &#39;Ну пожалуйста&#39;, customerComment: &#39;Ладно, но нет&#39; }],
+  [&#39;Следующий акт: принято ранее&#39;, { previous: 40, declared: 40, accepted: 20 }, { customerComment: &#39;Остальное после исполнительной&#39; }],
+];
+
+const fetchDetails = (i: number) =&gt; new Promise&lt;ShahmatkaKsDetails&gt;((ok) =&gt; setTimeout(() =&gt; ok(TIP_CASES[i][2]), 600));
+
+function TooltipDemo() {
+  const [data, setData] = useState&lt;Record&lt;number, ShahmatkaKsDetails&gt;&gt;({});
+  const [loading, setLoading] = useState&lt;Record&lt;number, boolean&gt;&gt;({});
+  const load = (i: number) =&gt; {
+    if (data[i] || loading[i]) return;
+    setLoading((l) =&gt; ({ ...l, [i]: true }));
+    fetchDetails(i).then((d) =&gt; {
+      setData((x) =&gt; ({ ...x, [i]: d }));
+      setLoading((l) =&gt; ({ ...l, [i]: false }));
+    });
+  };
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 16 }}&gt;
+      {TIP_CASES.map(([text, props], i) =&gt; (
+        &lt;div key={text} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 16 }}&gt;
+          &lt;ShahmatkaKsCell {...props} onClick={() =&gt; {}} details={data[i]} detailsLoading={loading[i]} onDetailsOpen={() =&gt; load(i)} /&gt;
+          &lt;span style={{ ...label, fontSize: 14, color: &#39;var(--text-black-primary)&#39; }}&gt;{text}&lt;/span&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Tooltip: Story = {
+  name: &#39;Подсказка&#39;,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          &#39;Наведите на ячейку. Первый раз данные «идут с сервера» 600 мс — в подсказке крутилка, дальше берутся из памяти. Сверху — что заявил подрядчик и его комментарий, под линией — что принял заказчик и его комментарий. Комментарий — только последний, вся переписка — в модалке.&#39;,
+      },
+    },
+  },
+  render: () =&gt; &lt;TooltipDemo /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ShahmatkaKsCell } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = ({ decided, accepted, awaiting, ...rest }: Partial&lt;Args&gt;) =&gt; (
+  &lt;ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() =&gt; {}} /&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;Grid
+    columns={[
+      [&#39;обычная&#39;, {}],
+      [&#39;ICONA&#39;, { icona: true }],
+      [&#39;комментарий&#39;, { comment: true, icona: true }],
+      [&#39;ID готовы&#39;, { idReady: true, icona: true }],
+    ]}
+    rows={[
+      [&#39;Работ не будет&#39;, (x) =&gt; &lt;ShahmatkaKsCell empty {...x} /&gt;],
+      [&#39;Объём не вносили&#39;, (x) =&gt; &lt;ShahmatkaKsCell {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+      [&#39;Заявлено 50, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Заявлено 100, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={100} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято всё: 50 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято часть: 25 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Не принято: 0 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 40 + заявлено 30&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 40, в этом акте 20 / 40&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Все цвета: ранее 20, принято 30, ждёт 20, не принято 10&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 100&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+    ]}
+  /&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Путь согласования</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Flow = () =&gt; &lt;FlowDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Подсказка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Tooltip = () =&gt; &lt;TooltipDemo /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-checkbox"
   class="card 
   no-error
@@ -2127,8 +2604,8 @@ tags?: ReactNode</code></pre>
       <h2><span class="status-dot dot-ok"></span> Checkbox</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-7-ui-kit-checkbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-7-ui-kit-checkbox-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-9-ui-kit-checkbox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-ui-kit-checkbox-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -2141,8 +2618,8 @@ tags?: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-7-ui-kit-checkbox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-ui-kit-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-9-ui-kit-checkbox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-ui-kit-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2294,9 +2771,9 @@ tags?: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Colors</h2>
       <div class="badges">
-        <label for="c-8-foundations-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-8-foundations-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-8-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-10-foundations-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-10-foundations-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-10-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -2308,9 +2785,9 @@ tags?: ReactNode</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-8-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-8-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-10-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-10-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2620,9 +3097,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DatePicker</h2>
       <div class="badges">
-        <label for="c-9-ui-kit-datepicker-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-9-ui-kit-datepicker-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-ui-kit-datepicker-stories" class="badge ok as-toggle">13 stories</label>
+        <label for="c-11-ui-kit-datepicker-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-11-ui-kit-datepicker-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-ui-kit-datepicker-stories" class="badge ok as-toggle">13 stories</label>
         
         
       </div>
@@ -2635,11 +3112,11 @@ export const Palette: Story = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-9-ui-kit-datepicker-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-9-ui-kit-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-ui-kit-datepicker-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-ui-kit-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-9-ui-kit-datepicker-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-11-ui-kit-datepicker-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2913,9 +3390,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DragHandle</h2>
       <div class="badges">
-        <label for="c-10-ui-kit-drag-handle-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-10-ui-kit-drag-handle-info" class="badge info as-toggle">1 info</label>
-        <label for="c-10-ui-kit-drag-handle-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-12-ui-kit-drag-handle-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-12-ui-kit-drag-handle-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-ui-kit-drag-handle-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -2928,11 +3405,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-10-ui-kit-drag-handle-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-10-ui-kit-drag-handle-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-12-ui-kit-drag-handle-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-ui-kit-drag-handle-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-10-ui-kit-drag-handle-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-12-ui-kit-drag-handle-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3080,9 +3557,9 @@ tone?: &#39;default&#39; | &#39;onDark&#39; = &#39;default&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DropdownMenu</h2>
       <div class="badges">
-        <label for="c-11-ui-kit-dropdownmenu-props" class="badge ok as-toggle">12 prop types</label>
-        <label for="c-11-ui-kit-dropdownmenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-ui-kit-dropdownmenu-stories" class="badge ok as-toggle">11 stories · 1 incomplete</label>
+        <label for="c-13-ui-kit-dropdownmenu-props" class="badge ok as-toggle">12 prop types</label>
+        <label for="c-13-ui-kit-dropdownmenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-13-ui-kit-dropdownmenu-stories" class="badge ok as-toggle">11 stories · 1 incomplete</label>
         
         
       </div>
@@ -3095,11 +3572,11 @@ tone?: &#39;default&#39; | &#39;onDark&#39; = &#39;default&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-11-ui-kit-dropdownmenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-11-ui-kit-dropdownmenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-13-ui-kit-dropdownmenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-13-ui-kit-dropdownmenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-11-ui-kit-dropdownmenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-13-ui-kit-dropdownmenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3390,9 +3867,9 @@ import { Button } from '../Button/Button';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DropdownMenuItem</h2>
       <div class="badges">
-        <label for="c-12-ui-kit-dropdownmenuitem-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-12-ui-kit-dropdownmenuitem-info" class="badge info as-toggle">1 info</label>
-        <label for="c-12-ui-kit-dropdownmenuitem-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-14-ui-kit-dropdownmenuitem-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-14-ui-kit-dropdownmenuitem-info" class="badge info as-toggle">1 info</label>
+        <label for="c-14-ui-kit-dropdownmenuitem-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -3405,11 +3882,11 @@ import { Button } from '../Button/Button';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-12-ui-kit-dropdownmenuitem-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-12-ui-kit-dropdownmenuitem-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-14-ui-kit-dropdownmenuitem-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-14-ui-kit-dropdownmenuitem-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-12-ui-kit-dropdownmenuitem-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-14-ui-kit-dropdownmenuitem-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3645,9 +4122,9 @@ selected?: boolean = false</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> EmptyState</h2>
       <div class="badges">
-        <label for="c-13-ui-kit-emptystate-emptystate-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-13-ui-kit-emptystate-emptystate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-13-ui-kit-emptystate-emptystate-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-15-ui-kit-emptystate-emptystate-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-15-ui-kit-emptystate-emptystate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-15-ui-kit-emptystate-emptystate-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -3660,11 +4137,11 @@ selected?: boolean = false</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-13-ui-kit-emptystate-emptystate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-13-ui-kit-emptystate-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-15-ui-kit-emptystate-emptystate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-15-ui-kit-emptystate-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-13-ui-kit-emptystate-emptystate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-15-ui-kit-emptystate-emptystate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3818,9 +4295,9 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> EntityCard</h2>
       <div class="badges">
-        <label for="c-14-ui-kit-entitycard-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-14-ui-kit-entitycard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-14-ui-kit-entitycard-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-16-ui-kit-entitycard-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-16-ui-kit-entitycard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-16-ui-kit-entitycard-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -3833,11 +4310,11 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-14-ui-kit-entitycard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-14-ui-kit-entitycard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-16-ui-kit-entitycard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-16-ui-kit-entitycard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-14-ui-kit-entitycard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-16-ui-kit-entitycard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4016,8 +4493,8 @@ title: ReactNode</code></pre>
       <h2><span class="status-dot dot-ok"></span> ErrorPage</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-15-ui-kit-emptystate-errorpage-info" class="badge info as-toggle">1 info</label>
-        <label for="c-15-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-17-ui-kit-emptystate-errorpage-info" class="badge info as-toggle">1 info</label>
+        <label for="c-17-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -4030,8 +4507,8 @@ title: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-15-ui-kit-emptystate-errorpage-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-15-ui-kit-emptystate-errorpage-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-17-ui-kit-emptystate-errorpage-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-17-ui-kit-emptystate-errorpage-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4090,7 +4567,7 @@ title: ReactNode</code></pre>
   </div>
 </article>
 <article
-  id="ui-kit-shahmatka-example"
+  id="ui-kit-shahmatka-ks-table"
   class="card 
   has-error
   has-info
@@ -4104,23 +4581,23 @@ title: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Example</h2>
       <div class="badges">
-        <label for="c-16-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
-        <label for="c-16-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
-        <label for="c-16-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-18-ui-kit-shahmatka-ks-table-err" class="badge err as-toggle">API error</label>
+        <label for="c-18-ui-kit-shahmatka-ks-table-info" class="badge info as-toggle">1 info</label>
+        <label for="c-18-ui-kit-shahmatka-ks-table-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
     </div>
-    <div class="meta" title="./src/components/Shahmatka/ShahmatkaExample.stories.tsx">ui-kit-shahmatka-example · ./src/components/Shahmatka/ShahmatkaExample.stories.tsx</div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx">ui-kit-shahmatka-ks-table · ./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx</div>
     
     
     
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-16-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-16-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-16-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-18-ui-kit-shahmatka-ks-table-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-18-ui-kit-shahmatka-ks-table-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-18-ui-kit-shahmatka-ks-table-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4132,102 +4609,164 @@ title: ReactNode</code></pre>
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  50 | ];
-  51 |
-&gt; 52 | const meta = {
+  24 | `;
+  25 |
+&gt; 26 | const meta = {
      | ^
-  53 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Example&#39;,
-  54 |   id: &#39;ui-kit-shahmatka-example&#39;,
-  55 | } satisfies Meta;
+  27 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Example&#39;,
+  28 |   id: &#39;ui-kit-shahmatka-ks-table&#39;,
+  29 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
 
-./src/components/Shahmatka/ShahmatkaExample.stories.tsx:
+./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
-import { Fragment } from &#39;react&#39;;
-import { ShahmatkaCell, type ShahmatkaCellProps } from &#39;./ShahmatkaCell&#39;;
-import { ShahmatkaLocationHeader } from &#39;./ShahmatkaLocationHeader&#39;;
-import { ShahmatkaTableCorner, ShahmatkaWorkRow } from &#39;./ShahmatkaWorkRow&#39;;
+import { useState } from &#39;react&#39;;
+import { BubbleTabs, type BubbleItem } from &#39;../Bubble/Bubble&#39;;
+import { Surface } from &#39;../Surface/Surface&#39;;
+import { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from &#39;./ShahmatkaKsCell&#39;;
+import { ShahmatkaTable, type ShahmatkaTableRow } from &#39;./ShahmatkaTable&#39;;
+import &#39;../../theme/figma-colors.css&#39;;
 
-// Пример сборки — как компоненты шахматки используются вместе. Это НЕ отдельный компонент
-// ShahmatkaTable (закрепление шапки/колонки при горизонтальном скролле здесь не сделано) —
-// просто демонстрация раскладки. Собрать в реальный компонент таблицы — следующий шаг, когда понадобится.
+const description = `
+Шахматка **КС** на экране акта, собранная из частей кита — так же, как шахматка ИД:
 
-const locations = [&#39;Подвал&#39;, &#39;Этаж 1&#39;, &#39;Котлован&#39;, &#39;Фасад Торцевой&#39;];
+- **BubbleTabs** — корпуса и секции. Секций много — ряд уходит вбок без полосы прокрутки, тянется мышкой
+  (\`overflow=&quot;scroll&quot;\`).
+- **ShahmatkaTable** + **ShahmatkaKsCell** — таблица. Слева только названия СТК (\`contractor: null\`), строки
+  48 — как ячейки КС; шапка локаций — как у ИД, 68, название до 3 строк. При прокрутке вбок закреплён
+  список СТК, вниз — шапка.
 
-interface ExampleRow {
-  contractor?: string;
-  title: string;
-  cells: ShahmatkaCellProps[];
-}
+**ShahmatkaTable** — общая таблица для ИД и КС: \`locations\`, \`rows\`, \`renderCell(row, location)\`,
+\`rowHeight\` (ИД 68, КС 48), \`headerHeight\` (68), \`maxHeight\`.
 
-const rows: ExampleRow[] = [
-  {
-    contractor: &#39;ООО &quot;Ромашка&quot;&#39;,
-    title: &#39;Бетонирование монолитных перекрытий&#39;,
-    cells: [
-      { variant: &#39;empty&#39; },
-      { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;required&#39;, protocols: &#39;done&#39;, schemes: &#39;required&#39; },
-      { variant: &#39;awaiting-signature&#39; },
-      { variant: &#39;empty&#39; },
-    ],
-  },
-  {
-    contractor: &#39;ООО &quot;Ромашка&quot;&#39;,
-    title: &#39;СТК Кабели магистральные (стояки) АППЗ&#39;,
-    cells: [
-      { variant: &#39;awaiting-other-signature&#39; },
-      { variant: &#39;awaiting-signature&#39; },
-      { variant: &#39;empty&#39; },
-      { variant: &#39;remarks&#39; },
-    ],
-  },
-  {
-    contractor: &#39;Подрядчик не назначен&#39;,
-    title: &#39;СТК Монтаж приемо-контрольного оборудования&#39;,
-    cells: [
-      { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
-      { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
-      { variant: &#39;awaiting-other-signature&#39; },
-      { variant: &#39;empty&#39; },
-    ],
-  },
-];
+Наведение — подсказка ячейки, данные «с сервера» (400 мс при первом наведении, потом из памяти).
+
+Данные примерные: при переключении корпуса или секции таблица меняется.
+`;
 
 const meta = {
-  title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Example&#39;,
-  id: &#39;ui-kit-shahmatka-example&#39;,
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Example&#39;,
+  id: &#39;ui-kit-shahmatka-ks-table&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
 } satisfies Meta;
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj&lt;typeof meta&gt;;
 
-export const MiniTable: Story = {
-  render: () =&gt; (
-    &lt;div
-      style={{
-        display: &#39;grid&#39;,
-        gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,
-        gap: 4,
-      }}
-    &gt;
-      &lt;ShahmatkaTableCorner /&gt;
-      {locations.map((label) =&gt; (
-        &lt;ShahmatkaLocationHeader key={label} label={label} /&gt;
-      ))}
+const BUILDINGS: BubbleItem[] = Array.from({ length: 4 }, (_, i) =&gt; ({ key: `b${i + 1}`, label: `Корпус ${i + 1}` }));
+const SECTIONS: BubbleItem[] = Array.from({ length: 12 }, (_, i) =&gt; ({ key: `s${i + 1}`, label: `Секция ${Math.floor(i / 4) + 1}.${(i % 4) + 1}` }));
 
-      {rows.map((row) =&gt; (
-        &lt;Fragment key={row.title}&gt;
-          &lt;ShahmatkaWorkRow contractor={row.contractor} title={row.title} /&gt;
-          {row.cells.map((cell, i) =&gt; (
-            &lt;ShahmatkaCell
-              key={locations[i]}
-              {...cell}
-              onClick={() =&gt; console.log(&#39;open act details:&#39;, row.title, locations[i])}
-            /&gt;
-          ))}
-        &lt;/Fragment&gt;
-      ))}
+const LOCATIONS = [&#39;Подвал&#39;, ...Array.from({ length: 16 }, (_, i) =&gt; `Этаж ${i + 1}`), &#39;Кровля&#39;, &#39;Фасад лицевой, очень длинное название&#39;].map((label) =&gt; ({ key: label, label }));
+
+interface Row extends ShahmatkaTableRow {
+  seed: number;
+}
+
+const ROWS: Row[] = [
+  &#39;СТК Основание под бетонную подготовку&#39;,
+  &#39;СТК Бетонная подготовка&#39;,
+  &#39;СТК Котлован&#39;,
+  &#39;СТК Утепление наружных стен&#39;,
+  &#39;Комплекс монтажных работ благоустройства площадки&#39;,
+  &#39;Кабели магистральные (стояки) АППЗ&#39;,
+  &#39;Комплекс работ по установке оконечного оборудования&#39;,
+  &#39;Монтаж приёмо-контрольного оборудования&#39;,
+  &#39;Датчики автономные (монтаж закладных)&#39;,
+  &#39;Установка оборудования в квартирах&#39;,
+  &#39;Монтаж оборудования диспетчерской&#39;,
+  &#39;Кладка наружных стен&#39;,
+].map((title, i) =&gt; ({ key: `r${i}`, title, contractor: null, seed: i * 7 + 3 }));
+
+// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции
+const CELLS: ShahmatkaKsCellProps[] = [
+  { empty: true },
+  {},
+  {},
+  { icona: true },
+  { declared: 50 },
+  { declared: 100, icona: true },
+  { declared: 100, accepted: 100 },
+  { declared: 50, accepted: 50, idReady: true },
+  { declared: 70, accepted: 35, icona: true },
+  { declared: 50, accepted: 0, comment: true },
+  { declared: 100, accepted: 50, comment: true, icona: true },
+  { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true },
+  { previous: 50, declared: 30, icona: true },
+  { previous: 40, declared: 40, accepted: 20 },
+  { previous: 100, idReady: true },
+];
+const cellFor = (row: Row, locIndex: number, building: string, section: string) =&gt; {
+  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;
+  // ближе к верхним этажам — больше пустых: работы идут снизу
+  return locIndex &gt; 11 &amp;&amp; n % 3 ? CELLS[1] : CELLS[n % CELLS.length];
+};
+
+// «Сервер»: подсказку ячейки отдаёт через 400 мс; экран запрашивает её при первом наведении и хранит
+const COMMENTS = [&#39;Ну пожалуйста&#39;, &#39;Доделали после проверки&#39;, &#39;Вот вообще не сделано&#39;, &#39;Ладно, но нет&#39;];
+const detailsFor = (cell: ShahmatkaKsCellProps, n: number): ShahmatkaKsDetails =&gt; {
+  const act = cell.icona ? Math.round(((cell.declared ?? 0) * 0.5) / 5) * 5 : 0;
+  return {
+    icona: cell.icona ? act : undefined,
+    manual: (cell.declared ?? 0) - act,
+    contractorComment: cell.comment ? COMMENTS[n % 2] : undefined,
+    customerComment: cell.comment &amp;&amp; cell.accepted !== undefined ? COMMENTS[2 + (n % 2)] : undefined,
+  };
+};
+
+function Screen() {
+  const [building, setBuilding] = useState(&#39;b1&#39;);
+  const [section, setSection] = useState(&#39;s1&#39;);
+  const [log, setLog] = useState(&#39;Наведите на ячейку — подсказка; нажмите — процентовка&#39;);
+  const [details, setDetails] = useState&lt;Record&lt;string, ShahmatkaKsDetails&gt;&gt;({});
+  const [loading, setLoading] = useState&lt;Record&lt;string, boolean&gt;&gt;({});
+  const load = (key: string, cell: ShahmatkaKsCellProps, n: number) =&gt; {
+    if (details[key] || loading[key]) return;
+    setLoading((l) =&gt; ({ ...l, [key]: true }));
+    setTimeout(() =&gt; {
+      setDetails((d) =&gt; ({ ...d, [key]: detailsFor(cell, n) }));
+      setLoading((l) =&gt; ({ ...l, [key]: false }));
+    }, 400);
+  };
+
+  return (
+    &lt;div style={{ padding: 24, background: &#39;var(--bg-grey-page-full)&#39;, borderRadius: 12 }}&gt;
+      &lt;Surface&gt;
+        &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+          &lt;BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=&quot;Корпус&quot; /&gt;
+          &lt;BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=&quot;scroll&quot; aria-label=&quot;Секция&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div style={{ marginTop: 24 }}&gt;
+          &lt;ShahmatkaTable
+            locations={LOCATIONS}
+            rows={ROWS}
+            rowHeight={48}
+            maxHeight={420}
+            renderCell={(row, loc) =&gt; {
+              const i = LOCATIONS.findIndex((l) =&gt; l.key === loc.key);
+              const cell = cellFor(row, i, building, section);
+              const where = `${BUILDINGS.find((b) =&gt; b.key === building)?.label}, ${SECTIONS.find((s) =&gt; s.key === section)?.label} — «${row.title}», ${loc.label}`;
+              const key = `${building}/${section}/${row.key}/${loc.key}`;
+              return (
+                &lt;ShahmatkaKsCell
+                  {...cell}
+                  onClick={cell.empty ? undefined : () =&gt; setLog(`Открыли бы процентовку: ${where}`)}
+                  details={details[key]}
+                  detailsLoading={loading[key]}
+                  onDetailsOpen={() =&gt; load(key, cell, row.seed + i)}
+                /&gt;
+              );
+            }}
+          /&gt;
+        &lt;/div&gt;
+        &lt;p style={{ margin: &#39;12px 0 0&#39;, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;var(--text-grey-secondary)&#39; }}&gt;{log}&lt;/p&gt;
+      &lt;/Surface&gt;
     &lt;/div&gt;
-  ),
+  );
+}
+
+export const Example: Story = {
+  name: &#39;Экран акта&#39;,
+  render: () =&gt; &lt;Screen /&gt;,
 };
 </code></pre></div>
     </div>
@@ -4250,45 +4789,270 @@ export const MiniTable: Story = {
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { Fragment } from 'react';
-import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, ShahmatkaWorkRow } from 'praktis-ui-kit';</code></pre>
+                <pre><code>import { BubbleTabs, ShahmatkaKsCell, ShahmatkaTable, Surface } from 'praktis-ui-kit';</code></pre>
               </div>
           
           
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">Mini Table</span>
+                <span class="ex-name">Экран акта</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const MiniTable = () =&gt; (
-  &lt;div
-    style={{
-      display: &#39;grid&#39;,
-      gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,
-      gap: 4,
-    }}
-  &gt;
-    &lt;ShahmatkaTableCorner /&gt;
-    {locations.map((label) =&gt; (
-      &lt;ShahmatkaLocationHeader key={label} label={label} /&gt;
-    ))}
+              <pre><code>const Example = () =&gt; &lt;Screen /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-shahmatka-example"
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Example">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> Example</h2>
+      <div class="badges">
+        <label for="c-19-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
+        <label for="c-19-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
+        <label for="c-19-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaExample.stories.tsx">ui-kit-shahmatka-example · ./src/components/Shahmatka/ShahmatkaExample.stories.tsx</div>
+    
+    
+    
+  </div>
 
-    {rows.map((row) =&gt; (
-      &lt;Fragment key={row.title}&gt;
-        &lt;ShahmatkaWorkRow contractor={row.contractor} title={row.title} /&gt;
-        {row.cells.map((cell, i) =&gt; (
-          &lt;ShahmatkaCell
-            key={locations[i]}
-            {...cell}
-            onClick={() =&gt; console.log(&#39;open act details:&#39;, row.title, locations[i])}
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-19-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-19-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-19-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  22 | `;
+  23 |
+&gt; 24 | const meta = {
+     | ^
+  25 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Example&#39;,
+  26 |   id: &#39;ui-kit-shahmatka-example&#39;,
+  27 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/components/Shahmatka/ShahmatkaExample.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useState } from &#39;react&#39;;
+import { IconFatAngleArrowDown, IconFatAngleArrowUp } from &#39;../../icons/fat&#39;;
+import { BubbleTabs, type BubbleItem } from &#39;../Bubble/Bubble&#39;;
+import { FunctionButton } from &#39;../FunctionButton/FunctionButton&#39;;
+import { Surface } from &#39;../Surface/Surface&#39;;
+import { ShahmatkaCell, type ShahmatkaCellProps } from &#39;./ShahmatkaCell&#39;;
+import { ShahmatkaLegend } from &#39;./ShahmatkaLegend&#39;;
+import { ShahmatkaTable, type ShahmatkaTableRow } from &#39;./ShahmatkaTable&#39;;
+
+const description = `
+Шахматка **ИД** на экране «Выполненные работы», собранная из частей кита:
+
+- **BubbleTabs** — корпуса и секции (вместо сегментированного переключателя). Секций много — ряд
+  уходит вбок без полосы прокрутки, тянется мышкой (\`overflow=&quot;scroll&quot;\`). Оранжевая точка — в корпусе
+  или секции требуется действие (\`isNew\` + \`newColor=&quot;orange&quot;\`, цвет по правилу Bulb).
+- **FunctionButton** со стрелкой Fat — «Посмотреть легенду», раскрывает **ShahmatkaLegend**.
+- **ShahmatkaTable** + **ShahmatkaCell** — таблица: при прокрутке вбок закреплён список СТК, вниз —
+  шапка локаций. Строки 68.
+
+Данные примерные: при переключении корпуса или секции таблица меняется.
+`;
+
+const meta = {
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Example&#39;,
+  id: &#39;ui-kit-shahmatka-example&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+} satisfies Meta;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+// Оранжевая точка — «требуется действие» (правило Bulb)
+const BUILDINGS: BubbleItem[] = Array.from({ length: 5 }, (_, i) =&gt; ({
+  key: `b${i + 1}`,
+  label: `Корпус ${i + 1}`,
+  isNew: i === 0,
+  newColor: &#39;orange&#39;,
+}));
+const SECTIONS: BubbleItem[] = Array.from({ length: 14 }, (_, i) =&gt; ({
+  key: `s${i + 1}`,
+  label: `Секция ${i + 1}`,
+  isNew: i === 1 || i === 3,
+  newColor: &#39;orange&#39;,
+}));
+
+const LOCATIONS = [
+  &#39;Подвал&#39;,
+  &#39;Этаж 1&#39;,
+  &#39;Котлован&#39;,
+  &#39;Этаж 3&#39;,
+  &#39;Фасад торцевой&#39;,
+  &#39;Этаж 5&#39;,
+  &#39;Фасад лицевой 9&#39;,
+  &#39;Очень длинное тестовое название локации&#39;,
+  ...Array.from({ length: 7 }, (_, i) =&gt; `Этаж ${i + 8}`),
+].map((label) =&gt; ({ key: label, label }));
+
+interface Row extends ShahmatkaTableRow {
+  seed: number;
+}
+
+const ROWS: Row[] = [
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Комплекс монтажных работ благоустройства площадки&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Бетонирование монолитных перекрытий&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Кабели магистральные (стояки) АППЗ&#39;],
+  [&#39;Подрядчик не назначен&#39;, &#39;СТК Комплекс работ по установке оконечного оборудования&#39;],
+  [&#39;Подрядчик не назначен&#39;, &#39;СТК Монтаж приёмо-контрольного оборудования&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Датчики автономные (монтаж закладных)&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Установка оборудования в квартирах&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Монтаж оборудования диспетчерской&#39;],
+].map(([contractor, title], i) =&gt; ({ key: String(i), contractor, title, seed: i * 7 + 3 }));
+
+// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции
+const CELLS: ShahmatkaCellProps[] = [
+  { variant: &#39;empty&#39; },
+  { variant: &#39;empty&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;required&#39;, materials: &#39;required&#39;, protocols: &#39;required&#39;, schemes: &#39;required&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;required&#39;, protocols: &#39;done&#39;, schemes: &#39;required&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;done&#39;, protocols: &#39;done&#39;, schemes: &#39;done&#39; },
+  { variant: &#39;awaiting-signature&#39; },
+  { variant: &#39;awaiting-other-signature&#39; },
+  { variant: &#39;remarks&#39; },
+  { variant: &#39;signed&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
+];
+const cellFor = (row: Row, locIndex: number, building: string, section: string): ShahmatkaCellProps =&gt; {
+  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;
+  return CELLS[n % CELLS.length];
+};
+
+function Screen() {
+  const [building, setBuilding] = useState(&#39;b1&#39;);
+  const [section, setSection] = useState(&#39;s1&#39;);
+  const [legend, setLegend] = useState(false);
+  const [log, setLog] = useState(&#39;Нажмите на ячейку&#39;);
+
+  return (
+    &lt;div style={{ padding: 24, background: &#39;var(--surface-grey, #f5f8fb)&#39;, borderRadius: 12 }}&gt;
+      &lt;Surface&gt;
+        &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+          &lt;BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=&quot;Корпус&quot; /&gt;
+          &lt;BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=&quot;scroll&quot; aria-label=&quot;Секция&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;div style={{ marginTop: 24 }}&gt;
+          &lt;FunctionButton
+            icon={legend ? &lt;IconFatAngleArrowUp /&gt; : &lt;IconFatAngleArrowDown /&gt;}
+            iconPosition=&quot;end&quot;
+            onClick={() =&gt; setLegend((v) =&gt; !v)}
+            aria-expanded={legend}
+          &gt;
+            {legend ? &#39;Скрыть легенду&#39; : &#39;Посмотреть легенду&#39;}
+          &lt;/FunctionButton&gt;
+          {legend &amp;&amp; (
+            &lt;div style={{ marginTop: 12 }}&gt;
+              &lt;ShahmatkaLegend /&gt;
+            &lt;/div&gt;
+          )}
+        &lt;/div&gt;
+
+        &lt;div style={{ marginTop: 16 }}&gt;
+          &lt;ShahmatkaTable
+            locations={LOCATIONS}
+            rows={ROWS}
+            maxHeight={420}
+            renderCell={(row, loc) =&gt; {
+              const i = LOCATIONS.findIndex((l) =&gt; l.key === loc.key);
+              const cell = cellFor(row, i, building, section);
+              return (
+                &lt;ShahmatkaCell
+                  {...cell}
+                  onClick={() =&gt; setLog(`${BUILDINGS.find((b) =&gt; b.key === building)?.label}, ${SECTIONS.find((s) =&gt; s.key === section)?.label} — «${row.title}», ${loc.label}`)}
+                /&gt;
+              );
+            }}
           /&gt;
-        ))}
-      &lt;/Fragment&gt;
-    ))}
-  &lt;/div&gt;
-);</code></pre>
+        &lt;/div&gt;
+        &lt;p style={{ margin: &#39;12px 0 0&#39;, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;var(--text-grey-secondary)&#39; }}&gt;{log}&lt;/p&gt;
+      &lt;/Surface&gt;
+    &lt;/div&gt;
+  );
+}
+
+export const MiniTable: Story = {
+  name: &#39;Экран «Выполненные работы»&#39;,
+  render: () =&gt; &lt;Screen /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+  BubbleTabs,
+  FunctionButton,
+  IconFatAngleArrowDown,
+  IconFatAngleArrowUp,
+  ShahmatkaCell,
+  ShahmatkaLegend,
+  ShahmatkaTable,
+  Surface,
+} from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Экран «Выполненные работы»</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const MiniTable = () =&gt; &lt;Screen /&gt;;</code></pre>
               
             </div>
         </div>
@@ -4311,9 +5075,9 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> FunctionButton</h2>
       <div class="badges">
-        <label for="c-17-ui-kit-functionbutton-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-17-ui-kit-functionbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-17-ui-kit-functionbutton-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-20-ui-kit-functionbutton-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-20-ui-kit-functionbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-20-ui-kit-functionbutton-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -4326,11 +5090,11 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-17-ui-kit-functionbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-17-ui-kit-functionbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-20-ui-kit-functionbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-20-ui-kit-functionbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-17-ui-kit-functionbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-20-ui-kit-functionbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4506,9 +5270,9 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;red&#39; = &#39;primary
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Header</h2>
       <div class="badges">
-        <label for="c-18-ui-kit-header-header-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-18-ui-kit-header-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-18-ui-kit-header-header-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-21-ui-kit-header-header-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-21-ui-kit-header-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-21-ui-kit-header-header-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -4521,11 +5285,11 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;red&#39; = &#39;primary
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-18-ui-kit-header-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-18-ui-kit-header-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-21-ui-kit-header-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-21-ui-kit-header-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-18-ui-kit-header-header-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-21-ui-kit-header-header-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4686,9 +5450,9 @@ onModuleClick?: () =&gt; void</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> IconButton</h2>
       <div class="badges">
-        <label for="c-19-ui-kit-iconbutton-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-19-ui-kit-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-19-ui-kit-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-22-ui-kit-iconbutton-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-22-ui-kit-iconbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-22-ui-kit-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -4701,11 +5465,11 @@ onModuleClick?: () =&gt; void</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-19-ui-kit-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-19-ui-kit-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-22-ui-kit-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-22-ui-kit-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-19-ui-kit-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-22-ui-kit-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4844,9 +5608,9 @@ import { IconRemove } from '../../icons';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Icons</h2>
       <div class="badges">
-        <label for="c-20-ui-kit-icons-err" class="badge err as-toggle">API error</label>
-        <label for="c-20-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-20-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-23-ui-kit-icons-err" class="badge err as-toggle">API error</label>
+        <label for="c-23-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-23-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -4858,9 +5622,9 @@ import { IconRemove } from '../../icons';</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-20-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-20-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-20-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-23-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-23-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-23-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -5035,9 +5799,9 @@ export const Fat: Story = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Input</h2>
       <div class="badges">
-        <label for="c-21-ui-kit-input-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-21-ui-kit-input-info" class="badge info as-toggle">1 info</label>
-        <label for="c-21-ui-kit-input-stories" class="badge ok as-toggle">15 stories</label>
+        <label for="c-24-ui-kit-input-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-24-ui-kit-input-info" class="badge info as-toggle">1 info</label>
+        <label for="c-24-ui-kit-input-stories" class="badge ok as-toggle">15 stories</label>
         
         
       </div>
@@ -5050,11 +5814,11 @@ export const Fat: Story = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-21-ui-kit-input-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-21-ui-kit-input-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-24-ui-kit-input-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-24-ui-kit-input-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-21-ui-kit-input-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-24-ui-kit-input-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5438,9 +6202,9 @@ import { IconSearch } from '../../icons';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> InputPassword</h2>
       <div class="badges">
-        <label for="c-22-ui-kit-inputpassword-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-22-ui-kit-inputpassword-info" class="badge info as-toggle">1 info</label>
-        <label for="c-22-ui-kit-inputpassword-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-25-ui-kit-inputpassword-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-25-ui-kit-inputpassword-info" class="badge info as-toggle">1 info</label>
+        <label for="c-25-ui-kit-inputpassword-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -5453,11 +6217,11 @@ import { IconSearch } from '../../icons';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-22-ui-kit-inputpassword-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-22-ui-kit-inputpassword-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-25-ui-kit-inputpassword-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-25-ui-kit-inputpassword-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-22-ui-kit-inputpassword-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-25-ui-kit-inputpassword-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5654,9 +6418,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> InputSearch</h2>
       <div class="badges">
-        <label for="c-23-ui-kit-inputsearch-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-23-ui-kit-inputsearch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-23-ui-kit-inputsearch-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-26-ui-kit-inputsearch-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-26-ui-kit-inputsearch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-26-ui-kit-inputsearch-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -5669,11 +6433,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-23-ui-kit-inputsearch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-23-ui-kit-inputsearch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-26-ui-kit-inputsearch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-26-ui-kit-inputsearch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-23-ui-kit-inputsearch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-26-ui-kit-inputsearch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5842,9 +6606,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> LoadingState</h2>
       <div class="badges">
-        <label for="c-24-ui-kit-loadingstate-props" class="badge ok as-toggle">11 prop types</label>
-        <label for="c-24-ui-kit-loadingstate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-24-ui-kit-loadingstate-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-27-ui-kit-loadingstate-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-27-ui-kit-loadingstate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-27-ui-kit-loadingstate-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -5857,11 +6621,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-24-ui-kit-loadingstate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-24-ui-kit-loadingstate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-27-ui-kit-loadingstate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-27-ui-kit-loadingstate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-24-ui-kit-loadingstate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-27-ui-kit-loadingstate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6014,9 +6778,9 @@ title?: ReactNode = &#39;Загрузка…&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Modal</h2>
       <div class="badges">
-        <label for="c-25-ui-kit-modal-modal-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-25-ui-kit-modal-modal-info" class="badge info as-toggle">1 info</label>
-        <label for="c-25-ui-kit-modal-modal-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-28-ui-kit-modal-modal-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-28-ui-kit-modal-modal-info" class="badge info as-toggle">1 info</label>
+        <label for="c-28-ui-kit-modal-modal-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -6029,11 +6793,11 @@ title?: ReactNode = &#39;Загрузка…&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-25-ui-kit-modal-modal-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-25-ui-kit-modal-modal-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-28-ui-kit-modal-modal-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-28-ui-kit-modal-modal-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-25-ui-kit-modal-modal-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-28-ui-kit-modal-modal-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6217,9 +6981,9 @@ open: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ModalButtons</h2>
       <div class="badges">
-        <label for="c-26-ui-kit-modal-modalbuttons-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-26-ui-kit-modal-modalbuttons-info" class="badge info as-toggle">1 info</label>
-        <label for="c-26-ui-kit-modal-modalbuttons-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-29-ui-kit-modal-modalbuttons-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-29-ui-kit-modal-modalbuttons-info" class="badge info as-toggle">1 info</label>
+        <label for="c-29-ui-kit-modal-modalbuttons-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -6232,11 +6996,11 @@ open: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-26-ui-kit-modal-modalbuttons-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-26-ui-kit-modal-modalbuttons-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-29-ui-kit-modal-modalbuttons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-29-ui-kit-modal-modalbuttons-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-26-ui-kit-modal-modalbuttons-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-29-ui-kit-modal-modalbuttons-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6366,9 +7130,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ModalHead</h2>
       <div class="badges">
-        <label for="c-27-ui-kit-modal-modalhead-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-27-ui-kit-modal-modalhead-info" class="badge info as-toggle">1 info</label>
-        <label for="c-27-ui-kit-modal-modalhead-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-30-ui-kit-modal-modalhead-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-30-ui-kit-modal-modalhead-info" class="badge info as-toggle">1 info</label>
+        <label for="c-30-ui-kit-modal-modalhead-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -6381,11 +7145,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-27-ui-kit-modal-modalhead-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-27-ui-kit-modal-modalhead-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-30-ui-kit-modal-modalhead-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-30-ui-kit-modal-modalhead-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-27-ui-kit-modal-modalhead-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-30-ui-kit-modal-modalhead-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6545,9 +7309,9 @@ title: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelect</h2>
       <div class="badges">
-        <label for="c-28-ui-kit-multiselect-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-28-ui-kit-multiselect-info" class="badge info as-toggle">1 info</label>
-        <label for="c-28-ui-kit-multiselect-stories" class="badge ok as-toggle">12 stories</label>
+        <label for="c-31-ui-kit-multiselect-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-31-ui-kit-multiselect-info" class="badge info as-toggle">1 info</label>
+        <label for="c-31-ui-kit-multiselect-stories" class="badge ok as-toggle">12 stories</label>
         
         
       </div>
@@ -6560,11 +7324,11 @@ title: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-28-ui-kit-multiselect-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-28-ui-kit-multiselect-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-31-ui-kit-multiselect-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-31-ui-kit-multiselect-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-28-ui-kit-multiselect-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-31-ui-kit-multiselect-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7091,9 +7855,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelectTag</h2>
       <div class="badges">
-        <label for="c-29-ui-kit-multiselecttag-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-29-ui-kit-multiselecttag-info" class="badge info as-toggle">1 info</label>
-        <label for="c-29-ui-kit-multiselecttag-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-32-ui-kit-multiselecttag-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-32-ui-kit-multiselecttag-info" class="badge info as-toggle">1 info</label>
+        <label for="c-32-ui-kit-multiselecttag-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -7106,11 +7870,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-29-ui-kit-multiselecttag-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-29-ui-kit-multiselecttag-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-32-ui-kit-multiselecttag-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-32-ui-kit-multiselecttag-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-29-ui-kit-multiselecttag-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-32-ui-kit-multiselecttag-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7232,9 +7996,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ObjectCard</h2>
       <div class="badges">
-        <label for="c-30-ui-kit-objectcard-props" class="badge ok as-toggle">20 prop types</label>
-        <label for="c-30-ui-kit-objectcard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-30-ui-kit-objectcard-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-33-ui-kit-objectcard-props" class="badge ok as-toggle">20 prop types</label>
+        <label for="c-33-ui-kit-objectcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-33-ui-kit-objectcard-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -7247,11 +8011,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-30-ui-kit-objectcard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-30-ui-kit-objectcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-33-ui-kit-objectcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-33-ui-kit-objectcard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-30-ui-kit-objectcard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-33-ui-kit-objectcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7535,9 +8299,9 @@ style?: CSSProperties</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ObjectStatus</h2>
       <div class="badges">
-        <label for="c-31-ui-kit-objectstatus-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-31-ui-kit-objectstatus-info" class="badge info as-toggle">1 info</label>
-        <label for="c-31-ui-kit-objectstatus-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-34-ui-kit-objectstatus-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-34-ui-kit-objectstatus-info" class="badge info as-toggle">1 info</label>
+        <label for="c-34-ui-kit-objectstatus-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -7550,11 +8314,11 @@ style?: CSSProperties</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-31-ui-kit-objectstatus-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-31-ui-kit-objectstatus-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-34-ui-kit-objectstatus-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-34-ui-kit-objectstatus-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-31-ui-kit-objectstatus-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-34-ui-kit-objectstatus-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7674,9 +8438,9 @@ tone?: &#39;glass&#39; | &#39;warning&#39; | &#39;danger&#39; | &#39;success&#39
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Pagination</h2>
       <div class="badges">
-        <label for="c-32-ui-kit-pagination-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-32-ui-kit-pagination-info" class="badge info as-toggle">1 info</label>
-        <label for="c-32-ui-kit-pagination-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-35-ui-kit-pagination-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-35-ui-kit-pagination-info" class="badge info as-toggle">1 info</label>
+        <label for="c-35-ui-kit-pagination-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -7689,11 +8453,11 @@ tone?: &#39;glass&#39; | &#39;warning&#39; | &#39;danger&#39; | &#39;success&#39
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-32-ui-kit-pagination-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-32-ui-kit-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-35-ui-kit-pagination-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-35-ui-kit-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-32-ui-kit-pagination-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-35-ui-kit-pagination-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7792,8 +8556,8 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
       <h2><span class="status-dot dot-ok"></span> Radio</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-33-ui-kit-radio-info" class="badge info as-toggle">1 info</label>
-        <label for="c-33-ui-kit-radio-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-36-ui-kit-radio-info" class="badge info as-toggle">1 info</label>
+        <label for="c-36-ui-kit-radio-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -7806,8 +8570,8 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-33-ui-kit-radio-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-33-ui-kit-radio-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-36-ui-kit-radio-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-36-ui-kit-radio-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -7943,9 +8707,9 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> RemarkCard</h2>
       <div class="badges">
-        <label for="c-34-ui-kit-remarkcard-props" class="badge ok as-toggle">20 prop types</label>
-        <label for="c-34-ui-kit-remarkcard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-34-ui-kit-remarkcard-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-37-ui-kit-remarkcard-props" class="badge ok as-toggle">20 prop types</label>
+        <label for="c-37-ui-kit-remarkcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-37-ui-kit-remarkcard-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -7958,11 +8722,11 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-34-ui-kit-remarkcard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-34-ui-kit-remarkcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-37-ui-kit-remarkcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-37-ui-kit-remarkcard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-34-ui-kit-remarkcard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-37-ui-kit-remarkcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8211,9 +8975,9 @@ text: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Scrollbar</h2>
       <div class="badges">
-        <label for="c-35-ui-kit-scrollbar-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-35-ui-kit-scrollbar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-35-ui-kit-scrollbar-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-38-ui-kit-scrollbar-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-38-ui-kit-scrollbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-38-ui-kit-scrollbar-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -8226,11 +8990,11 @@ text: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-35-ui-kit-scrollbar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-35-ui-kit-scrollbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-38-ui-kit-scrollbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-38-ui-kit-scrollbar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-35-ui-kit-scrollbar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-38-ui-kit-scrollbar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8361,9 +9125,9 @@ size?: &#39;s&#39; | &#39;xs&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Select</h2>
       <div class="badges">
-        <label for="c-36-ui-kit-select-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-36-ui-kit-select-info" class="badge info as-toggle">1 info</label>
-        <label for="c-36-ui-kit-select-stories" class="badge ok as-toggle">16 stories</label>
+        <label for="c-39-ui-kit-select-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-39-ui-kit-select-info" class="badge info as-toggle">1 info</label>
+        <label for="c-39-ui-kit-select-stories" class="badge ok as-toggle">16 stories</label>
         
         
       </div>
@@ -8376,11 +9140,11 @@ size?: &#39;s&#39; | &#39;xs&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-36-ui-kit-select-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-36-ui-kit-select-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-39-ui-kit-select-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-39-ui-kit-select-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-36-ui-kit-select-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-39-ui-kit-select-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8876,9 +9640,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaCell</h2>
       <div class="badges">
-        <label for="c-37-ui-kit-shahmatka-cell-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-37-ui-kit-shahmatka-cell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-37-ui-kit-shahmatka-cell-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-40-ui-kit-shahmatka-cell-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-40-ui-kit-shahmatka-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-40-ui-kit-shahmatka-cell-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -8891,11 +9655,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-37-ui-kit-shahmatka-cell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-37-ui-kit-shahmatka-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-cell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-37-ui-kit-shahmatka-cell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-cell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9003,8 +9767,8 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
               
               
               <pre><code>const Hover = () =&gt; (
-  &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 8, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;#41484a&#39; }}&gt;
-    &lt;p style={{ margin: 0 }}&gt;Наведите курсор на ячейки — у «пустой» (нет работ) ховера нет, у остальных есть.&lt;/p&gt;
+  &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 8, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;var(--text-black-primary)&#39; }}&gt;
+    &lt;p style={{ margin: 0 }}&gt;Наведите курсор на ячейки — у белой (работ не будет) ховера нет, у остальных есть — голубая обводка.&lt;/p&gt;
     &lt;div style={{ display: &#39;flex&#39;, gap: 8 }}&gt;
       &lt;ShahmatkaCell variant=&quot;empty&quot; /&gt;
       &lt;ShahmatkaCell variant=&quot;quadrants&quot; date=&quot;done&quot; materials=&quot;required&quot; protocols=&quot;done&quot; schemes=&quot;required&quot; /&gt;
@@ -9036,8 +9800,8 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
       <h2><span class="status-dot dot-ok"></span> ShahmatkaLegend</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-38-ui-kit-shahmatka-legend-info" class="badge info as-toggle">1 info</label>
-        <label for="c-38-ui-kit-shahmatka-legend-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-41-ui-kit-shahmatka-legend-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-ui-kit-shahmatka-legend-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -9050,8 +9814,8 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-38-ui-kit-shahmatka-legend-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-38-ui-kit-shahmatka-legend-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-41-ui-kit-shahmatka-legend-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-ui-kit-shahmatka-legend-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -9110,9 +9874,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaLocationHeader</h2>
       <div class="badges">
-        <label for="c-39-ui-kit-shahmatka-locationheader-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-39-ui-kit-shahmatka-locationheader-info" class="badge info as-toggle">1 info</label>
-        <label for="c-39-ui-kit-shahmatka-locationheader-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-42-ui-kit-shahmatka-locationheader-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-42-ui-kit-shahmatka-locationheader-info" class="badge info as-toggle">1 info</label>
+        <label for="c-42-ui-kit-shahmatka-locationheader-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -9125,11 +9889,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-39-ui-kit-shahmatka-locationheader-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-39-ui-kit-shahmatka-locationheader-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-42-ui-kit-shahmatka-locationheader-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-42-ui-kit-shahmatka-locationheader-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-39-ui-kit-shahmatka-locationheader-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-42-ui-kit-shahmatka-locationheader-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9146,11 +9910,16 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen)</small></span>
-              <span class="badge ok">1 prop type</span>
+              <span class="badge ok">2 prop types</span>
             </div>
             <pre><code>Component: src/components/Shahmatka/ShahmatkaLocationHeader.tsx::ShahmatkaLocationHeader</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>label: string</code></pre>
+            <pre><code>label: string
+
+/**
+ * Сколько строк названия помещается: ИД — 3 (по умолчанию), КС — 2.
+ */
+lines?: number = 3</code></pre>
           </div>
         </div>
     
@@ -9222,9 +9991,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaMiniCell</h2>
       <div class="badges">
-        <label for="c-40-ui-kit-shahmatka-minicell-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-40-ui-kit-shahmatka-minicell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-40-ui-kit-shahmatka-minicell-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-43-ui-kit-shahmatka-minicell-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-43-ui-kit-shahmatka-minicell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-43-ui-kit-shahmatka-minicell-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -9237,11 +10006,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-40-ui-kit-shahmatka-minicell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-40-ui-kit-shahmatka-minicell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-43-ui-kit-shahmatka-minicell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-43-ui-kit-shahmatka-minicell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-40-ui-kit-shahmatka-minicell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-43-ui-kit-shahmatka-minicell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9330,9 +10099,9 @@ status?: &#39;pending&#39; | &#39;required&#39; | &#39;done&#39; | &#39;sample&#
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaWorkRow</h2>
       <div class="badges">
-        <label for="c-41-ui-kit-shahmatka-workrow-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-41-ui-kit-shahmatka-workrow-info" class="badge info as-toggle">1 info</label>
-        <label for="c-41-ui-kit-shahmatka-workrow-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-44-ui-kit-shahmatka-workrow-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-44-ui-kit-shahmatka-workrow-info" class="badge info as-toggle">1 info</label>
+        <label for="c-44-ui-kit-shahmatka-workrow-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -9345,11 +10114,11 @@ status?: &#39;pending&#39; | &#39;required&#39; | &#39;done&#39; | &#39;sample&#
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-41-ui-kit-shahmatka-workrow-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-41-ui-kit-shahmatka-workrow-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-44-ui-kit-shahmatka-workrow-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-44-ui-kit-shahmatka-workrow-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-41-ui-kit-shahmatka-workrow-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-44-ui-kit-shahmatka-workrow-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9370,7 +10139,10 @@ status?: &#39;pending&#39; | &#39;required&#39; | &#39;done&#39; | &#39;sample&#
             </div>
             <pre><code>Component: src/components/Shahmatka/ShahmatkaWorkRow.tsx::ShahmatkaWorkRow</code></pre>
             <pre><code>Props:</code></pre>
-            <pre><code>contractor?: string = &#39;Подрядчик не назначен&#39;
+            <pre><code>/**
+ * Подрядчик — плашка над названием. `null` — без плашки (шахматка КС: только название СТК).
+ */
+contractor?: string | null = &#39;Подрядчик не назначен&#39;
 
 title: string</code></pre>
           </div>
@@ -9450,9 +10222,9 @@ title: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SideBar</h2>
       <div class="badges">
-        <label for="c-42-ui-kit-sidemenu-sidebar-props" class="badge ok as-toggle">12 prop types</label>
-        <label for="c-42-ui-kit-sidemenu-sidebar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-42-ui-kit-sidemenu-sidebar-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-45-ui-kit-sidemenu-sidebar-props" class="badge ok as-toggle">12 prop types</label>
+        <label for="c-45-ui-kit-sidemenu-sidebar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-45-ui-kit-sidemenu-sidebar-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -9465,11 +10237,11 @@ title: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-42-ui-kit-sidemenu-sidebar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-42-ui-kit-sidemenu-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-45-ui-kit-sidemenu-sidebar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-45-ui-kit-sidemenu-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-42-ui-kit-sidemenu-sidebar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-45-ui-kit-sidemenu-sidebar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9632,9 +10404,9 @@ title?: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SideMenu</h2>
       <div class="badges">
-        <label for="c-43-ui-kit-sidemenu-sidemenu-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-43-ui-kit-sidemenu-sidemenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-43-ui-kit-sidemenu-sidemenu-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-46-ui-kit-sidemenu-sidemenu-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-46-ui-kit-sidemenu-sidemenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-46-ui-kit-sidemenu-sidemenu-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -9647,11 +10419,11 @@ title?: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-43-ui-kit-sidemenu-sidemenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-43-ui-kit-sidemenu-sidemenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-46-ui-kit-sidemenu-sidemenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-46-ui-kit-sidemenu-sidemenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-43-ui-kit-sidemenu-sidemenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-46-ui-kit-sidemenu-sidemenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9828,9 +10600,9 @@ selectedKey?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Spinner</h2>
       <div class="badges">
-        <label for="c-44-ui-kit-spinner-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-44-ui-kit-spinner-info" class="badge info as-toggle">1 info</label>
-        <label for="c-44-ui-kit-spinner-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-47-ui-kit-spinner-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-47-ui-kit-spinner-info" class="badge info as-toggle">1 info</label>
+        <label for="c-47-ui-kit-spinner-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -9843,11 +10615,11 @@ selectedKey?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-44-ui-kit-spinner-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-44-ui-kit-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-47-ui-kit-spinner-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-47-ui-kit-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-44-ui-kit-spinner-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-47-ui-kit-spinner-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9941,9 +10713,9 @@ tone?: &#39;accent&#39; | &#39;current&#39; | &#39;block&#39; = &#39;accent&#39;
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> StackedBar</h2>
       <div class="badges">
-        <label for="c-45-ui-kit-stackedbar-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-45-ui-kit-stackedbar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-45-ui-kit-stackedbar-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-48-ui-kit-stackedbar-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-48-ui-kit-stackedbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-48-ui-kit-stackedbar-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -9956,11 +10728,11 @@ tone?: &#39;accent&#39; | &#39;current&#39; | &#39;block&#39; = &#39;accent&#39;
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-45-ui-kit-stackedbar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-45-ui-kit-stackedbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-48-ui-kit-stackedbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-48-ui-kit-stackedbar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-45-ui-kit-stackedbar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-48-ui-kit-stackedbar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10110,9 +10882,9 @@ total?: number</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> StatCard</h2>
       <div class="badges">
-        <label for="c-46-ui-kit-statcard-props" class="badge ok as-toggle">14 prop types</label>
-        <label for="c-46-ui-kit-statcard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-46-ui-kit-statcard-stories" class="badge ok as-toggle">12 stories</label>
+        <label for="c-49-ui-kit-statcard-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-49-ui-kit-statcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-49-ui-kit-statcard-stories" class="badge ok as-toggle">12 stories</label>
         
         
       </div>
@@ -10125,11 +10897,11 @@ total?: number</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-46-ui-kit-statcard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-46-ui-kit-statcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-49-ui-kit-statcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-49-ui-kit-statcard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-46-ui-kit-statcard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-49-ui-kit-statcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10490,9 +11262,9 @@ value: number | string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Statistic</h2>
       <div class="badges">
-        <label for="c-47-ui-kit-statistic-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-47-ui-kit-statistic-info" class="badge info as-toggle">1 info</label>
-        <label for="c-47-ui-kit-statistic-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-50-ui-kit-statistic-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-50-ui-kit-statistic-info" class="badge info as-toggle">1 info</label>
+        <label for="c-50-ui-kit-statistic-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -10505,11 +11277,11 @@ value: number | string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-47-ui-kit-statistic-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-47-ui-kit-statistic-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-50-ui-kit-statistic-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-50-ui-kit-statistic-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-47-ui-kit-statistic-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-50-ui-kit-statistic-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10632,9 +11404,9 @@ tone?: &#39;default&#39; | &#39;danger&#39; | &#39;warning&#39; | &#39;success&#
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Surface</h2>
       <div class="badges">
-        <label for="c-48-ui-kit-surface-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-48-ui-kit-surface-info" class="badge info as-toggle">1 info</label>
-        <label for="c-48-ui-kit-surface-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-51-ui-kit-surface-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-51-ui-kit-surface-info" class="badge info as-toggle">1 info</label>
+        <label for="c-51-ui-kit-surface-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -10647,11 +11419,11 @@ tone?: &#39;default&#39; | &#39;danger&#39; | &#39;warning&#39; | &#39;success&#
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-48-ui-kit-surface-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-48-ui-kit-surface-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-51-ui-kit-surface-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-51-ui-kit-surface-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-48-ui-kit-surface-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-51-ui-kit-surface-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10812,9 +11584,9 @@ padding?: number</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-49-ui-kit-switch-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-49-ui-kit-switch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-49-ui-kit-switch-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-52-ui-kit-switch-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-52-ui-kit-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-52-ui-kit-switch-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -10827,11 +11599,11 @@ padding?: number</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-49-ui-kit-switch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-49-ui-kit-switch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-52-ui-kit-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-52-ui-kit-switch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-49-ui-kit-switch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-52-ui-kit-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10949,9 +11721,9 @@ size?: &#39;l&#39; | &#39;m&#39; = &#39;l&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Table</h2>
       <div class="badges">
-        <label for="c-50-ui-kit-table-table-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-50-ui-kit-table-table-info" class="badge info as-toggle">1 info</label>
-        <label for="c-50-ui-kit-table-table-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-53-ui-kit-table-table-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-53-ui-kit-table-table-info" class="badge info as-toggle">1 info</label>
+        <label for="c-53-ui-kit-table-table-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -10964,11 +11736,11 @@ size?: &#39;l&#39; | &#39;m&#39; = &#39;l&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-50-ui-kit-table-table-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-50-ui-kit-table-table-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-53-ui-kit-table-table-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-53-ui-kit-table-table-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-50-ui-kit-table-table-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-53-ui-kit-table-table-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -11037,7 +11809,18 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { IconButton, IconTrash, Table, TableCell, TableTags, Tag } from 'praktis-ui-kit';</code></pre>
+                <pre><code>import {
+  Button,
+  IconAddCircle,
+  IconButton,
+  IconExport,
+  IconTrash,
+  InputSearch,
+  Table,
+  TableCell,
+  TableTags,
+  Tag,
+} from 'praktis-ui-kit';</code></pre>
               </div>
           
           
@@ -11150,6 +11933,26 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 );</code></pre>
               
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Пример: поиск, кнопки, таблица, страницы</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithSearchExample = () =&gt; &lt;SearchTableDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Во фрейме: сотни строк без страниц</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InFrame = () =&gt; &lt;FrameDemo /&gt;;</code></pre>
+              
+            </div>
         </div>
     
     
@@ -11170,9 +11973,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TableCell</h2>
       <div class="badges">
-        <label for="c-51-ui-kit-table-cell-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-51-ui-kit-table-cell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-51-ui-kit-table-cell-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-54-ui-kit-table-cell-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-54-ui-kit-table-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-54-ui-kit-table-cell-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -11185,11 +11988,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-51-ui-kit-table-cell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-51-ui-kit-table-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-54-ui-kit-table-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-54-ui-kit-table-cell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-51-ui-kit-table-cell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-54-ui-kit-table-cell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -11371,9 +12174,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TableHeaderCell</h2>
       <div class="badges">
-        <label for="c-52-ui-kit-table-headercell-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-52-ui-kit-table-headercell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-52-ui-kit-table-headercell-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-55-ui-kit-table-headercell-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-55-ui-kit-table-headercell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-55-ui-kit-table-headercell-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -11386,11 +12189,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-52-ui-kit-table-headercell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-52-ui-kit-table-headercell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-55-ui-kit-table-headercell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-55-ui-kit-table-headercell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-52-ui-kit-table-headercell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-55-ui-kit-table-headercell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -11571,9 +12374,9 @@ title: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Tabs</h2>
       <div class="badges">
-        <label for="c-53-ui-kit-tabs-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-53-ui-kit-tabs-info" class="badge info as-toggle">1 info</label>
-        <label for="c-53-ui-kit-tabs-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-56-ui-kit-tabs-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-56-ui-kit-tabs-info" class="badge info as-toggle">1 info</label>
+        <label for="c-56-ui-kit-tabs-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -11586,11 +12389,11 @@ title: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-53-ui-kit-tabs-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-53-ui-kit-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-56-ui-kit-tabs-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-56-ui-kit-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-53-ui-kit-tabs-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-56-ui-kit-tabs-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -11784,9 +12587,9 @@ import { Tag } from '../Tag/Tag';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Tag</h2>
       <div class="badges">
-        <label for="c-54-ui-kit-tag-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-54-ui-kit-tag-info" class="badge info as-toggle">1 info</label>
-        <label for="c-54-ui-kit-tag-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-57-ui-kit-tag-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-57-ui-kit-tag-info" class="badge info as-toggle">1 info</label>
+        <label for="c-57-ui-kit-tag-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -11799,11 +12602,11 @@ import { Tag } from '../Tag/Tag';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-54-ui-kit-tag-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-54-ui-kit-tag-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-57-ui-kit-tag-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-57-ui-kit-tag-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-54-ui-kit-tag-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-57-ui-kit-tag-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -11899,6 +12702,175 @@ status?: &#39;default&#39; | &#39;success&#39; | &#39;error&#39; | &#39;processi
   </div>
 </article>
 <article
+  id="ui-kit-textarea"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="TextArea">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TextArea</h2>
+      <div class="badges">
+        <label for="c-58-ui-kit-textarea-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-58-ui-kit-textarea-info" class="badge info as-toggle">1 info</label>
+        <label for="c-58-ui-kit-textarea-stories" class="badge ok as-toggle">5 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Input/TextArea.stories.tsx">ui-kit-textarea · ./src/components/Input/TextArea.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-58-ui-kit-textarea-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-58-ui-kit-textarea-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-58-ui-kit-textarea-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">5 prop types</span>
+            </div>
+            <pre><code>Component: src/components/Input/TextArea.tsx::TextArea</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Текст под полем — только при status=&quot;error&quot;.
+ */
+errorMessage?: ReactNode
+
+/**
+ * Текст подсказки у значка «i» рядом с подписью.
+ */
+infoText?: string
+
+/**
+ * Подпись над полем. Не передана — поле без подписи.
+ */
+label?: ReactNode
+
+/**
+ * После скольких строк поле перестаёт расти и прокручивается. По умолчанию растёт без предела.
+ */
+maxRows?: number
+
+/**
+ * Красная звёздочка у подписи.
+ */
+required?: boolean</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { TextArea } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (a) =&gt; (
+  &lt;Box&gt;
+    &lt;Field {...(a as Args)} /&gt;
+  &lt;/Box&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Без подписи</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Bare = (a) =&gt; (
+  &lt;Box&gt;
+    &lt;Field {...(a as Args)} /&gt;
+  &lt;/Box&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С подписью и без</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithAndWithout = () =&gt; (
+  &lt;Box&gt;
+    &lt;TextArea label=&quot;Комментарий&quot; required infoText=&quot;Увидят все участники согласования&quot; placeholder=&quot;Опишите замечание&quot; /&gt;
+    &lt;TextArea placeholder=&quot;Опишите замечание&quot; /&gt;
+  &lt;/Box&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;Box&gt;
+    &lt;TextArea label=&quot;Пустое&quot; required infoText=&quot;Подсказка&quot; placeholder=&quot;Example&quot; /&gt;
+    &lt;TextArea label=&quot;Заполненное&quot; required defaultValue=&quot;Example&quot; /&gt;
+    &lt;TextArea label=&quot;Отключено&quot; required disabled placeholder=&quot;Example&quot; /&gt;
+    &lt;TextArea label=&quot;С ошибкой&quot; required status=&quot;error&quot; errorMessage=&quot;Поле обязательно для заполнения&quot; placeholder=&quot;Example&quot; /&gt;
+  &lt;/Box&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Растёт по мере ввода</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Grow = () =&gt; &lt;GrowStory /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-textline"
   class="card 
   no-error
@@ -11913,9 +12885,9 @@ status?: &#39;default&#39; | &#39;success&#39; | &#39;error&#39; | &#39;processi
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextLine</h2>
       <div class="badges">
-        <label for="c-55-ui-kit-textline-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-55-ui-kit-textline-info" class="badge info as-toggle">1 info</label>
-        <label for="c-55-ui-kit-textline-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-59-ui-kit-textline-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-59-ui-kit-textline-info" class="badge info as-toggle">1 info</label>
+        <label for="c-59-ui-kit-textline-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -11928,11 +12900,11 @@ status?: &#39;default&#39; | &#39;success&#39; | &#39;error&#39; | &#39;processi
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-55-ui-kit-textline-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-55-ui-kit-textline-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-59-ui-kit-textline-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-59-ui-kit-textline-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-55-ui-kit-textline-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-59-ui-kit-textline-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -12103,9 +13075,9 @@ type?: &#39;lv&#39; | &#39;equal&#39; = &#39;lv&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Tokens</h2>
       <div class="badges">
-        <label for="c-56-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
-        <label for="c-56-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
-        <label for="c-56-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-60-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
+        <label for="c-60-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
+        <label for="c-60-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -12117,9 +13089,9 @@ type?: &#39;lv&#39; | &#39;equal&#39; = &#39;lv&#39;</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-56-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-56-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-56-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-60-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-60-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-60-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -12135,7 +13107,7 @@ type?: &#39;lv&#39; | &#39;equal&#39; = &#39;lv&#39;</code></pre>
   103 |
 &gt; 104 | const meta = {
       | ^
-  105 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Tokens&#39;,
+  105 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Tokens&#39;,
   106 |   id: &#39;ui-kit-shahmatka-tokens&#39;,
   107 | } satisfies Meta;
 
@@ -12244,7 +13216,7 @@ function Swatch({ name, kind }: TokenDef) {
 }
 
 const meta = {
-  title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Tokens&#39;,
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Tokens&#39;,
   id: &#39;ui-kit-shahmatka-tokens&#39;,
 } satisfies Meta;
 
@@ -12345,9 +13317,9 @@ export const Reference: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-57-foundations-typography-err" class="badge err as-toggle">API error</label>
-        <label for="c-57-foundations-typography-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-57-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-61-foundations-typography-err" class="badge err as-toggle">API error</label>
+        <label for="c-61-foundations-typography-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-61-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -12359,9 +13331,9 @@ export const Reference: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-57-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-57-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-57-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-61-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-61-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-61-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -12679,9 +13651,9 @@ function SectionHeading({ children }: { children: string }) {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
       <div class="badges">
-        <label for="c-58-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-58-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-58-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-62-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-62-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-62-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -12693,9 +13665,9 @@ function SectionHeading({ children }: { children: string }) {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-58-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-58-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-58-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-62-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-62-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-62-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -12883,9 +13855,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Части</h2>
       <div class="badges">
-        <label for="c-59-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-59-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-59-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-63-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-63-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-63-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -12897,9 +13869,9 @@ export const Palette: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-59-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-59-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-59-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-63-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-63-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-63-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13175,9 +14147,351 @@ export const Logos: Story = {
           <label for="no-component-found-toggle" class="group-header">
             <span class="caret">▸</span>
             <span class="group-title">No component found</span>
-            <span class="group-count">7</span>
+            <span class="group-count">9</span>
           </label>
           <div class="group-cards">
+<article
+  
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Cell">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> Cell</h2>
+      <div class="badges">
+        <label for="c-error-0-ui-kit-shahmatka-ks-cell-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-0-ui-kit-shahmatka-ks-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-0-ui-kit-shahmatka-ks-cell-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx">ui-kit-shahmatka-ks-cell · ./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-error-0-ui-kit-shahmatka-ks-cell-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-0-ui-kit-shahmatka-ks-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-0-ui-kit-shahmatka-ks-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  34 | };
+  35 |
+&gt; 36 | const meta = {
+     | ^
+  37 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Cell&#39;,
+  38 |   id: &#39;ui-kit-shahmatka-ks-cell&#39;,
+  39 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/components/Shahmatka/ShahmatkaKsCell.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useState, type ReactNode } from &#39;react&#39;;
+import { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from &#39;./ShahmatkaKsCell&#39;;
+import &#39;../../theme/figma-colors.css&#39;;
+
+const description = `
+Ячейка шахматки **КС**. Источник — Figma UI Kit «Практис», **shahmatka__job** (node 935:4681), и описание
+ячеек в файле «Автоматизация КС». 98×48, цвета — переменные Figma \`shahmatka/*\`.
+
+Ячейке передаются проценты по акту — цвет, заливку и число она считает сама:
+
+| Проп | Что | Как видно |
+|---|---|---|
+| \`previous\` | принято в прошлых актах | зелёная штриховка сверху (фон green/200, линии green/320 3px шагом 6) — только в следующих актах |
+| \`declared\` | заявлено подрядчиком в этом акте | — |
+| \`accepted\` | принято заказчиком в этом акте (не передано — ещё не решал) | зелёный; остаток заявленного — красный |
+| \`awaiting\` | сколько сейчас ждёт решения | жёлтый |
+| \`icona\` / \`idReady\` / \`comment\` | часть из Айконы / документы по ИД готовы / есть комментарий | ICONA справа, ID слева, голубой градиент со значком |
+| \`empty\` | работ на локации не будет | белая, без обводки |
+
+Сверху вниз: серый остаток → штриховка (принято ранее) → зелёный → жёлтый → красный — чем ниже, тем новее; строго по процентам от высоты.
+**Подсказка по наведению** — \`details\`: Айкона (\`icona\`, %), ручной ввод, последние комментарии подрядчика
+и заказчика; «Заявлено» и «Принято» ячейка берёт из своих процентов. Данные обычно приходят с сервера при
+наведении: \`onDetailsOpen\` — запросить, \`detailsLoading\` — крутилка, пока идёт запрос. См. «Подсказка».
+
+**Число:** пока что-то ждёт решения — сколько заявлено («50»); всё решено — «принято / заявлено»
+(«25 / 50», «50 / 50»). Цвет одинаков для всех ролей. Наведение — голубая обводка.
+`;
+
+type Args = Required&lt;Pick&lt;ShahmatkaKsCellProps, &#39;previous&#39; | &#39;declared&#39; | &#39;icona&#39; | &#39;idReady&#39; | &#39;comment&#39; | &#39;empty&#39;&gt;&gt; &amp; {
+  decided: boolean;
+  accepted: number;
+  awaiting: number;
+};
+
+const meta = {
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Cell&#39;,
+  id: &#39;ui-kit-shahmatka-ks-cell&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+  argTypes: {
+    previous: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;принято ранее, %&#39; },
+    declared: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;заявлено, %&#39; },
+    decided: { control: &#39;boolean&#39;, name: &#39;заказчик решал&#39; },
+    accepted: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;принято, %&#39;, if: { arg: &#39;decided&#39; } },
+    awaiting: { control: { type: &#39;range&#39;, min: 0, max: 100, step: 5 }, name: &#39;ждёт решения, %&#39;, if: { arg: &#39;decided&#39; } },
+    icona: { control: &#39;boolean&#39; },
+    idReady: { control: &#39;boolean&#39;, name: &#39;ID готовы&#39; },
+    comment: { control: &#39;boolean&#39;, name: &#39;комментарий&#39; },
+    empty: { control: &#39;boolean&#39;, name: &#39;работ не будет&#39; },
+  },
+  args: { previous: 0, declared: 50, decided: true, accepted: 25, awaiting: 0, icona: true, idReady: false, comment: false, empty: false },
+} satisfies Meta&lt;Args&gt;;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+export const Playground: Story = {
+  render: ({ decided, accepted, awaiting, ...rest }: Partial&lt;Args&gt;) =&gt; (
+    &lt;ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() =&gt; {}} /&gt;
+  ),
+};
+
+const label = { fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 12, lineHeight: 1.2, color: &#39;var(--text-black-secondary)&#39; } as const;
+
+function Grid({ rows, columns }: { rows: [string, (extra: Partial&lt;ShahmatkaKsCellProps&gt;) =&gt; ReactNode][]; columns: [string, Partial&lt;ShahmatkaKsCellProps&gt;][] }) {
+  return (
+    &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: `160px repeat(${columns.length}, 98px)`, gap: &#39;12px 16px&#39;, alignItems: &#39;center&#39; }}&gt;
+      &lt;span /&gt;
+      {columns.map(([c]) =&gt; (
+        &lt;span key={c} style={label}&gt;
+          {c}
+        &lt;/span&gt;
+      ))}
+      {rows.map(([r, cell]) =&gt; [
+        &lt;span key={r} style={label}&gt;
+          {r}
+        &lt;/span&gt;,
+        ...columns.map(([c, extra]) =&gt; &lt;div key={r + c}&gt;{cell(extra)}&lt;/div&gt;),
+      ])}
+    &lt;/div&gt;
+  );
+}
+
+export const States: Story = {
+  name: &#39;Состояния&#39;,
+  parameters: { docs: { description: { story: &#39;Как набор в Figma: статус × обычная / ICONA / комментарий / ID. Все ячейки — с наведением.&#39; } } },
+  render: () =&gt; (
+    &lt;Grid
+      columns={[
+        [&#39;обычная&#39;, {}],
+        [&#39;ICONA&#39;, { icona: true }],
+        [&#39;комментарий&#39;, { comment: true, icona: true }],
+        [&#39;ID готовы&#39;, { idReady: true, icona: true }],
+      ]}
+      rows={[
+        [&#39;Работ не будет&#39;, (x) =&gt; &lt;ShahmatkaKsCell empty {...x} /&gt;],
+        [&#39;Объём не вносили&#39;, (x) =&gt; &lt;ShahmatkaKsCell {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+        [&#39;Заявлено 50, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Заявлено 100, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={100} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято всё: 50 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято часть: 25 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Не принято: 0 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 40 + заявлено 30&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 40, в этом акте 20 / 40&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Все цвета: ранее 20, принято 30, ждёт 20, не принято 10&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() =&gt; {}} /&gt;],
+        [&#39;Принято ранее 100&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+      ]}
+    /&gt;
+  ),
+};
+
+// Шаги согласования — одна ячейка, данные меняются
+const FLOW: [string, ShahmatkaKsCellProps][] = [
+  [&#39;Акт 1. Подрядчик заявил 100 %&#39;, { declared: 100, icona: true }],
+  [&#39;Заказчик принял 50 — остаток красный&#39;, { declared: 100, accepted: 50, icona: true }],
+  [&#39;Подрядчик повторно подал отклонённые 50&#39;, { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true }],
+  [&#39;Заказчик принял ещё 25&#39;, { declared: 100, accepted: 75, icona: true, comment: true }],
+  [&#39;Акт 2. Всё принятое раньше — штриховкой&#39;, { previous: 75, icona: true }],
+  [&#39;Подрядчик заявил оставшиеся 25&#39;, { previous: 75, declared: 25, icona: true }],
+  [&#39;Заказчик принял всё: 25 / 25&#39;, { previous: 75, declared: 25, accepted: 25, icona: true, idReady: true }],
+];
+
+function FlowDemo() {
+  const [step, setStep] = useState(0);
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+      {FLOW.map(([text, props], i) =&gt; (
+        &lt;div key={text} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 16, opacity: i &lt;= step ? 1 : 0.35 }}&gt;
+          &lt;ShahmatkaKsCell {...props} onClick={() =&gt; setStep(i)} /&gt;
+          &lt;span style={{ ...label, fontSize: 14, color: &#39;var(--text-black-primary)&#39; }}&gt;{text}&lt;/span&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Flow: Story = {
+  name: &#39;Путь согласования&#39;,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          &#39;Одна работа на одной локации от заявки до следующего акта. В одном акте штриховки нет — только жёлтый, зелёный и красный. Штриховка появляется в следующем акте: туда тянется всё принятое раньше.&#39;,
+      },
+    },
+  },
+  render: () =&gt; &lt;FlowDemo /&gt;,
+};
+
+// Подсказка: данные как из базы — приходят через 600 мс после первого наведения, потом берутся из памяти
+const TIP_CASES: [string, ShahmatkaKsCellProps, ShahmatkaKsDetails][] = [
+  [&#39;Заявлено, ждёт решения&#39;, { declared: 50 }, {}],
+  [&#39;Айкона + ручной ввод, комментарий подрядчика&#39;, { declared: 100, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: &#39;Ну пожалуйста&#39; }],
+  [&#39;Заказчик не принял всё, с комментарием&#39;, { declared: 50, accepted: 0, comment: true }, { customerComment: &#39;Вот вообще ты не сделал 50&#39; }],
+  [&#39;Айкона, заказчик принял часть&#39;, { declared: 100, accepted: 75, icona: true, comment: true }, { icona: 50, manual: 50, contractorComment: &#39;Ну пожалуйста&#39;, customerComment: &#39;Ладно, но нет&#39; }],
+  [&#39;Следующий акт: принято ранее&#39;, { previous: 40, declared: 40, accepted: 20 }, { customerComment: &#39;Остальное после исполнительной&#39; }],
+];
+
+const fetchDetails = (i: number) =&gt; new Promise&lt;ShahmatkaKsDetails&gt;((ok) =&gt; setTimeout(() =&gt; ok(TIP_CASES[i][2]), 600));
+
+function TooltipDemo() {
+  const [data, setData] = useState&lt;Record&lt;number, ShahmatkaKsDetails&gt;&gt;({});
+  const [loading, setLoading] = useState&lt;Record&lt;number, boolean&gt;&gt;({});
+  const load = (i: number) =&gt; {
+    if (data[i] || loading[i]) return;
+    setLoading((l) =&gt; ({ ...l, [i]: true }));
+    fetchDetails(i).then((d) =&gt; {
+      setData((x) =&gt; ({ ...x, [i]: d }));
+      setLoading((l) =&gt; ({ ...l, [i]: false }));
+    });
+  };
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 16 }}&gt;
+      {TIP_CASES.map(([text, props], i) =&gt; (
+        &lt;div key={text} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 16 }}&gt;
+          &lt;ShahmatkaKsCell {...props} onClick={() =&gt; {}} details={data[i]} detailsLoading={loading[i]} onDetailsOpen={() =&gt; load(i)} /&gt;
+          &lt;span style={{ ...label, fontSize: 14, color: &#39;var(--text-black-primary)&#39; }}&gt;{text}&lt;/span&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Tooltip: Story = {
+  name: &#39;Подсказка&#39;,
+  parameters: {
+    docs: {
+      description: {
+        story:
+          &#39;Наведите на ячейку. Первый раз данные «идут с сервера» 600 мс — в подсказке крутилка, дальше берутся из памяти. Сверху — что заявил подрядчик и его комментарий, под линией — что принял заказчик и его комментарий. Комментарий — только последний, вся переписка — в модалке.&#39;,
+      },
+    },
+  },
+  render: () =&gt; &lt;TooltipDemo /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ShahmatkaKsCell } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = ({ decided, accepted, awaiting, ...rest }: Partial&lt;Args&gt;) =&gt; (
+  &lt;ShahmatkaKsCell {...rest} accepted={decided ? accepted : undefined} awaiting={decided ? awaiting : undefined} onClick={() =&gt; {}} /&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;Grid
+    columns={[
+      [&#39;обычная&#39;, {}],
+      [&#39;ICONA&#39;, { icona: true }],
+      [&#39;комментарий&#39;, { comment: true, icona: true }],
+      [&#39;ID готовы&#39;, { idReady: true, icona: true }],
+    ]}
+    rows={[
+      [&#39;Работ не будет&#39;, (x) =&gt; &lt;ShahmatkaKsCell empty {...x} /&gt;],
+      [&#39;Объём не вносили&#39;, (x) =&gt; &lt;ShahmatkaKsCell {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+      [&#39;Заявлено 50, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Заявлено 100, ждёт решения&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={100} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято всё: 50 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={50} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято часть: 25 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={25} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Не принято: 0 / 50&#39;, (x) =&gt; &lt;ShahmatkaKsCell declared={50} accepted={0} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 40 + заявлено 30&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={30} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 40, в этом акте 20 / 40&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={40} declared={40} accepted={20} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Все цвета: ранее 20, принято 30, ждёт 20, не принято 10&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={20} declared={60} accepted={30} awaiting={20} {...x} onClick={() =&gt; {}} /&gt;],
+      [&#39;Принято ранее 100&#39;, (x) =&gt; &lt;ShahmatkaKsCell previous={100} {...x} comment={false} onClick={() =&gt; {}} /&gt;],
+    ]}
+  /&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Путь согласования</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Flow = () =&gt; &lt;FlowDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Подсказка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Tooltip = () =&gt; &lt;TooltipDemo /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
 <article
   
   class="card 
@@ -13193,9 +14507,9 @@ export const Logos: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Colors</h2>
       <div class="badges">
-        <label for="c-error-0-foundations-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-0-foundations-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-0-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-error-1-foundations-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-1-foundations-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-error-1-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -13207,9 +14521,9 @@ export const Logos: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-0-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-0-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-0-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-1-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-1-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-1-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13519,23 +14833,23 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Example</h2>
       <div class="badges">
-        <label for="c-error-1-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-1-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-1-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-error-2-ui-kit-shahmatka-ks-table-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-2-ui-kit-shahmatka-ks-table-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-2-ui-kit-shahmatka-ks-table-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
     </div>
-    <div class="meta" title="./src/components/Shahmatka/ShahmatkaExample.stories.tsx">ui-kit-shahmatka-example · ./src/components/Shahmatka/ShahmatkaExample.stories.tsx</div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx">ui-kit-shahmatka-ks-table · ./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx</div>
     
     
     
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-1-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-1-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-1-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-2-ui-kit-shahmatka-ks-table-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-2-ui-kit-shahmatka-ks-table-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-2-ui-kit-shahmatka-ks-table-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13547,102 +14861,164 @@ export const Palette: Story = {
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  50 | ];
-  51 |
-&gt; 52 | const meta = {
+  24 | `;
+  25 |
+&gt; 26 | const meta = {
      | ^
-  53 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Example&#39;,
-  54 |   id: &#39;ui-kit-shahmatka-example&#39;,
-  55 | } satisfies Meta;
+  27 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Example&#39;,
+  28 |   id: &#39;ui-kit-shahmatka-ks-table&#39;,
+  29 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
 
-./src/components/Shahmatka/ShahmatkaExample.stories.tsx:
+./src/components/Shahmatka/ShahmatkaKsTable.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
-import { Fragment } from &#39;react&#39;;
-import { ShahmatkaCell, type ShahmatkaCellProps } from &#39;./ShahmatkaCell&#39;;
-import { ShahmatkaLocationHeader } from &#39;./ShahmatkaLocationHeader&#39;;
-import { ShahmatkaTableCorner, ShahmatkaWorkRow } from &#39;./ShahmatkaWorkRow&#39;;
+import { useState } from &#39;react&#39;;
+import { BubbleTabs, type BubbleItem } from &#39;../Bubble/Bubble&#39;;
+import { Surface } from &#39;../Surface/Surface&#39;;
+import { ShahmatkaKsCell, type ShahmatkaKsCellProps, type ShahmatkaKsDetails } from &#39;./ShahmatkaKsCell&#39;;
+import { ShahmatkaTable, type ShahmatkaTableRow } from &#39;./ShahmatkaTable&#39;;
+import &#39;../../theme/figma-colors.css&#39;;
 
-// Пример сборки — как компоненты шахматки используются вместе. Это НЕ отдельный компонент
-// ShahmatkaTable (закрепление шапки/колонки при горизонтальном скролле здесь не сделано) —
-// просто демонстрация раскладки. Собрать в реальный компонент таблицы — следующий шаг, когда понадобится.
+const description = `
+Шахматка **КС** на экране акта, собранная из частей кита — так же, как шахматка ИД:
 
-const locations = [&#39;Подвал&#39;, &#39;Этаж 1&#39;, &#39;Котлован&#39;, &#39;Фасад Торцевой&#39;];
+- **BubbleTabs** — корпуса и секции. Секций много — ряд уходит вбок без полосы прокрутки, тянется мышкой
+  (\`overflow=&quot;scroll&quot;\`).
+- **ShahmatkaTable** + **ShahmatkaKsCell** — таблица. Слева только названия СТК (\`contractor: null\`), строки
+  48 — как ячейки КС; шапка локаций — как у ИД, 68, название до 3 строк. При прокрутке вбок закреплён
+  список СТК, вниз — шапка.
 
-interface ExampleRow {
-  contractor?: string;
-  title: string;
-  cells: ShahmatkaCellProps[];
-}
+**ShahmatkaTable** — общая таблица для ИД и КС: \`locations\`, \`rows\`, \`renderCell(row, location)\`,
+\`rowHeight\` (ИД 68, КС 48), \`headerHeight\` (68), \`maxHeight\`.
 
-const rows: ExampleRow[] = [
-  {
-    contractor: &#39;ООО &quot;Ромашка&quot;&#39;,
-    title: &#39;Бетонирование монолитных перекрытий&#39;,
-    cells: [
-      { variant: &#39;empty&#39; },
-      { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;required&#39;, protocols: &#39;done&#39;, schemes: &#39;required&#39; },
-      { variant: &#39;awaiting-signature&#39; },
-      { variant: &#39;empty&#39; },
-    ],
-  },
-  {
-    contractor: &#39;ООО &quot;Ромашка&quot;&#39;,
-    title: &#39;СТК Кабели магистральные (стояки) АППЗ&#39;,
-    cells: [
-      { variant: &#39;awaiting-other-signature&#39; },
-      { variant: &#39;awaiting-signature&#39; },
-      { variant: &#39;empty&#39; },
-      { variant: &#39;remarks&#39; },
-    ],
-  },
-  {
-    contractor: &#39;Подрядчик не назначен&#39;,
-    title: &#39;СТК Монтаж приемо-контрольного оборудования&#39;,
-    cells: [
-      { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
-      { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
-      { variant: &#39;awaiting-other-signature&#39; },
-      { variant: &#39;empty&#39; },
-    ],
-  },
-];
+Наведение — подсказка ячейки, данные «с сервера» (400 мс при первом наведении, потом из памяти).
+
+Данные примерные: при переключении корпуса или секции таблица меняется.
+`;
 
 const meta = {
-  title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Example&#39;,
-  id: &#39;ui-kit-shahmatka-example&#39;,
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka КС/Example&#39;,
+  id: &#39;ui-kit-shahmatka-ks-table&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
 } satisfies Meta;
 
 export default meta;
-type Story = StoryObj;
+type Story = StoryObj&lt;typeof meta&gt;;
 
-export const MiniTable: Story = {
-  render: () =&gt; (
-    &lt;div
-      style={{
-        display: &#39;grid&#39;,
-        gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,
-        gap: 4,
-      }}
-    &gt;
-      &lt;ShahmatkaTableCorner /&gt;
-      {locations.map((label) =&gt; (
-        &lt;ShahmatkaLocationHeader key={label} label={label} /&gt;
-      ))}
+const BUILDINGS: BubbleItem[] = Array.from({ length: 4 }, (_, i) =&gt; ({ key: `b${i + 1}`, label: `Корпус ${i + 1}` }));
+const SECTIONS: BubbleItem[] = Array.from({ length: 12 }, (_, i) =&gt; ({ key: `s${i + 1}`, label: `Секция ${Math.floor(i / 4) + 1}.${(i % 4) + 1}` }));
 
-      {rows.map((row) =&gt; (
-        &lt;Fragment key={row.title}&gt;
-          &lt;ShahmatkaWorkRow contractor={row.contractor} title={row.title} /&gt;
-          {row.cells.map((cell, i) =&gt; (
-            &lt;ShahmatkaCell
-              key={locations[i]}
-              {...cell}
-              onClick={() =&gt; console.log(&#39;open act details:&#39;, row.title, locations[i])}
-            /&gt;
-          ))}
-        &lt;/Fragment&gt;
-      ))}
+const LOCATIONS = [&#39;Подвал&#39;, ...Array.from({ length: 16 }, (_, i) =&gt; `Этаж ${i + 1}`), &#39;Кровля&#39;, &#39;Фасад лицевой, очень длинное название&#39;].map((label) =&gt; ({ key: label, label }));
+
+interface Row extends ShahmatkaTableRow {
+  seed: number;
+}
+
+const ROWS: Row[] = [
+  &#39;СТК Основание под бетонную подготовку&#39;,
+  &#39;СТК Бетонная подготовка&#39;,
+  &#39;СТК Котлован&#39;,
+  &#39;СТК Утепление наружных стен&#39;,
+  &#39;Комплекс монтажных работ благоустройства площадки&#39;,
+  &#39;Кабели магистральные (стояки) АППЗ&#39;,
+  &#39;Комплекс работ по установке оконечного оборудования&#39;,
+  &#39;Монтаж приёмо-контрольного оборудования&#39;,
+  &#39;Датчики автономные (монтаж закладных)&#39;,
+  &#39;Установка оборудования в квартирах&#39;,
+  &#39;Монтаж оборудования диспетчерской&#39;,
+  &#39;Кладка наружных стен&#39;,
+].map((title, i) =&gt; ({ key: `r${i}`, title, contractor: null, seed: i * 7 + 3 }));
+
+// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции
+const CELLS: ShahmatkaKsCellProps[] = [
+  { empty: true },
+  {},
+  {},
+  { icona: true },
+  { declared: 50 },
+  { declared: 100, icona: true },
+  { declared: 100, accepted: 100 },
+  { declared: 50, accepted: 50, idReady: true },
+  { declared: 70, accepted: 35, icona: true },
+  { declared: 50, accepted: 0, comment: true },
+  { declared: 100, accepted: 50, comment: true, icona: true },
+  { declared: 100, accepted: 50, awaiting: 50, icona: true, comment: true },
+  { previous: 50, declared: 30, icona: true },
+  { previous: 40, declared: 40, accepted: 20 },
+  { previous: 100, idReady: true },
+];
+const cellFor = (row: Row, locIndex: number, building: string, section: string) =&gt; {
+  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;
+  // ближе к верхним этажам — больше пустых: работы идут снизу
+  return locIndex &gt; 11 &amp;&amp; n % 3 ? CELLS[1] : CELLS[n % CELLS.length];
+};
+
+// «Сервер»: подсказку ячейки отдаёт через 400 мс; экран запрашивает её при первом наведении и хранит
+const COMMENTS = [&#39;Ну пожалуйста&#39;, &#39;Доделали после проверки&#39;, &#39;Вот вообще не сделано&#39;, &#39;Ладно, но нет&#39;];
+const detailsFor = (cell: ShahmatkaKsCellProps, n: number): ShahmatkaKsDetails =&gt; {
+  const act = cell.icona ? Math.round(((cell.declared ?? 0) * 0.5) / 5) * 5 : 0;
+  return {
+    icona: cell.icona ? act : undefined,
+    manual: (cell.declared ?? 0) - act,
+    contractorComment: cell.comment ? COMMENTS[n % 2] : undefined,
+    customerComment: cell.comment &amp;&amp; cell.accepted !== undefined ? COMMENTS[2 + (n % 2)] : undefined,
+  };
+};
+
+function Screen() {
+  const [building, setBuilding] = useState(&#39;b1&#39;);
+  const [section, setSection] = useState(&#39;s1&#39;);
+  const [log, setLog] = useState(&#39;Наведите на ячейку — подсказка; нажмите — процентовка&#39;);
+  const [details, setDetails] = useState&lt;Record&lt;string, ShahmatkaKsDetails&gt;&gt;({});
+  const [loading, setLoading] = useState&lt;Record&lt;string, boolean&gt;&gt;({});
+  const load = (key: string, cell: ShahmatkaKsCellProps, n: number) =&gt; {
+    if (details[key] || loading[key]) return;
+    setLoading((l) =&gt; ({ ...l, [key]: true }));
+    setTimeout(() =&gt; {
+      setDetails((d) =&gt; ({ ...d, [key]: detailsFor(cell, n) }));
+      setLoading((l) =&gt; ({ ...l, [key]: false }));
+    }, 400);
+  };
+
+  return (
+    &lt;div style={{ padding: 24, background: &#39;var(--bg-grey-page-full)&#39;, borderRadius: 12 }}&gt;
+      &lt;Surface&gt;
+        &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+          &lt;BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=&quot;Корпус&quot; /&gt;
+          &lt;BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=&quot;scroll&quot; aria-label=&quot;Секция&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div style={{ marginTop: 24 }}&gt;
+          &lt;ShahmatkaTable
+            locations={LOCATIONS}
+            rows={ROWS}
+            rowHeight={48}
+            maxHeight={420}
+            renderCell={(row, loc) =&gt; {
+              const i = LOCATIONS.findIndex((l) =&gt; l.key === loc.key);
+              const cell = cellFor(row, i, building, section);
+              const where = `${BUILDINGS.find((b) =&gt; b.key === building)?.label}, ${SECTIONS.find((s) =&gt; s.key === section)?.label} — «${row.title}», ${loc.label}`;
+              const key = `${building}/${section}/${row.key}/${loc.key}`;
+              return (
+                &lt;ShahmatkaKsCell
+                  {...cell}
+                  onClick={cell.empty ? undefined : () =&gt; setLog(`Открыли бы процентовку: ${where}`)}
+                  details={details[key]}
+                  detailsLoading={loading[key]}
+                  onDetailsOpen={() =&gt; load(key, cell, row.seed + i)}
+                /&gt;
+              );
+            }}
+          /&gt;
+        &lt;/div&gt;
+        &lt;p style={{ margin: &#39;12px 0 0&#39;, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;var(--text-grey-secondary)&#39; }}&gt;{log}&lt;/p&gt;
+      &lt;/Surface&gt;
     &lt;/div&gt;
-  ),
+  );
+}
+
+export const Example: Story = {
+  name: &#39;Экран акта&#39;,
+  render: () =&gt; &lt;Screen /&gt;,
 };
 </code></pre></div>
     </div>
@@ -13665,45 +15041,270 @@ export const MiniTable: Story = {
                 <div class="row">
                   <span class="ex-name">Imports</span>
                 </div>
-                <pre><code>import { Fragment } from 'react';
-import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, ShahmatkaWorkRow } from 'praktis-ui-kit';</code></pre>
+                <pre><code>import { BubbleTabs, ShahmatkaKsCell, ShahmatkaTable, Surface } from 'praktis-ui-kit';</code></pre>
               </div>
           
           
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">Mini Table</span>
+                <span class="ex-name">Экран акта</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const MiniTable = () =&gt; (
-  &lt;div
-    style={{
-      display: &#39;grid&#39;,
-      gridTemplateColumns: `300px repeat(${locations.length}, 98px)`,
-      gap: 4,
-    }}
-  &gt;
-    &lt;ShahmatkaTableCorner /&gt;
-    {locations.map((label) =&gt; (
-      &lt;ShahmatkaLocationHeader key={label} label={label} /&gt;
-    ))}
+              <pre><code>const Example = () =&gt; &lt;Screen /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Example">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> Example</h2>
+      <div class="badges">
+        <label for="c-error-3-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-3-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-3-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Shahmatka/ShahmatkaExample.stories.tsx">ui-kit-shahmatka-example · ./src/components/Shahmatka/ShahmatkaExample.stories.tsx</div>
+    
+    
+    
+  </div>
 
-    {rows.map((row) =&gt; (
-      &lt;Fragment key={row.title}&gt;
-        &lt;ShahmatkaWorkRow contractor={row.contractor} title={row.title} /&gt;
-        {row.cells.map((cell, i) =&gt; (
-          &lt;ShahmatkaCell
-            key={locations[i]}
-            {...cell}
-            onClick={() =&gt; console.log(&#39;open act details:&#39;, row.title, locations[i])}
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-error-3-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-3-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-3-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  22 | `;
+  23 |
+&gt; 24 | const meta = {
+     | ^
+  25 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Example&#39;,
+  26 |   id: &#39;ui-kit-shahmatka-example&#39;,
+  27 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/components/Shahmatka/ShahmatkaExample.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useState } from &#39;react&#39;;
+import { IconFatAngleArrowDown, IconFatAngleArrowUp } from &#39;../../icons/fat&#39;;
+import { BubbleTabs, type BubbleItem } from &#39;../Bubble/Bubble&#39;;
+import { FunctionButton } from &#39;../FunctionButton/FunctionButton&#39;;
+import { Surface } from &#39;../Surface/Surface&#39;;
+import { ShahmatkaCell, type ShahmatkaCellProps } from &#39;./ShahmatkaCell&#39;;
+import { ShahmatkaLegend } from &#39;./ShahmatkaLegend&#39;;
+import { ShahmatkaTable, type ShahmatkaTableRow } from &#39;./ShahmatkaTable&#39;;
+
+const description = `
+Шахматка **ИД** на экране «Выполненные работы», собранная из частей кита:
+
+- **BubbleTabs** — корпуса и секции (вместо сегментированного переключателя). Секций много — ряд
+  уходит вбок без полосы прокрутки, тянется мышкой (\`overflow=&quot;scroll&quot;\`). Оранжевая точка — в корпусе
+  или секции требуется действие (\`isNew\` + \`newColor=&quot;orange&quot;\`, цвет по правилу Bulb).
+- **FunctionButton** со стрелкой Fat — «Посмотреть легенду», раскрывает **ShahmatkaLegend**.
+- **ShahmatkaTable** + **ShahmatkaCell** — таблица: при прокрутке вбок закреплён список СТК, вниз —
+  шапка локаций. Строки 68.
+
+Данные примерные: при переключении корпуса или секции таблица меняется.
+`;
+
+const meta = {
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Example&#39;,
+  id: &#39;ui-kit-shahmatka-example&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+} satisfies Meta;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+// Оранжевая точка — «требуется действие» (правило Bulb)
+const BUILDINGS: BubbleItem[] = Array.from({ length: 5 }, (_, i) =&gt; ({
+  key: `b${i + 1}`,
+  label: `Корпус ${i + 1}`,
+  isNew: i === 0,
+  newColor: &#39;orange&#39;,
+}));
+const SECTIONS: BubbleItem[] = Array.from({ length: 14 }, (_, i) =&gt; ({
+  key: `s${i + 1}`,
+  label: `Секция ${i + 1}`,
+  isNew: i === 1 || i === 3,
+  newColor: &#39;orange&#39;,
+}));
+
+const LOCATIONS = [
+  &#39;Подвал&#39;,
+  &#39;Этаж 1&#39;,
+  &#39;Котлован&#39;,
+  &#39;Этаж 3&#39;,
+  &#39;Фасад торцевой&#39;,
+  &#39;Этаж 5&#39;,
+  &#39;Фасад лицевой 9&#39;,
+  &#39;Очень длинное тестовое название локации&#39;,
+  ...Array.from({ length: 7 }, (_, i) =&gt; `Этаж ${i + 8}`),
+].map((label) =&gt; ({ key: label, label }));
+
+interface Row extends ShahmatkaTableRow {
+  seed: number;
+}
+
+const ROWS: Row[] = [
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Комплекс монтажных работ благоустройства площадки&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Бетонирование монолитных перекрытий&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Кабели магистральные (стояки) АППЗ&#39;],
+  [&#39;Подрядчик не назначен&#39;, &#39;СТК Комплекс работ по установке оконечного оборудования&#39;],
+  [&#39;Подрядчик не назначен&#39;, &#39;СТК Монтаж приёмо-контрольного оборудования&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Датчики автономные (монтаж закладных)&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Установка оборудования в квартирах&#39;],
+  [&#39;ООО «Ромашка»&#39;, &#39;СТК Монтаж оборудования диспетчерской&#39;],
+].map(([contractor, title], i) =&gt; ({ key: String(i), contractor, title, seed: i * 7 + 3 }));
+
+// Примерные данные: одна и та же ячейка всегда выглядит одинаково для своих корпуса и секции
+const CELLS: ShahmatkaCellProps[] = [
+  { variant: &#39;empty&#39; },
+  { variant: &#39;empty&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;required&#39;, materials: &#39;required&#39;, protocols: &#39;required&#39;, schemes: &#39;required&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;required&#39;, protocols: &#39;done&#39;, schemes: &#39;required&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;done&#39;, materials: &#39;done&#39;, protocols: &#39;done&#39;, schemes: &#39;done&#39; },
+  { variant: &#39;awaiting-signature&#39; },
+  { variant: &#39;awaiting-other-signature&#39; },
+  { variant: &#39;remarks&#39; },
+  { variant: &#39;signed&#39; },
+  { variant: &#39;quadrants&#39;, date: &#39;pending&#39;, materials: &#39;pending&#39;, protocols: &#39;pending&#39;, schemes: &#39;pending&#39; },
+];
+const cellFor = (row: Row, locIndex: number, building: string, section: string): ShahmatkaCellProps =&gt; {
+  const n = row.seed * 31 + locIndex * 17 + building.charCodeAt(1) * 13 + Number(section.slice(1)) * 7;
+  return CELLS[n % CELLS.length];
+};
+
+function Screen() {
+  const [building, setBuilding] = useState(&#39;b1&#39;);
+  const [section, setSection] = useState(&#39;s1&#39;);
+  const [legend, setLegend] = useState(false);
+  const [log, setLog] = useState(&#39;Нажмите на ячейку&#39;);
+
+  return (
+    &lt;div style={{ padding: 24, background: &#39;var(--surface-grey, #f5f8fb)&#39;, borderRadius: 12 }}&gt;
+      &lt;Surface&gt;
+        &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 12 }}&gt;
+          &lt;BubbleTabs items={BUILDINGS} activeKey={building} onChange={setBuilding} aria-label=&quot;Корпус&quot; /&gt;
+          &lt;BubbleTabs items={SECTIONS} activeKey={section} onChange={setSection} overflow=&quot;scroll&quot; aria-label=&quot;Секция&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;div style={{ marginTop: 24 }}&gt;
+          &lt;FunctionButton
+            icon={legend ? &lt;IconFatAngleArrowUp /&gt; : &lt;IconFatAngleArrowDown /&gt;}
+            iconPosition=&quot;end&quot;
+            onClick={() =&gt; setLegend((v) =&gt; !v)}
+            aria-expanded={legend}
+          &gt;
+            {legend ? &#39;Скрыть легенду&#39; : &#39;Посмотреть легенду&#39;}
+          &lt;/FunctionButton&gt;
+          {legend &amp;&amp; (
+            &lt;div style={{ marginTop: 12 }}&gt;
+              &lt;ShahmatkaLegend /&gt;
+            &lt;/div&gt;
+          )}
+        &lt;/div&gt;
+
+        &lt;div style={{ marginTop: 16 }}&gt;
+          &lt;ShahmatkaTable
+            locations={LOCATIONS}
+            rows={ROWS}
+            maxHeight={420}
+            renderCell={(row, loc) =&gt; {
+              const i = LOCATIONS.findIndex((l) =&gt; l.key === loc.key);
+              const cell = cellFor(row, i, building, section);
+              return (
+                &lt;ShahmatkaCell
+                  {...cell}
+                  onClick={() =&gt; setLog(`${BUILDINGS.find((b) =&gt; b.key === building)?.label}, ${SECTIONS.find((s) =&gt; s.key === section)?.label} — «${row.title}», ${loc.label}`)}
+                /&gt;
+              );
+            }}
           /&gt;
-        ))}
-      &lt;/Fragment&gt;
-    ))}
-  &lt;/div&gt;
-);</code></pre>
+        &lt;/div&gt;
+        &lt;p style={{ margin: &#39;12px 0 0&#39;, fontFamily: &#39;Inter, sans-serif&#39;, fontSize: 14, color: &#39;var(--text-grey-secondary)&#39; }}&gt;{log}&lt;/p&gt;
+      &lt;/Surface&gt;
+    &lt;/div&gt;
+  );
+}
+
+export const MiniTable: Story = {
+  name: &#39;Экран «Выполненные работы»&#39;,
+  render: () =&gt; &lt;Screen /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+  BubbleTabs,
+  FunctionButton,
+  IconFatAngleArrowDown,
+  IconFatAngleArrowUp,
+  ShahmatkaCell,
+  ShahmatkaLegend,
+  ShahmatkaTable,
+  Surface,
+} from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Экран «Выполненные работы»</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const MiniTable = () =&gt; &lt;Screen /&gt;;</code></pre>
               
             </div>
         </div>
@@ -13726,9 +15327,9 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Icons</h2>
       <div class="badges">
-        <label for="c-error-2-ui-kit-icons-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-2-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-2-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-error-4-ui-kit-icons-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-4-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-error-4-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -13740,9 +15341,9 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-2-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-2-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-2-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-4-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-4-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-4-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13917,9 +15518,9 @@ export const Fat: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Tokens</h2>
       <div class="badges">
-        <label for="c-error-3-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-3-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-3-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-error-5-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-5-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-5-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -13931,9 +15532,9 @@ export const Fat: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-3-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-3-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-3-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-5-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-5-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-5-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13949,7 +15550,7 @@ export const Fat: Story = {
   103 |
 &gt; 104 | const meta = {
       | ^
-  105 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Tokens&#39;,
+  105 |   title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Tokens&#39;,
   106 |   id: &#39;ui-kit-shahmatka-tokens&#39;,
   107 | } satisfies Meta;
 
@@ -14058,7 +15659,7 @@ function Swatch({ name, kind }: TokenDef) {
 }
 
 const meta = {
-  title: &#39;UI Kit/Продуктовые блоки/Shahmatka/Tokens&#39;,
+  title: &#39;UI Kit/Продуктовые блоки/Shahmatka ID/Tokens&#39;,
   id: &#39;ui-kit-shahmatka-tokens&#39;,
 } satisfies Meta;
 
@@ -14159,9 +15760,9 @@ export const Reference: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-error-4-foundations-typography-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-4-foundations-typography-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-4-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-error-6-foundations-typography-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-6-foundations-typography-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-error-6-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -14173,9 +15774,9 @@ export const Reference: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-4-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-4-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-4-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-6-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-6-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-6-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -14493,9 +16094,9 @@ function SectionHeading({ children }: { children: string }) {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
       <div class="badges">
-        <label for="c-error-5-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-5-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-5-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-error-7-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-7-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-error-7-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -14507,9 +16108,9 @@ function SectionHeading({ children }: { children: string }) {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-5-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-5-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-5-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-7-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-7-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-7-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -14697,9 +16298,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Части</h2>
       <div class="badges">
-        <label for="c-error-6-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-6-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-6-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-error-8-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-8-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-8-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -14711,9 +16312,9 @@ export const Palette: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-6-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-6-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-6-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-8-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-8-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-8-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
