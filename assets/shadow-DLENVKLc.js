@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";function t(e){var t;return e==null||(t=e.getRootNode)==null?void 0:t.call(e)}function n(e){return t(e)instanceof ShadowRoot}function r(e){return n(e)?t(e):null}function i(){return(i=e((()=>{})))()}export{i as n,r as t};

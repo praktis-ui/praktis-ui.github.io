@@ -1,6 +1,28 @@
 {
   "v": 0,
   "components": {
+    "foundations-figma-colors": {
+      "id": "foundations-figma-colors",
+      "name": "ЦветаFigma",
+      "path": "./src/theme/FigmaColors.stories.tsx",
+      "jsDocTags": {},
+      "error": {
+        "name": "No component found",
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  22 | `;\n  23 |\n> 24 | const meta = {\n     | ^\n  25 |   title: 'Foundations/Цвета Figma',\n  26 |   id: 'foundations-figma-colors',\n  27 |   parameters: { layout: 'padded', docs: { description: { component: description } } },\n\n./src/theme/FigmaColors.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useLayoutEffect, useRef, useState } from 'react';\nimport data from './figma-colors.json';\nimport './figma-colors.css';\n\n// Цвета Figma UI Kit «Практис» — все переменные из Figma (коллекции Colors и Palette) с теми же\n// именами, как они называются в коде. Значение каждой — живое, из CSS-переменной: переключите\n// тему ☀️/🌙 в тулбаре — видно, у каких есть тёмное значение.\n\nconst cssName = (name: string) => '--' + name.replace(/с/g, 'c').toLowerCase().replace(/[/\\s]+/g, '-');\n\nconst description = `\nВсе цвета Figma UI Kit «Практис» — CSS-переменные кита **с теми же именами**:\n\\`text/grey-primary\\` в Figma → \\`var(--text-grey-primary)\\` в CSS (и \\`figmaColors.textGreyPrimary\\` в коде).\n\n- **Colors** — смысловые (text, icon, bg, border, button): их и брать в компонентах. Каждый ссылается на\n  цвет палитры — как в Figma.\n- **Palette** — базовые цвета; напрямую — только если смыслового нет.\n- Цвет вручную (\\`#41484a\\`) в компонентах не пишем — только переменной.\n- Обновить из Figma: выгрузить переменные в \\`src/theme/figma-colors.json\\` и \\`npm run figma-colors\\`.\n- Тёмной темы в Figma нет — черновые значения в \\`src/theme/figma-colors.dark.json\\`.\n`;\n\nconst meta = {\n  title: 'Foundations/Цвета Figma',\n  id: 'foundations-figma-colors',\n  parameters: { layout: 'padded', docs: { description: { component: description } } },\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nfunction Swatch({ name, alias }: { name: string; alias?: string }) {\n  const ref = useRef<HTMLDivElement>(null);\n  const [value, setValue] = useState('');\n  // Без массива зависимостей: после смены темы в тулбаре значение перечитывается\n  useLayoutEffect(() => {\n    if (ref.current) setValue(getComputedStyle(ref.current).getPropertyValue(cssName(name)).trim());\n  });\n  const text = name.startsWith('text/');\n  return (\n    <div ref={ref} style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>\n      <span\n        style={{\n          flexShrink: 0,\n          width: 40,\n          height: 40,\n          borderRadius: 6,\n          background: text ? (name.includes('white') ? 'var(--grey-800)' : 'var(--bg-white-page-full)') : `var(${cssName(name)})`,\n          boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.08)',\n          display: 'grid',\n          placeItems: 'center',\n          color: `var(${cssName(name)})`,\n          fontWeight: 600,\n          fontSize: 16,\n        }}\n      >\n        {text ? 'Аа' : ''}\n      </span>\n      <span style={{ display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0, fontSize: 12, lineHeight: 1.2 }}>\n        <span style={{ color: 'var(--text-black-primary)', fontWeight: 500 }}>{name}</span>\n        <code style={{ color: 'var(--text-grey-secondary)' }}>{cssName(name)}</code>\n        <span style={{ color: 'var(--text-black-secondary)' }}>\n          {value}\n          {alias ? ` ← ${alias}` : ''}\n        </span>\n      </span>\n    </div>\n  );\n}\n\nfunction Grid({ items }: { items: { name: string; alias?: string }[] }) {\n  const groups = new Map<string, typeof items>();\n  for (const it of items) {\n    const g = it.name.split('/')[0];\n    groups.set(g, [...(groups.get(g) ?? []), it]);\n  }\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, fontFamily: 'Inter, sans-serif' }}>\n      {[...groups].map(([g, list]) => (\n        <section key={g}>\n          <h3 style={{ margin: '0 0 12px', fontSize: 16, fontWeight: 500, color: 'var(--text-black-primary)' }}>{g}</h3>\n          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12 }}>\n            {list.map((it) => (\n              <Swatch key={it.name} {...it} />\n            ))}\n          </div>\n        </section>\n      ))}\n    </div>\n  );\n}\n\nexport const Colors: Story = {\n  name: 'Colors — смысловые',\n  render: () => <Grid items={data.Colors} />,\n};\n\nexport const Palette: Story = {\n  name: 'Palette — базовые',\n  render: () => <Grid items={data.Palette} />,\n};\n"
+      },
+      "stories": [
+        {
+          "id": "foundations-figma-colors--colors",
+          "name": "Colors — смысловые",
+          "snippet": "const Colors = () => <Grid items={data.Colors} />;"
+        },
+        {
+          "id": "foundations-figma-colors--palette",
+          "name": "Palette — базовые",
+          "snippet": "const Palette = () => <Grid items={data.Palette} />;"
+        }
+      ]
+    },
     "foundations-colors": {
       "id": "foundations-colors",
       "name": "Colors",
@@ -25,13 +47,18 @@
       "jsDocTags": {},
       "error": {
         "name": "No component found",
-        "message": "We could not detect the component from your story file. Specify meta.component.\n  3 | import { iconManifest } from './manifest';\n  4 |\n> 5 | const meta = {\n    | ^\n  6 |   title: 'Foundations/Icons',\n  7 |   id: 'ui-kit-icons',\n  8 |   parameters: {\n\n./src/icons/Icons.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState } from 'react';\nimport { iconManifest } from './manifest';\n\nconst meta = {\n  title: 'Foundations/Icons',\n  id: 'ui-kit-icons',\n  parameters: {\n    layout: 'fullscreen',\n  },\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\n// Клик по плитке копирует имя компонента (например IconAccreditations) в буфер —\n// дальше редактор сам предложит нужный import из src/icons при автодополнении.\nfunction IconGallery() {\n  const [copied, setCopied] = useState<string | null>(null);\n\n  const handleCopy = (name: string) => {\n    navigator.clipboard.writeText(name).catch(() => {});\n    setCopied(name);\n    window.setTimeout(() => setCopied((current) => (current === name ? null : current)), 1200);\n  };\n\n  return (\n    <div style={{ padding: 24 }}>\n      <div\n        style={{\n          display: 'grid',\n          gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',\n          gap: 16,\n        }}\n      >\n        {iconManifest.map(({ name, label, Icon }) => (\n          <button\n            key={name}\n            type=\"button\"\n            onClick={() => handleCopy(name)}\n            title={`Скопировать «${name}»`}\n            style={{\n              display: 'flex',\n              flexDirection: 'column',\n              alignItems: 'center',\n              gap: 8,\n              padding: 12,\n              border: '1px solid rgba(128, 128, 128, 0.2)',\n              borderRadius: 8,\n              background: copied === name ? 'rgba(60, 131, 246, 0.1)' : 'transparent',\n              cursor: 'pointer',\n              font: 'inherit',\n              color: 'inherit',\n            }}\n          >\n            <Icon size={24} />\n            <span\n              style={{\n                fontSize: 11,\n                color: copied === name ? '#3c83f6' : '#888',\n                textAlign: 'center',\n                wordBreak: 'break-word',\n              }}\n            >\n              {copied === name ? 'Скопировано' : label}\n            </span>\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n\n// Полная галерея иконок кита («Белоконь-Анастасия», Stroke, после снятия boolean-обёртки).\n// Иконки наследуют цвет через currentColor — здесь показаны в цвете текста по умолчанию.\nexport const AllIcons: Story = {\n  render: () => <IconGallery />,\n};\n"
+        "message": "We could not detect the component from your story file. Specify meta.component.\n   6 | import type { IconProps } from './types';\n   7 |\n>  8 | const meta = {\n     | ^\n   9 |   title: 'Foundations/Icons',\n  10 |   id: 'ui-kit-icons',\n  11 |   parameters: {\n\n./src/icons/Icons.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState } from 'react';\nimport type { ComponentType } from 'react';\nimport { fatIconManifest } from './fat/manifest';\nimport { iconManifest } from './manifest';\nimport type { IconProps } from './types';\n\nconst meta = {\n  title: 'Foundations/Icons',\n  id: 'ui-kit-icons',\n  parameters: {\n    layout: 'fullscreen',\n  },\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\n// Клик по плитке копирует имя компонента (например IconAccreditations) в буфер —\n// дальше редактор сам предложит нужный import из src/icons при автодополнении.\nfunction IconGallery({ icons }: { icons: { name: string; label: string; Icon: ComponentType<IconProps> }[] }) {\n  const [copied, setCopied] = useState<string | null>(null);\n\n  const handleCopy = (name: string) => {\n    navigator.clipboard.writeText(name).catch(() => {});\n    setCopied(name);\n    window.setTimeout(() => setCopied((current) => (current === name ? null : current)), 1200);\n  };\n\n  return (\n    <div style={{ padding: 24 }}>\n      <div\n        style={{\n          display: 'grid',\n          gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',\n          gap: 16,\n        }}\n      >\n        {icons.map(({ name, label, Icon }) => (\n          <button\n            key={name}\n            type=\"button\"\n            onClick={() => handleCopy(name)}\n            title={`Скопировать «${name}»`}\n            style={{\n              display: 'flex',\n              flexDirection: 'column',\n              alignItems: 'center',\n              gap: 8,\n              padding: 12,\n              border: '1px solid rgba(128, 128, 128, 0.2)',\n              borderRadius: 8,\n              background: copied === name ? 'rgba(60, 131, 246, 0.1)' : 'transparent',\n              cursor: 'pointer',\n              font: 'inherit',\n              color: 'inherit',\n            }}\n          >\n            <Icon size={24} />\n            <span\n              style={{\n                fontSize: 11,\n                color: copied === name ? '#3c83f6' : '#888',\n                textAlign: 'center',\n                wordBreak: 'break-word',\n              }}\n            >\n              {copied === name ? 'Скопировано' : label}\n            </span>\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n}\n\n// Полная галерея иконок кита («Белоконь-Анастасия», Stroke, после снятия boolean-обёртки).\n// Иконки наследуют цвет через currentColor — здесь показаны в цвете текста по умолчанию.\nexport const AllIcons: Story = {\n  name: 'Stroke — контурные',\n  render: () => <IconGallery icons={iconManifest} />,\n};\n\n// Набор Fat (Figma, страница Bold, node 2732:12232) — залитые «жирные» иконки. Импорт — из\n// src/icons/fat. Где какие: стрелки в шевронах (Select, MultiSelect, таблица) и иконки кнопок-ссылок\n// без заливки — Fat; всё остальное — Stroke (docs/ai/01-build-ui.md).\nexport const Fat: Story = {\n  name: 'Fat — залитые (шевроны, кнопки-ссылки)',\n  render: () => <IconGallery icons={fatIconManifest} />,\n};\n"
       },
       "stories": [
         {
           "id": "ui-kit-icons--all-icons",
-          "name": "All Icons",
-          "snippet": "const AllIcons = () => <IconGallery />;"
+          "name": "Stroke — контурные",
+          "snippet": "const AllIcons = () => <IconGallery icons={iconManifest} />;"
+        },
+        {
+          "id": "ui-kit-icons--fat",
+          "name": "Fat — залитые (шевроны, кнопки-ссылки)",
+          "snippet": "const Fat = () => <IconGallery icons={fatIconManifest} />;"
         }
       ]
     },
@@ -595,6 +622,111 @@
         }
       ],
       "import": "import { Button, IconEdit, IconPlus, IconSearch, IconTrash } from 'praktis-ui-kit';"
+    },
+    "ui-kit-drag-handle": {
+      "id": "ui-kit-drag-handle",
+      "name": "DragHandle",
+      "path": "./src/components/DragHandle/DragHandle.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "DragHandle",
+        "definedInFile": "./src/components/DragHandle/DragHandle.tsx",
+        "actualName": "DragHandle",
+        "exportName": "DragHandle",
+        "props": {
+          "ref": {
+            "required": false,
+            "tsType": {
+              "name": "Ref",
+              "elements": [
+                {
+                  "name": "HTMLButtonElement"
+                }
+              ],
+              "raw": "Ref<HTMLButtonElement>"
+            },
+            "description": ""
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "16 | 20",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "16"
+                },
+                {
+                  "name": "literal",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "16 — по макету (таблица), 20 — на карточке объекта.",
+            "defaultValue": {
+              "value": "16",
+              "computed": false
+            }
+          },
+          "tone": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'default' | 'onDark'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'default'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'onDark'"
+                }
+              ]
+            },
+            "description": "onDark — белая, на фото или тёмной подложке.",
+            "defaultValue": {
+              "value": "'default'",
+              "computed": false
+            }
+          },
+          "label": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Подпись для экранного диктора.",
+            "defaultValue": {
+              "value": "'Перетащить'",
+              "computed": false
+            }
+          }
+        },
+        "composes": [
+          "ButtonHTMLAttributes"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-drag-handle--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (args) =>\n  args.tone === 'onDark' ? (\n    <div style={{ padding: 16, borderRadius: 8, background: 'var(--grey-800)' }}>\n      <DragHandle {...args} />\n    </div>\n  ) : (\n    <DragHandle {...args} />\n  );"
+        },
+        {
+          "id": "ui-kit-drag-handle--states",
+          "name": "Состояния",
+          "snippet": "const States = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n    {(['default', 'onDark'] as const).map((tone) => (\n      <div\n        key={tone}\n        style={{\n          display: 'flex',\n          gap: 40,\n          padding: '16px 24px',\n          borderRadius: 8,\n          background: tone === 'onDark' ? 'var(--grey-800)' : 'var(--bg-white-page-full)',\n          boxShadow: tone === 'onDark' ? undefined : 'inset 0 0 0 1px var(--grey-330)',\n        }}\n      >\n        {STATES[tone].map(([name, color, token]) => (\n          <div key={name} style={{ ...cell, color: tone === 'onDark' ? 'var(--text-white-secondary)' : cell.color }}>\n            <DragHandle size={20} tone={tone} style={color ? { color } : undefined} tabIndex={color ? -1 : undefined} />\n            <span>{name}</span>\n            <code style={{ fontSize: 11 }}>{token}</code>\n          </div>\n        ))}\n      </div>\n    ))}\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-drag-handle--sizes",
+          "name": "Размеры и фон",
+          "snippet": "const Sizes = () => (\n  <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>\n    <div style={cell}>\n      <DragHandle size={16} />\n      16\n    </div>\n    <div style={cell}>\n      <DragHandle size={20} />\n      20\n    </div>\n    <div style={{ ...cell, padding: 16, borderRadius: 8, background: 'var(--grey-800)', color: 'var(--text-white-primary)' }}>\n      <DragHandle size={20} tone=\"onDark\" />\n      onDark 20\n    </div>\n  </div>\n);"
+        }
+      ],
+      "import": "import { DragHandle } from 'praktis-ui-kit';"
     },
     "ui-kit-functionbutton": {
       "id": "ui-kit-functionbutton",
@@ -2080,6 +2212,70 @@
       ],
       "import": "import { Select } from 'praktis-ui-kit';"
     },
+    "ui-kit-switch": {
+      "id": "ui-kit-switch",
+      "name": "Switch",
+      "path": "./src/components/Switch/Switch.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Switch",
+        "definedInFile": "./src/components/Switch/Switch.tsx",
+        "actualName": "Switch",
+        "exportName": "Switch",
+        "props": {
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'l' | 'm'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'l'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                }
+              ]
+            },
+            "description": "l — 36×20 (по умолчанию), m — 30×16.",
+            "defaultValue": {
+              "value": "'l'",
+              "computed": false
+            }
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-switch--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live size=\"l\" disabled={false} loading={false} />;"
+        },
+        {
+          "id": "ui-kit-switch--states",
+          "name": "Все варианты",
+          "snippet": "const States = () => (\n  <div style={{ display: 'grid', gridTemplateColumns: '80px repeat(4, 120px)', gap: '12px 16px', alignItems: 'center' }}>\n    <span />\n    {['включён', 'выключен', 'включён, недоступен', 'выключен, недоступен'].map((t) => (\n      <span key={t} style={head}>\n        {t}\n      </span>\n    ))}\n    {(['l', 'm'] as SwitchSize[]).flatMap((size) => [\n      <span key={size} style={head}>\n        {size.toUpperCase()}\n      </span>,\n      cell(<Switch size={size} defaultChecked aria-label=\"Пример\" />, size + '1'),\n      cell(<Switch size={size} aria-label=\"Пример\" />, size + '2'),\n      cell(<Switch size={size} defaultChecked disabled aria-label=\"Пример\" />, size + '3'),\n      cell(<Switch size={size} disabled aria-label=\"Пример\" />, size + '4'),\n    ])}\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-switch--with-label",
+          "name": "С подписью",
+          "snippet": "const WithLabel = () => <WithLabelDemo />;"
+        },
+        {
+          "id": "ui-kit-switch--loading",
+          "name": "Загрузка",
+          "snippet": "const Loading = () => <LoadingDemo />;"
+        }
+      ],
+      "import": "import { Checkbox, Radio, Switch } from 'praktis-ui-kit';"
+    },
     "ui-kit-bubble": {
       "id": "ui-kit-bubble",
       "name": "Bubble",
@@ -2814,7 +3010,7 @@
       "jsDocTags": {},
       "error": {
         "name": "No component found",
-        "message": "We could not detect the component from your story file. Specify meta.component.\n  19 | `;\n  20 |\n> 21 | const meta = {\n     | ^\n  22 |   title: 'UI Kit/Навигация/Header/Части',\n  23 |   id: 'ui-kit-header-части',\n  24 |   parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n\n./src/components/Header/HeaderParts.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState, type ReactNode } from 'react';\nimport { IconBookmark, IconBuilding05 } from '../../icons';\nimport { ACCOUNT_MENU } from './headerStoryData';\nimport { CloudIcon, HeaderAccount, HeaderAppButton, HeaderButton, HeaderLogo, HeaderMenuItem, TasksIcon } from './HeaderParts';\n\nconst componentDescription = `\nМолекулы шапки — живут только в ней. Источник — Figma UI Kit «Практис», node 986:1967.\n\n- **HeaderMenuItem** — пункт меню: иконка 20 + текст 16; наведение — голубая полоска снизу,\n  текущий раздел — синяя; точка-метка — **Bulb** кита: зелёная «есть новое», красная «нужно действие»;\n  счётчик (\\`count\\`) — тот же Bulb, синий, после текста (как в боковом меню).\n- **HeaderButton** — уведомления, задачи, «Загрузки», доп. кнопки: 49×49, с подписью — шире;\n  счётчик зелёный или красный; у «Загрузок» — крутилка и ошибка.\n- **HeaderAppButton** — единственная круглая кнопка, привлекает внимание, открывает спецмодалку.\n- **HeaderAccount** — кабинет: аватар, имя, организация; открывает меню (DropdownMenu кита).\n  Узкий вариант (планшет) — только аватар.\n- **HeaderLogo** — Praktis, Praktis RU, Setl Group, Айкона; в тёмной теме сама берёт тёмную версию из макета.\n`;\n\nconst meta = {\n  title: 'UI Kit/Навигация/Header/Части',\n  id: 'ui-kit-header-части',\n  parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n  // Меню кабинета — выпадающий список: в Docs без запаса высоты он обрезается (гайд 2)\n  decorators: [(Story) => <div style={{ minHeight: 340 }}><Story /></div>],\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nconst Row = ({ children, label }: { children: ReactNode; label: string }) => (\n  <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr', alignItems: 'center', gap: 16, fontFamily: 'Inter, sans-serif' }}>\n    <span style={{ fontSize: 12, color: '#7e7e7e' }}>{label}</span>\n    <div style={{ display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>{children}</div>\n  </div>\n);\n\nexport const MenuItems: Story = {\n  name: 'HeaderMenuItem',\n  parameters: { docs: { description: { story: 'Клик — пункт становится текущим. Наведение — голубая полоска.' } } },\n  render: () => <MenuDemo />,\n};\n\nfunction MenuDemo() {\n  const [active, setActive] = useState('objects');\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>\n      <Row label=\"клик — текущий\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Объекты\" active={active === 'objects'} onClick={() => setActive('objects')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Задачи\" active={active === 'tasks'} onClick={() => setActive('tasks')} />\n        <HeaderMenuItem label=\"Без иконки\" active={active === 'plain'} onClick={() => setActive('plain')} />\n      </Row>\n      <Row label=\"точки-метки\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Есть новое\" dot=\"green\" active={active === 'new'} onClick={() => setActive('new')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Нужно действие\" dot=\"red\" active={active === 'todo'} onClick={() => setActive('todo')} />\n      </Row>\n      <Row label=\"счётчик\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Заявки\" count={3} active={active === 'req'} onClick={() => setActive('req')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Тендеры\" count=\"99+\" active={active === 'tenders'} onClick={() => setActive('tenders')} />\n      </Row>\n    </div>\n  );\n}\n\nexport const Buttons: Story = {\n  name: 'HeaderButton',\n  parameters: { docs: { description: { story: 'Пустая, со счётчиком «есть новое» (зелёный) и «важное» (красный); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.' } } },\n  render: () => <ButtonsDemo />,\n};\n\nfunction ButtonsDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  const click = (s: string) => () => setLast(s);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n      <Row label=\"без подписи\">\n        <HeaderButton label=\"Уведомления\" onClick={click('пустая')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" onClick={click('счётчик зелёный')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" countColor=\"red\" onClick={click('счётчик красный')} />\n      </Row>\n      <Row label=\"с подписью\">\n        <HeaderButton label=\"Уведомления\" showLabel onClick={click('пустая с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" onClick={click('зелёный с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" countColor=\"red\" onClick={click('красный с подписью')} />\n      </Row>\n      <Row label=\"задачи\">\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} onClick={click('задачи')} />\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} count=\"3\" onClick={click('задачи со счётчиком')} />\n        <HeaderButton label=\"Задачи\" showLabel icon={<TasksIcon />} count=\"3\" onClick={click('задачи с подписью')} />\n      </Row>\n      <Row label=\"«Загрузки»\">\n        <HeaderButton label=\"Загрузки\" icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка без подписи')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"error\" onClick={click('ошибка загрузки')} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif', minHeight: 15 }}>{last ? `Нажато: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const AppButton: Story = {\n  name: 'HeaderAppButton',\n  parameters: { docs: { description: { story: 'Наведение и нажатие — голубой темнее. Неактивная — серая.' } } },\n  render: () => (\n    <Row label=\"обычная / неактивная\">\n      <HeaderAppButton label=\"Все сервисы\" />\n      <HeaderAppButton label=\"Все сервисы\" disabled />\n    </Row>\n  ),\n};\n\nexport const Account: Story = {\n  name: 'HeaderAccount',\n  parameters: { docs: { description: { story: 'Клик — меню кабинета. Длинное имя обрезается отточием. Узкий вариант — только аватар.' } } },\n  render: () => <AccountDemo />,\n};\n\nfunction AccountDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: 360 }}>\n      <Row label=\"обычный / длинное имя / узкий\">\n        <HeaderAccount name=\"Иванов Антон\" job=\"ООО “Сетл Тех”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Константинопольский Константин\" job=\"ООО “Охушки эти воробушки”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Иванов Антон\" compact menu={ACCOUNT_MENU} onMenuClick={setLast} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif' }}>{last ? `Выбрано в меню: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const Logos: Story = {\n  name: 'HeaderLogo',\n  parameters: { docs: { description: { story: 'Переключи тему в тулбаре — логотипы сменятся на тёмную версию.' } } },\n  render: () => (\n    <Row label=\"praktis / praktis-ru / setl-group / icona\">\n      <HeaderLogo type=\"praktis\" />\n      <HeaderLogo type=\"praktis-ru\" />\n      <HeaderLogo type=\"setl-group\" />\n      <HeaderLogo type=\"icona\" />\n    </Row>\n  ),\n};\n"
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  20 | `;\n  21 |\n> 22 | const meta = {\n     | ^\n  23 |   title: 'UI Kit/Навигация/Header/Части',\n  24 |   id: 'ui-kit-header-части',\n  25 |   parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n\n./src/components/Header/HeaderParts.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { useState, type ReactNode } from 'react';\nimport { IconBookmark, IconBuilding05 } from '../../icons';\nimport { ACCOUNT_MENU } from './headerStoryData';\nimport { CloudIcon, HeaderAccount, HeaderAppButton, HeaderButton, HeaderLogo, HeaderMenuItem, TasksIcon } from './HeaderParts';\n\nconst componentDescription = `\nМолекулы шапки — живут только в ней. Источник — Figma UI Kit «Практис», node 986:1967.\n\n- **HeaderMenuItem** — пункт меню: иконка 20 + текст 16; наведение — голубая полоска снизу,\n  текущий раздел — синяя; точка-метка — **Bulb** кита, цвет по смыслу: зелёная — новое, оранжевая — требуется действие,\n  красная — ошибка, синяя — изменения;\n  счётчик (\\`count\\`) — тот же Bulb, синий, после текста (как в боковом меню).\n- **HeaderButton** — уведомления, задачи, «Загрузки», доп. кнопки: 49×49, с подписью — шире;\n  счётчик — цвет по смыслу, как у точки (зелёный — новое, оранжевый — требуется действие); у «Загрузок» — крутилка и ошибка.\n- **HeaderAppButton** — единственная круглая кнопка, привлекает внимание, открывает спецмодалку.\n- **HeaderAccount** — кабинет: аватар, имя, организация; открывает меню (DropdownMenu кита).\n  Узкий вариант (планшет) — только аватар.\n- **HeaderLogo** — Praktis, Praktis RU, Setl Group, Айкона; в тёмной теме сама берёт тёмную версию из макета.\n`;\n\nconst meta = {\n  title: 'UI Kit/Навигация/Header/Части',\n  id: 'ui-kit-header-части',\n  parameters: { layout: 'padded', docs: { description: { component: componentDescription }, story: { height: '400px' } } },\n  // Меню кабинета — выпадающий список: в Docs без запаса высоты он обрезается (гайд 2)\n  decorators: [(Story) => <div style={{ minHeight: 340 }}><Story /></div>],\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nconst Row = ({ children, label }: { children: ReactNode; label: string }) => (\n  <div style={{ display: 'grid', gridTemplateColumns: '160px 1fr', alignItems: 'center', gap: 16, fontFamily: 'Inter, sans-serif' }}>\n    <span style={{ fontSize: 12, color: '#7e7e7e' }}>{label}</span>\n    <div style={{ display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>{children}</div>\n  </div>\n);\n\nexport const MenuItems: Story = {\n  name: 'HeaderMenuItem',\n  parameters: { docs: { description: { story: 'Клик — пункт становится текущим. Наведение — голубая полоска.' } } },\n  render: () => <MenuDemo />,\n};\n\nfunction MenuDemo() {\n  const [active, setActive] = useState('objects');\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>\n      <Row label=\"клик — текущий\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Объекты\" active={active === 'objects'} onClick={() => setActive('objects')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Задачи\" active={active === 'tasks'} onClick={() => setActive('tasks')} />\n        <HeaderMenuItem label=\"Без иконки\" active={active === 'plain'} onClick={() => setActive('plain')} />\n      </Row>\n      <Row label=\"точки-метки\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Есть новое\" dot=\"green\" active={active === 'new'} onClick={() => setActive('new')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Нужно действие\" dot=\"orange\" active={active === 'todo'} onClick={() => setActive('todo')} />\n      </Row>\n      <Row label=\"счётчик\">\n        <HeaderMenuItem icon={<IconBuilding05 />} label=\"Заявки\" count={3} active={active === 'req'} onClick={() => setActive('req')} />\n        <HeaderMenuItem icon={<IconBookmark />} label=\"Тендеры\" count=\"99+\" active={active === 'tenders'} onClick={() => setActive('tenders')} />\n      </Row>\n    </div>\n  );\n}\n\nexport const Buttons: Story = {\n  name: 'HeaderButton',\n  parameters: { docs: { description: { story: 'Пустая, со счётчиком «есть новое» (зелёный) и «требуется действие» (оранжевый); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.' } } },\n  render: () => <ButtonsDemo />,\n};\n\nfunction ButtonsDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  const click = (s: string) => () => setLast(s);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>\n      <Row label=\"без подписи\">\n        <HeaderButton label=\"Уведомления\" onClick={click('пустая')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" onClick={click('счётчик зелёный')} />\n        <HeaderButton label=\"Уведомления\" count=\"99+\" countColor=\"orange\" onClick={click('счётчик оранжевый')} />\n      </Row>\n      <Row label=\"с подписью\">\n        <HeaderButton label=\"Уведомления\" showLabel onClick={click('пустая с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" onClick={click('зелёный с подписью')} />\n        <HeaderButton label=\"Уведомления\" showLabel count=\"99+\" countColor=\"orange\" onClick={click('оранжевый с подписью')} />\n      </Row>\n      <Row label=\"задачи\">\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} onClick={click('задачи')} />\n        <HeaderButton label=\"Задачи\" icon={<TasksIcon />} count=\"3\" onClick={click('задачи со счётчиком')} />\n        <HeaderButton label=\"Задачи\" showLabel icon={<TasksIcon />} count=\"3\" onClick={click('задачи с подписью')} />\n      </Row>\n      <Row label=\"«Загрузки»\">\n        <HeaderButton label=\"Загрузки\" icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка без подписи')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"loading\" onClick={click('загрузка')} />\n        <HeaderButton label=\"Загрузки\" showLabel icon={<CloudIcon />} status=\"error\" onClick={click('ошибка загрузки')} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif', minHeight: 15 }}>{last ? `Нажато: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const AppButton: Story = {\n  name: 'HeaderAppButton',\n  parameters: { docs: { description: { story: 'Наведение и нажатие — голубой темнее. Неактивная — серая.' } } },\n  render: () => (\n    <Row label=\"обычная / неактивная\">\n      <HeaderAppButton label=\"Все сервисы\" />\n      <HeaderAppButton label=\"Все сервисы\" disabled />\n    </Row>\n  ),\n};\n\nexport const Account: Story = {\n  name: 'HeaderAccount',\n  parameters: { docs: { description: { story: 'Клик — меню кабинета. Длинное имя обрезается отточием. Узкий вариант — только аватар.' } } },\n  render: () => <AccountDemo />,\n};\n\nfunction AccountDemo() {\n  const [last, setLast] = useState<string | null>(null);\n  return (\n    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, minHeight: 360 }}>\n      <Row label=\"обычный / длинное имя / узкий\">\n        <HeaderAccount name=\"Иванов Антон\" job=\"ООО “Сетл Тех”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Константинопольский Константин\" job=\"ООО “Охушки эти воробушки”\" menu={ACCOUNT_MENU} onMenuClick={setLast} />\n        <HeaderAccount name=\"Иванов Антон\" compact menu={ACCOUNT_MENU} onMenuClick={setLast} />\n      </Row>\n      <span style={{ fontSize: 12, color: '#7e7e7e', fontFamily: 'Inter, sans-serif' }}>{last ? `Выбрано в меню: ${last}` : ' '}</span>\n    </div>\n  );\n}\n\nexport const Logos: Story = {\n  name: 'HeaderLogo',\n  parameters: { docs: { description: { story: 'Переключи тему в тулбаре — логотипы сменятся на тёмную версию.' } } },\n  render: () => (\n    <Row label=\"praktis / praktis-ru / setl-group / icona\">\n      <HeaderLogo type=\"praktis\" />\n      <HeaderLogo type=\"praktis-ru\" />\n      <HeaderLogo type=\"setl-group\" />\n      <HeaderLogo type=\"icona\" />\n    </Row>\n  ),\n};\n"
       },
       "stories": [
         {
@@ -3624,6 +3820,197 @@
       ],
       "import": "import { Bulb, Button, IconEye } from 'praktis-ui-kit';"
     },
+    "ui-kit-stackedbar": {
+      "id": "ui-kit-stackedbar",
+      "name": "StackedBar",
+      "path": "./src/components/StackedBar/StackedBar.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "StackedBar",
+        "definedInFile": "./src/components/StackedBar/StackedBar.tsx",
+        "actualName": "StackedBar",
+        "exportName": "StackedBar",
+        "props": {
+          "segments": {
+            "required": true,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "StackedBarSegment"
+                }
+              ],
+              "raw": "StackedBarSegment[]"
+            },
+            "description": ""
+          },
+          "total": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Всего. Больше суммы сегментов — справа остаток. По умолчанию — сумма."
+          },
+          "showCount": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Число в центре сегмента.",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "legend": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Легенда под полосой — у сегментов с `label`.",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          }
+        },
+        "composes": [
+          "HTMLAttributes"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-stackedbar--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (a) => (\n  <Page>\n    <StackedBar segments={statuses(a as Args)} total={(a as Args).total || undefined} showCount={(a as Args).showCount} legend={(a as Args).legend} />\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-stackedbar--colors",
+          "name": "Цвета сегментов",
+          "snippet": "const Colors = () => (\n  <Page>\n    <div style={{ display: 'grid', gap: 16 }}>\n      <StackedBar legend={false} segments={[{ value: 12, color: 'info', label: 'info — На согласовании' }]} />\n      <StackedBar legend={false} segments={[{ value: 8, color: 'success', label: 'success — Согласовано' }]} />\n      <StackedBar legend={false} segments={[{ value: 5, color: 'warning', label: 'warning — На доработке' }]} />\n      <StackedBar legend={false} segments={[{ value: 3, color: 'danger', label: 'danger — Просрочено' }]} />\n      <StackedBar legend={false} segments={[{ value: 16, color: 'neutral', label: 'neutral — В работе' }]} />\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-stackedbar--remaining",
+          "name": "С остатком",
+          "snippet": "const Remaining = () => (\n  <div style={{ padding: 24, background: 'var(--surface-grey, #f5f8fb)', borderRadius: 12, display: 'grid', gap: 16 }}>\n    <Surface>\n      <StackedBar legend={false} showCount={false} segments={[{ value: 28, color: 'success', label: 'Согласовано' }]} total={36} />\n    </Surface>\n    <Surface>\n      <Surface>\n        <StackedBar legend={false} showCount={false} segments={[{ value: 28, color: 'success', label: 'Согласовано' }]} total={36} />\n      </Surface>\n    </Surface>\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-stackedbar--edge",
+          "name": "Узкие сегменты и длинная легенда",
+          "snippet": "const Edge = () => (\n  <Page>\n    <div style={{ maxWidth: 360 }}>\n      <StackedBar\n        segments={[\n          { value: 120, color: 'neutral', label: 'В работе у подрядчика' },\n          { value: 3, color: 'info', label: 'На повторном согласовании в экспертизе' },\n          { value: 1, color: 'danger', label: 'Просрочено' },\n          { value: 40, color: 'success', label: 'Согласовано' },\n        ]}\n      />\n    </div>\n  </Page>\n);"
+        }
+      ],
+      "import": "import { StackedBar, Surface } from 'praktis-ui-kit';"
+    },
+    "ui-kit-statistic": {
+      "id": "ui-kit-statistic",
+      "name": "Statistic",
+      "path": "./src/components/Statistic/Statistic.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Statistic",
+        "definedInFile": "./src/components/Statistic/Statistic.tsx",
+        "actualName": "Statistic",
+        "exportName": "Statistic",
+        "props": {
+          "tone": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'default' | 'danger' | 'warning' | 'success' | 'accent'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'default'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'danger'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'warning'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'success'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'accent'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'default'",
+              "computed": false
+            }
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": "mob — значение 15 (Mobile/H5).",
+            "defaultValue": {
+              "value": "'web'",
+              "computed": false
+            }
+          },
+          "groupSeparator": {
+            "defaultValue": {
+              "value": "' '",
+              "computed": false
+            },
+            "required": false
+          },
+          "decimalSeparator": {
+            "defaultValue": {
+              "value": "','",
+              "computed": false
+            },
+            "required": false
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-statistic--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (a: Partial<Args>) => (\n  <Box>\n    <Statistic title={a.title} value={a.value} tone={a.tone} device={a.device} suffix={/^\\d+$/.test(a.value ?? '') ? '₽' : undefined} />\n  </Box>\n);"
+        },
+        {
+          "id": "ui-kit-statistic--tones",
+          "name": "Цвета значения",
+          "snippet": "const Tones = () => (\n  <div style={{ display: 'flex', gap: 24 }}>\n    {TONES.map((tone) => (\n      <Box key={tone}>\n        <Statistic tone={tone} title={TONE_TEXT[tone][0]} value={TONE_TEXT[tone][1]} />\n      </Box>\n    ))}\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-statistic--kinds",
+          "name": "Числа, длинный текст, телефон, не текст",
+          "snippet": "const Kinds = () => (\n  <div style={{ display: 'flex', gap: 24 }}>\n    <Box>\n      <Statistic title=\"АВР согласовано\" value={12676938080} suffix=\"₽\" />\n    </Box>\n    <Box>\n      <Statistic title=\"Тех. заказчик\" value=\"ООО «Строительная компания Северо-Запад»\" />\n    </Box>\n    <Box>\n      <Statistic title=\"Остаток по договорам\" value={938080} suffix=\"₽\" device=\"mob\" />\n    </Box>\n    <Box>\n      <Statistic title=\"Проверка\" formatter={() => <Tag status=\"success\">Принято</Tag>} />\n    </Box>\n  </div>\n);"
+        }
+      ],
+      "import": "import { Statistic, Tag } from 'praktis-ui-kit';"
+    },
     "ui-kit-table-table": {
       "id": "ui-kit-table-table",
       "name": "Table",
@@ -3738,6 +4125,34 @@
             },
             "description": "«Сбросить» в плашке «ничего не найдено» — очистить поиск. Нет — плашка без кнопки."
           },
+          "onRowsReorder": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(rows: T[]) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "T"
+                        }
+                      ],
+                      "raw": "T[]"
+                    },
+                    "name": "rows"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Строки переставляются: слева колонка с ручкой (DragHandle, Figma 7373:3773), тянуть мышью,\nпальцем или с клавиатуры (Tab до ручки, пробел, стрелки, пробел). Возвращает строки в новом\nпорядке. Для дерева не включается."
+          },
           "emptyState": {
             "required": false,
             "tsType": {
@@ -3787,6 +4202,11 @@
           "id": "ui-kit-table-table--editable-cells",
           "name": "Редактирование по клику",
           "snippet": "const EditableCells = () => <EditableDemo />;"
+        },
+        {
+          "id": "ui-kit-table-table--rows-reorder",
+          "name": "Перестановка строк",
+          "snippet": "const RowsReorder = () => (\n  <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>\n    <ReorderDemo />\n    <ReorderDemo size=\"small\" withSelection />\n  </div>\n);"
         }
       ],
       "import": "import { IconButton, IconTrash, Table, TableCell, TableTags, Tag } from 'praktis-ui-kit';"
@@ -4520,6 +4940,970 @@
       ],
       "import": "import { Tag, TextLine, TextList } from 'praktis-ui-kit';"
     },
+    "ui-kit-card": {
+      "id": "ui-kit-card",
+      "name": "Card",
+      "path": "./src/components/Card/Card.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Card",
+        "definedInFile": "./src/components/Card/Card.tsx",
+        "actualName": "Card",
+        "exportName": "Card",
+        "props": {
+          "fill": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'solid' | 'outline'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'solid'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'outline'"
+                }
+              ]
+            },
+            "description": "solid — подложка: цвет противоположен фону под ней (Surface).\noutline — без заливки, с тонкой обводкой border/table-separator (как у снятого замечания).",
+            "defaultValue": {
+              "value": "'solid'",
+              "computed": false
+            }
+          },
+          "onClick": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(e: MouseEvent<HTMLElement>) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "MouseEvent",
+                      "elements": [
+                        {
+                          "name": "HTMLElement"
+                        }
+                      ],
+                      "raw": "MouseEvent<HTMLElement>"
+                    },
+                    "name": "e"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Нажатие на карточку. Есть onClick или href — карточка кликабельная: ховер, нажатие, фокус."
+          },
+          "href": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Карточка-ссылка."
+          },
+          "selected": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Выбрана / активна (например, её место сейчас открыто в документе).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "actionLabel": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Что сделает нажатие — для экранного диктора. Обязательно у кликабельной карточки."
+          },
+          "level": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "1 | 2 | 3",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "1"
+                },
+                {
+                  "name": "literal",
+                  "value": "2"
+                },
+                {
+                  "name": "literal",
+                  "value": "3"
+                }
+              ]
+            },
+            "description": "Уровень вложенности подложки (скругление 20 / 12 / 6). По умолчанию — по вложенности."
+          },
+          "on": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'grey' | 'white'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'grey'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'white'"
+                }
+              ]
+            },
+            "description": "На каком фоне лежит (как у Surface): цвет карточки — противоположный. По умолчанию — по вложенности."
+          },
+          "padding": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "string | number",
+              "elements": [
+                {
+                  "name": "string"
+                },
+                {
+                  "name": "number"
+                }
+              ]
+            },
+            "description": "Отступ внутри, CSS. По умолчанию — по уровню Surface."
+          },
+          "as": {
+            "required": false,
+            "tsType": {
+              "name": "ElementType"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'article'",
+              "computed": false
+            }
+          },
+          "forceState": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'hover' | 'active' | 'focus'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'hover'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'active'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'focus'"
+                }
+              ]
+            },
+            "description": "Принудительное состояние — только для витрины, где все состояния стоят рядом."
+          },
+          "tags": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Облако тегов / статусов наверху — Tag кита."
+          },
+          "date": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Дата мелко справа в строке тегов."
+          },
+          "heading": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Заголовок карточки — на всю строку, переносится, не обрезается."
+          },
+          "headingLevel": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "3 | 4 | 5",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "3"
+                },
+                {
+                  "name": "literal",
+                  "value": "4"
+                },
+                {
+                  "name": "literal",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "Уровень заголовка: 3 — 20 (по умолчанию), 4 — 18, 5 — 16.",
+            "defaultValue": {
+              "value": "3",
+              "computed": false
+            }
+          },
+          "description": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Пояснение под заголовком."
+          },
+          "buttons": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Кнопки внизу — Button кита; основное действие — primary, последним."
+          },
+          "children": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Содержимое (между пояснением и кнопками)."
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-card--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <OnBackgrounds>\n    <Card\n        heading=\"Договоры объекта\"\n        description=\"Действующие договоры и дополнительные соглашения по объекту «Чистое небо».\"\n        date=\"28.09.2026\"\n        headingLevel={3}\n        withTags\n        withButtons\n        withContent\n        clickable={false}\n        tags={withTags ? tags : undefined}\n        buttons={withButtons ? buttons : undefined}\n        onClick={clickable ? () => {} : undefined}\n        actionLabel={clickable ? 'Открыть раздел' : undefined}>\n        {withContent ? content : undefined}\n    </Card>\n</OnBackgrounds>;"
+        },
+        {
+          "id": "ui-kit-card--structure",
+          "name": "Структура: части по желанию",
+          "snippet": "const Structure = () => (\n  <OnBackgrounds>\n    <Card\n      tags={tags}\n      date=\"28.09.2026\"\n      heading=\"Договоры объекта «Многоквартирный дом со встроенными помещениями, корпус 1, очередь 7, Санкт-Петербург»\"\n      description=\"Действующие договоры и дополнительные соглашения по объекту.\"\n      buttons={buttons}\n    >\n      {content}\n    </Card>\n    <Card heading=\"Только заголовок и кнопки\" buttons={<Button variant=\"primary\">Добавить</Button>} />\n    <Card tags={<Tag status=\"processing\">В работе</Tag>} heading=\"Теги и заголовок, заголовок H5\" headingLevel={5} />\n    <Card heading=\"Заголовок и пояснение\" description=\"Без тегов, без содержимого и без кнопок.\" />\n  </OnBackgrounds>\n);"
+        },
+        {
+          "id": "ui-kit-card--states",
+          "name": "Кликабельная: состояния",
+          "snippet": "const States = () => (\n  <OnBackgrounds>\n    {([undefined, 'hover', 'active', 'focus'] as const).map((force) => (\n      <Card\n        key={force ?? 'default'}\n        onClick={() => {}}\n        actionLabel=\"Открыть раздел\"\n        forceState={force}\n        tags={<Tag status=\"success\">Подписан</Tag>}\n        heading={force === undefined ? 'Обычная' : force === 'hover' ? 'Ховер' : force === 'active' ? 'Нажатие' : 'Фокус с клавиатуры'}\n        buttons={<Button variant=\"secondary\">Выгрузить</Button>}\n      />\n    ))}\n    <Card onClick={() => {}} actionLabel=\"Открыть раздел\" selected tags={<Tag status=\"success\">Подписан</Tag>} heading=\"Выбрана\" buttons={<Button variant=\"secondary\">Выгрузить</Button>} />\n  </OnBackgrounds>\n);"
+        }
+      ],
+      "import": "import { Button, Card, Surface, Tag } from 'praktis-ui-kit';"
+    },
+    "ui-kit-entitycard": {
+      "id": "ui-kit-entitycard",
+      "name": "EntityCard",
+      "path": "./src/components/EntityCard/EntityCard.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "EntityCard",
+        "definedInFile": "./src/components/EntityCard/EntityCard.tsx",
+        "actualName": "EntityCard",
+        "exportName": "EntityCard",
+        "props": {
+          "title": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "description": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Строка под заголовком: что это."
+          },
+          "meta": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Мелкая строка после описания: «Изменён 5 мин назад»."
+          },
+          "icon": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Иконка сущности в подложке слева сверху."
+          },
+          "status": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "object",
+              "raw": "{ label: ReactNode; status: TagStatus; icon?: boolean }",
+              "signature": {
+                "properties": [
+                  {
+                    "key": "label",
+                    "value": {
+                      "name": "ReactNode",
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "status",
+                    "value": {
+                      "name": "union",
+                      "raw": "'default' | 'success' | 'error' | 'processing' | 'warning'",
+                      "elements": [
+                        {
+                          "name": "literal",
+                          "value": "'default'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'success'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'error'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'processing'"
+                        },
+                        {
+                          "name": "literal",
+                          "value": "'warning'"
+                        }
+                      ],
+                      "required": true
+                    }
+                  },
+                  {
+                    "key": "icon",
+                    "value": {
+                      "name": "boolean",
+                      "required": false
+                    }
+                  }
+                ]
+              }
+            },
+            "description": "Статус справа сверху — Tag."
+          },
+          "actions": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "EntityCardAction"
+                }
+              ],
+              "raw": "EntityCardAction[]"
+            },
+            "description": "Кнопки-иконки справа сверху."
+          },
+          "menu": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "union",
+                  "raw": "DropdownMenuOption | DropdownMenuGroup | DropdownMenuDivider",
+                  "elements": [
+                    {
+                      "name": "DropdownMenuOption"
+                    },
+                    {
+                      "name": "DropdownMenuGroup"
+                    },
+                    {
+                      "name": "DropdownMenuDivider"
+                    }
+                  ]
+                }
+              ],
+              "raw": "DropdownMenuEntry[]"
+            },
+            "description": "Пункты меню «⋮». Нет пунктов — нет кнопки."
+          },
+          "onMenuClick": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(key: string) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "string"
+                    },
+                    "name": "key"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "children": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Показатели — обычно StatCard."
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-entitycard--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (a) => {\n  const Inner = () => {\n    const { log, actions, onMenu } = useLog();\n    return (\n      <Page>\n        <div style={{ maxWidth: 560 }}>\n          <EntityCard\n            {...a}\n            icon={<IconDoc />}\n            status={{ label: 'Действует', status: 'success' }}\n            actions={actions(String(a.title))}\n            menu={MENU}\n            onMenuClick={onMenu(String(a.title))}\n          >\n            <StatCard title=\"Заявок\" value={36} delta={{ value: '+6', period: 'за неделю' }} />\n            <StatCard title=\"Сумма\" value={2480000} unit=\"₽\" />\n          </EntityCard>\n        </div>\n        <Log>{log}</Log>\n      </Page>\n    );\n  };\n  return <Inner />;\n};"
+        },
+        {
+          "id": "ui-kit-entitycard--list",
+          "name": "Список карточек",
+          "snippet": "const List = () => <ListStory />;"
+        },
+        {
+          "id": "ui-kit-entitycard--clickable",
+          "name": "Кликабельная",
+          "snippet": "const Clickable = () => <ClickableStory />;"
+        },
+        {
+          "id": "ui-kit-entitycard--edge",
+          "name": "Длинный текст и без частей",
+          "snippet": "const Edge = () => (\n  <Page>\n    <Grid>\n      <EntityCard\n        icon={<IconDoc />}\n        title=\"Договор генерального подряда на строительство объекта «Многоквартирный жилой дом с подземной автостоянкой» № 2026/145-ГП\"\n        description=\"ЖК «Северный», корпус 3, секции 1–4, включая благоустройство прилегающей территории\"\n        meta=\"Изменён 28 сентября 2026 в 17:40\"\n        status={{ label: 'Действует', status: 'success' }}\n        actions={[{ key: 'view', icon: <IconEye />, label: 'Посмотреть' }]}\n        menu={MENU}\n      >\n        <StatCard title=\"Заявок\" value={36} />\n        <StatCard title=\"Сумма\" value={12676938080} unit=\"₽\" />\n      </EntityCard>\n      <EntityCard title=\"Договор поставки № 12-М\" description=\"ЖК «Северный», корпус 1\" status={{ label: 'Приостановлен', status: 'warning' }}>\n        <StatCard title=\"Заявок\" value={12} />\n        <StatCard title=\"Просрочено\" value={3} tone=\"danger\" />\n      </EntityCard>\n    </Grid>\n  </Page>\n);"
+        }
+      ],
+      "import": "import { EntityCard, IconCopy, IconDoc, IconEdit, IconEye, StatCard } from 'praktis-ui-kit';"
+    },
+    "ui-kit-objectcard": {
+      "id": "ui-kit-objectcard",
+      "name": "ObjectCard",
+      "path": "./src/components/ObjectCard/ObjectCard.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "ObjectCard",
+        "definedInFile": "./src/components/ObjectCard/ObjectCard.tsx",
+        "actualName": "ObjectCard",
+        "exportName": "ObjectCard",
+        "props": {
+          "name": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "address": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Адрес или другая строка под названием."
+          },
+          "stage": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "«Очередь 7» — над названием."
+          },
+          "image": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Фото объекта. Нет или не загрузилось — заглушка."
+          },
+          "status": {
+            "required": false,
+            "tsType": {
+              "name": "Pick",
+              "elements": [
+                {
+                  "name": "ObjectStatusProps"
+                },
+                {
+                  "name": "union",
+                  "raw": "'label' | 'tone' | 'star' | 'starred' | 'onStarChange'",
+                  "elements": [
+                    {
+                      "name": "literal",
+                      "value": "'label'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'tone'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'star'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'starred'"
+                    },
+                    {
+                      "name": "literal",
+                      "value": "'onStarChange'"
+                    }
+                  ]
+                }
+              ],
+              "raw": "Pick<ObjectStatusProps, 'label' | 'tone' | 'star' | 'starred' | 'onStarChange'>"
+            },
+            "description": "Статус слева сверху."
+          },
+          "counters": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "ObjectCardCounter"
+                }
+              ],
+              "raw": "ObjectCardCounter[]"
+            },
+            "description": "Счётчики справа сверху (просмотр): синий — новое, красный — требует действия.",
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            }
+          },
+          "fields": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "ObjectCardField"
+                }
+              ],
+              "raw": "ObjectCardField[]"
+            },
+            "description": "Поля под фото — по два в строке.",
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            }
+          },
+          "mode": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'view' | 'edit'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'view'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'edit'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'view'",
+              "computed": false
+            }
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'web'",
+              "computed": false
+            }
+          },
+          "on": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'grey' | 'white'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'grey'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'white'"
+                }
+              ]
+            },
+            "description": "На каком фоне лежит: на белом карточка серая, на сером — белая. По умолчанию — по вложенности."
+          },
+          "onClick": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Открыть объект. Есть onClick или href — карточка кликабельная."
+          },
+          "href": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          },
+          "actionLabel": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Что сделает нажатие — для экранного диктора. По умолчанию «Открыть объект …» из name."
+          },
+          "onDelete": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Корзина. Есть — кнопка показана."
+          },
+          "actions": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Свои кнопки справа сверху (разные в разных сервисах)."
+          },
+          "draggable": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Ручка перетаскивания (режим редактирования).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "dragHandleProps": {
+            "required": false,
+            "tsType": {
+              "name": "intersection",
+              "raw": "ButtonHTMLAttributes<HTMLButtonElement> & { ref?: Ref<HTMLButtonElement> }",
+              "elements": [
+                {
+                  "name": "ButtonHTMLAttributes",
+                  "elements": [
+                    {
+                      "name": "HTMLButtonElement"
+                    }
+                  ],
+                  "raw": "ButtonHTMLAttributes<HTMLButtonElement>"
+                },
+                {
+                  "name": "signature",
+                  "type": "object",
+                  "raw": "{ ref?: Ref<HTMLButtonElement> }",
+                  "signature": {
+                    "properties": [
+                      {
+                        "key": "ref",
+                        "value": {
+                          "name": "Ref",
+                          "elements": [
+                            {
+                              "name": "HTMLButtonElement"
+                            }
+                          ],
+                          "raw": "Ref<HTMLButtonElement>",
+                          "required": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "description": "Пропы ручки от ObjectCardGrid (обработчики перетаскивания)."
+          },
+          "forceHover": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Принудительное наведение — только для витрины.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          },
+          "style": {
+            "required": false,
+            "tsType": {
+              "name": "CSSProperties"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-objectcard--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live\n    mode=\"view\"\n    device=\"web\"\n    on=\"grey\"\n    name=\"Панорама парк Сосновка. Торговый центр\"\n    address=\"Санкт-Петербург, Пулковское шоссе, дом 99, корпус 4, строение 1\"\n    stage=\"Очередь 7\"\n    statusLabel=\"В работе\"\n    statusTone=\"glass\"\n    withPhoto\n    withStage={false}\n    withCounters\n    withStar={false}\n    withDelete\n    withHandle\n    withFields\n    clickable />;"
+        },
+        {
+          "id": "ui-kit-objectcard--states",
+          "name": "Просмотр и редактирование, наведение",
+          "snippet": "const States = () => (\n  <Page>\n    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 400px)', gap: 24 }}>\n      {(['view', 'edit'] as const).flatMap((mode) =>\n        [false, true].map((hover) => {\n          const o = OBJECTS[2];\n          return (\n            <ObjectCard\n              key={mode + hover}\n              {...o}\n              mode={mode}\n              forceHover={hover}\n              onClick={() => {}}\n              onDelete={() => {}}\n              draggable\n            />\n          );\n        }),\n      )}\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-objectcard--on-white-and-grey",
+          "name": "На белом и на сером",
+          "snippet": "const OnWhiteAndGrey = () => (\n  <div style={{ display: 'flex', gap: 24 }}>\n    <Page tone=\"grey\">\n      <div style={{ width: 400 }}>\n        <ObjectCard {...OBJECTS[0]} on=\"grey\" onClick={() => {}} />\n      </div>\n    </Page>\n    <Page tone=\"white\">\n      <div style={{ width: 400 }}>\n        <ObjectCard {...OBJECTS[0]} on=\"white\" onClick={() => {}} />\n      </div>\n    </Page>\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-objectcard--photo-and-placeholder",
+          "name": "Фото и заглушка",
+          "snippet": "const PhotoAndPlaceholder = () => (\n  <Page>\n    <div style={{ display: 'flex', gap: 24 }}>\n      <div style={{ width: 400 }}>\n        <ObjectCard {...OBJECTS[1]} />\n      </div>\n      <div style={{ width: 400 }}>\n        <ObjectCard {...OBJECTS[1]} image={undefined} />\n      </div>\n      <div style={{ width: 400 }}>\n        <ObjectCard {...OBJECTS[1]} image=\"/битая-ссылка.jpg\" />\n      </div>\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-objectcard--mobile",
+          "name": "Телефон",
+          "snippet": "const Mobile = () => (\n  <Page>\n    <div style={{ display: 'flex', gap: 24 }}>\n      <div style={{ width: 320 }}>\n        <ObjectCard {...OBJECTS[2]} device=\"mob\" onClick={() => {}} />\n      </div>\n      <div style={{ width: 320 }}>\n        <ObjectCard {...OBJECTS[2]} device=\"mob\" mode=\"edit\" onDelete={() => {}} draggable />\n      </div>\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-objectcard--service-page",
+          "name": "Главная сервиса: группы, просмотр и редактирование",
+          "snippet": "const ServicePage = () => <ServiceHome />;"
+        }
+      ],
+      "import": "import {\n  Button,\n  EmptyState,\n  IconEdit,\n  IconPlus,\n  IconRemove,\n  IconTick,\n  Modal,\n  ObjectCard,\n  ObjectCardGrid,\n  ObjectGroup,\n  Surface,\n} from 'praktis-ui-kit';"
+    },
+    "ui-kit-objectstatus": {
+      "id": "ui-kit-objectstatus",
+      "name": "ObjectStatus",
+      "path": "./src/components/ObjectCard/ObjectStatus.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "ObjectStatus",
+        "definedInFile": "./src/components/ObjectCard/ObjectStatus.tsx",
+        "actualName": "ObjectStatus",
+        "exportName": "ObjectStatus",
+        "props": {
+          "label": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "tone": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'glass' | 'warning' | 'danger' | 'success' | 'blue'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'glass'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'warning'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'danger'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'success'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'blue'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'glass'",
+              "computed": false
+            }
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'m' | 's'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'m'",
+              "computed": false
+            }
+          },
+          "star": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Звёздочка слева: false — нет, true — есть. Закрашена — `starred`.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "starred": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "onStarChange": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(starred: boolean) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "boolean"
+                    },
+                    "name": "starred"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Нажатие на звёздочку — тогда она кнопка «В избранное»."
+          },
+          "arrow": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Стрелка-ссылка справа (в макете — только у S).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "ariaLabel": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Подпись для экранного диктора, если label — просто число (счётчик)."
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-objectstatus--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Live label=\"В работе\" tone=\"glass\" size=\"m\" star={false} arrow={false} />;"
+        },
+        {
+          "id": "ui-kit-objectstatus--tones",
+          "name": "Цвета и размеры",
+          "snippet": "const Tones = () => (\n  <OnPhoto>\n    {(['m', 's'] as const).map((size) => (\n      <div key={size} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>\n        {TONES.map((tone) => (\n          <ObjectStatus key={tone} tone={tone} size={size} label={{ glass: 'В работе', warning: 'Истекает срок сдачи', danger: 'Просрочено', success: 'Завершен', blue: '2' }[tone]} />\n        ))}\n      </div>\n    ))}\n    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>\n      <ObjectStatus label=\"Избранное\" star starred />\n      <ObjectStatus label=\"Не в избранном\" star />\n      <ObjectStatus label=\"Ссылка\" size=\"s\" arrow />\n    </div>\n  </OnPhoto>\n);"
+        }
+      ],
+      "import": "import { ObjectStatus } from 'praktis-ui-kit';"
+    },
     "ui-kit-remarkcard": {
       "id": "ui-kit-remarkcard",
       "name": "RemarkCard",
@@ -4780,6 +6164,275 @@
         }
       ],
       "import": "import { RemarkCard, Surface } from 'praktis-ui-kit';"
+    },
+    "ui-kit-statcard": {
+      "id": "ui-kit-statcard",
+      "name": "StatCard",
+      "path": "./src/components/StatCard/StatCard.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "StatCard",
+        "definedInFile": "./src/components/StatCard/StatCard.tsx",
+        "actualName": "StatCard",
+        "exportName": "StatCard",
+        "props": {
+          "title": {
+            "required": true,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Подпись показателя."
+          },
+          "value": {
+            "required": true,
+            "tsType": {
+              "name": "union",
+              "raw": "number | string",
+              "elements": [
+                {
+                  "name": "number"
+                },
+                {
+                  "name": "string"
+                }
+              ]
+            },
+            "description": "Значение. Число — с разрядами через пробел и дробью через запятую."
+          },
+          "unit": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Единица после значения, мельче и серым: «₽», «из 36», «дн.»."
+          },
+          "precision": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Знаков после запятой у числа."
+          },
+          "tone": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'default' | 'danger' | 'warning' | 'success'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'default'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'danger'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'warning'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'success'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'default'",
+              "computed": false
+            }
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'m' | 'l'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'l'"
+                }
+              ]
+            },
+            "description": "m — значение H2 24; l — главный показатель экрана, H1 32.",
+            "defaultValue": {
+              "value": "'m'",
+              "computed": false
+            }
+          },
+          "icon": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Иконка кита. Цвет подложки и иконки — по `tone`."
+          },
+          "iconPlacement": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'start' | 'end'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'start'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'end'"
+                }
+              ]
+            },
+            "description": "Где иконка в строке подписи: `end` — справа у края плитки (по умолчанию), `start` — перед подписью.",
+            "defaultValue": {
+              "value": "'end'",
+              "computed": false
+            }
+          },
+          "delta": {
+            "required": false,
+            "tsType": {
+              "name": "StatCardDelta"
+            },
+            "description": ""
+          },
+          "note": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Строка пояснения под значением: «Самая старая — 12 дней»."
+          },
+          "trend": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "number[] | StatCardTrendPoint[]",
+              "elements": [
+                {
+                  "name": "Array",
+                  "elements": [
+                    {
+                      "name": "number"
+                    }
+                  ],
+                  "raw": "number[]"
+                },
+                {
+                  "name": "Array",
+                  "elements": [
+                    {
+                      "name": "StatCardTrendPoint"
+                    }
+                  ],
+                  "raw": "StatCardTrendPoint[]"
+                }
+              ]
+            },
+            "description": "История значения по порядку (от старых к новым) — плавный спарклайн внизу; с `label` у точек — тултип с подписью."
+          },
+          "progress": {
+            "required": false,
+            "tsType": {
+              "name": "StatCardProgress"
+            },
+            "description": ""
+          },
+          "segments": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "StackedBarSegment"
+                }
+              ],
+              "raw": "StackedBarSegment[]"
+            },
+            "description": "Состав значения по частям — полоса StackedBar с числами и легендой."
+          },
+          "actionText": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Подпись действия внизу кликабельной плитки."
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-statcard--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (a) => <PlaygroundStory {...(a as Args)} />;"
+        },
+        {
+          "id": "ui-kit-statcard--in-panel",
+          "name": "Сводка в белой панели",
+          "snippet": "const InPanel = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard title=\"Заявок в работе\" value={36} delta={{ value: '+6', period: 'за неделю' }} />\n        <StatCard title=\"Сумма договоров\" value={2480000} unit=\"₽\" delta={{ value: '+12%', good: true, period: 'к прошлому месяцу' }} />\n        <StatCard title=\"Просрочено\" value={4} tone=\"danger\" delta={{ value: '+2', good: false, period: 'за неделю' }} />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--on-page",
+          "name": "Прямо на фоне страницы",
+          "snippet": "const OnPage = () => (\n  <Page>\n    <Row>\n      <StatCard title=\"Заявок в работе\" value={36} note=\"из 52 за месяц\" />\n      <StatCard title=\"Сумма договоров\" value={2480000} unit=\"₽\" note=\"по 36 заявкам\" />\n      <StatCard title=\"Просрочено\" value={4} tone=\"danger\" note=\"11% заявок в работе\" />\n    </Row>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--trend",
+          "name": "С динамикой",
+          "snippet": "const Trend = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard title=\"Заявок в работе\" value={36} delta={{ value: '+6', period: 'за неделю' }} trend={withLabels(HISTORY.work, WEEKS)} />\n        <StatCard title=\"Сумма договоров\" value={2480000} unit=\"₽\" delta={{ value: '+12%', good: true, period: 'к прошлому месяцу' }} trend={withLabels(HISTORY.sum, MONTHS)} />\n        <StatCard title=\"Просрочено\" value={4} tone=\"danger\" delta={{ value: '+2', good: false, period: 'за неделю' }} trend={withLabels(HISTORY.late, WEEKS)} />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--progress",
+          "name": "Со шкалой «из скольких»",
+          "snippet": "const Progress = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard title=\"Заявок согласовано\" value={28} unit=\"из 36\" progress={{ value: 28, max: 36 }} tone=\"success\" />\n        <StatCard title=\"Сумма договоров\" value={2480000} unit=\"₽\" progress={{ value: 1240000, max: 2480000, caption: 'Оплачено 1 240 000 ₽' }} />\n        <StatCard title=\"Просрочено\" value={4} unit=\"из 36\" tone=\"danger\" progress={{ value: 4, max: 36, caption: '11% заявок', aside: 'норма до 5%' }} />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--segments",
+          "name": "Состав",
+          "snippet": "const Segments = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard\n          title=\"Юзер-таски BPMN\"\n          value={10}\n          segments={[\n            { value: 5, color: 'info', label: 'На согласовании' },\n            { value: 2, color: 'success', label: 'Согласовано' },\n            { value: 2, color: 'neutral', label: 'В работе' },\n            { value: 1, color: 'danger', label: 'Просрочено' },\n          ]}\n        />\n        <StatCard\n          title=\"Заявки\"\n          value={36}\n          segments={[\n            { value: 16, color: 'neutral', label: 'В работе' },\n            { value: 12, color: 'info', label: 'На согласовании' },\n            { value: 5, color: 'warning', label: 'На доработке' },\n            { value: 3, color: 'danger', label: 'Просрочено' },\n          ]}\n        />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--clickable",
+          "name": "Плитка-фильтр",
+          "snippet": "const Clickable = () => <ClickableStory />;"
+        },
+        {
+          "id": "ui-kit-statcard--with-icon",
+          "name": "С иконкой",
+          "snippet": "const WithIcon = () => (\n  <Page>\n    <p style={caption}>iconPlacement=\"end\" — справа (по умолчанию)</p>\n    <Surface>\n      <IconRow placement=\"end\" />\n    </Surface>\n    <p style={{ ...caption, marginTop: 24 }}>iconPlacement=\"start\" — перед подписью</p>\n    <Surface>\n      <IconRow placement=\"start\" />\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--hero",
+          "name": "Главный показатель",
+          "snippet": "const Hero = () => (\n  <Page>\n    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>\n      <div style={{ gridColumn: 'span 2', display: 'grid' }}>\n        <StatCard size=\"l\" title=\"Сумма договоров за сентябрь\" value={2480000} unit=\"₽\" delta={{ value: '+12%', good: true, period: 'в августе 2 214 000 ₽' }} trend={withLabels(HISTORY.sum, MONTHS)} />\n      </div>\n      <div style={{ display: 'grid', gap: 16 }}>\n        <StatCard title=\"Заявок в работе\" value={36} delta={{ value: '+6', period: 'за неделю' }} />\n        <StatCard title=\"Просрочено\" value={4} tone=\"danger\" delta={{ value: '+2', good: false, period: 'за неделю' }} />\n      </div>\n    </div>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--tones",
+          "name": "Цвета значения",
+          "snippet": "const Tones = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard title=\"Заявок в работе\" value={36} delta={{ value: '−3', period: 'за неделю' }} />\n        <StatCard title=\"Просрочено\" value={4} tone=\"danger\" delta={{ value: '+2', good: false, period: 'за неделю' }} />\n        <StatCard title=\"Срок истекает\" value={7} tone=\"warning\" note=\"в ближайшие 3 дня\" />\n        <StatCard title=\"Закрыто в срок\" value={96} unit=\"%\" tone=\"success\" delta={{ value: '+4%', good: true, period: 'к прошлому месяцу' }} />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--edge",
+          "name": "Длинные подписи и узкая плитка",
+          "snippet": "const Edge = () => (\n  <Page>\n    <Row>\n      <StatCard title=\"Сумма договоров с подрядчиками по всем объектам программы реновации\" value={12676938080} unit=\"₽\" delta={{ value: '−0,4%', good: false, period: 'к плану квартала' }} />\n      <StatCard title=\"Средняя сумма\" value={218616.27} precision={2} unit=\"₽\" />\n      <StatCard title=\"Средний срок согласования\" value=\"—\" note=\"Посчитаем после первой согласованной заявки\" />\n      <div style={{ maxWidth: 200 }}>\n        <StatCard title=\"Остаток\" value={12676938080} unit=\"₽\" />\n      </div>\n    </Row>\n  </Page>\n);"
+        },
+        {
+          "id": "ui-kit-statcard--states",
+          "name": "Состояния кликабельной",
+          "snippet": "const States = () => (\n  <Page>\n    <Surface>\n      <Row>\n        <StatCard title=\"Обычная\" value={36} onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Открыть список\" />\n        <StatCard title=\"Ховер\" value={36} onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Открыть список\" forceState=\"hover\" />\n        <StatCard title=\"Нажатие\" value={36} onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Открыть список\" forceState=\"active\" />\n        <StatCard title=\"Выбрана\" value={36} onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Открыть список\" selected />\n        <StatCard title=\"Фокус\" value={36} onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Открыть список\" forceState=\"focus\" />\n        <StatCard title=\"Алерт, ховер\" value={4} tone=\"danger\" onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Показать просроченные\" forceState=\"hover\" />\n        <StatCard title=\"Алерт, выбрана\" value={4} tone=\"danger\" onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Показать просроченные\" selected />\n        <StatCard title=\"Предупреждение, выбрана\" value={7} tone=\"warning\" onClick={() => {}} actionLabel=\"Открыть\" actionText=\"Показать\" selected />\n      </Row>\n    </Surface>\n  </Page>\n);"
+        }
+      ],
+      "import": "import { IconClockCircle, IconDoc, IconMoney, StatCard, Surface } from 'praktis-ui-kit';"
     },
     "ui-kit-alert": {
       "id": "ui-kit-alert",
@@ -5086,6 +6739,169 @@
         }
       ],
       "import": "import { ErrorPage } from 'praktis-ui-kit';"
+    },
+    "ui-kit-loadingstate": {
+      "id": "ui-kit-loadingstate",
+      "name": "LoadingState",
+      "path": "./src/components/LoadingState/LoadingState.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "LoadingState",
+        "definedInFile": "./src/components/LoadingState/LoadingState.tsx",
+        "actualName": "LoadingState",
+        "exportName": "LoadingState",
+        "props": {
+          "title": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Заголовок. По умолчанию «Загрузка…».",
+            "defaultValue": {
+              "value": "'Загрузка…'",
+              "computed": false
+            }
+          },
+          "description": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Мелко под заголовком: чего ждать («это может занять до 1 минуты»)."
+          },
+          "onCancel": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "«Отменить» — прервать загрузку и вернуться назад. Нет — нет кнопки."
+          },
+          "cancelLabel": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'Отменить'",
+              "computed": false
+            }
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'s' | 'xs'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'xs'"
+                }
+              ]
+            },
+            "description": "s — как в макете (крутилка 48, 20 / 16); xs — маленький блок (30, 16 / 14).",
+            "defaultValue": {
+              "value": "'s'",
+              "computed": false
+            }
+          },
+          "fullscreen": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "На весь экран, экран заблокирован.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "spinning": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "С children: показывать ли загрузку поверх них. По умолчанию true.",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "delay": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Показать не сразу, а через столько мс — чтобы быстрая загрузка не мигала."
+          },
+          "children": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Содержимое, поверх которого загрузка (как у antd Spin)."
+          },
+          "getContainer": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => HTMLElement",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "HTMLElement"
+                }
+              }
+            },
+            "description": "Куда вставлять fullscreen — ближайший `[data-theme]`, если тема не на body."
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-loadingstate--playground",
+          "name": "Playground",
+          "snippet": "const Playground = (args) => <PlaygroundDemo {...(args as Partial<Args>)} />;"
+        },
+        {
+          "id": "ui-kit-loadingstate--sizes",
+          "name": "Размеры",
+          "snippet": "const Sizes = () => (\n  <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 24 }}>\n    <div style={frame}>\n      <LoadingState description=\"Пожалуйста, подождите, это может занять до 1 минуты\" onCancel={() => {}} />\n    </div>\n    <div style={{ ...frame, height: 200 }}>\n      <LoadingState size=\"xs\" description=\"Считаем показатели\" />\n    </div>\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-loadingstate--over-block",
+          "name": "Поверх блока",
+          "snippet": "const OverBlock = () => <OverBlockDemo />;"
+        },
+        {
+          "id": "ui-kit-loadingstate--fullscreen",
+          "name": "На весь экран",
+          "snippet": "const Fullscreen = () => <FullscreenDemo />;"
+        }
+      ],
+      "import": "import { Button, LoadingState } from 'praktis-ui-kit';"
     },
     "ui-kit-modal-modal": {
       "id": "ui-kit-modal-modal",
@@ -5626,7 +7442,7 @@
             "required": false,
             "tsType": {
               "name": "union",
-              "raw": "'accent' | 'current'",
+              "raw": "'accent' | 'current' | 'block'",
               "elements": [
                 {
                   "name": "literal",
@@ -5635,6 +7451,10 @@
                 {
                   "name": "literal",
                   "value": "'current'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'block'"
                 }
               ]
             },
@@ -5657,8 +7477,8 @@
         },
         {
           "id": "ui-kit-spinner--tones",
-          "name": "Цвет: accent и current",
-          "snippet": "const Tones = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'center', fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#7e7e7e' }}>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center' }}>\n      <Spinner /> accent\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#41484a' }}>\n      <Spinner tone=\"current\" size={14} /> current на светлом\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#ffffff', background: '#3c83f6', padding: '8px 12px', borderRadius: 6 }}>\n      <Spinner tone=\"current\" size={14} /> current на синем\n    </span>\n  </div>\n);"
+          "name": "Цвет: accent, current, block",
+          "snippet": "const Tones = () => (\n  <div style={{ display: 'flex', gap: 24, alignItems: 'center', fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#7e7e7e' }}>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center' }}>\n      <Spinner /> accent\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#41484a' }}>\n      <Spinner tone=\"current\" size={14} /> current на светлом\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center', color: '#ffffff', background: '#3c83f6', padding: '8px 12px', borderRadius: 6 }}>\n      <Spinner tone=\"current\" size={14} /> current на синем\n    </span>\n    <span style={{ display: 'flex', gap: 8, alignItems: 'center' }}>\n      <Spinner tone=\"block\" size={48} /> block 48\n    </span>\n  </div>\n);"
         }
       ],
       "import": "import { Spinner } from 'praktis-ui-kit';"
@@ -5964,6 +7784,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 1399
+    "durationMs": 1861
   }
 }

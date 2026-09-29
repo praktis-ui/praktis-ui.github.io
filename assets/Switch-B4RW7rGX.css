@@ -1,0 +1,1 @@
+:root{--switch-disabled:var(--black-350)}[data-theme=dark]{--switch-disabled:var(--bg-black-disabled)}._switch_1ajrq_16.ant-switch-disabled:not(.ant-switch-loading),._switch_1ajrq_16.ant-switch-disabled:not(.ant-switch-loading):hover{background:var(--switch-disabled)!important}._switch_1ajrq_16:focus-visible{outline-offset:0!important;outline:3px solid #3c83f64d!important}

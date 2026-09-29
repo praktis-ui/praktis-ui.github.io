@@ -620,13 +620,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">6/49 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">49/49 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/49 without API description</a><span class="filter-pill ok" aria-disabled="true">266 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/266 incomplete snippets</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">7/60 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">60/60 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/60 without API description</a><span class="filter-pill ok" aria-disabled="true">315 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/315 incomplete snippets</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.4s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.9s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -1879,6 +1879,239 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
   </div>
 </article>
 <article
+  id="ui-kit-card"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Card">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Card</h2>
+      <div class="badges">
+        <label for="c-6-ui-kit-card-props" class="badge ok as-toggle">17 prop types</label>
+        <label for="c-6-ui-kit-card-info" class="badge info as-toggle">1 info</label>
+        <label for="c-6-ui-kit-card-stories" class="badge ok as-toggle">3 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Card/Card.stories.tsx">ui-kit-card · ./src/components/Card/Card.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-6-ui-kit-card-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-6-ui-kit-card-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-6-ui-kit-card-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">17 prop types</span>
+            </div>
+            <pre><code>Component: src/components/Card/Card.tsx::Card</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Что сделает нажатие — для экранного диктора. Обязательно у кликабельной карточки.
+ */
+actionLabel?: string
+
+as?: ElementType = &#39;article&#39;
+
+/**
+ * Кнопки внизу — Button кита; основное действие — primary, последним.
+ */
+buttons?: ReactNode
+
+/**
+ * Содержимое (между пояснением и кнопками).
+ */
+children?: ReactNode
+
+/**
+ * Дата мелко справа в строке тегов.
+ */
+date?: ReactNode
+
+/**
+ * Пояснение под заголовком.
+ */
+description?: ReactNode
+
+/**
+ * solid — подложка: цвет противоположен фону под ней (Surface).
+ * outline — без заливки, с тонкой обводкой border/table-separator (как у снятого замечания).
+ */
+fill?: &#39;solid&#39; | &#39;outline&#39; = &#39;solid&#39;
+
+/**
+ * Принудительное состояние — только для витрины, где все состояния стоят рядом.
+ */
+forceState?: &#39;hover&#39; | &#39;active&#39; | &#39;focus&#39;
+
+/**
+ * Заголовок карточки — на всю строку, переносится, не обрезается.
+ */
+heading?: ReactNode
+
+/**
+ * Уровень заголовка: 3 — 20 (по умолчанию), 4 — 18, 5 — 16.
+ */
+headingLevel?: 3 | 4 | 5 = 3
+
+/**
+ * Карточка-ссылка.
+ */
+href?: string
+
+/**
+ * Уровень вложенности подложки (скругление 20 / 12 / 6). По умолчанию — по вложенности.
+ */
+level?: 1 | 2 | 3
+
+/**
+ * На каком фоне лежит (как у Surface): цвет карточки — противоположный. По умолчанию — по вложенности.
+ */
+on?: &#39;grey&#39; | &#39;white&#39;
+
+/**
+ * Нажатие на карточку. Есть onClick или href — карточка кликабельная: ховер, нажатие, фокус.
+ */
+onClick?: (e: MouseEvent&lt;HTMLElement&gt;) =&gt; void
+
+/**
+ * Отступ внутри, CSS. По умолчанию — по уровню Surface.
+ */
+padding?: string | number
+
+/**
+ * Выбрана / активна (например, её место сейчас открыто в документе).
+ */
+selected?: boolean = false
+
+/**
+ * Облако тегов / статусов наверху — Tag кита.
+ */
+tags?: ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Button, Card, Surface, Tag } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;OnBackgrounds&gt;
+    &lt;Card
+        heading=&quot;Договоры объекта&quot;
+        description=&quot;Действующие договоры и дополнительные соглашения по объекту «Чистое небо».&quot;
+        date=&quot;28.09.2026&quot;
+        headingLevel={3}
+        withTags
+        withButtons
+        withContent
+        clickable={false}
+        tags={withTags ? tags : undefined}
+        buttons={withButtons ? buttons : undefined}
+        onClick={clickable ? () =&gt; {} : undefined}
+        actionLabel={clickable ? &#39;Открыть раздел&#39; : undefined}&gt;
+        {withContent ? content : undefined}
+    &lt;/Card&gt;
+&lt;/OnBackgrounds&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Структура: части по желанию</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Structure = () =&gt; (
+  &lt;OnBackgrounds&gt;
+    &lt;Card
+      tags={tags}
+      date=&quot;28.09.2026&quot;
+      heading=&quot;Договоры объекта «Многоквартирный дом со встроенными помещениями, корпус 1, очередь 7, Санкт-Петербург»&quot;
+      description=&quot;Действующие договоры и дополнительные соглашения по объекту.&quot;
+      buttons={buttons}
+    &gt;
+      {content}
+    &lt;/Card&gt;
+    &lt;Card heading=&quot;Только заголовок и кнопки&quot; buttons={&lt;Button variant=&quot;primary&quot;&gt;Добавить&lt;/Button&gt;} /&gt;
+    &lt;Card tags={&lt;Tag status=&quot;processing&quot;&gt;В работе&lt;/Tag&gt;} heading=&quot;Теги и заголовок, заголовок H5&quot; headingLevel={5} /&gt;
+    &lt;Card heading=&quot;Заголовок и пояснение&quot; description=&quot;Без тегов, без содержимого и без кнопок.&quot; /&gt;
+  &lt;/OnBackgrounds&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Кликабельная: состояния</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;OnBackgrounds&gt;
+    {([undefined, &#39;hover&#39;, &#39;active&#39;, &#39;focus&#39;] as const).map((force) =&gt; (
+      &lt;Card
+        key={force ?? &#39;default&#39;}
+        onClick={() =&gt; {}}
+        actionLabel=&quot;Открыть раздел&quot;
+        forceState={force}
+        tags={&lt;Tag status=&quot;success&quot;&gt;Подписан&lt;/Tag&gt;}
+        heading={force === undefined ? &#39;Обычная&#39; : force === &#39;hover&#39; ? &#39;Ховер&#39; : force === &#39;active&#39; ? &#39;Нажатие&#39; : &#39;Фокус с клавиатуры&#39;}
+        buttons={&lt;Button variant=&quot;secondary&quot;&gt;Выгрузить&lt;/Button&gt;}
+      /&gt;
+    ))}
+    &lt;Card onClick={() =&gt; {}} actionLabel=&quot;Открыть раздел&quot; selected tags={&lt;Tag status=&quot;success&quot;&gt;Подписан&lt;/Tag&gt;} heading=&quot;Выбрана&quot; buttons={&lt;Button variant=&quot;secondary&quot;&gt;Выгрузить&lt;/Button&gt;} /&gt;
+  &lt;/OnBackgrounds&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-checkbox"
   class="card 
   no-error
@@ -1894,8 +2127,8 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
       <h2><span class="status-dot dot-ok"></span> Checkbox</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-6-ui-kit-checkbox-info" class="badge info as-toggle">1 info</label>
-        <label for="c-6-ui-kit-checkbox-stories" class="badge ok as-toggle">9 stories</label>
+        <label for="c-7-ui-kit-checkbox-info" class="badge info as-toggle">1 info</label>
+        <label for="c-7-ui-kit-checkbox-stories" class="badge ok as-toggle">9 stories</label>
         
         
       </div>
@@ -1908,8 +2141,8 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-6-ui-kit-checkbox-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-6-ui-kit-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-7-ui-kit-checkbox-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-7-ui-kit-checkbox-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2061,9 +2294,9 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Colors</h2>
       <div class="badges">
-        <label for="c-7-foundations-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-7-foundations-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-7-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-8-foundations-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-8-foundations-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-8-foundations-colors-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -2075,9 +2308,9 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;stroke&#39; | &#39;link
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-7-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-7-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-7-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-8-foundations-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-8-foundations-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-8-foundations-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -2387,9 +2620,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DatePicker</h2>
       <div class="badges">
-        <label for="c-8-ui-kit-datepicker-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-8-ui-kit-datepicker-info" class="badge info as-toggle">1 info</label>
-        <label for="c-8-ui-kit-datepicker-stories" class="badge ok as-toggle">13 stories</label>
+        <label for="c-9-ui-kit-datepicker-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-9-ui-kit-datepicker-info" class="badge info as-toggle">1 info</label>
+        <label for="c-9-ui-kit-datepicker-stories" class="badge ok as-toggle">13 stories</label>
         
         
       </div>
@@ -2402,11 +2635,11 @@ export const Palette: Story = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-8-ui-kit-datepicker-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-8-ui-kit-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-9-ui-kit-datepicker-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-9-ui-kit-datepicker-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-8-ui-kit-datepicker-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-9-ui-kit-datepicker-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2666,6 +2899,173 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-drag-handle"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="DragHandle">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> DragHandle</h2>
+      <div class="badges">
+        <label for="c-10-ui-kit-drag-handle-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-10-ui-kit-drag-handle-info" class="badge info as-toggle">1 info</label>
+        <label for="c-10-ui-kit-drag-handle-stories" class="badge ok as-toggle">3 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/DragHandle/DragHandle.stories.tsx">ui-kit-drag-handle · ./src/components/DragHandle/DragHandle.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-10-ui-kit-drag-handle-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-10-ui-kit-drag-handle-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-10-ui-kit-drag-handle-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src/components/DragHandle/DragHandle.tsx::DragHandle</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Подпись для экранного диктора.
+ */
+label?: string = &#39;Перетащить&#39;
+
+ref?: Ref&lt;HTMLButtonElement&gt;
+
+/**
+ * 16 — по макету (таблица), 20 — на карточке объекта.
+ */
+size?: 16 | 20 = 16
+
+/**
+ * onDark — белая, на фото или тёмной подложке.
+ */
+tone?: &#39;default&#39; | &#39;onDark&#39; = &#39;default&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { DragHandle } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (args) =&gt;
+  args.tone === &#39;onDark&#39; ? (
+    &lt;div style={{ padding: 16, borderRadius: 8, background: &#39;var(--grey-800)&#39; }}&gt;
+      &lt;DragHandle {...args} /&gt;
+    &lt;/div&gt;
+  ) : (
+    &lt;DragHandle {...args} /&gt;
+  );</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 16 }}&gt;
+    {([&#39;default&#39;, &#39;onDark&#39;] as const).map((tone) =&gt; (
+      &lt;div
+        key={tone}
+        style={{
+          display: &#39;flex&#39;,
+          gap: 40,
+          padding: &#39;16px 24px&#39;,
+          borderRadius: 8,
+          background: tone === &#39;onDark&#39; ? &#39;var(--grey-800)&#39; : &#39;var(--bg-white-page-full)&#39;,
+          boxShadow: tone === &#39;onDark&#39; ? undefined : &#39;inset 0 0 0 1px var(--grey-330)&#39;,
+        }}
+      &gt;
+        {STATES[tone].map(([name, color, token]) =&gt; (
+          &lt;div key={name} style={{ ...cell, color: tone === &#39;onDark&#39; ? &#39;var(--text-white-secondary)&#39; : cell.color }}&gt;
+            &lt;DragHandle size={20} tone={tone} style={color ? { color } : undefined} tabIndex={color ? -1 : undefined} /&gt;
+            &lt;span&gt;{name}&lt;/span&gt;
+            &lt;code style={{ fontSize: 11 }}&gt;{token}&lt;/code&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    ))}
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Размеры и фон</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Sizes = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 32, alignItems: &#39;center&#39; }}&gt;
+    &lt;div style={cell}&gt;
+      &lt;DragHandle size={16} /&gt;
+      16
+    &lt;/div&gt;
+    &lt;div style={cell}&gt;
+      &lt;DragHandle size={20} /&gt;
+      20
+    &lt;/div&gt;
+    &lt;div style={{ ...cell, padding: 16, borderRadius: 8, background: &#39;var(--grey-800)&#39;, color: &#39;var(--text-white-primary)&#39; }}&gt;
+      &lt;DragHandle size={20} tone=&quot;onDark&quot; /&gt;
+      onDark 20
+    &lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-dropdownmenu"
   class="card 
   no-error
@@ -2680,9 +3080,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DropdownMenu</h2>
       <div class="badges">
-        <label for="c-9-ui-kit-dropdownmenu-props" class="badge ok as-toggle">12 prop types</label>
-        <label for="c-9-ui-kit-dropdownmenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-9-ui-kit-dropdownmenu-stories" class="badge ok as-toggle">11 stories · 1 incomplete</label>
+        <label for="c-11-ui-kit-dropdownmenu-props" class="badge ok as-toggle">12 prop types</label>
+        <label for="c-11-ui-kit-dropdownmenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-11-ui-kit-dropdownmenu-stories" class="badge ok as-toggle">11 stories · 1 incomplete</label>
         
         
       </div>
@@ -2695,11 +3095,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-9-ui-kit-dropdownmenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-9-ui-kit-dropdownmenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-11-ui-kit-dropdownmenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-11-ui-kit-dropdownmenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-9-ui-kit-dropdownmenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-11-ui-kit-dropdownmenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -2990,9 +3390,9 @@ import { Button } from '../Button/Button';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> DropdownMenuItem</h2>
       <div class="badges">
-        <label for="c-10-ui-kit-dropdownmenuitem-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-10-ui-kit-dropdownmenuitem-info" class="badge info as-toggle">1 info</label>
-        <label for="c-10-ui-kit-dropdownmenuitem-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-12-ui-kit-dropdownmenuitem-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-12-ui-kit-dropdownmenuitem-info" class="badge info as-toggle">1 info</label>
+        <label for="c-12-ui-kit-dropdownmenuitem-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -3005,11 +3405,11 @@ import { Button } from '../Button/Button';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-10-ui-kit-dropdownmenuitem-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-10-ui-kit-dropdownmenuitem-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-12-ui-kit-dropdownmenuitem-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-12-ui-kit-dropdownmenuitem-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-10-ui-kit-dropdownmenuitem-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-12-ui-kit-dropdownmenuitem-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3245,9 +3645,9 @@ selected?: boolean = false</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> EmptyState</h2>
       <div class="badges">
-        <label for="c-11-ui-kit-emptystate-emptystate-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-11-ui-kit-emptystate-emptystate-info" class="badge info as-toggle">1 info</label>
-        <label for="c-11-ui-kit-emptystate-emptystate-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-13-ui-kit-emptystate-emptystate-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-13-ui-kit-emptystate-emptystate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-13-ui-kit-emptystate-emptystate-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -3260,11 +3660,11 @@ selected?: boolean = false</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-11-ui-kit-emptystate-emptystate-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-11-ui-kit-emptystate-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-13-ui-kit-emptystate-emptystate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-13-ui-kit-emptystate-emptystate-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-11-ui-kit-emptystate-emptystate-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-13-ui-kit-emptystate-emptystate-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3404,6 +3804,203 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-entitycard"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="EntityCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> EntityCard</h2>
+      <div class="badges">
+        <label for="c-14-ui-kit-entitycard-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-14-ui-kit-entitycard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-14-ui-kit-entitycard-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/EntityCard/EntityCard.stories.tsx">ui-kit-entitycard · ./src/components/EntityCard/EntityCard.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-14-ui-kit-entitycard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-14-ui-kit-entitycard-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-14-ui-kit-entitycard-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">9 prop types</span>
+            </div>
+            <pre><code>Component: src/components/EntityCard/EntityCard.tsx::EntityCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Кнопки-иконки справа сверху.
+ */
+actions?: EntityCardAction[]
+
+/**
+ * Показатели — обычно StatCard.
+ */
+children?: ReactNode
+
+/**
+ * Строка под заголовком: что это.
+ */
+description?: ReactNode
+
+/**
+ * Иконка сущности в подложке слева сверху.
+ */
+icon?: ReactNode
+
+/**
+ * Пункты меню «⋮». Нет пунктов — нет кнопки.
+ */
+menu?: DropdownMenuEntry[]
+
+/**
+ * Мелкая строка после описания: «Изменён 5 мин назад».
+ */
+meta?: ReactNode
+
+onMenuClick?: (key: string) =&gt; void
+
+/**
+ * Статус справа сверху — Tag.
+ */
+status?: { label: ReactNode; status: TagStatus; icon?: boolean }
+
+title: ReactNode</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { EntityCard, IconCopy, IconDoc, IconEdit, IconEye, StatCard } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (a) =&gt; {
+  const Inner = () =&gt; {
+    const { log, actions, onMenu } = useLog();
+    return (
+      &lt;Page&gt;
+        &lt;div style={{ maxWidth: 560 }}&gt;
+          &lt;EntityCard
+            {...a}
+            icon={&lt;IconDoc /&gt;}
+            status={{ label: &#39;Действует&#39;, status: &#39;success&#39; }}
+            actions={actions(String(a.title))}
+            menu={MENU}
+            onMenuClick={onMenu(String(a.title))}
+          &gt;
+            &lt;StatCard title=&quot;Заявок&quot; value={36} delta={{ value: &#39;+6&#39;, period: &#39;за неделю&#39; }} /&gt;
+            &lt;StatCard title=&quot;Сумма&quot; value={2480000} unit=&quot;₽&quot; /&gt;
+          &lt;/EntityCard&gt;
+        &lt;/div&gt;
+        &lt;Log&gt;{log}&lt;/Log&gt;
+      &lt;/Page&gt;
+    );
+  };
+  return &lt;Inner /&gt;;
+};</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Список карточек</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const List = () =&gt; &lt;ListStory /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Кликабельная</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Clickable = () =&gt; &lt;ClickableStory /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Длинный текст и без частей</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Edge = () =&gt; (
+  &lt;Page&gt;
+    &lt;Grid&gt;
+      &lt;EntityCard
+        icon={&lt;IconDoc /&gt;}
+        title=&quot;Договор генерального подряда на строительство объекта «Многоквартирный жилой дом с подземной автостоянкой» № 2026/145-ГП&quot;
+        description=&quot;ЖК «Северный», корпус 3, секции 1–4, включая благоустройство прилегающей территории&quot;
+        meta=&quot;Изменён 28 сентября 2026 в 17:40&quot;
+        status={{ label: &#39;Действует&#39;, status: &#39;success&#39; }}
+        actions={[{ key: &#39;view&#39;, icon: &lt;IconEye /&gt;, label: &#39;Посмотреть&#39; }]}
+        menu={MENU}
+      &gt;
+        &lt;StatCard title=&quot;Заявок&quot; value={36} /&gt;
+        &lt;StatCard title=&quot;Сумма&quot; value={12676938080} unit=&quot;₽&quot; /&gt;
+      &lt;/EntityCard&gt;
+      &lt;EntityCard title=&quot;Договор поставки № 12-М&quot; description=&quot;ЖК «Северный», корпус 1&quot; status={{ label: &#39;Приостановлен&#39;, status: &#39;warning&#39; }}&gt;
+        &lt;StatCard title=&quot;Заявок&quot; value={12} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={3} tone=&quot;danger&quot; /&gt;
+      &lt;/EntityCard&gt;
+    &lt;/Grid&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-emptystate-errorpage"
   class="card 
   no-error
@@ -3419,8 +4016,8 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
       <h2><span class="status-dot dot-ok"></span> ErrorPage</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-12-ui-kit-emptystate-errorpage-info" class="badge info as-toggle">1 info</label>
-        <label for="c-12-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-15-ui-kit-emptystate-errorpage-info" class="badge info as-toggle">1 info</label>
+        <label for="c-15-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -3433,8 +4030,8 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-12-ui-kit-emptystate-errorpage-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-12-ui-kit-emptystate-errorpage-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-15-ui-kit-emptystate-errorpage-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-15-ui-kit-emptystate-errorpage-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3507,9 +4104,9 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Example</h2>
       <div class="badges">
-        <label for="c-13-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
-        <label for="c-13-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
-        <label for="c-13-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-16-ui-kit-shahmatka-example-err" class="badge err as-toggle">API error</label>
+        <label for="c-16-ui-kit-shahmatka-example-info" class="badge info as-toggle">1 info</label>
+        <label for="c-16-ui-kit-shahmatka-example-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -3521,9 +4118,9 @@ size?: &#39;m&#39; | &#39;s&#39; | &#39;xs&#39;</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-13-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-13-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-13-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-16-ui-kit-shahmatka-example-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-16-ui-kit-shahmatka-example-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-16-ui-kit-shahmatka-example-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -3714,9 +4311,9 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> FunctionButton</h2>
       <div class="badges">
-        <label for="c-14-ui-kit-functionbutton-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-14-ui-kit-functionbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-14-ui-kit-functionbutton-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-17-ui-kit-functionbutton-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-17-ui-kit-functionbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-17-ui-kit-functionbutton-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -3729,11 +4326,11 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-14-ui-kit-functionbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-14-ui-kit-functionbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-17-ui-kit-functionbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-17-ui-kit-functionbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-14-ui-kit-functionbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-17-ui-kit-functionbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -3909,9 +4506,9 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;red&#39; = &#39;primary
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Header</h2>
       <div class="badges">
-        <label for="c-15-ui-kit-header-header-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-15-ui-kit-header-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-15-ui-kit-header-header-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-18-ui-kit-header-header-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-18-ui-kit-header-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-18-ui-kit-header-header-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -3924,11 +4521,11 @@ variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;red&#39; = &#39;primary
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-15-ui-kit-header-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-15-ui-kit-header-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-18-ui-kit-header-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-18-ui-kit-header-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-15-ui-kit-header-header-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-18-ui-kit-header-header-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4089,9 +4686,9 @@ onModuleClick?: () =&gt; void</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> IconButton</h2>
       <div class="badges">
-        <label for="c-16-ui-kit-iconbutton-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-16-ui-kit-iconbutton-info" class="badge info as-toggle">1 info</label>
-        <label for="c-16-ui-kit-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-19-ui-kit-iconbutton-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-19-ui-kit-iconbutton-info" class="badge info as-toggle">1 info</label>
+        <label for="c-19-ui-kit-iconbutton-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -4104,11 +4701,11 @@ onModuleClick?: () =&gt; void</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-16-ui-kit-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-16-ui-kit-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-19-ui-kit-iconbutton-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-19-ui-kit-iconbutton-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-16-ui-kit-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-19-ui-kit-iconbutton-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4247,9 +4844,9 @@ import { IconRemove } from '../../icons';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Icons</h2>
       <div class="badges">
-        <label for="c-17-ui-kit-icons-err" class="badge err as-toggle">API error</label>
-        <label for="c-17-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-17-ui-kit-icons-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-20-ui-kit-icons-err" class="badge err as-toggle">API error</label>
+        <label for="c-20-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-20-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -4261,9 +4858,9 @@ import { IconRemove } from '../../icons';</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-17-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-17-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-17-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-20-ui-kit-icons-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-20-ui-kit-icons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-20-ui-kit-icons-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -4275,18 +4872,21 @@ import { IconRemove } from '../../icons';</code></pre>
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  3 | import { iconManifest } from &#39;./manifest&#39;;
-  4 |
-&gt; 5 | const meta = {
-    | ^
-  6 |   title: &#39;Foundations/Icons&#39;,
-  7 |   id: &#39;ui-kit-icons&#39;,
-  8 |   parameters: {
+   6 | import type { IconProps } from &#39;./types&#39;;
+   7 |
+&gt;  8 | const meta = {
+     | ^
+   9 |   title: &#39;Foundations/Icons&#39;,
+  10 |   id: &#39;ui-kit-icons&#39;,
+  11 |   parameters: {
 
 ./src/icons/Icons.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
 import { useState } from &#39;react&#39;;
+import type { ComponentType } from &#39;react&#39;;
+import { fatIconManifest } from &#39;./fat/manifest&#39;;
 import { iconManifest } from &#39;./manifest&#39;;
+import type { IconProps } from &#39;./types&#39;;
 
 const meta = {
   title: &#39;Foundations/Icons&#39;,
@@ -4301,7 +4901,7 @@ type Story = StoryObj&lt;typeof meta&gt;;
 
 // Клик по плитке копирует имя компонента (например IconAccreditations) в буфер —
 // дальше редактор сам предложит нужный import из src/icons при автодополнении.
-function IconGallery() {
+function IconGallery({ icons }: { icons: { name: string; label: string; Icon: ComponentType&lt;IconProps&gt; }[] }) {
   const [copied, setCopied] = useState&lt;string | null&gt;(null);
 
   const handleCopy = (name: string) =&gt; {
@@ -4319,7 +4919,7 @@ function IconGallery() {
           gap: 16,
         }}
       &gt;
-        {iconManifest.map(({ name, label, Icon }) =&gt; (
+        {icons.map(({ name, label, Icon }) =&gt; (
           &lt;button
             key={name}
             type=&quot;button&quot;
@@ -4360,7 +4960,16 @@ function IconGallery() {
 // Полная галерея иконок кита («Белоконь-Анастасия», Stroke, после снятия boolean-обёртки).
 // Иконки наследуют цвет через currentColor — здесь показаны в цвете текста по умолчанию.
 export const AllIcons: Story = {
-  render: () =&gt; &lt;IconGallery /&gt;,
+  name: &#39;Stroke — контурные&#39;,
+  render: () =&gt; &lt;IconGallery icons={iconManifest} /&gt;,
+};
+
+// Набор Fat (Figma, страница Bold, node 2732:12232) — залитые «жирные» иконки. Импорт — из
+// src/icons/fat. Где какие: стрелки в шевронах (Select, MultiSelect, таблица) и иконки кнопок-ссылок
+// без заливки — Fat; всё остальное — Stroke (docs/ai/01-build-ui.md).
+export const Fat: Story = {
+  name: &#39;Fat — залитые (шевроны, кнопки-ссылки)&#39;,
+  render: () =&gt; &lt;IconGallery icons={fatIconManifest} /&gt;,
 };
 </code></pre></div>
     </div>
@@ -4388,12 +4997,22 @@ export const AllIcons: Story = {
           
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">All Icons</span>
+                <span class="ex-name">Stroke — контурные</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const AllIcons = () =&gt; &lt;IconGallery /&gt;;</code></pre>
+              <pre><code>const AllIcons = () =&gt; &lt;IconGallery icons={iconManifest} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Fat — залитые (шевроны, кнопки-ссылки)</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Fat = () =&gt; &lt;IconGallery icons={fatIconManifest} /&gt;;</code></pre>
               
             </div>
         </div>
@@ -4416,9 +5035,9 @@ export const AllIcons: Story = {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Input</h2>
       <div class="badges">
-        <label for="c-18-ui-kit-input-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-18-ui-kit-input-info" class="badge info as-toggle">1 info</label>
-        <label for="c-18-ui-kit-input-stories" class="badge ok as-toggle">15 stories</label>
+        <label for="c-21-ui-kit-input-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-21-ui-kit-input-info" class="badge info as-toggle">1 info</label>
+        <label for="c-21-ui-kit-input-stories" class="badge ok as-toggle">15 stories</label>
         
         
       </div>
@@ -4431,11 +5050,11 @@ export const AllIcons: Story = {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-18-ui-kit-input-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-18-ui-kit-input-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-21-ui-kit-input-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-21-ui-kit-input-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-18-ui-kit-input-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-21-ui-kit-input-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -4819,9 +5438,9 @@ import { IconSearch } from '../../icons';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> InputPassword</h2>
       <div class="badges">
-        <label for="c-19-ui-kit-inputpassword-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-19-ui-kit-inputpassword-info" class="badge info as-toggle">1 info</label>
-        <label for="c-19-ui-kit-inputpassword-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-22-ui-kit-inputpassword-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-22-ui-kit-inputpassword-info" class="badge info as-toggle">1 info</label>
+        <label for="c-22-ui-kit-inputpassword-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -4834,11 +5453,11 @@ import { IconSearch } from '../../icons';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-19-ui-kit-inputpassword-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-19-ui-kit-inputpassword-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-22-ui-kit-inputpassword-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-22-ui-kit-inputpassword-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-19-ui-kit-inputpassword-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-22-ui-kit-inputpassword-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5035,9 +5654,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> InputSearch</h2>
       <div class="badges">
-        <label for="c-20-ui-kit-inputsearch-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-20-ui-kit-inputsearch-info" class="badge info as-toggle">1 info</label>
-        <label for="c-20-ui-kit-inputsearch-stories" class="badge ok as-toggle">8 stories</label>
+        <label for="c-23-ui-kit-inputsearch-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-23-ui-kit-inputsearch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-23-ui-kit-inputsearch-stories" class="badge ok as-toggle">8 stories</label>
         
         
       </div>
@@ -5050,11 +5669,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-20-ui-kit-inputsearch-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-20-ui-kit-inputsearch-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-23-ui-kit-inputsearch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-23-ui-kit-inputsearch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-20-ui-kit-inputsearch-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-23-ui-kit-inputsearch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5209,6 +5828,178 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-loadingstate"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="LoadingState">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> LoadingState</h2>
+      <div class="badges">
+        <label for="c-24-ui-kit-loadingstate-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-24-ui-kit-loadingstate-info" class="badge info as-toggle">1 info</label>
+        <label for="c-24-ui-kit-loadingstate-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/LoadingState/LoadingState.stories.tsx">ui-kit-loadingstate · ./src/components/LoadingState/LoadingState.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-24-ui-kit-loadingstate-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-24-ui-kit-loadingstate-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-24-ui-kit-loadingstate-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">11 prop types</span>
+            </div>
+            <pre><code>Component: src/components/LoadingState/LoadingState.tsx::LoadingState</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>cancelLabel?: string = &#39;Отменить&#39;
+
+/**
+ * Содержимое, поверх которого загрузка (как у antd Spin).
+ */
+children?: ReactNode
+
+className?: string
+
+/**
+ * Показать не сразу, а через столько мс — чтобы быстрая загрузка не мигала.
+ */
+delay?: number
+
+/**
+ * Мелко под заголовком: чего ждать («это может занять до 1 минуты»).
+ */
+description?: ReactNode
+
+/**
+ * На весь экран, экран заблокирован.
+ */
+fullscreen?: boolean = false
+
+/**
+ * Куда вставлять fullscreen — ближайший `[data-theme]`, если тема не на body.
+ */
+getContainer?: () =&gt; HTMLElement
+
+/**
+ * «Отменить» — прервать загрузку и вернуться назад. Нет — нет кнопки.
+ */
+onCancel?: () =&gt; void
+
+/**
+ * s — как в макете (крутилка 48, 20 / 16); xs — маленький блок (30, 16 / 14).
+ */
+size?: &#39;s&#39; | &#39;xs&#39; = &#39;s&#39;
+
+/**
+ * С children: показывать ли загрузку поверх них. По умолчанию true.
+ */
+spinning?: boolean = true
+
+/**
+ * Заголовок. По умолчанию «Загрузка…».
+ */
+title?: ReactNode = &#39;Загрузка…&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Button, LoadingState } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (args) =&gt; &lt;PlaygroundDemo {...(args as Partial&lt;Args&gt;)} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Размеры</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Sizes = () =&gt; (
+  &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;1fr 320px&#39;, gap: 24 }}&gt;
+    &lt;div style={frame}&gt;
+      &lt;LoadingState description=&quot;Пожалуйста, подождите, это может занять до 1 минуты&quot; onCancel={() =&gt; {}} /&gt;
+    &lt;/div&gt;
+    &lt;div style={{ ...frame, height: 200 }}&gt;
+      &lt;LoadingState size=&quot;xs&quot; description=&quot;Считаем показатели&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Поверх блока</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const OverBlock = () =&gt; &lt;OverBlockDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">На весь экран</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Fullscreen = () =&gt; &lt;FullscreenDemo /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-modal-modal"
   class="card 
   no-error
@@ -5223,9 +6014,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Modal</h2>
       <div class="badges">
-        <label for="c-21-ui-kit-modal-modal-props" class="badge ok as-toggle">8 prop types</label>
-        <label for="c-21-ui-kit-modal-modal-info" class="badge info as-toggle">1 info</label>
-        <label for="c-21-ui-kit-modal-modal-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-25-ui-kit-modal-modal-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-25-ui-kit-modal-modal-info" class="badge info as-toggle">1 info</label>
+        <label for="c-25-ui-kit-modal-modal-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -5238,11 +6029,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-21-ui-kit-modal-modal-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-21-ui-kit-modal-modal-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-25-ui-kit-modal-modal-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-25-ui-kit-modal-modal-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-21-ui-kit-modal-modal-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-25-ui-kit-modal-modal-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5426,9 +6217,9 @@ open: boolean</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ModalButtons</h2>
       <div class="badges">
-        <label for="c-22-ui-kit-modal-modalbuttons-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-22-ui-kit-modal-modalbuttons-info" class="badge info as-toggle">1 info</label>
-        <label for="c-22-ui-kit-modal-modalbuttons-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-26-ui-kit-modal-modalbuttons-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-26-ui-kit-modal-modalbuttons-info" class="badge info as-toggle">1 info</label>
+        <label for="c-26-ui-kit-modal-modalbuttons-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -5441,11 +6232,11 @@ open: boolean</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-22-ui-kit-modal-modalbuttons-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-22-ui-kit-modal-modalbuttons-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-26-ui-kit-modal-modalbuttons-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-26-ui-kit-modal-modalbuttons-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-22-ui-kit-modal-modalbuttons-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-26-ui-kit-modal-modalbuttons-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5575,9 +6366,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ModalHead</h2>
       <div class="badges">
-        <label for="c-23-ui-kit-modal-modalhead-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-23-ui-kit-modal-modalhead-info" class="badge info as-toggle">1 info</label>
-        <label for="c-23-ui-kit-modal-modalhead-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-27-ui-kit-modal-modalhead-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-27-ui-kit-modal-modalhead-info" class="badge info as-toggle">1 info</label>
+        <label for="c-27-ui-kit-modal-modalhead-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -5590,11 +6381,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-23-ui-kit-modal-modalhead-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-23-ui-kit-modal-modalhead-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-27-ui-kit-modal-modalhead-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-27-ui-kit-modal-modalhead-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-23-ui-kit-modal-modalhead-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-27-ui-kit-modal-modalhead-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -5754,9 +6545,9 @@ title: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelect</h2>
       <div class="badges">
-        <label for="c-24-ui-kit-multiselect-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-24-ui-kit-multiselect-info" class="badge info as-toggle">1 info</label>
-        <label for="c-24-ui-kit-multiselect-stories" class="badge ok as-toggle">12 stories</label>
+        <label for="c-28-ui-kit-multiselect-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-28-ui-kit-multiselect-info" class="badge info as-toggle">1 info</label>
+        <label for="c-28-ui-kit-multiselect-stories" class="badge ok as-toggle">12 stories</label>
         
         
       </div>
@@ -5769,11 +6560,11 @@ title: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-24-ui-kit-multiselect-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-24-ui-kit-multiselect-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-28-ui-kit-multiselect-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-28-ui-kit-multiselect-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-24-ui-kit-multiselect-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-28-ui-kit-multiselect-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6300,9 +7091,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> MultiSelectTag</h2>
       <div class="badges">
-        <label for="c-25-ui-kit-multiselecttag-props" class="badge ok as-toggle">4 prop types</label>
-        <label for="c-25-ui-kit-multiselecttag-info" class="badge info as-toggle">1 info</label>
-        <label for="c-25-ui-kit-multiselecttag-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-29-ui-kit-multiselecttag-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-29-ui-kit-multiselecttag-info" class="badge info as-toggle">1 info</label>
+        <label for="c-29-ui-kit-multiselecttag-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -6315,11 +7106,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-25-ui-kit-multiselecttag-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-25-ui-kit-multiselecttag-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-29-ui-kit-multiselecttag-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-29-ui-kit-multiselecttag-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-25-ui-kit-multiselecttag-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-29-ui-kit-multiselecttag-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6427,6 +7218,448 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
   </div>
 </article>
 <article
+  id="ui-kit-objectcard"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="ObjectCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ObjectCard</h2>
+      <div class="badges">
+        <label for="c-30-ui-kit-objectcard-props" class="badge ok as-toggle">20 prop types</label>
+        <label for="c-30-ui-kit-objectcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-30-ui-kit-objectcard-stories" class="badge ok as-toggle">6 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/ObjectCard/ObjectCard.stories.tsx">ui-kit-objectcard · ./src/components/ObjectCard/ObjectCard.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-30-ui-kit-objectcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-30-ui-kit-objectcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-30-ui-kit-objectcard-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">20 prop types</span>
+            </div>
+            <pre><code>Component: src/components/ObjectCard/ObjectCard.tsx::ObjectCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Что сделает нажатие — для экранного диктора. По умолчанию «Открыть объект …» из name.
+ */
+actionLabel?: string
+
+/**
+ * Свои кнопки справа сверху (разные в разных сервисах).
+ */
+actions?: ReactNode
+
+/**
+ * Адрес или другая строка под названием.
+ */
+address?: ReactNode
+
+className?: string
+
+/**
+ * Счётчики справа сверху (просмотр): синий — новое, красный — требует действия.
+ */
+counters?: ObjectCardCounter[] = []
+
+device?: &#39;web&#39; | &#39;mob&#39; = &#39;web&#39;
+
+/**
+ * Ручка перетаскивания (режим редактирования).
+ */
+draggable?: boolean = false
+
+/**
+ * Пропы ручки от ObjectCardGrid (обработчики перетаскивания).
+ */
+dragHandleProps?: ButtonHTMLAttributes&lt;HTMLButtonElement&gt; &amp; { ref?: Ref&lt;HTMLButtonElement&gt; }
+
+/**
+ * Поля под фото — по два в строке.
+ */
+fields?: ObjectCardField[] = []
+
+/**
+ * Принудительное наведение — только для витрины.
+ */
+forceHover?: boolean = false
+
+href?: string
+
+/**
+ * Фото объекта. Нет или не загрузилось — заглушка.
+ */
+image?: string
+
+mode?: &#39;view&#39; | &#39;edit&#39; = &#39;view&#39;
+
+name: ReactNode
+
+/**
+ * На каком фоне лежит: на белом карточка серая, на сером — белая. По умолчанию — по вложенности.
+ */
+on?: &#39;grey&#39; | &#39;white&#39;
+
+/**
+ * Открыть объект. Есть onClick или href — карточка кликабельная.
+ */
+onClick?: () =&gt; void
+
+/**
+ * Корзина. Есть — кнопка показана.
+ */
+onDelete?: () =&gt; void
+
+/**
+ * «Очередь 7» — над названием.
+ */
+stage?: ReactNode
+
+/**
+ * Статус слева сверху.
+ */
+status?: Pick&lt;ObjectStatusProps, &#39;label&#39; | &#39;tone&#39; | &#39;star&#39; | &#39;starred&#39; | &#39;onStarChange&#39;&gt;
+
+style?: CSSProperties</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import {
+  Button,
+  EmptyState,
+  IconEdit,
+  IconPlus,
+  IconRemove,
+  IconTick,
+  Modal,
+  ObjectCard,
+  ObjectCardGrid,
+  ObjectGroup,
+  Surface,
+} from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;Live
+    mode=&quot;view&quot;
+    device=&quot;web&quot;
+    on=&quot;grey&quot;
+    name=&quot;Панорама парк Сосновка. Торговый центр&quot;
+    address=&quot;Санкт-Петербург, Пулковское шоссе, дом 99, корпус 4, строение 1&quot;
+    stage=&quot;Очередь 7&quot;
+    statusLabel=&quot;В работе&quot;
+    statusTone=&quot;glass&quot;
+    withPhoto
+    withStage={false}
+    withCounters
+    withStar={false}
+    withDelete
+    withHandle
+    withFields
+    clickable /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Просмотр и редактирование, наведение</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;repeat(2, 400px)&#39;, gap: 24 }}&gt;
+      {([&#39;view&#39;, &#39;edit&#39;] as const).flatMap((mode) =&gt;
+        [false, true].map((hover) =&gt; {
+          const o = OBJECTS[2];
+          return (
+            &lt;ObjectCard
+              key={mode + hover}
+              {...o}
+              mode={mode}
+              forceHover={hover}
+              onClick={() =&gt; {}}
+              onDelete={() =&gt; {}}
+              draggable
+            /&gt;
+          );
+        }),
+      )}
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">На белом и на сером</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const OnWhiteAndGrey = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 24 }}&gt;
+    &lt;Page tone=&quot;grey&quot;&gt;
+      &lt;div style={{ width: 400 }}&gt;
+        &lt;ObjectCard {...OBJECTS[0]} on=&quot;grey&quot; onClick={() =&gt; {}} /&gt;
+      &lt;/div&gt;
+    &lt;/Page&gt;
+    &lt;Page tone=&quot;white&quot;&gt;
+      &lt;div style={{ width: 400 }}&gt;
+        &lt;ObjectCard {...OBJECTS[0]} on=&quot;white&quot; onClick={() =&gt; {}} /&gt;
+      &lt;/div&gt;
+    &lt;/Page&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Фото и заглушка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const PhotoAndPlaceholder = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ display: &#39;flex&#39;, gap: 24 }}&gt;
+      &lt;div style={{ width: 400 }}&gt;
+        &lt;ObjectCard {...OBJECTS[1]} /&gt;
+      &lt;/div&gt;
+      &lt;div style={{ width: 400 }}&gt;
+        &lt;ObjectCard {...OBJECTS[1]} image={undefined} /&gt;
+      &lt;/div&gt;
+      &lt;div style={{ width: 400 }}&gt;
+        &lt;ObjectCard {...OBJECTS[1]} image=&quot;/битая-ссылка.jpg&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Телефон</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Mobile = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ display: &#39;flex&#39;, gap: 24 }}&gt;
+      &lt;div style={{ width: 320 }}&gt;
+        &lt;ObjectCard {...OBJECTS[2]} device=&quot;mob&quot; onClick={() =&gt; {}} /&gt;
+      &lt;/div&gt;
+      &lt;div style={{ width: 320 }}&gt;
+        &lt;ObjectCard {...OBJECTS[2]} device=&quot;mob&quot; mode=&quot;edit&quot; onDelete={() =&gt; {}} draggable /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Главная сервиса: группы, просмотр и редактирование</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const ServicePage = () =&gt; &lt;ServiceHome /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-objectstatus"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="ObjectStatus">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> ObjectStatus</h2>
+      <div class="badges">
+        <label for="c-31-ui-kit-objectstatus-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-31-ui-kit-objectstatus-info" class="badge info as-toggle">1 info</label>
+        <label for="c-31-ui-kit-objectstatus-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/ObjectCard/ObjectStatus.stories.tsx">ui-kit-objectstatus · ./src/components/ObjectCard/ObjectStatus.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-31-ui-kit-objectstatus-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-31-ui-kit-objectstatus-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-31-ui-kit-objectstatus-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">9 prop types</span>
+            </div>
+            <pre><code>Component: src/components/ObjectCard/ObjectStatus.tsx::ObjectStatus</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Подпись для экранного диктора, если label — просто число (счётчик).
+ */
+ariaLabel?: string
+
+/**
+ * Стрелка-ссылка справа (в макете — только у S).
+ */
+arrow?: boolean = false
+
+className?: string
+
+label: ReactNode
+
+/**
+ * Нажатие на звёздочку — тогда она кнопка «В избранное».
+ */
+onStarChange?: (starred: boolean) =&gt; void
+
+size?: &#39;m&#39; | &#39;s&#39; = &#39;m&#39;
+
+/**
+ * Звёздочка слева: false — нет, true — есть. Закрашена — `starred`.
+ */
+star?: boolean = false
+
+starred?: boolean = false
+
+tone?: &#39;glass&#39; | &#39;warning&#39; | &#39;danger&#39; | &#39;success&#39; | &#39;blue&#39; = &#39;glass&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { ObjectStatus } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;Live label=&quot;В работе&quot; tone=&quot;glass&quot; size=&quot;m&quot; star={false} arrow={false} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Цвета и размеры</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Tones = () =&gt; (
+  &lt;OnPhoto&gt;
+    {([&#39;m&#39;, &#39;s&#39;] as const).map((size) =&gt; (
+      &lt;div key={size} style={{ display: &#39;flex&#39;, gap: 12, alignItems: &#39;center&#39; }}&gt;
+        {TONES.map((tone) =&gt; (
+          &lt;ObjectStatus key={tone} tone={tone} size={size} label={{ glass: &#39;В работе&#39;, warning: &#39;Истекает срок сдачи&#39;, danger: &#39;Просрочено&#39;, success: &#39;Завершен&#39;, blue: &#39;2&#39; }[tone]} /&gt;
+        ))}
+      &lt;/div&gt;
+    ))}
+    &lt;div style={{ display: &#39;flex&#39;, gap: 12, alignItems: &#39;center&#39; }}&gt;
+      &lt;ObjectStatus label=&quot;Избранное&quot; star starred /&gt;
+      &lt;ObjectStatus label=&quot;Не в избранном&quot; star /&gt;
+      &lt;ObjectStatus label=&quot;Ссылка&quot; size=&quot;s&quot; arrow /&gt;
+    &lt;/div&gt;
+  &lt;/OnPhoto&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-pagination"
   class="card 
   no-error
@@ -6441,9 +7674,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Pagination</h2>
       <div class="badges">
-        <label for="c-26-ui-kit-pagination-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-26-ui-kit-pagination-info" class="badge info as-toggle">1 info</label>
-        <label for="c-26-ui-kit-pagination-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-32-ui-kit-pagination-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-32-ui-kit-pagination-info" class="badge info as-toggle">1 info</label>
+        <label for="c-32-ui-kit-pagination-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -6456,11 +7689,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-26-ui-kit-pagination-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-26-ui-kit-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-32-ui-kit-pagination-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-32-ui-kit-pagination-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-26-ui-kit-pagination-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-32-ui-kit-pagination-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6559,8 +7792,8 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
       <h2><span class="status-dot dot-ok"></span> Radio</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-27-ui-kit-radio-info" class="badge info as-toggle">1 info</label>
-        <label for="c-27-ui-kit-radio-stories" class="badge ok as-toggle">7 stories</label>
+        <label for="c-33-ui-kit-radio-info" class="badge info as-toggle">1 info</label>
+        <label for="c-33-ui-kit-radio-stories" class="badge ok as-toggle">7 stories</label>
         
         
       </div>
@@ -6573,8 +7806,8 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-27-ui-kit-radio-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-27-ui-kit-radio-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-33-ui-kit-radio-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-33-ui-kit-radio-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -6710,9 +7943,9 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> RemarkCard</h2>
       <div class="badges">
-        <label for="c-28-ui-kit-remarkcard-props" class="badge ok as-toggle">20 prop types</label>
-        <label for="c-28-ui-kit-remarkcard-info" class="badge info as-toggle">1 info</label>
-        <label for="c-28-ui-kit-remarkcard-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-34-ui-kit-remarkcard-props" class="badge ok as-toggle">20 prop types</label>
+        <label for="c-34-ui-kit-remarkcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-34-ui-kit-remarkcard-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -6725,11 +7958,11 @@ size?: &#39;large&#39; | &#39;small&#39; = &#39;large&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-28-ui-kit-remarkcard-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-28-ui-kit-remarkcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-34-ui-kit-remarkcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-34-ui-kit-remarkcard-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-28-ui-kit-remarkcard-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-34-ui-kit-remarkcard-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -6978,9 +8211,9 @@ text: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Scrollbar</h2>
       <div class="badges">
-        <label for="c-29-ui-kit-scrollbar-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-29-ui-kit-scrollbar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-29-ui-kit-scrollbar-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-35-ui-kit-scrollbar-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-35-ui-kit-scrollbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-35-ui-kit-scrollbar-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -6993,11 +8226,11 @@ text: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-29-ui-kit-scrollbar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-29-ui-kit-scrollbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-35-ui-kit-scrollbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-35-ui-kit-scrollbar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-29-ui-kit-scrollbar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-35-ui-kit-scrollbar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7128,9 +8361,9 @@ size?: &#39;s&#39; | &#39;xs&#39; = &#39;s&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Select</h2>
       <div class="badges">
-        <label for="c-30-ui-kit-select-props" class="badge ok as-toggle">9 prop types</label>
-        <label for="c-30-ui-kit-select-info" class="badge info as-toggle">1 info</label>
-        <label for="c-30-ui-kit-select-stories" class="badge ok as-toggle">16 stories</label>
+        <label for="c-36-ui-kit-select-props" class="badge ok as-toggle">9 prop types</label>
+        <label for="c-36-ui-kit-select-info" class="badge info as-toggle">1 info</label>
+        <label for="c-36-ui-kit-select-stories" class="badge ok as-toggle">16 stories</label>
         
         
       </div>
@@ -7143,11 +8376,11 @@ size?: &#39;s&#39; | &#39;xs&#39; = &#39;s&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-30-ui-kit-select-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-30-ui-kit-select-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-36-ui-kit-select-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-36-ui-kit-select-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-30-ui-kit-select-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-36-ui-kit-select-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7643,9 +8876,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaCell</h2>
       <div class="badges">
-        <label for="c-31-ui-kit-shahmatka-cell-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-31-ui-kit-shahmatka-cell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-31-ui-kit-shahmatka-cell-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-37-ui-kit-shahmatka-cell-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-37-ui-kit-shahmatka-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-37-ui-kit-shahmatka-cell-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -7658,11 +8891,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-31-ui-kit-shahmatka-cell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-31-ui-kit-shahmatka-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-37-ui-kit-shahmatka-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-37-ui-kit-shahmatka-cell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-31-ui-kit-shahmatka-cell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-37-ui-kit-shahmatka-cell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7803,8 +9036,8 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
       <h2><span class="status-dot dot-ok"></span> ShahmatkaLegend</h2>
       <div class="badges">
         <span class="badge">no API description</span>
-        <label for="c-32-ui-kit-shahmatka-legend-info" class="badge info as-toggle">1 info</label>
-        <label for="c-32-ui-kit-shahmatka-legend-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-38-ui-kit-shahmatka-legend-info" class="badge info as-toggle">1 info</label>
+        <label for="c-38-ui-kit-shahmatka-legend-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -7817,8 +9050,8 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-32-ui-kit-shahmatka-legend-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-32-ui-kit-shahmatka-legend-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-38-ui-kit-shahmatka-legend-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-38-ui-kit-shahmatka-legend-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -7877,9 +9110,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaLocationHeader</h2>
       <div class="badges">
-        <label for="c-33-ui-kit-shahmatka-locationheader-props" class="badge ok as-toggle">1 prop type</label>
-        <label for="c-33-ui-kit-shahmatka-locationheader-info" class="badge info as-toggle">1 info</label>
-        <label for="c-33-ui-kit-shahmatka-locationheader-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-39-ui-kit-shahmatka-locationheader-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-39-ui-kit-shahmatka-locationheader-info" class="badge info as-toggle">1 info</label>
+        <label for="c-39-ui-kit-shahmatka-locationheader-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -7892,11 +9125,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-33-ui-kit-shahmatka-locationheader-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-33-ui-kit-shahmatka-locationheader-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-39-ui-kit-shahmatka-locationheader-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-39-ui-kit-shahmatka-locationheader-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-33-ui-kit-shahmatka-locationheader-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-39-ui-kit-shahmatka-locationheader-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -7989,9 +9222,9 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaMiniCell</h2>
       <div class="badges">
-        <label for="c-34-ui-kit-shahmatka-minicell-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-34-ui-kit-shahmatka-minicell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-34-ui-kit-shahmatka-minicell-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-40-ui-kit-shahmatka-minicell-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-40-ui-kit-shahmatka-minicell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-40-ui-kit-shahmatka-minicell-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -8004,11 +9237,11 @@ size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-34-ui-kit-shahmatka-minicell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-34-ui-kit-shahmatka-minicell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-minicell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-minicell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-34-ui-kit-shahmatka-minicell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-40-ui-kit-shahmatka-minicell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8097,9 +9330,9 @@ status?: &#39;pending&#39; | &#39;required&#39; | &#39;done&#39; | &#39;sample&#
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> ShahmatkaWorkRow</h2>
       <div class="badges">
-        <label for="c-35-ui-kit-shahmatka-workrow-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-35-ui-kit-shahmatka-workrow-info" class="badge info as-toggle">1 info</label>
-        <label for="c-35-ui-kit-shahmatka-workrow-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-41-ui-kit-shahmatka-workrow-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-41-ui-kit-shahmatka-workrow-info" class="badge info as-toggle">1 info</label>
+        <label for="c-41-ui-kit-shahmatka-workrow-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -8112,11 +9345,11 @@ status?: &#39;pending&#39; | &#39;required&#39; | &#39;done&#39; | &#39;sample&#
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-35-ui-kit-shahmatka-workrow-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-35-ui-kit-shahmatka-workrow-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-41-ui-kit-shahmatka-workrow-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-41-ui-kit-shahmatka-workrow-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-35-ui-kit-shahmatka-workrow-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-41-ui-kit-shahmatka-workrow-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8217,9 +9450,9 @@ title: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SideBar</h2>
       <div class="badges">
-        <label for="c-36-ui-kit-sidemenu-sidebar-props" class="badge ok as-toggle">12 prop types</label>
-        <label for="c-36-ui-kit-sidemenu-sidebar-info" class="badge info as-toggle">1 info</label>
-        <label for="c-36-ui-kit-sidemenu-sidebar-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-42-ui-kit-sidemenu-sidebar-props" class="badge ok as-toggle">12 prop types</label>
+        <label for="c-42-ui-kit-sidemenu-sidebar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-42-ui-kit-sidemenu-sidebar-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -8232,11 +9465,11 @@ title: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-36-ui-kit-sidemenu-sidebar-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-36-ui-kit-sidemenu-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-42-ui-kit-sidemenu-sidebar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-42-ui-kit-sidemenu-sidebar-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-36-ui-kit-sidemenu-sidebar-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-42-ui-kit-sidemenu-sidebar-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8399,9 +9632,9 @@ title?: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> SideMenu</h2>
       <div class="badges">
-        <label for="c-37-ui-kit-sidemenu-sidemenu-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-37-ui-kit-sidemenu-sidemenu-info" class="badge info as-toggle">1 info</label>
-        <label for="c-37-ui-kit-sidemenu-sidemenu-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-43-ui-kit-sidemenu-sidemenu-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-43-ui-kit-sidemenu-sidemenu-info" class="badge info as-toggle">1 info</label>
+        <label for="c-43-ui-kit-sidemenu-sidemenu-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -8414,11 +9647,11 @@ title?: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-37-ui-kit-sidemenu-sidemenu-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-37-ui-kit-sidemenu-sidemenu-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-43-ui-kit-sidemenu-sidemenu-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-43-ui-kit-sidemenu-sidemenu-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-37-ui-kit-sidemenu-sidemenu-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-43-ui-kit-sidemenu-sidemenu-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8595,9 +9828,9 @@ selectedKey?: string</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Spinner</h2>
       <div class="badges">
-        <label for="c-38-ui-kit-spinner-props" class="badge ok as-toggle">2 prop types</label>
-        <label for="c-38-ui-kit-spinner-info" class="badge info as-toggle">1 info</label>
-        <label for="c-38-ui-kit-spinner-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-44-ui-kit-spinner-props" class="badge ok as-toggle">2 prop types</label>
+        <label for="c-44-ui-kit-spinner-info" class="badge info as-toggle">1 info</label>
+        <label for="c-44-ui-kit-spinner-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -8610,11 +9843,11 @@ selectedKey?: string</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-38-ui-kit-spinner-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-38-ui-kit-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-44-ui-kit-spinner-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-44-ui-kit-spinner-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-38-ui-kit-spinner-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-44-ui-kit-spinner-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8637,7 +9870,7 @@ selectedKey?: string</code></pre>
             <pre><code>Props:</code></pre>
             <pre><code>size?: number = 18
 
-tone?: &#39;accent&#39; | &#39;current&#39; = &#39;accent&#39;</code></pre>
+tone?: &#39;accent&#39; | &#39;current&#39; | &#39;block&#39; = &#39;accent&#39;</code></pre>
           </div>
         </div>
     
@@ -8665,7 +9898,7 @@ tone?: &#39;accent&#39; | &#39;current&#39; = &#39;accent&#39;</code></pre>
             </div>
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">Цвет: accent и current</span>
+                <span class="ex-name">Цвет: accent, current, block</span>
                 <span class="badge ok">story ok</span>
               </div>
               
@@ -8681,6 +9914,700 @@ tone?: &#39;accent&#39; | &#39;current&#39; = &#39;accent&#39;</code></pre>
     &lt;span style={{ display: &#39;flex&#39;, gap: 8, alignItems: &#39;center&#39;, color: &#39;#ffffff&#39;, background: &#39;#3c83f6&#39;, padding: &#39;8px 12px&#39;, borderRadius: 6 }}&gt;
       &lt;Spinner tone=&quot;current&quot; size={14} /&gt; current на синем
     &lt;/span&gt;
+    &lt;span style={{ display: &#39;flex&#39;, gap: 8, alignItems: &#39;center&#39; }}&gt;
+      &lt;Spinner tone=&quot;block&quot; size={48} /&gt; block 48
+    &lt;/span&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-stackedbar"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="StackedBar">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> StackedBar</h2>
+      <div class="badges">
+        <label for="c-45-ui-kit-stackedbar-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-45-ui-kit-stackedbar-info" class="badge info as-toggle">1 info</label>
+        <label for="c-45-ui-kit-stackedbar-stories" class="badge ok as-toggle">4 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/StackedBar/StackedBar.stories.tsx">ui-kit-stackedbar · ./src/components/StackedBar/StackedBar.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-45-ui-kit-stackedbar-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-45-ui-kit-stackedbar-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-45-ui-kit-stackedbar-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src/components/StackedBar/StackedBar.tsx::StackedBar</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Легенда под полосой — у сегментов с `label`.
+ */
+legend?: boolean = true
+
+segments: StackedBarSegment[]
+
+/**
+ * Число в центре сегмента.
+ */
+showCount?: boolean = true
+
+/**
+ * Всего. Больше суммы сегментов — справа остаток. По умолчанию — сумма.
+ */
+total?: number</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { StackedBar, Surface } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (a) =&gt; (
+  &lt;Page&gt;
+    &lt;StackedBar segments={statuses(a as Args)} total={(a as Args).total || undefined} showCount={(a as Args).showCount} legend={(a as Args).legend} /&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Цвета сегментов</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Colors = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ display: &#39;grid&#39;, gap: 16 }}&gt;
+      &lt;StackedBar legend={false} segments={[{ value: 12, color: &#39;info&#39;, label: &#39;info — На согласовании&#39; }]} /&gt;
+      &lt;StackedBar legend={false} segments={[{ value: 8, color: &#39;success&#39;, label: &#39;success — Согласовано&#39; }]} /&gt;
+      &lt;StackedBar legend={false} segments={[{ value: 5, color: &#39;warning&#39;, label: &#39;warning — На доработке&#39; }]} /&gt;
+      &lt;StackedBar legend={false} segments={[{ value: 3, color: &#39;danger&#39;, label: &#39;danger — Просрочено&#39; }]} /&gt;
+      &lt;StackedBar legend={false} segments={[{ value: 16, color: &#39;neutral&#39;, label: &#39;neutral — В работе&#39; }]} /&gt;
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С остатком</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Remaining = () =&gt; (
+  &lt;div style={{ padding: 24, background: &#39;var(--surface-grey, #f5f8fb)&#39;, borderRadius: 12, display: &#39;grid&#39;, gap: 16 }}&gt;
+    &lt;Surface&gt;
+      &lt;StackedBar legend={false} showCount={false} segments={[{ value: 28, color: &#39;success&#39;, label: &#39;Согласовано&#39; }]} total={36} /&gt;
+    &lt;/Surface&gt;
+    &lt;Surface&gt;
+      &lt;Surface&gt;
+        &lt;StackedBar legend={false} showCount={false} segments={[{ value: 28, color: &#39;success&#39;, label: &#39;Согласовано&#39; }]} total={36} /&gt;
+      &lt;/Surface&gt;
+    &lt;/Surface&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Узкие сегменты и длинная легенда</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Edge = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ maxWidth: 360 }}&gt;
+      &lt;StackedBar
+        segments={[
+          { value: 120, color: &#39;neutral&#39;, label: &#39;В работе у подрядчика&#39; },
+          { value: 3, color: &#39;info&#39;, label: &#39;На повторном согласовании в экспертизе&#39; },
+          { value: 1, color: &#39;danger&#39;, label: &#39;Просрочено&#39; },
+          { value: 40, color: &#39;success&#39;, label: &#39;Согласовано&#39; },
+        ]}
+      /&gt;
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-statcard"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="StatCard">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> StatCard</h2>
+      <div class="badges">
+        <label for="c-46-ui-kit-statcard-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-46-ui-kit-statcard-info" class="badge info as-toggle">1 info</label>
+        <label for="c-46-ui-kit-statcard-stories" class="badge ok as-toggle">12 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/StatCard/StatCard.stories.tsx">ui-kit-statcard · ./src/components/StatCard/StatCard.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-46-ui-kit-statcard-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-46-ui-kit-statcard-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-46-ui-kit-statcard-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">14 prop types</span>
+            </div>
+            <pre><code>Component: src/components/StatCard/StatCard.tsx::StatCard</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Подпись действия внизу кликабельной плитки.
+ */
+actionText?: ReactNode
+
+delta?: StatCardDelta
+
+/**
+ * Иконка кита. Цвет подложки и иконки — по `tone`.
+ */
+icon?: ReactNode
+
+/**
+ * Где иконка в строке подписи: `end` — справа у края плитки (по умолчанию), `start` — перед подписью.
+ */
+iconPlacement?: &#39;start&#39; | &#39;end&#39; = &#39;end&#39;
+
+/**
+ * Строка пояснения под значением: «Самая старая — 12 дней».
+ */
+note?: ReactNode
+
+/**
+ * Знаков после запятой у числа.
+ */
+precision?: number
+
+progress?: StatCardProgress
+
+/**
+ * Состав значения по частям — полоса StackedBar с числами и легендой.
+ */
+segments?: StackedBarSegment[]
+
+/**
+ * m — значение H2 24; l — главный показатель экрана, H1 32.
+ */
+size?: &#39;m&#39; | &#39;l&#39; = &#39;m&#39;
+
+/**
+ * Подпись показателя.
+ */
+title: ReactNode
+
+tone?: &#39;default&#39; | &#39;danger&#39; | &#39;warning&#39; | &#39;success&#39; = &#39;default&#39;
+
+/**
+ * История значения по порядку (от старых к новым) — плавный спарклайн внизу; с `label` у точек — тултип с подписью.
+ */
+trend?: number[] | StatCardTrendPoint[]
+
+/**
+ * Единица после значения, мельче и серым: «₽», «из 36», «дн.».
+ */
+unit?: ReactNode
+
+/**
+ * Значение. Число — с разрядами через пробел и дробью через запятую.
+ */
+value: number | string</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { IconClockCircle, IconDoc, IconMoney, StatCard, Surface } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (a) =&gt; &lt;PlaygroundStory {...(a as Args)} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Сводка в белой панели</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InPanel = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard title=&quot;Заявок в работе&quot; value={36} delta={{ value: &#39;+6&#39;, period: &#39;за неделю&#39; }} /&gt;
+        &lt;StatCard title=&quot;Сумма договоров&quot; value={2480000} unit=&quot;₽&quot; delta={{ value: &#39;+12%&#39;, good: true, period: &#39;к прошлому месяцу&#39; }} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={4} tone=&quot;danger&quot; delta={{ value: &#39;+2&#39;, good: false, period: &#39;за неделю&#39; }} /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Прямо на фоне страницы</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const OnPage = () =&gt; (
+  &lt;Page&gt;
+    &lt;Row&gt;
+      &lt;StatCard title=&quot;Заявок в работе&quot; value={36} note=&quot;из 52 за месяц&quot; /&gt;
+      &lt;StatCard title=&quot;Сумма договоров&quot; value={2480000} unit=&quot;₽&quot; note=&quot;по 36 заявкам&quot; /&gt;
+      &lt;StatCard title=&quot;Просрочено&quot; value={4} tone=&quot;danger&quot; note=&quot;11% заявок в работе&quot; /&gt;
+    &lt;/Row&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С динамикой</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Trend = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard title=&quot;Заявок в работе&quot; value={36} delta={{ value: &#39;+6&#39;, period: &#39;за неделю&#39; }} trend={withLabels(HISTORY.work, WEEKS)} /&gt;
+        &lt;StatCard title=&quot;Сумма договоров&quot; value={2480000} unit=&quot;₽&quot; delta={{ value: &#39;+12%&#39;, good: true, period: &#39;к прошлому месяцу&#39; }} trend={withLabels(HISTORY.sum, MONTHS)} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={4} tone=&quot;danger&quot; delta={{ value: &#39;+2&#39;, good: false, period: &#39;за неделю&#39; }} trend={withLabels(HISTORY.late, WEEKS)} /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Со шкалой «из скольких»</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Progress = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard title=&quot;Заявок согласовано&quot; value={28} unit=&quot;из 36&quot; progress={{ value: 28, max: 36 }} tone=&quot;success&quot; /&gt;
+        &lt;StatCard title=&quot;Сумма договоров&quot; value={2480000} unit=&quot;₽&quot; progress={{ value: 1240000, max: 2480000, caption: &#39;Оплачено 1 240 000 ₽&#39; }} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={4} unit=&quot;из 36&quot; tone=&quot;danger&quot; progress={{ value: 4, max: 36, caption: &#39;11% заявок&#39;, aside: &#39;норма до 5%&#39; }} /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состав</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Segments = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard
+          title=&quot;Юзер-таски BPMN&quot;
+          value={10}
+          segments={[
+            { value: 5, color: &#39;info&#39;, label: &#39;На согласовании&#39; },
+            { value: 2, color: &#39;success&#39;, label: &#39;Согласовано&#39; },
+            { value: 2, color: &#39;neutral&#39;, label: &#39;В работе&#39; },
+            { value: 1, color: &#39;danger&#39;, label: &#39;Просрочено&#39; },
+          ]}
+        /&gt;
+        &lt;StatCard
+          title=&quot;Заявки&quot;
+          value={36}
+          segments={[
+            { value: 16, color: &#39;neutral&#39;, label: &#39;В работе&#39; },
+            { value: 12, color: &#39;info&#39;, label: &#39;На согласовании&#39; },
+            { value: 5, color: &#39;warning&#39;, label: &#39;На доработке&#39; },
+            { value: 3, color: &#39;danger&#39;, label: &#39;Просрочено&#39; },
+          ]}
+        /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Плитка-фильтр</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Clickable = () =&gt; &lt;ClickableStory /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С иконкой</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithIcon = () =&gt; (
+  &lt;Page&gt;
+    &lt;p style={caption}&gt;iconPlacement=&quot;end&quot; — справа (по умолчанию)&lt;/p&gt;
+    &lt;Surface&gt;
+      &lt;IconRow placement=&quot;end&quot; /&gt;
+    &lt;/Surface&gt;
+    &lt;p style={{ ...caption, marginTop: 24 }}&gt;iconPlacement=&quot;start&quot; — перед подписью&lt;/p&gt;
+    &lt;Surface&gt;
+      &lt;IconRow placement=&quot;start&quot; /&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Главный показатель</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Hero = () =&gt; (
+  &lt;Page&gt;
+    &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;repeat(auto-fit, minmax(240px, 1fr))&#39;, gap: 16 }}&gt;
+      &lt;div style={{ gridColumn: &#39;span 2&#39;, display: &#39;grid&#39; }}&gt;
+        &lt;StatCard size=&quot;l&quot; title=&quot;Сумма договоров за сентябрь&quot; value={2480000} unit=&quot;₽&quot; delta={{ value: &#39;+12%&#39;, good: true, period: &#39;в августе 2 214 000 ₽&#39; }} trend={withLabels(HISTORY.sum, MONTHS)} /&gt;
+      &lt;/div&gt;
+      &lt;div style={{ display: &#39;grid&#39;, gap: 16 }}&gt;
+        &lt;StatCard title=&quot;Заявок в работе&quot; value={36} delta={{ value: &#39;+6&#39;, period: &#39;за неделю&#39; }} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={4} tone=&quot;danger&quot; delta={{ value: &#39;+2&#39;, good: false, period: &#39;за неделю&#39; }} /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Цвета значения</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Tones = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard title=&quot;Заявок в работе&quot; value={36} delta={{ value: &#39;−3&#39;, period: &#39;за неделю&#39; }} /&gt;
+        &lt;StatCard title=&quot;Просрочено&quot; value={4} tone=&quot;danger&quot; delta={{ value: &#39;+2&#39;, good: false, period: &#39;за неделю&#39; }} /&gt;
+        &lt;StatCard title=&quot;Срок истекает&quot; value={7} tone=&quot;warning&quot; note=&quot;в ближайшие 3 дня&quot; /&gt;
+        &lt;StatCard title=&quot;Закрыто в срок&quot; value={96} unit=&quot;%&quot; tone=&quot;success&quot; delta={{ value: &#39;+4%&#39;, good: true, period: &#39;к прошлому месяцу&#39; }} /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Длинные подписи и узкая плитка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Edge = () =&gt; (
+  &lt;Page&gt;
+    &lt;Row&gt;
+      &lt;StatCard title=&quot;Сумма договоров с подрядчиками по всем объектам программы реновации&quot; value={12676938080} unit=&quot;₽&quot; delta={{ value: &#39;−0,4%&#39;, good: false, period: &#39;к плану квартала&#39; }} /&gt;
+      &lt;StatCard title=&quot;Средняя сумма&quot; value={218616.27} precision={2} unit=&quot;₽&quot; /&gt;
+      &lt;StatCard title=&quot;Средний срок согласования&quot; value=&quot;—&quot; note=&quot;Посчитаем после первой согласованной заявки&quot; /&gt;
+      &lt;div style={{ maxWidth: 200 }}&gt;
+        &lt;StatCard title=&quot;Остаток&quot; value={12676938080} unit=&quot;₽&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/Row&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния кликабельной</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;Page&gt;
+    &lt;Surface&gt;
+      &lt;Row&gt;
+        &lt;StatCard title=&quot;Обычная&quot; value={36} onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Открыть список&quot; /&gt;
+        &lt;StatCard title=&quot;Ховер&quot; value={36} onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Открыть список&quot; forceState=&quot;hover&quot; /&gt;
+        &lt;StatCard title=&quot;Нажатие&quot; value={36} onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Открыть список&quot; forceState=&quot;active&quot; /&gt;
+        &lt;StatCard title=&quot;Выбрана&quot; value={36} onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Открыть список&quot; selected /&gt;
+        &lt;StatCard title=&quot;Фокус&quot; value={36} onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Открыть список&quot; forceState=&quot;focus&quot; /&gt;
+        &lt;StatCard title=&quot;Алерт, ховер&quot; value={4} tone=&quot;danger&quot; onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Показать просроченные&quot; forceState=&quot;hover&quot; /&gt;
+        &lt;StatCard title=&quot;Алерт, выбрана&quot; value={4} tone=&quot;danger&quot; onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Показать просроченные&quot; selected /&gt;
+        &lt;StatCard title=&quot;Предупреждение, выбрана&quot; value={7} tone=&quot;warning&quot; onClick={() =&gt; {}} actionLabel=&quot;Открыть&quot; actionText=&quot;Показать&quot; selected /&gt;
+      &lt;/Row&gt;
+    &lt;/Surface&gt;
+  &lt;/Page&gt;
+);</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-statistic"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Statistic">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Statistic</h2>
+      <div class="badges">
+        <label for="c-47-ui-kit-statistic-props" class="badge ok as-toggle">4 prop types</label>
+        <label for="c-47-ui-kit-statistic-info" class="badge info as-toggle">1 info</label>
+        <label for="c-47-ui-kit-statistic-stories" class="badge ok as-toggle">3 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Statistic/Statistic.stories.tsx">ui-kit-statistic · ./src/components/Statistic/Statistic.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-47-ui-kit-statistic-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-47-ui-kit-statistic-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-47-ui-kit-statistic-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">4 prop types</span>
+            </div>
+            <pre><code>Component: src/components/Statistic/Statistic.tsx::Statistic</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>decimalSeparator?: any = &#39;,&#39;
+
+/**
+ * mob — значение 15 (Mobile/H5).
+ */
+device?: &#39;web&#39; | &#39;mob&#39; = &#39;web&#39;
+
+groupSeparator?: any = &#39; &#39;
+
+tone?: &#39;default&#39; | &#39;danger&#39; | &#39;warning&#39; | &#39;success&#39; | &#39;accent&#39; = &#39;default&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Statistic, Tag } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = (a: Partial&lt;Args&gt;) =&gt; (
+  &lt;Box&gt;
+    &lt;Statistic title={a.title} value={a.value} tone={a.tone} device={a.device} suffix={/^\d+$/.test(a.value ?? &#39;&#39;) ? &#39;₽&#39; : undefined} /&gt;
+  &lt;/Box&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Цвета значения</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Tones = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 24 }}&gt;
+    {TONES.map((tone) =&gt; (
+      &lt;Box key={tone}&gt;
+        &lt;Statistic tone={tone} title={TONE_TEXT[tone][0]} value={TONE_TEXT[tone][1]} /&gt;
+      &lt;/Box&gt;
+    ))}
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Числа, длинный текст, телефон, не текст</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Kinds = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, gap: 24 }}&gt;
+    &lt;Box&gt;
+      &lt;Statistic title=&quot;АВР согласовано&quot; value={12676938080} suffix=&quot;₽&quot; /&gt;
+    &lt;/Box&gt;
+    &lt;Box&gt;
+      &lt;Statistic title=&quot;Тех. заказчик&quot; value=&quot;ООО «Строительная компания Северо-Запад»&quot; /&gt;
+    &lt;/Box&gt;
+    &lt;Box&gt;
+      &lt;Statistic title=&quot;Остаток по договорам&quot; value={938080} suffix=&quot;₽&quot; device=&quot;mob&quot; /&gt;
+    &lt;/Box&gt;
+    &lt;Box&gt;
+      &lt;Statistic title=&quot;Проверка&quot; formatter={() =&gt; &lt;Tag status=&quot;success&quot;&gt;Принято&lt;/Tag&gt;} /&gt;
+    &lt;/Box&gt;
   &lt;/div&gt;
 );</code></pre>
               
@@ -8705,9 +10632,9 @@ tone?: &#39;accent&#39; | &#39;current&#39; = &#39;accent&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Surface</h2>
       <div class="badges">
-        <label for="c-39-ui-kit-surface-props" class="badge ok as-toggle">6 prop types</label>
-        <label for="c-39-ui-kit-surface-info" class="badge info as-toggle">1 info</label>
-        <label for="c-39-ui-kit-surface-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-48-ui-kit-surface-props" class="badge ok as-toggle">6 prop types</label>
+        <label for="c-48-ui-kit-surface-info" class="badge info as-toggle">1 info</label>
+        <label for="c-48-ui-kit-surface-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -8720,11 +10647,11 @@ tone?: &#39;accent&#39; | &#39;current&#39; = &#39;accent&#39;</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-39-ui-kit-surface-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-39-ui-kit-surface-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-48-ui-kit-surface-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-48-ui-kit-surface-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-39-ui-kit-surface-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-48-ui-kit-surface-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8871,7 +10798,7 @@ padding?: number</code></pre>
   </div>
 </article>
 <article
-  id="ui-kit-table-table"
+  id="ui-kit-switch"
   class="card 
   no-error
   has-info
@@ -8880,19 +10807,19 @@ padding?: number</code></pre>
   
   no-doc-error"
   role="listitem"
-  aria-label="Table">
+  aria-label="Switch">
   <div class="head">
     <div class="title">
-      <h2><span class="status-dot dot-ok"></span> Table</h2>
+      <h2><span class="status-dot dot-ok"></span> Switch</h2>
       <div class="badges">
-        <label for="c-40-ui-kit-table-table-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-40-ui-kit-table-table-info" class="badge info as-toggle">1 info</label>
-        <label for="c-40-ui-kit-table-table-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-49-ui-kit-switch-props" class="badge ok as-toggle">1 prop type</label>
+        <label for="c-49-ui-kit-switch-info" class="badge info as-toggle">1 info</label>
+        <label for="c-49-ui-kit-switch-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
     </div>
-    <div class="meta" title="./src/components/Table/Table.stories.tsx">ui-kit-table-table · ./src/components/Table/Table.stories.tsx</div>
+    <div class="meta" title="./src/components/Switch/Switch.stories.tsx">ui-kit-switch · ./src/components/Switch/Switch.stories.tsx</div>
     
     
     
@@ -8900,11 +10827,11 @@ padding?: number</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-40-ui-kit-table-table-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-40-ui-kit-table-table-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-49-ui-kit-switch-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-49-ui-kit-switch-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-40-ui-kit-table-table-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-49-ui-kit-switch-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -8921,7 +10848,144 @@ padding?: number</code></pre>
           <div class="note ok">
             <div class="row">
               <span class="ex-name">Prop types <small>(react-docgen)</small></span>
-              <span class="badge ok">7 prop types</span>
+              <span class="badge ok">1 prop type</span>
+            </div>
+            <pre><code>Component: src/components/Switch/Switch.tsx::Switch</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * l — 36×20 (по умолчанию), m — 30×16.
+ */
+size?: &#39;l&#39; | &#39;m&#39; = &#39;l&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Checkbox, Radio, Switch } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;Live size=&quot;l&quot; disabled={false} loading={false} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Все варианты</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; (
+  &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;80px repeat(4, 120px)&#39;, gap: &#39;12px 16px&#39;, alignItems: &#39;center&#39; }}&gt;
+    &lt;span /&gt;
+    {[&#39;включён&#39;, &#39;выключен&#39;, &#39;включён, недоступен&#39;, &#39;выключен, недоступен&#39;].map((t) =&gt; (
+      &lt;span key={t} style={head}&gt;
+        {t}
+      &lt;/span&gt;
+    ))}
+    {([&#39;l&#39;, &#39;m&#39;] as SwitchSize[]).flatMap((size) =&gt; [
+      &lt;span key={size} style={head}&gt;
+        {size.toUpperCase()}
+      &lt;/span&gt;,
+      cell(&lt;Switch size={size} defaultChecked aria-label=&quot;Пример&quot; /&gt;, size + &#39;1&#39;),
+      cell(&lt;Switch size={size} aria-label=&quot;Пример&quot; /&gt;, size + &#39;2&#39;),
+      cell(&lt;Switch size={size} defaultChecked disabled aria-label=&quot;Пример&quot; /&gt;, size + &#39;3&#39;),
+      cell(&lt;Switch size={size} disabled aria-label=&quot;Пример&quot; /&gt;, size + &#39;4&#39;),
+    ])}
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С подписью</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithLabel = () =&gt; &lt;WithLabelDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Загрузка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Loading = () =&gt; &lt;LoadingDemo /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  id="ui-kit-table-table"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Table">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Table</h2>
+      <div class="badges">
+        <label for="c-50-ui-kit-table-table-props" class="badge ok as-toggle">8 prop types</label>
+        <label for="c-50-ui-kit-table-table-info" class="badge info as-toggle">1 info</label>
+        <label for="c-50-ui-kit-table-table-stories" class="badge ok as-toggle">7 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Table/Table.stories.tsx">ui-kit-table-table · ./src/components/Table/Table.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-50-ui-kit-table-table-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-50-ui-kit-table-table-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-50-ui-kit-table-table-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">8 prop types</span>
             </div>
             <pre><code>Component: src/components/Table/Table.tsx::Table</code></pre>
             <pre><code>Props:</code></pre>
@@ -8934,6 +10998,13 @@ dataSource?: any = []
  * Не передано — запасной текст «Здесь пока ничего нет».
  */
 emptyState?: EmptyStateContent
+
+/**
+ * Строки переставляются: слева колонка с ручкой (DragHandle, Figma 7373:3773), тянуть мышью,
+ * пальцем или с клавиатуры (Tab до ручки, пробел, стрелки, пробел). Возвращает строки в новом
+ * порядке. Для дерева не включается.
+ */
+onRowsReorder?: (rows: T[]) =&gt; void
 
 /**
  * «Сбросить» в плашке «ничего не найдено» — очистить поиск. Нет — плашка без кнопки.
@@ -9064,6 +11135,21 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
               <pre><code>const EditableCells = () =&gt; &lt;EditableDemo /&gt;;</code></pre>
               
             </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Перестановка строк</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const RowsReorder = () =&gt; (
+  &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 40 }}&gt;
+    &lt;ReorderDemo /&gt;
+    &lt;ReorderDemo size=&quot;small&quot; withSelection /&gt;
+  &lt;/div&gt;
+);</code></pre>
+              
+            </div>
         </div>
     
     
@@ -9084,9 +11170,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TableCell</h2>
       <div class="badges">
-        <label for="c-41-ui-kit-table-cell-props" class="badge ok as-toggle">10 prop types</label>
-        <label for="c-41-ui-kit-table-cell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-41-ui-kit-table-cell-stories" class="badge ok as-toggle">4 stories</label>
+        <label for="c-51-ui-kit-table-cell-props" class="badge ok as-toggle">10 prop types</label>
+        <label for="c-51-ui-kit-table-cell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-51-ui-kit-table-cell-stories" class="badge ok as-toggle">4 stories</label>
         
         
       </div>
@@ -9099,11 +11185,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-41-ui-kit-table-cell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-41-ui-kit-table-cell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-51-ui-kit-table-cell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-51-ui-kit-table-cell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-41-ui-kit-table-cell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-51-ui-kit-table-cell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9285,9 +11371,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TableHeaderCell</h2>
       <div class="badges">
-        <label for="c-42-ui-kit-table-headercell-props" class="badge ok as-toggle">7 prop types</label>
-        <label for="c-42-ui-kit-table-headercell-info" class="badge info as-toggle">1 info</label>
-        <label for="c-42-ui-kit-table-headercell-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-52-ui-kit-table-headercell-props" class="badge ok as-toggle">7 prop types</label>
+        <label for="c-52-ui-kit-table-headercell-info" class="badge info as-toggle">1 info</label>
+        <label for="c-52-ui-kit-table-headercell-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -9300,11 +11386,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-42-ui-kit-table-headercell-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-42-ui-kit-table-headercell-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-52-ui-kit-table-headercell-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-52-ui-kit-table-headercell-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-42-ui-kit-table-headercell-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-52-ui-kit-table-headercell-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9485,9 +11571,9 @@ title: ReactNode</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Tabs</h2>
       <div class="badges">
-        <label for="c-43-ui-kit-tabs-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-43-ui-kit-tabs-info" class="badge info as-toggle">1 info</label>
-        <label for="c-43-ui-kit-tabs-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-53-ui-kit-tabs-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-53-ui-kit-tabs-info" class="badge info as-toggle">1 info</label>
+        <label for="c-53-ui-kit-tabs-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -9500,11 +11586,11 @@ title: ReactNode</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-43-ui-kit-tabs-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-43-ui-kit-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-53-ui-kit-tabs-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-53-ui-kit-tabs-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-43-ui-kit-tabs-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-53-ui-kit-tabs-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9698,9 +11784,9 @@ import { Tag } from '../Tag/Tag';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Tag</h2>
       <div class="badges">
-        <label for="c-44-ui-kit-tag-props" class="badge ok as-toggle">3 prop types</label>
-        <label for="c-44-ui-kit-tag-info" class="badge info as-toggle">1 info</label>
-        <label for="c-44-ui-kit-tag-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-54-ui-kit-tag-props" class="badge ok as-toggle">3 prop types</label>
+        <label for="c-54-ui-kit-tag-info" class="badge info as-toggle">1 info</label>
+        <label for="c-54-ui-kit-tag-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -9713,11 +11799,11 @@ import { Tag } from '../Tag/Tag';</code></pre>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-44-ui-kit-tag-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-44-ui-kit-tag-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-54-ui-kit-tag-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-54-ui-kit-tag-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-44-ui-kit-tag-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-54-ui-kit-tag-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -9827,9 +11913,9 @@ status?: &#39;default&#39; | &#39;success&#39; | &#39;error&#39; | &#39;processi
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> TextLine</h2>
       <div class="badges">
-        <label for="c-45-ui-kit-textline-props" class="badge ok as-toggle">5 prop types</label>
-        <label for="c-45-ui-kit-textline-info" class="badge info as-toggle">1 info</label>
-        <label for="c-45-ui-kit-textline-stories" class="badge ok as-toggle">6 stories</label>
+        <label for="c-55-ui-kit-textline-props" class="badge ok as-toggle">5 prop types</label>
+        <label for="c-55-ui-kit-textline-info" class="badge info as-toggle">1 info</label>
+        <label for="c-55-ui-kit-textline-stories" class="badge ok as-toggle">6 stories</label>
         
         
       </div>
@@ -9842,11 +11928,11 @@ status?: &#39;default&#39; | &#39;success&#39; | &#39;error&#39; | &#39;processi
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-45-ui-kit-textline-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-45-ui-kit-textline-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-55-ui-kit-textline-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-55-ui-kit-textline-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-45-ui-kit-textline-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-55-ui-kit-textline-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -10017,9 +12103,9 @@ type?: &#39;lv&#39; | &#39;equal&#39; = &#39;lv&#39;</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Tokens</h2>
       <div class="badges">
-        <label for="c-46-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
-        <label for="c-46-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
-        <label for="c-46-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-56-ui-kit-shahmatka-tokens-err" class="badge err as-toggle">API error</label>
+        <label for="c-56-ui-kit-shahmatka-tokens-info" class="badge info as-toggle">1 info</label>
+        <label for="c-56-ui-kit-shahmatka-tokens-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -10031,9 +12117,9 @@ type?: &#39;lv&#39; | &#39;equal&#39; = &#39;lv&#39;</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-46-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-46-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-46-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-56-ui-kit-shahmatka-tokens-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-56-ui-kit-shahmatka-tokens-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-56-ui-kit-shahmatka-tokens-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -10259,9 +12345,9 @@ export const Reference: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-47-foundations-typography-err" class="badge err as-toggle">API error</label>
-        <label for="c-47-foundations-typography-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-47-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-57-foundations-typography-err" class="badge err as-toggle">API error</label>
+        <label for="c-57-foundations-typography-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-57-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -10273,9 +12359,9 @@ export const Reference: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-47-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-47-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-47-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-57-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-57-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-57-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -10579,6 +12665,210 @@ function SectionHeading({ children }: { children: string }) {
   </div>
 </article>
 <article
+  id="foundations-figma-colors"
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="ЦветаFigma">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
+      <div class="badges">
+        <label for="c-58-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-58-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-58-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/theme/FigmaColors.stories.tsx">foundations-figma-colors · ./src/theme/FigmaColors.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-58-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-58-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-58-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  22 | `;
+  23 |
+&gt; 24 | const meta = {
+     | ^
+  25 |   title: &#39;Foundations/Цвета Figma&#39;,
+  26 |   id: &#39;foundations-figma-colors&#39;,
+  27 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/theme/FigmaColors.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useLayoutEffect, useRef, useState } from &#39;react&#39;;
+import data from &#39;./figma-colors.json&#39;;
+import &#39;./figma-colors.css&#39;;
+
+// Цвета Figma UI Kit «Практис» — все переменные из Figma (коллекции Colors и Palette) с теми же
+// именами, как они называются в коде. Значение каждой — живое, из CSS-переменной: переключите
+// тему ☀️/🌙 в тулбаре — видно, у каких есть тёмное значение.
+
+const cssName = (name: string) =&gt; &#39;--&#39; + name.replace(/с/g, &#39;c&#39;).toLowerCase().replace(/[/\s]+/g, &#39;-&#39;);
+
+const description = `
+Все цвета Figma UI Kit «Практис» — CSS-переменные кита **с теми же именами**:
+\`text/grey-primary\` в Figma → \`var(--text-grey-primary)\` в CSS (и \`figmaColors.textGreyPrimary\` в коде).
+
+- **Colors** — смысловые (text, icon, bg, border, button): их и брать в компонентах. Каждый ссылается на
+  цвет палитры — как в Figma.
+- **Palette** — базовые цвета; напрямую — только если смыслового нет.
+- Цвет вручную (\`#41484a\`) в компонентах не пишем — только переменной.
+- Обновить из Figma: выгрузить переменные в \`src/theme/figma-colors.json\` и \`npm run figma-colors\`.
+- Тёмной темы в Figma нет — черновые значения в \`src/theme/figma-colors.dark.json\`.
+`;
+
+const meta = {
+  title: &#39;Foundations/Цвета Figma&#39;,
+  id: &#39;foundations-figma-colors&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+} satisfies Meta;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+function Swatch({ name, alias }: { name: string; alias?: string }) {
+  const ref = useRef&lt;HTMLDivElement&gt;(null);
+  const [value, setValue] = useState(&#39;&#39;);
+  // Без массива зависимостей: после смены темы в тулбаре значение перечитывается
+  useLayoutEffect(() =&gt; {
+    if (ref.current) setValue(getComputedStyle(ref.current).getPropertyValue(cssName(name)).trim());
+  });
+  const text = name.startsWith(&#39;text/&#39;);
+  return (
+    &lt;div ref={ref} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 12, minWidth: 0 }}&gt;
+      &lt;span
+        style={{
+          flexShrink: 0,
+          width: 40,
+          height: 40,
+          borderRadius: 6,
+          background: text ? (name.includes(&#39;white&#39;) ? &#39;var(--grey-800)&#39; : &#39;var(--bg-white-page-full)&#39;) : `var(${cssName(name)})`,
+          boxShadow: &#39;inset 0 0 0 1px rgba(0,0,0,.08)&#39;,
+          display: &#39;grid&#39;,
+          placeItems: &#39;center&#39;,
+          color: `var(${cssName(name)})`,
+          fontWeight: 600,
+          fontSize: 16,
+        }}
+      &gt;
+        {text ? &#39;Аа&#39; : &#39;&#39;}
+      &lt;/span&gt;
+      &lt;span style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 2, minWidth: 0, fontSize: 12, lineHeight: 1.2 }}&gt;
+        &lt;span style={{ color: &#39;var(--text-black-primary)&#39;, fontWeight: 500 }}&gt;{name}&lt;/span&gt;
+        &lt;code style={{ color: &#39;var(--text-grey-secondary)&#39; }}&gt;{cssName(name)}&lt;/code&gt;
+        &lt;span style={{ color: &#39;var(--text-black-secondary)&#39; }}&gt;
+          {value}
+          {alias ? ` ← ${alias}` : &#39;&#39;}
+        &lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  );
+}
+
+function Grid({ items }: { items: { name: string; alias?: string }[] }) {
+  const groups = new Map&lt;string, typeof items&gt;();
+  for (const it of items) {
+    const g = it.name.split(&#39;/&#39;)[0];
+    groups.set(g, [...(groups.get(g) ?? []), it]);
+  }
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 24, fontFamily: &#39;Inter, sans-serif&#39; }}&gt;
+      {[...groups].map(([g, list]) =&gt; (
+        &lt;section key={g}&gt;
+          &lt;h3 style={{ margin: &#39;0 0 12px&#39;, fontSize: 16, fontWeight: 500, color: &#39;var(--text-black-primary)&#39; }}&gt;{g}&lt;/h3&gt;
+          &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;repeat(auto-fill, minmax(260px, 1fr))&#39;, gap: 12 }}&gt;
+            {list.map((it) =&gt; (
+              &lt;Swatch key={it.name} {...it} /&gt;
+            ))}
+          &lt;/div&gt;
+        &lt;/section&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Colors: Story = {
+  name: &#39;Colors — смысловые&#39;,
+  render: () =&gt; &lt;Grid items={data.Colors} /&gt;,
+};
+
+export const Palette: Story = {
+  name: &#39;Palette — базовые&#39;,
+  render: () =&gt; &lt;Grid items={data.Palette} /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">Specify an @import jsdoc tag on your component or your stories meta such as @import import { ЦветаFigma } from &#39;my-design-system&#39;;</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Colors — смысловые</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Colors = () =&gt; &lt;Grid items={data.Colors} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Palette — базовые</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Palette = () =&gt; &lt;Grid items={data.Palette} /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-header-части"
   class="card 
   has-error
@@ -10593,9 +12883,9 @@ function SectionHeading({ children }: { children: string }) {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Части</h2>
       <div class="badges">
-        <label for="c-48-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-48-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-48-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-59-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-59-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-59-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -10607,9 +12897,9 @@ function SectionHeading({ children }: { children: string }) {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-48-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-48-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-48-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-59-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-59-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-59-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -10621,13 +12911,13 @@ function SectionHeading({ children }: { children: string }) {
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  19 | `;
-  20 |
-&gt; 21 | const meta = {
+  20 | `;
+  21 |
+&gt; 22 | const meta = {
      | ^
-  22 |   title: &#39;UI Kit/Навигация/Header/Части&#39;,
-  23 |   id: &#39;ui-kit-header-части&#39;,
-  24 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: componentDescription }, story: { height: &#39;400px&#39; } } },
+  23 |   title: &#39;UI Kit/Навигация/Header/Части&#39;,
+  24 |   id: &#39;ui-kit-header-части&#39;,
+  25 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: componentDescription }, story: { height: &#39;400px&#39; } } },
 
 ./src/components/Header/HeaderParts.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
@@ -10640,10 +12930,11 @@ const componentDescription = `
 Молекулы шапки — живут только в ней. Источник — Figma UI Kit «Практис», node 986:1967.
 
 - **HeaderMenuItem** — пункт меню: иконка 20 + текст 16; наведение — голубая полоска снизу,
-  текущий раздел — синяя; точка-метка — **Bulb** кита: зелёная «есть новое», красная «нужно действие»;
+  текущий раздел — синяя; точка-метка — **Bulb** кита, цвет по смыслу: зелёная — новое, оранжевая — требуется действие,
+  красная — ошибка, синяя — изменения;
   счётчик (\`count\`) — тот же Bulb, синий, после текста (как в боковом меню).
 - **HeaderButton** — уведомления, задачи, «Загрузки», доп. кнопки: 49×49, с подписью — шире;
-  счётчик зелёный или красный; у «Загрузок» — крутилка и ошибка.
+  счётчик — цвет по смыслу, как у точки (зелёный — новое, оранжевый — требуется действие); у «Загрузок» — крутилка и ошибка.
 - **HeaderAppButton** — единственная круглая кнопка, привлекает внимание, открывает спецмодалку.
 - **HeaderAccount** — кабинет: аватар, имя, организация; открывает меню (DropdownMenu кита).
   Узкий вариант (планшет) — только аватар.
@@ -10686,7 +12977,7 @@ function MenuDemo() {
       &lt;/Row&gt;
       &lt;Row label=&quot;точки-метки&quot;&gt;
         &lt;HeaderMenuItem icon={&lt;IconBuilding05 /&gt;} label=&quot;Есть новое&quot; dot=&quot;green&quot; active={active === &#39;new&#39;} onClick={() =&gt; setActive(&#39;new&#39;)} /&gt;
-        &lt;HeaderMenuItem icon={&lt;IconBookmark /&gt;} label=&quot;Нужно действие&quot; dot=&quot;red&quot; active={active === &#39;todo&#39;} onClick={() =&gt; setActive(&#39;todo&#39;)} /&gt;
+        &lt;HeaderMenuItem icon={&lt;IconBookmark /&gt;} label=&quot;Нужно действие&quot; dot=&quot;orange&quot; active={active === &#39;todo&#39;} onClick={() =&gt; setActive(&#39;todo&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;счётчик&quot;&gt;
         &lt;HeaderMenuItem icon={&lt;IconBuilding05 /&gt;} label=&quot;Заявки&quot; count={3} active={active === &#39;req&#39;} onClick={() =&gt; setActive(&#39;req&#39;)} /&gt;
@@ -10698,7 +12989,7 @@ function MenuDemo() {
 
 export const Buttons: Story = {
   name: &#39;HeaderButton&#39;,
-  parameters: { docs: { description: { story: &#39;Пустая, со счётчиком «есть новое» (зелёный) и «важное» (красный); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.&#39; } } },
+  parameters: { docs: { description: { story: &#39;Пустая, со счётчиком «есть новое» (зелёный) и «требуется действие» (оранжевый); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.&#39; } } },
   render: () =&gt; &lt;ButtonsDemo /&gt;,
 };
 
@@ -10710,12 +13001,12 @@ function ButtonsDemo() {
       &lt;Row label=&quot;без подписи&quot;&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; onClick={click(&#39;пустая&#39;)} /&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; onClick={click(&#39;счётчик зелёный&#39;)} /&gt;
-        &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; countColor=&quot;red&quot; onClick={click(&#39;счётчик красный&#39;)} /&gt;
+        &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; countColor=&quot;orange&quot; onClick={click(&#39;счётчик оранжевый&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;с подписью&quot;&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; showLabel onClick={click(&#39;пустая с подписью&#39;)} /&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; onClick={click(&#39;зелёный с подписью&#39;)} /&gt;
-        &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; countColor=&quot;red&quot; onClick={click(&#39;красный с подписью&#39;)} /&gt;
+        &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; countColor=&quot;orange&quot; onClick={click(&#39;оранжевый с подписью&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;задачи&quot;&gt;
         &lt;HeaderButton label=&quot;Задачи&quot; icon={&lt;TasksIcon /&gt;} onClick={click(&#39;задачи&#39;)} /&gt;
@@ -10884,7 +13175,7 @@ export const Logos: Story = {
           <label for="no-component-found-toggle" class="group-header">
             <span class="caret">▸</span>
             <span class="group-title">No component found</span>
-            <span class="group-count">6</span>
+            <span class="group-count">7</span>
           </label>
           <div class="group-cards">
 <article
@@ -11437,7 +13728,7 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
       <div class="badges">
         <label for="c-error-2-ui-kit-icons-err" class="badge err as-toggle">API error</label>
         <label for="c-error-2-ui-kit-icons-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-error-2-ui-kit-icons-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-error-2-ui-kit-icons-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -11463,18 +13754,21 @@ import { ShahmatkaCell, ShahmatkaLocationHeader, ShahmatkaTableCorner, Shahmatka
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  3 | import { iconManifest } from &#39;./manifest&#39;;
-  4 |
-&gt; 5 | const meta = {
-    | ^
-  6 |   title: &#39;Foundations/Icons&#39;,
-  7 |   id: &#39;ui-kit-icons&#39;,
-  8 |   parameters: {
+   6 | import type { IconProps } from &#39;./types&#39;;
+   7 |
+&gt;  8 | const meta = {
+     | ^
+   9 |   title: &#39;Foundations/Icons&#39;,
+  10 |   id: &#39;ui-kit-icons&#39;,
+  11 |   parameters: {
 
 ./src/icons/Icons.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
 import { useState } from &#39;react&#39;;
+import type { ComponentType } from &#39;react&#39;;
+import { fatIconManifest } from &#39;./fat/manifest&#39;;
 import { iconManifest } from &#39;./manifest&#39;;
+import type { IconProps } from &#39;./types&#39;;
 
 const meta = {
   title: &#39;Foundations/Icons&#39;,
@@ -11489,7 +13783,7 @@ type Story = StoryObj&lt;typeof meta&gt;;
 
 // Клик по плитке копирует имя компонента (например IconAccreditations) в буфер —
 // дальше редактор сам предложит нужный import из src/icons при автодополнении.
-function IconGallery() {
+function IconGallery({ icons }: { icons: { name: string; label: string; Icon: ComponentType&lt;IconProps&gt; }[] }) {
   const [copied, setCopied] = useState&lt;string | null&gt;(null);
 
   const handleCopy = (name: string) =&gt; {
@@ -11507,7 +13801,7 @@ function IconGallery() {
           gap: 16,
         }}
       &gt;
-        {iconManifest.map(({ name, label, Icon }) =&gt; (
+        {icons.map(({ name, label, Icon }) =&gt; (
           &lt;button
             key={name}
             type=&quot;button&quot;
@@ -11548,7 +13842,16 @@ function IconGallery() {
 // Полная галерея иконок кита («Белоконь-Анастасия», Stroke, после снятия boolean-обёртки).
 // Иконки наследуют цвет через currentColor — здесь показаны в цвете текста по умолчанию.
 export const AllIcons: Story = {
-  render: () =&gt; &lt;IconGallery /&gt;,
+  name: &#39;Stroke — контурные&#39;,
+  render: () =&gt; &lt;IconGallery icons={iconManifest} /&gt;,
+};
+
+// Набор Fat (Figma, страница Bold, node 2732:12232) — залитые «жирные» иконки. Импорт — из
+// src/icons/fat. Где какие: стрелки в шевронах (Select, MultiSelect, таблица) и иконки кнопок-ссылок
+// без заливки — Fat; всё остальное — Stroke (docs/ai/01-build-ui.md).
+export const Fat: Story = {
+  name: &#39;Fat — залитые (шевроны, кнопки-ссылки)&#39;,
+  render: () =&gt; &lt;IconGallery icons={fatIconManifest} /&gt;,
 };
 </code></pre></div>
     </div>
@@ -11576,12 +13879,22 @@ export const AllIcons: Story = {
           
             <div class="note ok">
               <div class="row">
-                <span class="ex-name">All Icons</span>
+                <span class="ex-name">Stroke — контурные</span>
                 <span class="badge ok">story ok</span>
               </div>
               
               
-              <pre><code>const AllIcons = () =&gt; &lt;IconGallery /&gt;;</code></pre>
+              <pre><code>const AllIcons = () =&gt; &lt;IconGallery icons={iconManifest} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Fat — залитые (шевроны, кнопки-ссылки)</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Fat = () =&gt; &lt;IconGallery icons={fatIconManifest} /&gt;;</code></pre>
               
             </div>
         </div>
@@ -12175,28 +14488,28 @@ function SectionHeading({ children }: { children: string }) {
   
   no-doc-error"
   role="listitem"
-  aria-label="Части">
+  aria-label="ЦветаFigma">
   <div class="head">
     <div class="title">
-      <h2><span class="status-dot dot-err"></span> Части</h2>
+      <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
       <div class="badges">
-        <label for="c-error-5-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-error-5-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-error-5-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-error-5-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-5-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-error-5-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
     </div>
-    <div class="meta" title="./src/components/Header/HeaderParts.stories.tsx">ui-kit-header-части · ./src/components/Header/HeaderParts.stories.tsx</div>
+    <div class="meta" title="./src/theme/FigmaColors.stories.tsx">foundations-figma-colors · ./src/theme/FigmaColors.stories.tsx</div>
     
     
     
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-error-5-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-error-5-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-error-5-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-error-5-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-5-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-5-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -12208,13 +14521,217 @@ function SectionHeading({ children }: { children: string }) {
     <div class="note err">
       <div class="note-title">API error</div>
       <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
-  19 | `;
-  20 |
-&gt; 21 | const meta = {
+  22 | `;
+  23 |
+&gt; 24 | const meta = {
      | ^
-  22 |   title: &#39;UI Kit/Навигация/Header/Части&#39;,
-  23 |   id: &#39;ui-kit-header-части&#39;,
-  24 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: componentDescription }, story: { height: &#39;400px&#39; } } },
+  25 |   title: &#39;Foundations/Цвета Figma&#39;,
+  26 |   id: &#39;foundations-figma-colors&#39;,
+  27 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+
+./src/theme/FigmaColors.stories.tsx:
+import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
+import { useLayoutEffect, useRef, useState } from &#39;react&#39;;
+import data from &#39;./figma-colors.json&#39;;
+import &#39;./figma-colors.css&#39;;
+
+// Цвета Figma UI Kit «Практис» — все переменные из Figma (коллекции Colors и Palette) с теми же
+// именами, как они называются в коде. Значение каждой — живое, из CSS-переменной: переключите
+// тему ☀️/🌙 в тулбаре — видно, у каких есть тёмное значение.
+
+const cssName = (name: string) =&gt; &#39;--&#39; + name.replace(/с/g, &#39;c&#39;).toLowerCase().replace(/[/\s]+/g, &#39;-&#39;);
+
+const description = `
+Все цвета Figma UI Kit «Практис» — CSS-переменные кита **с теми же именами**:
+\`text/grey-primary\` в Figma → \`var(--text-grey-primary)\` в CSS (и \`figmaColors.textGreyPrimary\` в коде).
+
+- **Colors** — смысловые (text, icon, bg, border, button): их и брать в компонентах. Каждый ссылается на
+  цвет палитры — как в Figma.
+- **Palette** — базовые цвета; напрямую — только если смыслового нет.
+- Цвет вручную (\`#41484a\`) в компонентах не пишем — только переменной.
+- Обновить из Figma: выгрузить переменные в \`src/theme/figma-colors.json\` и \`npm run figma-colors\`.
+- Тёмной темы в Figma нет — черновые значения в \`src/theme/figma-colors.dark.json\`.
+`;
+
+const meta = {
+  title: &#39;Foundations/Цвета Figma&#39;,
+  id: &#39;foundations-figma-colors&#39;,
+  parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  tags: [&#39;autodocs&#39;],
+} satisfies Meta;
+
+export default meta;
+type Story = StoryObj&lt;typeof meta&gt;;
+
+function Swatch({ name, alias }: { name: string; alias?: string }) {
+  const ref = useRef&lt;HTMLDivElement&gt;(null);
+  const [value, setValue] = useState(&#39;&#39;);
+  // Без массива зависимостей: после смены темы в тулбаре значение перечитывается
+  useLayoutEffect(() =&gt; {
+    if (ref.current) setValue(getComputedStyle(ref.current).getPropertyValue(cssName(name)).trim());
+  });
+  const text = name.startsWith(&#39;text/&#39;);
+  return (
+    &lt;div ref={ref} style={{ display: &#39;flex&#39;, alignItems: &#39;center&#39;, gap: 12, minWidth: 0 }}&gt;
+      &lt;span
+        style={{
+          flexShrink: 0,
+          width: 40,
+          height: 40,
+          borderRadius: 6,
+          background: text ? (name.includes(&#39;white&#39;) ? &#39;var(--grey-800)&#39; : &#39;var(--bg-white-page-full)&#39;) : `var(${cssName(name)})`,
+          boxShadow: &#39;inset 0 0 0 1px rgba(0,0,0,.08)&#39;,
+          display: &#39;grid&#39;,
+          placeItems: &#39;center&#39;,
+          color: `var(${cssName(name)})`,
+          fontWeight: 600,
+          fontSize: 16,
+        }}
+      &gt;
+        {text ? &#39;Аа&#39; : &#39;&#39;}
+      &lt;/span&gt;
+      &lt;span style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 2, minWidth: 0, fontSize: 12, lineHeight: 1.2 }}&gt;
+        &lt;span style={{ color: &#39;var(--text-black-primary)&#39;, fontWeight: 500 }}&gt;{name}&lt;/span&gt;
+        &lt;code style={{ color: &#39;var(--text-grey-secondary)&#39; }}&gt;{cssName(name)}&lt;/code&gt;
+        &lt;span style={{ color: &#39;var(--text-black-secondary)&#39; }}&gt;
+          {value}
+          {alias ? ` ← ${alias}` : &#39;&#39;}
+        &lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  );
+}
+
+function Grid({ items }: { items: { name: string; alias?: string }[] }) {
+  const groups = new Map&lt;string, typeof items&gt;();
+  for (const it of items) {
+    const g = it.name.split(&#39;/&#39;)[0];
+    groups.set(g, [...(groups.get(g) ?? []), it]);
+  }
+  return (
+    &lt;div style={{ display: &#39;flex&#39;, flexDirection: &#39;column&#39;, gap: 24, fontFamily: &#39;Inter, sans-serif&#39; }}&gt;
+      {[...groups].map(([g, list]) =&gt; (
+        &lt;section key={g}&gt;
+          &lt;h3 style={{ margin: &#39;0 0 12px&#39;, fontSize: 16, fontWeight: 500, color: &#39;var(--text-black-primary)&#39; }}&gt;{g}&lt;/h3&gt;
+          &lt;div style={{ display: &#39;grid&#39;, gridTemplateColumns: &#39;repeat(auto-fill, minmax(260px, 1fr))&#39;, gap: 12 }}&gt;
+            {list.map((it) =&gt; (
+              &lt;Swatch key={it.name} {...it} /&gt;
+            ))}
+          &lt;/div&gt;
+        &lt;/section&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export const Colors: Story = {
+  name: &#39;Colors — смысловые&#39;,
+  render: () =&gt; &lt;Grid items={data.Colors} /&gt;,
+};
+
+export const Palette: Story = {
+  name: &#39;Palette — базовые&#39;,
+  render: () =&gt; &lt;Grid items={data.Palette} /&gt;,
+};
+</code></pre></div>
+    </div>
+        </div>
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">Specify an @import jsdoc tag on your component or your stories meta such as @import import { ЦветаFigma } from &#39;my-design-system&#39;;</div>
+    </div>
+        </div>
+    
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Colors — смысловые</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Colors = () =&gt; &lt;Grid items={data.Colors} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Palette — базовые</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Palette = () =&gt; &lt;Grid items={data.Palette} /&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
+  
+  class="card 
+  has-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Части">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-err"></span> Части</h2>
+      <div class="badges">
+        <label for="c-error-6-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-error-6-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-error-6-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Header/HeaderParts.stories.tsx">ui-kit-header-части · ./src/components/Header/HeaderParts.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  <input id="c-error-6-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-error-6-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-error-6-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  
+
+  <div class="panels">
+    
+        <div class="panel panel-err">
+          
+    <div class="note err">
+      <div class="note-title">API error</div>
+      <div class="note-body"><pre><code>We could not detect the component from your story file. Specify meta.component.
+  20 | `;
+  21 |
+&gt; 22 | const meta = {
+     | ^
+  23 |   title: &#39;UI Kit/Навигация/Header/Части&#39;,
+  24 |   id: &#39;ui-kit-header-части&#39;,
+  25 |   parameters: { layout: &#39;padded&#39;, docs: { description: { component: componentDescription }, story: { height: &#39;400px&#39; } } },
 
 ./src/components/Header/HeaderParts.stories.tsx:
 import type { Meta, StoryObj } from &#39;@storybook/react-vite&#39;;
@@ -12227,10 +14744,11 @@ const componentDescription = `
 Молекулы шапки — живут только в ней. Источник — Figma UI Kit «Практис», node 986:1967.
 
 - **HeaderMenuItem** — пункт меню: иконка 20 + текст 16; наведение — голубая полоска снизу,
-  текущий раздел — синяя; точка-метка — **Bulb** кита: зелёная «есть новое», красная «нужно действие»;
+  текущий раздел — синяя; точка-метка — **Bulb** кита, цвет по смыслу: зелёная — новое, оранжевая — требуется действие,
+  красная — ошибка, синяя — изменения;
   счётчик (\`count\`) — тот же Bulb, синий, после текста (как в боковом меню).
 - **HeaderButton** — уведомления, задачи, «Загрузки», доп. кнопки: 49×49, с подписью — шире;
-  счётчик зелёный или красный; у «Загрузок» — крутилка и ошибка.
+  счётчик — цвет по смыслу, как у точки (зелёный — новое, оранжевый — требуется действие); у «Загрузок» — крутилка и ошибка.
 - **HeaderAppButton** — единственная круглая кнопка, привлекает внимание, открывает спецмодалку.
 - **HeaderAccount** — кабинет: аватар, имя, организация; открывает меню (DropdownMenu кита).
   Узкий вариант (планшет) — только аватар.
@@ -12273,7 +14791,7 @@ function MenuDemo() {
       &lt;/Row&gt;
       &lt;Row label=&quot;точки-метки&quot;&gt;
         &lt;HeaderMenuItem icon={&lt;IconBuilding05 /&gt;} label=&quot;Есть новое&quot; dot=&quot;green&quot; active={active === &#39;new&#39;} onClick={() =&gt; setActive(&#39;new&#39;)} /&gt;
-        &lt;HeaderMenuItem icon={&lt;IconBookmark /&gt;} label=&quot;Нужно действие&quot; dot=&quot;red&quot; active={active === &#39;todo&#39;} onClick={() =&gt; setActive(&#39;todo&#39;)} /&gt;
+        &lt;HeaderMenuItem icon={&lt;IconBookmark /&gt;} label=&quot;Нужно действие&quot; dot=&quot;orange&quot; active={active === &#39;todo&#39;} onClick={() =&gt; setActive(&#39;todo&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;счётчик&quot;&gt;
         &lt;HeaderMenuItem icon={&lt;IconBuilding05 /&gt;} label=&quot;Заявки&quot; count={3} active={active === &#39;req&#39;} onClick={() =&gt; setActive(&#39;req&#39;)} /&gt;
@@ -12285,7 +14803,7 @@ function MenuDemo() {
 
 export const Buttons: Story = {
   name: &#39;HeaderButton&#39;,
-  parameters: { docs: { description: { story: &#39;Пустая, со счётчиком «есть новое» (зелёный) и «важное» (красный); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.&#39; } } },
+  parameters: { docs: { description: { story: &#39;Пустая, со счётчиком «есть новое» (зелёный) и «требуется действие» (оранжевый); с подписью и без; «Загрузки» — идёт загрузка и ошибка. Под кнопками — какая нажата.&#39; } } },
   render: () =&gt; &lt;ButtonsDemo /&gt;,
 };
 
@@ -12297,12 +14815,12 @@ function ButtonsDemo() {
       &lt;Row label=&quot;без подписи&quot;&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; onClick={click(&#39;пустая&#39;)} /&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; onClick={click(&#39;счётчик зелёный&#39;)} /&gt;
-        &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; countColor=&quot;red&quot; onClick={click(&#39;счётчик красный&#39;)} /&gt;
+        &lt;HeaderButton label=&quot;Уведомления&quot; count=&quot;99+&quot; countColor=&quot;orange&quot; onClick={click(&#39;счётчик оранжевый&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;с подписью&quot;&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; showLabel onClick={click(&#39;пустая с подписью&#39;)} /&gt;
         &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; onClick={click(&#39;зелёный с подписью&#39;)} /&gt;
-        &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; countColor=&quot;red&quot; onClick={click(&#39;красный с подписью&#39;)} /&gt;
+        &lt;HeaderButton label=&quot;Уведомления&quot; showLabel count=&quot;99+&quot; countColor=&quot;orange&quot; onClick={click(&#39;оранжевый с подписью&#39;)} /&gt;
       &lt;/Row&gt;
       &lt;Row label=&quot;задачи&quot;&gt;
         &lt;HeaderButton label=&quot;Задачи&quot; icon={&lt;TasksIcon /&gt;} onClick={click(&#39;задачи&#39;)} /&gt;
