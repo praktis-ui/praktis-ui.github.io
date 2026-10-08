@@ -998,6 +998,24 @@
       ],
       "import": "import { IconButton, IconDownload2, IconEye, IconRemove, IconTrash } from 'praktis-ui-kit';\nimport { IconRemove } from '../../icons';"
     },
+    "ui-kit-form-fields": {
+      "id": "ui-kit-form-fields",
+      "name": "Форма",
+      "path": "./src/components/Input/FormFields.stories.tsx",
+      "jsDocTags": {},
+      "error": {
+        "name": "No component found",
+        "message": "We could not detect the component from your story file. Specify meta.component.\n  37 | `;\n  38 |\n> 39 | const meta = {\n     | ^\n  40 |   title: 'UI Kit/Поля и выбор/Форма',\n  41 |   id: 'ui-kit-form-fields',\n  42 |   parameters: { layout: 'padded', docs: { description: { component: description } } },\n\n./src/components/Input/FormFields.stories.tsx:\nimport type { Meta, StoryObj } from '@storybook/react-vite';\nimport { Form } from 'antd';\nimport type { Dayjs } from 'dayjs';\nimport { useState } from 'react';\nimport { Button } from '../Button/Button';\nimport { dateCompleteRule, DatePicker } from '../DatePicker/DatePicker';\nimport { MultiSelect } from '../MultiSelect/MultiSelect';\nimport { Select } from '../Select/Select';\nimport { Input } from './Input';\nimport { InputPassword } from './InputPassword';\nimport { TextArea } from './TextArea';\nimport '../../theme/figma-colors.css';\n\nconst description = `\nПоля кита в форме **antd Form**: проверку делает форма (правила \\`rules\\`), подпись и ошибку рисует поле кита —\nв нашем виде. Разработчику не нужно перекладывать ошибки из формы в \\`status\\` / \\`errorMessage\\`.\n\n\\`\\`\\`tsx\n<Form form={form} onFinish={save}>\n  <Form.Item name=\"email\" rules={[{ required: true, message: 'Укажите почту' }]} noStyle>\n    <Input label=\"Почта\" required />\n  </Form.Item>\n  <Form.Item name=\"start\" rules={[{ required: true, message: 'Укажите дату' }, dateCompleteRule]} noStyle>\n    <DatePicker label=\"Дата начала\" required />\n  </Form.Item>\n</Form>\n\\`\\`\\`\n\n| Правило | Почему |\n|---|---|\n| \\`Form.Item\\` — с \\`noStyle\\` | у такого Form.Item нет своих подписи и текста ошибки — их рисует поле кита. Без \\`noStyle\\` antd нарисует свою подпись; текст ошибки поле тогда не повторяет |\n| подпись и звёздочку — в поле: \\`label\\`, \\`required\\` | форма звёздочку не ставит |\n| у **DatePicker** — ещё \\`dateCompleteRule\\` | начали вводить дату и не закончили («12.0») — форма не отправится, под полем «Введите дату полностью»; такой даты нет (31.04) — «Некорректная дата». Вернулись исправлять — краснота снимается сразу |\n| свои \\`status\\` / \\`errorMessage\\` | важнее формы: например, ошибка с сервера |\n\nРаботает у Input, InputPassword, InputSearch, TextArea, Select, MultiSelect, DatePicker. Вне формы поля ведут себя как раньше.\n`;\n\nconst meta = {\n  title: 'UI Kit/Поля и выбор/Форма',\n  id: 'ui-kit-form-fields',\n  parameters: { layout: 'padded', docs: { description: { component: description } } },\n  tags: ['autodocs'],\n} satisfies Meta;\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nconst WORKS = ['Монолитные работы', 'Кровля', 'Фасадные работы', 'Электромонтаж'].map((w) => ({ value: w, label: w }));\nconst OBJECTS = ['ЖК «Любимое»', 'ЖК «Панорама парк»', 'Школа на 1100 мест'].map((w) => ({ value: w, label: w }));\n\ntype Values = { name: string; email: string; password: string; object: string; works: string[]; start: Dayjs; comment?: string };\n\nfunction FormDemo() {\n  const [form] = Form.useForm<Values>();\n  const [result, setResult] = useState('');\n  return (\n    <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', fontFamily: 'Inter, sans-serif' }}>\n      <Form<Values>\n        form={form}\n        onFinish={(v) => setResult(JSON.stringify({ ...v, start: v.start?.format('DD.MM.YYYY') }, null, 2))}\n        onFinishFailed={() => setResult('Форма не отправлена: есть ошибки')}\n        style={{ width: 360, display: 'flex', flexDirection: 'column', gap: 16 }}\n      >\n        <Form.Item name=\"name\" rules={[{ required: true, message: 'Укажите ФИО' }]} noStyle>\n          <Input label=\"ФИО\" required placeholder=\"Иванов Иван Иванович\" />\n        </Form.Item>\n        <Form.Item name=\"email\" rules={[{ required: true, message: 'Укажите почту' }, { type: 'email', message: 'Почта в формате name@company.ru' }]} noStyle>\n          <Input label=\"Почта\" required placeholder=\"name@company.ru\" />\n        </Form.Item>\n        <Form.Item name=\"password\" rules={[{ required: true, message: 'Придумайте пароль' }, { min: 8, message: 'Не короче 8 символов' }]} noStyle>\n          <InputPassword label=\"Пароль\" required placeholder=\"Не короче 8 символов\" />\n        </Form.Item>\n        <Form.Item name=\"object\" rules={[{ required: true, message: 'Выберите объект' }]} noStyle>\n          <Select label=\"Объект\" required placeholder=\"Выберите объект\" options={OBJECTS} />\n        </Form.Item>\n        <Form.Item name=\"works\" rules={[{ required: true, message: 'Выберите хотя бы один вид работ' }]} noStyle>\n          <MultiSelect label=\"Виды работ\" required placeholder=\"Выберите виды работ\" options={WORKS} />\n        </Form.Item>\n        <Form.Item name=\"start\" rules={[{ required: true, message: 'Укажите дату начала' }, dateCompleteRule]} noStyle>\n          <DatePicker label=\"Дата начала\" required />\n        </Form.Item>\n        <Form.Item name=\"comment\" rules={[{ max: 200, message: 'Не длиннее 200 символов' }]} noStyle>\n          <TextArea label=\"Комментарий\" placeholder=\"Необязательно\" />\n        </Form.Item>\n        <div style={{ display: 'flex', gap: 12 }}>\n          <Button variant=\"primary\" htmlType=\"submit\">\n            Отправить\n          </Button>\n          <Button\n            variant=\"stroke\"\n            onClick={() => {\n              form.resetFields();\n              setResult('');\n            }}\n          >\n            Сбросить\n          </Button>\n        </div>\n      </Form>\n      <pre style={{ margin: 0, fontSize: 12, color: 'var(--text-black-secondary)', whiteSpace: 'pre-wrap' }}>{result || 'Нажмите «Отправить» — пустые поля покажут ошибки. Заполните — здесь появятся значения формы.'}</pre>\n    </div>\n  );\n}\n\nexport const InForm: Story = {\n  name: 'В форме antd',\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'Нажмите «Отправить» с пустыми полями — у каждого поля красная подпись и текст ошибки в виде кита. Исправили поле — ошибка уходит. В дате начните вводить и уйдите из поля, не закончив, — «Введите дату полностью», форма не отправится.',\n      },\n    },\n  },\n  render: () => <FormDemo />,\n};\n\n"
+      },
+      "stories": [
+        {
+          "id": "ui-kit-form-fields--in-form",
+          "name": "В форме antd",
+          "snippet": "const InForm = () => <FormDemo />;"
+        }
+      ],
+      "import": "import { Button, DatePicker, Input, InputPassword, MultiSelect, Select, TextArea } from 'praktis-ui-kit';\nimport { Form } from 'antd';"
+    },
     "ui-kit-checkbox": {
       "id": "ui-kit-checkbox",
       "name": "Checkbox",
@@ -4162,7 +4180,7 @@
               "elements": [
                 {
                   "name": "union",
-                  "raw": "(ColumnType<T> & { editable?: TableColumnEditable<T> }) | ColumnGroupType<T>",
+                  "raw": "| (ColumnType<T> & {\n    editable?: TableColumnEditable<T>;\n    /**\n     * Где колонка на телефоне (строка — карточка). Обычно не нужно — кит решает сам: первая колонка —\n     * заголовок, теги статуса — наверх, кнопки-иконки — к ним, кнопки с текстом — вниз, короткие\n     * значения — по два в ряд, длинные и файлы — на всю ширину.\n     */\n    mobile?: MobileRole;\n  })\n| ColumnGroupType<T>",
                   "elements": [
                     {
                       "name": "unknown"
@@ -4291,6 +4309,97 @@
             },
             "description": "Что показать, когда строк нет: заголовок и мелко — что сделать (с кнопкой) или чего ждать.\nНе передано — запасной текст «Здесь пока ничего нет»."
           },
+          "nestedTable": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => ReactNode",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "ReactNode"
+                }
+              }
+            },
+            "description": "Вложенная таблица под строкой (Figma, пример 15215:19569): шеврон в первой колонке раскрывает\nстроку, под ней на серой подложке — белая карточка с тем, что вернула функция (обычно `<Table>`\nкита без подвала). В шапке первой колонки — шеврон «раскрыть / свернуть все»."
+          },
+          "rowHasNested": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => boolean",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "boolean"
+                }
+              }
+            },
+            "description": "У каких строк есть вложенная таблица. По умолчанию — у всех."
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": "Телефон или компьютер. По умолчанию — само (до 601 или мобильный браузер, ThemeProvider device):\nна телефоне каждая строка — карточка, страницы — подгрузка при прокрутке."
+          },
+          "onLoadMore": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Телефон, данные с сервера: догрузить ещё, когда дочитали до конца."
+          },
+          "hasMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Есть что догружать (с `onLoadMore`)."
+          },
+          "loadingMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт догрузка (с `onLoadMore`)."
+          },
           "dataSource": {
             "defaultValue": {
               "value": "[]",
@@ -4327,7 +4436,7 @@
         {
           "id": "ui-kit-table-table--with-tags",
           "name": "С тегами и действиями",
-          "snippet": "const WithTags = () => (\n  <Table<Accreditation>\n    pagination={false}\n    dataSource={ACCREDITATIONS}\n    columns={[\n      {\n        title: 'Организация',\n        dataIndex: 'org',\n        width: 320,\n        render: (org: string, row) => <TableCell secondary={`ИНН ${row.inn}`}>{org}</TableCell>,\n      },\n      { title: 'Виды работ', dataIndex: 'works', render: (works: string[]) => <TableTags tags={works.map((w) => ({ key: w, label: w }))} /> },\n      { title: 'Действует до', dataIndex: 'until', width: 180 },\n      {\n        key: 'actions',\n        width: 72,\n        render: () => (\n          <TableCell align=\"center\">\n            <IconButton variant=\"red\" label=\"Удалить\" icon={<IconTrash />} />\n          </TableCell>\n        ),\n      },\n    ]}\n  />\n);"
+          "snippet": "const WithTags = () => (\n  <Table<Accreditation>\n    pagination={false}\n    dataSource={ACCREDITATIONS}\n    columns={[\n      {\n        title: 'Организация',\n        dataIndex: 'org',\n        width: 320,\n        render: (org: string, row) => <TableCell secondary={`ИНН ${row.inn}`}>{org}</TableCell>,\n      },\n      { title: 'Виды работ', dataIndex: 'works', render: (works: string[]) => <TableTags tags={works.map((w) => ({ key: w, label: w }))} /> },\n      { title: 'Действует до', dataIndex: 'until', width: 180 },\n      {\n        key: 'actions',\n        width: 72,\n        fixed: 'right', // кнопки в конце строки — закреплены справа\n        render: () => (\n          <TableCell align=\"center\">\n            <IconButton variant=\"red\" label=\"Удалить\" icon={<IconTrash />} />\n          </TableCell>\n        ),\n      },\n    ]}\n  />\n);"
         },
         {
           "id": "ui-kit-table-table--editable-cells",
@@ -4351,6 +4460,538 @@
         }
       ],
       "import": "import {\n  Button,\n  IconAddCircle,\n  IconButton,\n  IconExport,\n  IconTrash,\n  InputSearch,\n  Table,\n  TableCell,\n  TableTags,\n  Tag,\n} from 'praktis-ui-kit';"
+    },
+    "ui-kit-table-nested": {
+      "id": "ui-kit-table-nested",
+      "name": "Вложеннаятаблица",
+      "path": "./src/components/Table/TableNested.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Table",
+        "definedInFile": "./src/components/Table/Table.tsx",
+        "actualName": "Table",
+        "exportName": "Table",
+        "props": {
+          "columns": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "union",
+                  "raw": "| (ColumnType<T> & {\n    editable?: TableColumnEditable<T>;\n    /**\n     * Где колонка на телефоне (строка — карточка). Обычно не нужно — кит решает сам: первая колонка —\n     * заголовок, теги статуса — наверх, кнопки-иконки — к ним, кнопки с текстом — вниз, короткие\n     * значения — по два в ряд, длинные и файлы — на всю ширину.\n     */\n    mobile?: MobileRole;\n  })\n| ColumnGroupType<T>",
+                  "elements": [
+                    {
+                      "name": "unknown"
+                    },
+                    {
+                      "name": "ColumnGroupType",
+                      "elements": [
+                        {
+                          "name": "T"
+                        }
+                      ],
+                      "raw": "ColumnGroupType<T>"
+                    }
+                  ]
+                }
+              ],
+              "raw": "TableColumn<T>[]"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            }
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'large' | 'medium' | 'small'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'large'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'medium'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'small'"
+                }
+              ]
+            },
+            "description": "large / medium / small: строки 56 / 46 / 36, шапка 54 / 46 / 38.",
+            "defaultValue": {
+              "value": "'large'",
+              "computed": false
+            }
+          },
+          "pagination": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "false | TablePagination",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "false"
+                },
+                {
+                  "name": "TablePagination"
+                }
+              ]
+            },
+            "description": "Подвал с пагинацией. `false` — все строки сразу, без подвала.",
+            "defaultValue": {
+              "value": "{}",
+              "computed": false
+            }
+          },
+          "searchQuery": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Текущий поисковый запрос над таблицей. Строк нет и запрос не пустой — вместо «Нет данных»\nплашка «ничего не найдено»."
+          },
+          "onSearchReset": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "«Сбросить» в плашке «ничего не найдено» — очистить поиск. Нет — плашка без кнопки."
+          },
+          "onRowsReorder": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(rows: T[]) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "T"
+                        }
+                      ],
+                      "raw": "T[]"
+                    },
+                    "name": "rows"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Строки переставляются: слева колонка с ручкой (DragHandle, Figma 7373:3773), тянуть мышью,\nпальцем или с клавиатуры (Tab до ручки, пробел, стрелки, пробел). Возвращает строки в новом\nпорядке. Для дерева не включается."
+          },
+          "emptyState": {
+            "required": false,
+            "tsType": {
+              "name": "EmptyStateContent"
+            },
+            "description": "Что показать, когда строк нет: заголовок и мелко — что сделать (с кнопкой) или чего ждать.\nНе передано — запасной текст «Здесь пока ничего нет»."
+          },
+          "nestedTable": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => ReactNode",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "ReactNode"
+                }
+              }
+            },
+            "description": "Вложенная таблица под строкой (Figma, пример 15215:19569): шеврон в первой колонке раскрывает\nстроку, под ней на серой подложке — белая карточка с тем, что вернула функция (обычно `<Table>`\nкита без подвала). В шапке первой колонки — шеврон «раскрыть / свернуть все»."
+          },
+          "rowHasNested": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => boolean",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "boolean"
+                }
+              }
+            },
+            "description": "У каких строк есть вложенная таблица. По умолчанию — у всех."
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": "Телефон или компьютер. По умолчанию — само (до 601 или мобильный браузер, ThemeProvider device):\nна телефоне каждая строка — карточка, страницы — подгрузка при прокрутке."
+          },
+          "onLoadMore": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Телефон, данные с сервера: догрузить ещё, когда дочитали до конца."
+          },
+          "hasMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Есть что догружать (с `onLoadMore`)."
+          },
+          "loadingMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт догрузка (с `onLoadMore`)."
+          },
+          "dataSource": {
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            },
+            "required": false
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-table-nested--nested",
+          "name": "Вложенная таблица",
+          "snippet": "const Nested = () => (\n  <Table<Invoice>\n    columns={INVOICE_COLUMNS}\n    dataSource={INVOICES}\n    pagination={false}\n    expandable={{ defaultExpandedRowKeys: ['t1'] }}\n    rowHasNested={(r) => r.materials.length > 0}\n    nestedTable={(r) => <Table<Material> columns={MATERIAL_COLUMNS} dataSource={r.materials} pagination={false} />}\n  />\n);"
+        }
+      ],
+      "import": "import { Table } from 'praktis-ui-kit';"
+    },
+    "ui-kit-table-mobile": {
+      "id": "ui-kit-table-mobile",
+      "name": "Нателефоне",
+      "path": "./src/components/Table/TableMobile.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Table",
+        "definedInFile": "./src/components/Table/Table.tsx",
+        "actualName": "Table",
+        "exportName": "Table",
+        "props": {
+          "columns": {
+            "required": false,
+            "tsType": {
+              "name": "Array",
+              "elements": [
+                {
+                  "name": "union",
+                  "raw": "| (ColumnType<T> & {\n    editable?: TableColumnEditable<T>;\n    /**\n     * Где колонка на телефоне (строка — карточка). Обычно не нужно — кит решает сам: первая колонка —\n     * заголовок, теги статуса — наверх, кнопки-иконки — к ним, кнопки с текстом — вниз, короткие\n     * значения — по два в ряд, длинные и файлы — на всю ширину.\n     */\n    mobile?: MobileRole;\n  })\n| ColumnGroupType<T>",
+                  "elements": [
+                    {
+                      "name": "unknown"
+                    },
+                    {
+                      "name": "ColumnGroupType",
+                      "elements": [
+                        {
+                          "name": "T"
+                        }
+                      ],
+                      "raw": "ColumnGroupType<T>"
+                    }
+                  ]
+                }
+              ],
+              "raw": "TableColumn<T>[]"
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            }
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'large' | 'medium' | 'small'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'large'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'medium'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'small'"
+                }
+              ]
+            },
+            "description": "large / medium / small: строки 56 / 46 / 36, шапка 54 / 46 / 38.",
+            "defaultValue": {
+              "value": "'large'",
+              "computed": false
+            }
+          },
+          "pagination": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "false | TablePagination",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "false"
+                },
+                {
+                  "name": "TablePagination"
+                }
+              ]
+            },
+            "description": "Подвал с пагинацией. `false` — все строки сразу, без подвала.",
+            "defaultValue": {
+              "value": "{}",
+              "computed": false
+            }
+          },
+          "searchQuery": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": "Текущий поисковый запрос над таблицей. Строк нет и запрос не пустой — вместо «Нет данных»\nплашка «ничего не найдено»."
+          },
+          "onSearchReset": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "«Сбросить» в плашке «ничего не найдено» — очистить поиск. Нет — плашка без кнопки."
+          },
+          "onRowsReorder": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(rows: T[]) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "Array",
+                      "elements": [
+                        {
+                          "name": "T"
+                        }
+                      ],
+                      "raw": "T[]"
+                    },
+                    "name": "rows"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Строки переставляются: слева колонка с ручкой (DragHandle, Figma 7373:3773), тянуть мышью,\nпальцем или с клавиатуры (Tab до ручки, пробел, стрелки, пробел). Возвращает строки в новом\nпорядке. Для дерева не включается."
+          },
+          "emptyState": {
+            "required": false,
+            "tsType": {
+              "name": "EmptyStateContent"
+            },
+            "description": "Что показать, когда строк нет: заголовок и мелко — что сделать (с кнопкой) или чего ждать.\nНе передано — запасной текст «Здесь пока ничего нет»."
+          },
+          "nestedTable": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => ReactNode",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "ReactNode"
+                }
+              }
+            },
+            "description": "Вложенная таблица под строкой (Figma, пример 15215:19569): шеврон в первой колонке раскрывает\nстроку, под ней на серой подложке — белая карточка с тем, что вернула функция (обычно `<Table>`\nкита без подвала). В шапке первой колонки — шеврон «раскрыть / свернуть все»."
+          },
+          "rowHasNested": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(row: T) => boolean",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "T"
+                    },
+                    "name": "row"
+                  }
+                ],
+                "return": {
+                  "name": "boolean"
+                }
+              }
+            },
+            "description": "У каких строк есть вложенная таблица. По умолчанию — у всех."
+          },
+          "device": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'web' | 'mob'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'web'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'mob'"
+                }
+              ]
+            },
+            "description": "Телефон или компьютер. По умолчанию — само (до 601 или мобильный браузер, ThemeProvider device):\nна телефоне каждая строка — карточка, страницы — подгрузка при прокрутке."
+          },
+          "onLoadMore": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Телефон, данные с сервера: догрузить ещё, когда дочитали до конца."
+          },
+          "hasMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Есть что догружать (с `onLoadMore`)."
+          },
+          "loadingMore": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Идёт догрузка (с `onLoadMore`)."
+          },
+          "dataSource": {
+            "defaultValue": {
+              "value": "[]",
+              "computed": false
+            },
+            "required": false
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-table-mobile--contracts",
+          "name": "Договоры",
+          "snippet": "const Contracts = () => (\n  <Phone>\n    <Table<Contract> columns={CONTRACT_COLUMNS} dataSource={CONTRACTS} />\n  </Phone>\n);"
+        },
+        {
+          "id": "ui-kit-table-mobile--nested",
+          "name": "Накладные с материалами",
+          "snippet": "const Nested = () => (\n  <Phone>\n    <Table<Invoice>\n      columns={INVOICE_COLUMNS}\n      dataSource={INVOICES}\n      pagination={false}\n      expandable={{ defaultExpandedRowKeys: ['t1'] }}\n      rowHasNested={(r) => r.materials.length > 0}\n      nestedTable={(r) => <Table<Material> columns={MATERIAL_COLUMNS} dataSource={r.materials} pagination={false} />}\n    />\n  </Phone>\n);"
+        },
+        {
+          "id": "ui-kit-table-mobile--load-more",
+          "name": "Подгрузка с сервера",
+          "snippet": "const LoadMore = () => <ServerDemo />;"
+        }
+      ],
+      "import": "import { DeviceProvider, IconButton, IconCopy, IconEdit, IconTrash, Table, TableTags, Tag } from 'praktis-ui-kit';"
     },
     "ui-kit-table-cell": {
       "id": "ui-kit-table-cell",
@@ -5543,6 +6184,183 @@
         }
       ],
       "import": "import { EntityCard, IconCopy, IconDoc, IconEdit, IconEye, StatCard } from 'praktis-ui-kit';"
+    },
+    "ui-kit-fileitem": {
+      "id": "ui-kit-fileitem",
+      "name": "FileItem",
+      "path": "./src/components/FileItem/FileItem.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "FileItem",
+        "definedInFile": "./src/components/FileItem/FileItem.tsx",
+        "actualName": "FileItem",
+        "exportName": "FileItem",
+        "props": {
+          "name": {
+            "required": true,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'s' | 'm'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                }
+              ]
+            },
+            "description": "m — 40 (загрузка, таблицы L / M), s — 34 (таблицы S). В таблице — сам."
+          },
+          "status": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'default' | 'loading' | 'error'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'default'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'loading'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'error'"
+                }
+              ]
+            },
+            "description": "loading — грузится (полоса и «Отменить»), error — не загрузился (красный, только «Удалить»).",
+            "defaultValue": {
+              "value": "'default'",
+              "computed": false
+            }
+          },
+          "progress": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Сколько загружено, 0–100 (при `status=\"loading\"`).",
+            "defaultValue": {
+              "value": "0",
+              "computed": false
+            }
+          },
+          "note": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Мелкий серый текст справа: «от 15.03.2025»."
+          },
+          "onView": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Посмотреть файл. Нет — кнопки нет."
+          },
+          "onDownload": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Скачать. Нет — кнопки нет."
+          },
+          "onDelete": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Удалить. Нет — кнопки нет."
+          },
+          "onCancel": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Отменить загрузку (при `status=\"loading\"`)."
+          },
+          "icon": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Значок слева. По умолчанию — документ."
+          },
+          "className": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "stories": [
+        {
+          "id": "ui-kit-fileitem--playground",
+          "name": "Playground",
+          "snippet": "const Playground = ({ name, size, status, progress, note, view, download, remove }: Partial<Args>) => (\n  <div style={{ width: 360 }}>\n    <FileItem\n      name={name ?? ''}\n      size={size}\n      status={status}\n      progress={progress}\n      note={note || undefined}\n      onView={view ? noop : undefined}\n      onDownload={download ? noop : undefined}\n      onDelete={remove ? noop : undefined}\n      onCancel={noop}\n    />\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-fileitem--states",
+          "name": "Состояния и фон",
+          "snippet": "const States = () => (\n  <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>\n    {(['m', 's'] as FileItemSize[]).map((size) => (\n      <div key={size} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>\n        <span style={label}>{size === 'm' ? 'M — 40' : 'S — 34'}</span>\n        <div style={{ display: 'flex', gap: 24 }}>\n          <Surface on=\"grey\" level={2}>\n            <Column size={size} />\n          </Surface>\n          <Surface on=\"white\" level={2}>\n            <Column size={size} />\n          </Surface>\n        </div>\n      </div>\n    ))}\n  </div>\n);"
+        },
+        {
+          "id": "ui-kit-fileitem--upload",
+          "name": "Загрузка",
+          "snippet": "const Upload = () => <UploadDemo />;"
+        }
+      ],
+      "import": "import { Button, FileItem, FileList, Surface } from 'praktis-ui-kit';"
     },
     "ui-kit-objectcard": {
       "id": "ui-kit-objectcard",
@@ -7794,7 +8612,7 @@
             "tsType": {
               "name": "number"
             },
-            "description": "Сколько строк названия помещается: ИД — 3 (по умолчанию), КС — 2.",
+            "description": "Сколько строк названия помещается: 3 при шапке 68 (ИД и КС, по умолчанию), 2 — если шапка ниже.",
             "defaultValue": {
               "value": "3",
               "computed": false
@@ -7996,6 +8814,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 2276
+    "durationMs": 2305
   }
 }

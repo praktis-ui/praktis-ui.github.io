@@ -1,0 +1,3 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";var t;function n(){return(n=e((()=>{t=e=>({[e.componentCls]:{[`${e.antCls}-motion-collapse-legacy`]:{overflow:`hidden`,"&-active":{transition:`height ${e.motionDurationMid} ${e.motionEaseInOut},
+        opacity ${e.motionDurationMid} ${e.motionEaseInOut} !important`}},[`${e.antCls}-motion-collapse`]:{overflow:`hidden`,transition:`height ${e.motionDurationMid} ${e.motionEaseInOut},
+        opacity ${e.motionDurationMid} ${e.motionEaseInOut} !important`}}})})))()}export{n,t};
