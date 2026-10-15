@@ -2376,6 +2376,179 @@
       ],
       "import": "import { TextArea } from 'praktis-ui-kit';"
     },
+    "ui-kit-treeselect": {
+      "id": "ui-kit-treeselect",
+      "name": "TreeSelect",
+      "path": "./src/components/TreeSelect/TreeSelect.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "TreeSelect",
+        "definedInFile": "./src/components/TreeSelect/TreeSelect.tsx",
+        "actualName": "TreeSelect",
+        "exportName": "TreeSelect",
+        "props": {
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'s' | 'm'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                }
+              ]
+            },
+            "description": "",
+            "defaultValue": {
+              "value": "'m'",
+              "computed": false
+            }
+          },
+          "checkable": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Несколько значений: чекбоксы в списке, выбранное — тегами (как MultiSelect).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "singleLine": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "С `checkable`: теги в одну строку, не поместившиеся — в «+N» с тултипом (как MultiSelect).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "emptyState": {
+            "required": false,
+            "tsType": {
+              "name": "EmptyStateContent"
+            },
+            "description": ""
+          },
+          "label": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "required": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": ""
+          },
+          "infoText": {
+            "required": false,
+            "tsType": {
+              "name": "string"
+            },
+            "description": ""
+          },
+          "errorMessage": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "loading": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Спиннер вместо шеврона, «Loading...»; список не открывается.",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "loadError": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Не удалось загрузить — красная рамка, иконка «обновить» (onRetry).",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "onRetry": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "() => void",
+              "signature": {
+                "arguments": [],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-treeselect--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <TreeSelect\n    size=\"m\"\n    treeData={[\n      {\n        value: 'q1',\n        title: 'Очередь 1',\n        children: [\n          {\n            value: 'q1-b1',\n            title: 'Корпус 1',\n            children: [\n              { value: 'q1-b1-s1', title: 'Секция 1' },\n              { value: 'q1-b1-s2', title: 'Секция 2' },\n              { value: 'q1-b1-s3', title: 'Секция 3' },\n            ],\n          },\n          {\n            value: 'q1-b2',\n            title: 'Корпус 2',\n            children: [\n              { value: 'q1-b2-s1', title: 'Секция 1' },\n              { value: 'q1-b2-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q1-park', title: 'Подземный паркинг' },\n        ],\n      },\n      {\n        value: 'q2',\n        title: 'Очередь 2',\n        children: [\n          {\n            value: 'q2-b3',\n            title: 'Корпус 3',\n            children: [\n              { value: 'q2-b3-s1', title: 'Секция 1' },\n              { value: 'q2-b3-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n        ],\n      },\n      { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n    ]}\n    placeholder=\"Выберите\"\n    label=\"Объект\"\n    required\n    infoText=\"Очередь, корпус или секция\"\n    errorMessage=\"Поле обязательно для заполнения\"\n    treeDefaultExpandedKeys={['q1', 'q1-b1']} />;"
+        },
+        {
+          "id": "ui-kit-treeselect--single",
+          "name": "Single",
+          "snippet": "const Single = () => <TreeSelect\n    size=\"m\"\n    treeData={[\n      {\n        value: 'q1',\n        title: 'Очередь 1',\n        children: [\n          {\n            value: 'q1-b1',\n            title: 'Корпус 1',\n            children: [\n              { value: 'q1-b1-s1', title: 'Секция 1' },\n              { value: 'q1-b1-s2', title: 'Секция 2' },\n              { value: 'q1-b1-s3', title: 'Секция 3' },\n            ],\n          },\n          {\n            value: 'q1-b2',\n            title: 'Корпус 2',\n            children: [\n              { value: 'q1-b2-s1', title: 'Секция 1' },\n              { value: 'q1-b2-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q1-park', title: 'Подземный паркинг' },\n        ],\n      },\n      {\n        value: 'q2',\n        title: 'Очередь 2',\n        children: [\n          {\n            value: 'q2-b3',\n            title: 'Корпус 3',\n            children: [\n              { value: 'q2-b3-s1', title: 'Секция 1' },\n              { value: 'q2-b3-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n        ],\n      },\n      { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n    ]}\n    placeholder=\"Выберите\"\n    label={undefined}\n    required\n    infoText={undefined}\n    errorMessage=\"Поле обязательно для заполнения\"\n    treeDefaultExpandedKeys={['q1', 'q1-b1']}\n    defaultValue=\"q1-b1-s2\"\n    open />;"
+        },
+        {
+          "id": "ui-kit-treeselect--checkable",
+          "name": "Checkable",
+          "snippet": "const Checkable = () => <TreeSelect\n    size=\"m\"\n    treeData={[\n      {\n        value: 'q1',\n        title: 'Очередь 1',\n        children: [\n          {\n            value: 'q1-b1',\n            title: 'Корпус 1',\n            children: [\n              { value: 'q1-b1-s1', title: 'Секция 1' },\n              { value: 'q1-b1-s2', title: 'Секция 2' },\n              { value: 'q1-b1-s3', title: 'Секция 3' },\n            ],\n          },\n          {\n            value: 'q1-b2',\n            title: 'Корпус 2',\n            children: [\n              { value: 'q1-b2-s1', title: 'Секция 1' },\n              { value: 'q1-b2-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q1-park', title: 'Подземный паркинг' },\n        ],\n      },\n      {\n        value: 'q2',\n        title: 'Очередь 2',\n        children: [\n          {\n            value: 'q2-b3',\n            title: 'Корпус 3',\n            children: [\n              { value: 'q2-b3-s1', title: 'Секция 1' },\n              { value: 'q2-b3-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n        ],\n      },\n      { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n    ]}\n    placeholder=\"Выберите\"\n    label={undefined}\n    required\n    infoText={undefined}\n    errorMessage=\"Поле обязательно для заполнения\"\n    treeDefaultExpandedKeys={['q1', 'q1-b1']}\n    checkable\n    defaultValue={['q1-b1-s1', 'q1-b1-s2', 'q1-b1-s3', 'q1-b2-s1']}\n    open />;"
+        },
+        {
+          "id": "ui-kit-treeselect--single-line",
+          "name": "Single Line",
+          "snippet": "const SingleLine = () => <TreeSelect\n    size=\"m\"\n    treeData={[\n      {\n        value: 'q1',\n        title: 'Очередь 1',\n        children: [\n          {\n            value: 'q1-b1',\n            title: 'Корпус 1',\n            children: [\n              { value: 'q1-b1-s1', title: 'Секция 1' },\n              { value: 'q1-b1-s2', title: 'Секция 2' },\n              { value: 'q1-b1-s3', title: 'Секция 3' },\n            ],\n          },\n          {\n            value: 'q1-b2',\n            title: 'Корпус 2',\n            children: [\n              { value: 'q1-b2-s1', title: 'Секция 1' },\n              { value: 'q1-b2-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q1-park', title: 'Подземный паркинг' },\n        ],\n      },\n      {\n        value: 'q2',\n        title: 'Очередь 2',\n        children: [\n          {\n            value: 'q2-b3',\n            title: 'Корпус 3',\n            children: [\n              { value: 'q2-b3-s1', title: 'Секция 1' },\n              { value: 'q2-b3-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n        ],\n      },\n      { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n    ]}\n    placeholder=\"Выберите\"\n    label={undefined}\n    required\n    infoText={undefined}\n    errorMessage=\"Поле обязательно для заполнения\"\n    treeDefaultExpandedKeys={['q1', 'q1-b1']}\n    checkable\n    singleLine\n    defaultValue={['q1-b1-s1', 'q1-b1-s2', 'q1-b1-s3', 'q1-b2-s1']} />;"
+        },
+        {
+          "id": "ui-kit-treeselect--no-search",
+          "name": "No Search",
+          "snippet": "const NoSearch = () => <TreeSelect\n    size=\"m\"\n    treeData={[\n      {\n        value: 'q1',\n        title: 'Очередь 1',\n        children: [\n          {\n            value: 'q1-b1',\n            title: 'Корпус 1',\n            children: [\n              { value: 'q1-b1-s1', title: 'Секция 1' },\n              { value: 'q1-b1-s2', title: 'Секция 2' },\n              { value: 'q1-b1-s3', title: 'Секция 3' },\n            ],\n          },\n          {\n            value: 'q1-b2',\n            title: 'Корпус 2',\n            children: [\n              { value: 'q1-b2-s1', title: 'Секция 1' },\n              { value: 'q1-b2-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q1-park', title: 'Подземный паркинг' },\n        ],\n      },\n      {\n        value: 'q2',\n        title: 'Очередь 2',\n        children: [\n          {\n            value: 'q2-b3',\n            title: 'Корпус 3',\n            children: [\n              { value: 'q2-b3-s1', title: 'Секция 1' },\n              { value: 'q2-b3-s2', title: 'Секция 2' },\n            ],\n          },\n          { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n        ],\n      },\n      { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n    ]}\n    placeholder=\"Выберите\"\n    label={undefined}\n    required\n    infoText={undefined}\n    errorMessage=\"Поле обязательно для заполнения\"\n    treeDefaultExpandedKeys={['q1', 'q1-b1']}\n    showSearch={false} />;"
+        },
+        {
+          "id": "ui-kit-treeselect--sizes",
+          "name": "Sizes",
+          "snippet": "const Sizes = () => <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>\n    <TreeSelect\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        size=\"s\"\n        label={undefined}\n        infoText={undefined}\n        defaultValue=\"q1-b2-s1\" />\n    <TreeSelect\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        size=\"m\"\n        label={undefined}\n        infoText={undefined}\n        defaultValue=\"q1-b2-s1\" />\n</div>;"
+        },
+        {
+          "id": "ui-kit-treeselect--states",
+          "name": "States",
+          "snippet": "const States = () => <div\n    style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'flex-start' }}>\n    <TreeSelect\n        size=\"m\"\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined} />\n    <TreeSelect\n        size=\"m\"\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined}\n        defaultValue=\"q1-b1-s1\" />\n    <TreeSelect\n        size=\"m\"\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined}\n        disabled\n        defaultValue=\"q1-b1-s1\" />\n    <TreeSelect\n        size=\"m\"\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined}\n        loading />\n    <TreeSelect\n        size=\"m\"\n        treeData={[\n          {\n            value: 'q1',\n            title: 'Очередь 1',\n            children: [\n              {\n                value: 'q1-b1',\n                title: 'Корпус 1',\n                children: [\n                  { value: 'q1-b1-s1', title: 'Секция 1' },\n                  { value: 'q1-b1-s2', title: 'Секция 2' },\n                  { value: 'q1-b1-s3', title: 'Секция 3' },\n                ],\n              },\n              {\n                value: 'q1-b2',\n                title: 'Корпус 2',\n                children: [\n                  { value: 'q1-b2-s1', title: 'Секция 1' },\n                  { value: 'q1-b2-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q1-park', title: 'Подземный паркинг' },\n            ],\n          },\n          {\n            value: 'q2',\n            title: 'Очередь 2',\n            children: [\n              {\n                value: 'q2-b3',\n                title: 'Корпус 3',\n                children: [\n                  { value: 'q2-b3-s1', title: 'Секция 1' },\n                  { value: 'q2-b3-s2', title: 'Секция 2' },\n                ],\n              },\n              { value: 'q2-school', title: 'Школа на 550 мест', disabled: true },\n            ],\n          },\n          { value: 'roads', title: 'Внутриплощадочные дороги и благоустройство территории' },\n        ]}\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined}\n        status=\"error\" />\n    <TreeSelect\n        size=\"m\"\n        placeholder=\"Выберите\"\n        required\n        errorMessage=\"Поле обязательно для заполнения\"\n        treeDefaultExpandedKeys={['q1', 'q1-b1']}\n        label={undefined}\n        infoText={undefined}\n        treeData={[]} />\n</div>;"
+        }
+      ],
+      "import": "import { TreeSelect } from 'praktis-ui-kit';"
+    },
     "ui-kit-breadcrumbs": {
       "id": "ui-kit-breadcrumbs",
       "name": "Breadcrumbs",
@@ -8814,6 +8987,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 2305
+    "durationMs": 2749
   }
 }

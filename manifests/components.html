@@ -620,13 +620,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/68 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">68/68 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/68 without API description</a><span class="filter-pill ok" aria-disabled="true">337 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/337 incomplete snippets</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/69 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">69/69 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/69 without API description</a><span class="filter-pill ok" aria-disabled="true">344 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/344 incomplete snippets</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.3s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.7s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -13520,6 +13520,807 @@ export const Reference: Story = {
   </div>
 </article>
 <article
+  id="ui-kit-treeselect"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  no-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="TreeSelect">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> TreeSelect</h2>
+      <div class="badges">
+        <label for="c-62-ui-kit-treeselect-props" class="badge ok as-toggle">11 prop types</label>
+        <label for="c-62-ui-kit-treeselect-info" class="badge info as-toggle">1 info</label>
+        <label for="c-62-ui-kit-treeselect-stories" class="badge ok as-toggle">7 stories</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/TreeSelect/TreeSelect.stories.tsx">ui-kit-treeselect · ./src/components/TreeSelect/TreeSelect.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-62-ui-kit-treeselect-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-62-ui-kit-treeselect-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-62-ui-kit-treeselect-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">11 prop types</span>
+            </div>
+            <pre><code>Component: src/components/TreeSelect/TreeSelect.tsx::TreeSelect</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>/**
+ * Несколько значений: чекбоксы в списке, выбранное — тегами (как MultiSelect).
+ */
+checkable?: boolean = false
+
+emptyState?: EmptyStateContent
+
+errorMessage?: ReactNode
+
+infoText?: string
+
+label?: ReactNode
+
+/**
+ * Не удалось загрузить — красная рамка, иконка «обновить» (onRetry).
+ */
+loadError?: boolean = false
+
+/**
+ * Спиннер вместо шеврона, «Loading...»; список не открывается.
+ */
+loading?: boolean = false
+
+onRetry?: () =&gt; void
+
+required?: boolean
+
+/**
+ * С `checkable`: теги в одну строку, не поместившиеся — в «+N» с тултипом (как MultiSelect).
+ */
+singleLine?: boolean = false
+
+size?: &#39;s&#39; | &#39;m&#39; = &#39;m&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { TreeSelect } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;TreeSelect
+    size=&quot;m&quot;
+    treeData={[
+      {
+        value: &#39;q1&#39;,
+        title: &#39;Очередь 1&#39;,
+        children: [
+          {
+            value: &#39;q1-b1&#39;,
+            title: &#39;Корпус 1&#39;,
+            children: [
+              { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+              { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+            ],
+          },
+          {
+            value: &#39;q1-b2&#39;,
+            title: &#39;Корпус 2&#39;,
+            children: [
+              { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+        ],
+      },
+      {
+        value: &#39;q2&#39;,
+        title: &#39;Очередь 2&#39;,
+        children: [
+          {
+            value: &#39;q2-b3&#39;,
+            title: &#39;Корпус 3&#39;,
+            children: [
+              { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+        ],
+      },
+      { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+    ]}
+    placeholder=&quot;Выберите&quot;
+    label=&quot;Объект&quot;
+    required
+    infoText=&quot;Очередь, корпус или секция&quot;
+    errorMessage=&quot;Поле обязательно для заполнения&quot;
+    treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Single</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Single = () =&gt; &lt;TreeSelect
+    size=&quot;m&quot;
+    treeData={[
+      {
+        value: &#39;q1&#39;,
+        title: &#39;Очередь 1&#39;,
+        children: [
+          {
+            value: &#39;q1-b1&#39;,
+            title: &#39;Корпус 1&#39;,
+            children: [
+              { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+              { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+            ],
+          },
+          {
+            value: &#39;q1-b2&#39;,
+            title: &#39;Корпус 2&#39;,
+            children: [
+              { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+        ],
+      },
+      {
+        value: &#39;q2&#39;,
+        title: &#39;Очередь 2&#39;,
+        children: [
+          {
+            value: &#39;q2-b3&#39;,
+            title: &#39;Корпус 3&#39;,
+            children: [
+              { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+        ],
+      },
+      { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+    ]}
+    placeholder=&quot;Выберите&quot;
+    label={undefined}
+    required
+    infoText={undefined}
+    errorMessage=&quot;Поле обязательно для заполнения&quot;
+    treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+    defaultValue=&quot;q1-b1-s2&quot;
+    open /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Checkable</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Checkable = () =&gt; &lt;TreeSelect
+    size=&quot;m&quot;
+    treeData={[
+      {
+        value: &#39;q1&#39;,
+        title: &#39;Очередь 1&#39;,
+        children: [
+          {
+            value: &#39;q1-b1&#39;,
+            title: &#39;Корпус 1&#39;,
+            children: [
+              { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+              { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+            ],
+          },
+          {
+            value: &#39;q1-b2&#39;,
+            title: &#39;Корпус 2&#39;,
+            children: [
+              { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+        ],
+      },
+      {
+        value: &#39;q2&#39;,
+        title: &#39;Очередь 2&#39;,
+        children: [
+          {
+            value: &#39;q2-b3&#39;,
+            title: &#39;Корпус 3&#39;,
+            children: [
+              { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+        ],
+      },
+      { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+    ]}
+    placeholder=&quot;Выберите&quot;
+    label={undefined}
+    required
+    infoText={undefined}
+    errorMessage=&quot;Поле обязательно для заполнения&quot;
+    treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+    checkable
+    defaultValue={[&#39;q1-b1-s1&#39;, &#39;q1-b1-s2&#39;, &#39;q1-b1-s3&#39;, &#39;q1-b2-s1&#39;]}
+    open /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Single Line</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const SingleLine = () =&gt; &lt;TreeSelect
+    size=&quot;m&quot;
+    treeData={[
+      {
+        value: &#39;q1&#39;,
+        title: &#39;Очередь 1&#39;,
+        children: [
+          {
+            value: &#39;q1-b1&#39;,
+            title: &#39;Корпус 1&#39;,
+            children: [
+              { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+              { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+            ],
+          },
+          {
+            value: &#39;q1-b2&#39;,
+            title: &#39;Корпус 2&#39;,
+            children: [
+              { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+        ],
+      },
+      {
+        value: &#39;q2&#39;,
+        title: &#39;Очередь 2&#39;,
+        children: [
+          {
+            value: &#39;q2-b3&#39;,
+            title: &#39;Корпус 3&#39;,
+            children: [
+              { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+        ],
+      },
+      { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+    ]}
+    placeholder=&quot;Выберите&quot;
+    label={undefined}
+    required
+    infoText={undefined}
+    errorMessage=&quot;Поле обязательно для заполнения&quot;
+    treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+    checkable
+    singleLine
+    defaultValue={[&#39;q1-b1-s1&#39;, &#39;q1-b1-s2&#39;, &#39;q1-b1-s3&#39;, &#39;q1-b2-s1&#39;]} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">No Search</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const NoSearch = () =&gt; &lt;TreeSelect
+    size=&quot;m&quot;
+    treeData={[
+      {
+        value: &#39;q1&#39;,
+        title: &#39;Очередь 1&#39;,
+        children: [
+          {
+            value: &#39;q1-b1&#39;,
+            title: &#39;Корпус 1&#39;,
+            children: [
+              { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+              { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+            ],
+          },
+          {
+            value: &#39;q1-b2&#39;,
+            title: &#39;Корпус 2&#39;,
+            children: [
+              { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+        ],
+      },
+      {
+        value: &#39;q2&#39;,
+        title: &#39;Очередь 2&#39;,
+        children: [
+          {
+            value: &#39;q2-b3&#39;,
+            title: &#39;Корпус 3&#39;,
+            children: [
+              { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+              { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+            ],
+          },
+          { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+        ],
+      },
+      { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+    ]}
+    placeholder=&quot;Выберите&quot;
+    label={undefined}
+    required
+    infoText={undefined}
+    errorMessage=&quot;Поле обязательно для заполнения&quot;
+    treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+    showSearch={false} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Sizes</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Sizes = () =&gt; &lt;div style={{ display: &#39;flex&#39;, alignItems: &#39;flex-start&#39;, gap: 12 }}&gt;
+    &lt;TreeSelect
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        size=&quot;s&quot;
+        label={undefined}
+        infoText={undefined}
+        defaultValue=&quot;q1-b2-s1&quot; /&gt;
+    &lt;TreeSelect
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        size=&quot;m&quot;
+        label={undefined}
+        infoText={undefined}
+        defaultValue=&quot;q1-b2-s1&quot; /&gt;
+&lt;/div&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">States</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; &lt;div
+    style={{ display: &#39;flex&#39;, gap: 12, flexWrap: &#39;wrap&#39;, alignItems: &#39;flex-start&#39; }}&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined} /&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined}
+        defaultValue=&quot;q1-b1-s1&quot; /&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined}
+        disabled
+        defaultValue=&quot;q1-b1-s1&quot; /&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined}
+        loading /&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        treeData={[
+          {
+            value: &#39;q1&#39;,
+            title: &#39;Очередь 1&#39;,
+            children: [
+              {
+                value: &#39;q1-b1&#39;,
+                title: &#39;Корпус 1&#39;,
+                children: [
+                  { value: &#39;q1-b1-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b1-s2&#39;, title: &#39;Секция 2&#39; },
+                  { value: &#39;q1-b1-s3&#39;, title: &#39;Секция 3&#39; },
+                ],
+              },
+              {
+                value: &#39;q1-b2&#39;,
+                title: &#39;Корпус 2&#39;,
+                children: [
+                  { value: &#39;q1-b2-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q1-b2-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q1-park&#39;, title: &#39;Подземный паркинг&#39; },
+            ],
+          },
+          {
+            value: &#39;q2&#39;,
+            title: &#39;Очередь 2&#39;,
+            children: [
+              {
+                value: &#39;q2-b3&#39;,
+                title: &#39;Корпус 3&#39;,
+                children: [
+                  { value: &#39;q2-b3-s1&#39;, title: &#39;Секция 1&#39; },
+                  { value: &#39;q2-b3-s2&#39;, title: &#39;Секция 2&#39; },
+                ],
+              },
+              { value: &#39;q2-school&#39;, title: &#39;Школа на 550 мест&#39;, disabled: true },
+            ],
+          },
+          { value: &#39;roads&#39;, title: &#39;Внутриплощадочные дороги и благоустройство территории&#39; },
+        ]}
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined}
+        status=&quot;error&quot; /&gt;
+    &lt;TreeSelect
+        size=&quot;m&quot;
+        placeholder=&quot;Выберите&quot;
+        required
+        errorMessage=&quot;Поле обязательно для заполнения&quot;
+        treeDefaultExpandedKeys={[&#39;q1&#39;, &#39;q1-b1&#39;]}
+        label={undefined}
+        infoText={undefined}
+        treeData={[]} /&gt;
+&lt;/div&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="foundations-typography"
   class="card 
   has-error
@@ -13534,9 +14335,9 @@ export const Reference: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Typography</h2>
       <div class="badges">
-        <label for="c-62-foundations-typography-err" class="badge err as-toggle">API error</label>
-        <label for="c-62-foundations-typography-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-62-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-63-foundations-typography-err" class="badge err as-toggle">API error</label>
+        <label for="c-63-foundations-typography-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-63-foundations-typography-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -13548,9 +14349,9 @@ export const Reference: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-62-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-62-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-62-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-63-foundations-typography-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-63-foundations-typography-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-63-foundations-typography-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -13868,9 +14669,9 @@ function SectionHeading({ children }: { children: string }) {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Вложеннаятаблица</h2>
       <div class="badges">
-        <label for="c-63-ui-kit-table-nested-props" class="badge ok as-toggle">14 prop types</label>
-        <label for="c-63-ui-kit-table-nested-info" class="badge info as-toggle">1 info</label>
-        <label for="c-63-ui-kit-table-nested-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-64-ui-kit-table-nested-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-64-ui-kit-table-nested-info" class="badge info as-toggle">1 info</label>
+        <label for="c-64-ui-kit-table-nested-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -13883,11 +14684,11 @@ function SectionHeading({ children }: { children: string }) {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-63-ui-kit-table-nested-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-63-ui-kit-table-nested-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-64-ui-kit-table-nested-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-64-ui-kit-table-nested-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-63-ui-kit-table-nested-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-64-ui-kit-table-nested-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -14032,9 +14833,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Нателефоне</h2>
       <div class="badges">
-        <label for="c-64-ui-kit-table-mobile-props" class="badge ok as-toggle">14 prop types</label>
-        <label for="c-64-ui-kit-table-mobile-info" class="badge info as-toggle">1 info</label>
-        <label for="c-64-ui-kit-table-mobile-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-65-ui-kit-table-mobile-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-65-ui-kit-table-mobile-info" class="badge info as-toggle">1 info</label>
+        <label for="c-65-ui-kit-table-mobile-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -14047,11 +14848,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-64-ui-kit-table-mobile-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-64-ui-kit-table-mobile-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-mobile-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-mobile-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-64-ui-kit-table-mobile-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-mobile-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -14222,9 +15023,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Форма</h2>
       <div class="badges">
-        <label for="c-65-ui-kit-form-fields-err" class="badge err as-toggle">API error</label>
-        <label for="c-65-ui-kit-form-fields-info" class="badge info as-toggle">1 info</label>
-        <label for="c-65-ui-kit-form-fields-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-66-ui-kit-form-fields-err" class="badge err as-toggle">API error</label>
+        <label for="c-66-ui-kit-form-fields-info" class="badge info as-toggle">1 info</label>
+        <label for="c-66-ui-kit-form-fields-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -14236,9 +15037,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-65-ui-kit-form-fields-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-65-ui-kit-form-fields-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-65-ui-kit-form-fields-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-66-ui-kit-form-fields-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-66-ui-kit-form-fields-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-66-ui-kit-form-fields-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -14433,9 +15234,9 @@ import { Form } from 'antd';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
       <div class="badges">
-        <label for="c-66-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-66-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-66-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-67-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-67-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-67-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -14447,9 +15248,9 @@ import { Form } from 'antd';</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-66-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-66-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-66-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-67-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-67-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-67-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -14637,9 +15438,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Части</h2>
       <div class="badges">
-        <label for="c-67-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-67-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-67-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-68-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-68-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-68-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -14651,9 +15452,9 @@ export const Palette: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-67-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-67-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-67-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-68-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-68-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-68-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
