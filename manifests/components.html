@@ -626,7 +626,7 @@
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.7s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.8s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -15102,6 +15102,15 @@ const meta = {
   title: &#39;UI Kit/Поля и выбор/Форма&#39;,
   id: &#39;ui-kit-form-fields&#39;,
   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  // Место под календарь DatePicker и списки Select под формой — иначе в Docs они разворачиваются вверх,
+  // за край карточки (попапы открываются в обёртке темы, см. Select)
+  decorators: [
+    (Story) =&gt; (
+      &lt;div style={{ paddingBottom: 400 }}&gt;
+        &lt;Story /&gt;
+      &lt;/div&gt;
+    ),
+  ],
   tags: [&#39;autodocs&#39;],
 } satisfies Meta;
 
@@ -17756,6 +17765,15 @@ const meta = {
   title: &#39;UI Kit/Поля и выбор/Форма&#39;,
   id: &#39;ui-kit-form-fields&#39;,
   parameters: { layout: &#39;padded&#39;, docs: { description: { component: description } } },
+  // Место под календарь DatePicker и списки Select под формой — иначе в Docs они разворачиваются вверх,
+  // за край карточки (попапы открываются в обёртке темы, см. Select)
+  decorators: [
+    (Story) =&gt; (
+      &lt;div style={{ paddingBottom: 400 }}&gt;
+        &lt;Story /&gt;
+      &lt;/div&gt;
+    ),
+  ],
   tags: [&#39;autodocs&#39;],
 } satisfies Meta;
 
