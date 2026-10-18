@@ -620,13 +620,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/69 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">69/69 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/69 without API description</a><span class="filter-pill ok" aria-disabled="true">344 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">1/344 incomplete snippets</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/70 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">70/70 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/70 without API description</a><span class="filter-pill ok" aria-disabled="true">351 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">2/351 incomplete snippets</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>1.8s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.2s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -14655,6 +14655,572 @@ function SectionHeading({ children }: { children: string }) {
   </div>
 </article>
 <article
+  id="ui-kit-upload"
+  class="card 
+  no-error
+  has-info
+  no-story-error
+  has-story-warning
+  
+  no-doc-error"
+  role="listitem"
+  aria-label="Upload">
+  <div class="head">
+    <div class="title">
+      <h2><span class="status-dot dot-ok"></span> Upload</h2>
+      <div class="badges">
+        <label for="c-64-ui-kit-upload-props" class="badge ok as-toggle">12 prop types</label>
+        <label for="c-64-ui-kit-upload-info" class="badge info as-toggle">1 info</label>
+        <label for="c-64-ui-kit-upload-stories" class="badge ok as-toggle">7 stories · 1 incomplete</label>
+        
+        
+      </div>
+    </div>
+    <div class="meta" title="./src/components/Upload/Upload.stories.tsx">ui-kit-upload · ./src/components/Upload/Upload.stories.tsx</div>
+    
+    
+    
+  </div>
+
+  <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
+  
+  <input id="c-64-ui-kit-upload-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-64-ui-kit-upload-stories" class="tg tg-stories" type="checkbox" hidden />
+  
+  
+  <input id="c-64-ui-kit-upload-props" class="tg tg-props" type="checkbox" hidden />
+
+  <div class="panels">
+    
+    
+        <div class="panel panel-info">
+          
+    <div class="note info">
+      <div class="note-title">Info</div>
+      <div class="note-body">No description found. Write a jsdoc comment such as /** Component description */.</div>
+    </div>
+        </div>
+    
+        <div class="panel panel-props">
+          <div class="note ok">
+            <div class="row">
+              <span class="ex-name">Prop types <small>(react-docgen)</small></span>
+              <span class="badge ok">12 prop types</span>
+            </div>
+            <pre><code>Component: src/components/Upload/Upload.tsx::Upload</code></pre>
+            <pre><code>Props:</code></pre>
+            <pre><code>errorMessage?: ReactNode
+
+/**
+ * Подсказка под заголовком области. По умолчанию — из accept и maxSize.
+ */
+hint?: ReactNode
+
+/**
+ * Кнопка в состоянии загрузки (trigger=&quot;button&quot;).
+ */
+loading?: boolean = false
+
+/**
+ * Максимальный размер одного файла, МБ.
+ */
+maxSize?: number
+
+multiple?: any = true
+
+onDownload?: (file: UploadFile) =&gt; void
+
+/**
+ * Кнопки «Посмотреть» и «Скачать» у загруженного файла.
+ */
+onView?: (file: UploadFile) =&gt; void
+
+/**
+ * Показывать список файлов. По умолчанию — да.
+ */
+showList?: boolean = true
+
+/**
+ * Размер кнопки (trigger=&quot;button&quot;): s 30, m 36, l 48 — как у Button.
+ */
+size?: &#39;s&#39; | &#39;m&#39; | &#39;l&#39; = &#39;m&#39;
+
+/**
+ * Ошибка снаружи (например, файл обязателен): красная рамка и текст под областью.
+ */
+status?: &#39;error&#39;
+
+/**
+ * Заголовок области / подпись кнопки. По умолчанию «Загрузить файлы» / «Загрузить».
+ */
+title?: ReactNode
+
+/**
+ * area — пунктирная область для перетаскивания, button — кнопка «Загрузить».
+ */
+trigger?: &#39;area&#39; | &#39;button&#39; = &#39;area&#39;</code></pre>
+          </div>
+        </div>
+    
+        <div class="panel panel-stories">
+          
+          
+          
+          <div class="note ok">
+                <div class="row">
+                  <span class="ex-name">Imports</span>
+                </div>
+                <pre><code>import { Surface, Upload } from 'praktis-ui-kit';</code></pre>
+              </div>
+          
+          
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Playground</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Playground = () =&gt; &lt;Upload
+    trigger=&quot;area&quot;
+    accept=&quot;.pdf&quot;
+    maxSize={50}
+    customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+      let percent = 0;
+      const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+      const timer = setInterval(() =&gt; {
+        percent += 12;
+        onProgress?.({ percent: Math.min(percent, 100) });
+        if (failing &amp;&amp; percent &gt;= 48) {
+          clearInterval(timer);
+          onError?.(new Error(&#39;Сервер не принял файл&#39;));
+        } else if (percent &gt;= 100) {
+          clearInterval(timer);
+          onSuccess?.(&#39;ok&#39;);
+        }
+      }, 250);
+      return { abort: () =&gt; clearInterval(timer) };
+    }}
+    onView={() =&gt; undefined}
+    onDownload={() =&gt; undefined} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">С файлами</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const WithFiles = () =&gt; &lt;Upload
+    trigger=&quot;area&quot;
+    accept=&quot;.pdf&quot;
+    maxSize={50}
+    customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+      let percent = 0;
+      const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+      const timer = setInterval(() =&gt; {
+        percent += 12;
+        onProgress?.({ percent: Math.min(percent, 100) });
+        if (failing &amp;&amp; percent &gt;= 48) {
+          clearInterval(timer);
+          onError?.(new Error(&#39;Сервер не принял файл&#39;));
+        } else if (percent &gt;= 100) {
+          clearInterval(timer);
+          onSuccess?.(&#39;ok&#39;);
+        }
+      }, 250);
+      return { abort: () =&gt; clearInterval(timer) };
+    }}
+    onView={() =&gt; undefined}
+    onDownload={() =&gt; undefined}
+    defaultFileList={[
+      { uid: &#39;1&#39;, name: &#39;Исполнительная схема.pdf&#39;, status: &#39;done&#39; },
+      { uid: &#39;2&#39;, name: &#39;Акт освидетельствования скрытых работ.pdf&#39;, status: &#39;uploading&#39;, percent: 40 },
+      { uid: &#39;3&#39;, name: &#39;Сертификат на арматуру.pdf&#39;, status: &#39;error&#39; },
+    ]} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Состояния области</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const States = () =&gt; &lt;div style={{ display: &#39;grid&#39;, gap: 24 }}&gt;
+    &lt;Upload
+        trigger=&quot;area&quot;
+        accept=&quot;.pdf&quot;
+        maxSize={50}
+        customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+          let percent = 0;
+          const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+          const timer = setInterval(() =&gt; {
+            percent += 12;
+            onProgress?.({ percent: Math.min(percent, 100) });
+            if (failing &amp;&amp; percent &gt;= 48) {
+              clearInterval(timer);
+              onError?.(new Error(&#39;Сервер не принял файл&#39;));
+            } else if (percent &gt;= 100) {
+              clearInterval(timer);
+              onSuccess?.(&#39;ok&#39;);
+            }
+          }, 250);
+          return { abort: () =&gt; clearInterval(timer) };
+        }}
+        onView={() =&gt; undefined}
+        onDownload={() =&gt; undefined} /&gt;
+    &lt;Upload
+        trigger=&quot;area&quot;
+        accept=&quot;.pdf&quot;
+        maxSize={50}
+        customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+          let percent = 0;
+          const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+          const timer = setInterval(() =&gt; {
+            percent += 12;
+            onProgress?.({ percent: Math.min(percent, 100) });
+            if (failing &amp;&amp; percent &gt;= 48) {
+              clearInterval(timer);
+              onError?.(new Error(&#39;Сервер не принял файл&#39;));
+            } else if (percent &gt;= 100) {
+              clearInterval(timer);
+              onSuccess?.(&#39;ok&#39;);
+            }
+          }, 250);
+          return { abort: () =&gt; clearInterval(timer) };
+        }}
+        onView={() =&gt; undefined}
+        onDownload={() =&gt; undefined}
+        disabled /&gt;
+    &lt;Upload
+        trigger=&quot;area&quot;
+        accept=&quot;.pdf&quot;
+        maxSize={50}
+        customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+          let percent = 0;
+          const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+          const timer = setInterval(() =&gt; {
+            percent += 12;
+            onProgress?.({ percent: Math.min(percent, 100) });
+            if (failing &amp;&amp; percent &gt;= 48) {
+              clearInterval(timer);
+              onError?.(new Error(&#39;Сервер не принял файл&#39;));
+            } else if (percent &gt;= 100) {
+              clearInterval(timer);
+              onSuccess?.(&#39;ok&#39;);
+            }
+          }, 250);
+          return { abort: () =&gt; clearInterval(timer) };
+        }}
+        onView={() =&gt; undefined}
+        onDownload={() =&gt; undefined}
+        maxCount={1}
+        defaultFileList={[{ uid: &#39;a&#39;, name: &#39;Договор подряда.pdf&#39;, status: &#39;done&#39; }]} /&gt;
+    &lt;Upload
+        trigger=&quot;area&quot;
+        accept=&quot;.pdf&quot;
+        maxSize={50}
+        customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+          let percent = 0;
+          const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+          const timer = setInterval(() =&gt; {
+            percent += 12;
+            onProgress?.({ percent: Math.min(percent, 100) });
+            if (failing &amp;&amp; percent &gt;= 48) {
+              clearInterval(timer);
+              onError?.(new Error(&#39;Сервер не принял файл&#39;));
+            } else if (percent &gt;= 100) {
+              clearInterval(timer);
+              onSuccess?.(&#39;ok&#39;);
+            }
+          }, 250);
+          return { abort: () =&gt; clearInterval(timer) };
+        }}
+        onView={() =&gt; undefined}
+        onDownload={() =&gt; undefined}
+        status=&quot;error&quot;
+        errorMessage=&quot;Загрузите хотя бы один документ&quot; /&gt;
+&lt;/div&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Один файл</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const OneFile = () =&gt; &lt;Upload
+    trigger=&quot;area&quot;
+    accept=&quot;.pdf&quot;
+    maxSize={50}
+    customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+      let percent = 0;
+      const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+      const timer = setInterval(() =&gt; {
+        percent += 12;
+        onProgress?.({ percent: Math.min(percent, 100) });
+        if (failing &amp;&amp; percent &gt;= 48) {
+          clearInterval(timer);
+          onError?.(new Error(&#39;Сервер не принял файл&#39;));
+        } else if (percent &gt;= 100) {
+          clearInterval(timer);
+          onSuccess?.(&#39;ok&#39;);
+        }
+      }, 250);
+      return { abort: () =&gt; clearInterval(timer) };
+    }}
+    onView={() =&gt; undefined}
+    onDownload={() =&gt; undefined}
+    maxCount={1}
+    multiple={false} /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Кнопка</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Button = () =&gt; &lt;div style={{ display: &#39;grid&#39;, gap: 16 }}&gt;
+    &lt;div
+        style={{ display: &#39;flex&#39;, gap: 12, alignItems: &#39;center&#39;, flexWrap: &#39;wrap&#39; }}&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            size=&quot;s&quot;
+            showList={false} /&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            size=&quot;m&quot;
+            showList={false} /&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            size=&quot;l&quot;
+            showList={false} /&gt;
+    &lt;/div&gt;
+    &lt;div
+        style={{ display: &#39;flex&#39;, gap: 12, alignItems: &#39;flex-start&#39;, flexWrap: &#39;wrap&#39; }}&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            loading
+            showList={false} /&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            disabled
+            showList={false} /&gt;
+        &lt;Upload
+            trigger=&quot;button&quot;
+            accept=&quot;.pdf&quot;
+            maxSize={50}
+            customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+              let percent = 0;
+              const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+              const timer = setInterval(() =&gt; {
+                percent += 12;
+                onProgress?.({ percent: Math.min(percent, 100) });
+                if (failing &amp;&amp; percent &gt;= 48) {
+                  clearInterval(timer);
+                  onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                } else if (percent &gt;= 100) {
+                  clearInterval(timer);
+                  onSuccess?.(&#39;ok&#39;);
+                }
+              }, 250);
+              return { abort: () =&gt; clearInterval(timer) };
+            }}
+            onView={() =&gt; undefined}
+            onDownload={() =&gt; undefined}
+            status=&quot;error&quot;
+            errorMessage=&quot;Прикрепите документ&quot;
+            showList={false} /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">Кнопка с файлами</span>
+                <span class="badge info">incomplete example</span>
+              </div>
+              
+              
+              <pre><code>const ButtonWithFiles = () =&gt; &lt;Upload
+    trigger=&quot;button&quot;
+    accept=&quot;.pdf&quot;
+    maxSize={50}
+    customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+      let percent = 0;
+      const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+      const timer = setInterval(() =&gt; {
+        percent += 12;
+        onProgress?.({ percent: Math.min(percent, 100) });
+        if (failing &amp;&amp; percent &gt;= 48) {
+          clearInterval(timer);
+          onError?.(new Error(&#39;Сервер не принял файл&#39;));
+        } else if (percent &gt;= 100) {
+          clearInterval(timer);
+          onSuccess?.(&#39;ok&#39;);
+        }
+      }, 250);
+      return { abort: () =&gt; clearInterval(timer) };
+    }}
+    onView={() =&gt; undefined}
+    onDownload={() =&gt; undefined}
+    defaultFileList={FILES.slice(0, 1)} /&gt;;</code></pre>
+              <div class="snippet-warning">Incomplete snippet: `FILES` could not be resolved statically.</div>
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">В карточке</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const InCard = () =&gt; &lt;div style={{ padding: 24, background: &#39;var(--bg-grey-page-full)&#39; }}&gt;
+    &lt;Surface padding={24}&gt;
+        &lt;div style={{ display: &#39;grid&#39;, gap: 24, fontFamily: &#39;Inter, sans-serif&#39; }}&gt;
+            &lt;div style={{ display: &#39;grid&#39;, gap: 12 }}&gt;
+                &lt;div
+                    style={{ fontSize: 18, fontWeight: 500, color: &#39;var(--text-black-primary)&#39; }}&gt;Дополнительные документы&lt;/div&gt;
+                &lt;div style={{ fontSize: 14, color: &#39;var(--text-black-secondary)&#39; }}&gt;По необходимости вы можете прикрепить дополнительные файлы&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;Upload
+                trigger=&quot;area&quot;
+                accept=&quot;.pdf&quot;
+                maxSize={50}
+                customRequest={({ file, onProgress, onSuccess, onError }) =&gt; {
+                  let percent = 0;
+                  const failing = (file as File).name.toLowerCase().includes(&#39;ошибка&#39;);
+                  const timer = setInterval(() =&gt; {
+                    percent += 12;
+                    onProgress?.({ percent: Math.min(percent, 100) });
+                    if (failing &amp;&amp; percent &gt;= 48) {
+                      clearInterval(timer);
+                      onError?.(new Error(&#39;Сервер не принял файл&#39;));
+                    } else if (percent &gt;= 100) {
+                      clearInterval(timer);
+                      onSuccess?.(&#39;ok&#39;);
+                    }
+                  }, 250);
+                  return { abort: () =&gt; clearInterval(timer) };
+                }}
+                onView={() =&gt; undefined}
+                onDownload={() =&gt; undefined}
+                defaultFileList={FILES.slice(0, 1)} /&gt;
+        &lt;/div&gt;
+    &lt;/Surface&gt;
+&lt;/div&gt;;</code></pre>
+              
+            </div>
+        </div>
+    
+    
+  </div>
+</article>
+<article
   id="ui-kit-table-nested"
   class="card 
   no-error
@@ -14669,9 +15235,9 @@ function SectionHeading({ children }: { children: string }) {
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Вложеннаятаблица</h2>
       <div class="badges">
-        <label for="c-64-ui-kit-table-nested-props" class="badge ok as-toggle">14 prop types</label>
-        <label for="c-64-ui-kit-table-nested-info" class="badge info as-toggle">1 info</label>
-        <label for="c-64-ui-kit-table-nested-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-65-ui-kit-table-nested-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-65-ui-kit-table-nested-info" class="badge info as-toggle">1 info</label>
+        <label for="c-65-ui-kit-table-nested-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -14684,11 +15250,11 @@ function SectionHeading({ children }: { children: string }) {
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-64-ui-kit-table-nested-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-64-ui-kit-table-nested-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-nested-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-nested-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-64-ui-kit-table-nested-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-65-ui-kit-table-nested-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -14833,9 +15399,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-ok"></span> Нателефоне</h2>
       <div class="badges">
-        <label for="c-65-ui-kit-table-mobile-props" class="badge ok as-toggle">14 prop types</label>
-        <label for="c-65-ui-kit-table-mobile-info" class="badge info as-toggle">1 info</label>
-        <label for="c-65-ui-kit-table-mobile-stories" class="badge ok as-toggle">3 stories</label>
+        <label for="c-66-ui-kit-table-mobile-props" class="badge ok as-toggle">14 prop types</label>
+        <label for="c-66-ui-kit-table-mobile-info" class="badge info as-toggle">1 info</label>
+        <label for="c-66-ui-kit-table-mobile-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -14848,11 +15414,11 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
   
-  <input id="c-65-ui-kit-table-mobile-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-65-ui-kit-table-mobile-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-66-ui-kit-table-mobile-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-66-ui-kit-table-mobile-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
-  <input id="c-65-ui-kit-table-mobile-props" class="tg tg-props" type="checkbox" hidden />
+  <input id="c-66-ui-kit-table-mobile-props" class="tg tg-props" type="checkbox" hidden />
 
   <div class="panels">
     
@@ -15023,9 +15589,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Форма</h2>
       <div class="badges">
-        <label for="c-66-ui-kit-form-fields-err" class="badge err as-toggle">API error</label>
-        <label for="c-66-ui-kit-form-fields-info" class="badge info as-toggle">1 info</label>
-        <label for="c-66-ui-kit-form-fields-stories" class="badge ok as-toggle">1 story</label>
+        <label for="c-67-ui-kit-form-fields-err" class="badge err as-toggle">API error</label>
+        <label for="c-67-ui-kit-form-fields-info" class="badge info as-toggle">1 info</label>
+        <label for="c-67-ui-kit-form-fields-stories" class="badge ok as-toggle">1 story</label>
         
         
       </div>
@@ -15037,9 +15603,9 @@ size?: &#39;large&#39; | &#39;medium&#39; | &#39;small&#39; = &#39;large&#39;</c
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-66-ui-kit-form-fields-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-66-ui-kit-form-fields-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-66-ui-kit-form-fields-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-67-ui-kit-form-fields-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-67-ui-kit-form-fields-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-67-ui-kit-form-fields-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -15243,9 +15809,9 @@ import { Form } from 'antd';</code></pre>
     <div class="title">
       <h2><span class="status-dot dot-err"></span> ЦветаFigma</h2>
       <div class="badges">
-        <label for="c-67-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
-        <label for="c-67-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
-        <label for="c-67-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-68-foundations-figma-colors-err" class="badge err as-toggle">API error</label>
+        <label for="c-68-foundations-figma-colors-info" class="badge info as-toggle">2 infos</label>
+        <label for="c-68-foundations-figma-colors-stories" class="badge ok as-toggle">2 stories</label>
         
         
       </div>
@@ -15257,9 +15823,9 @@ import { Form } from 'antd';</code></pre>
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-67-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-67-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-67-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-68-foundations-figma-colors-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-68-foundations-figma-colors-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-68-foundations-figma-colors-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   
@@ -15447,9 +16013,9 @@ export const Palette: Story = {
     <div class="title">
       <h2><span class="status-dot dot-err"></span> Части</h2>
       <div class="badges">
-        <label for="c-68-ui-kit-header-err" class="badge err as-toggle">API error</label>
-        <label for="c-68-ui-kit-header-info" class="badge info as-toggle">1 info</label>
-        <label for="c-68-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
+        <label for="c-69-ui-kit-header-err" class="badge err as-toggle">API error</label>
+        <label for="c-69-ui-kit-header-info" class="badge info as-toggle">1 info</label>
+        <label for="c-69-ui-kit-header-stories" class="badge ok as-toggle">5 stories</label>
         
         
       </div>
@@ -15461,9 +16027,9 @@ export const Palette: Story = {
   </div>
 
   <!-- ⬇️ Hidden toggles must be siblings BEFORE .panels -->
-  <input id="c-68-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
-  <input id="c-68-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
-  <input id="c-68-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
+  <input id="c-69-ui-kit-header-err" class="tg tg-err" type="checkbox" hidden />
+  <input id="c-69-ui-kit-header-info" class="tg tg-info" type="checkbox" hidden />
+  <input id="c-69-ui-kit-header-stories" class="tg tg-stories" type="checkbox" hidden />
   
   
   

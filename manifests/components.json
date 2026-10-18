@@ -2549,6 +2549,221 @@
       ],
       "import": "import { TreeSelect } from 'praktis-ui-kit';"
     },
+    "ui-kit-upload": {
+      "id": "ui-kit-upload",
+      "name": "Upload",
+      "path": "./src/components/Upload/Upload.stories.tsx",
+      "jsDocTags": {},
+      "reactDocgen": {
+        "description": "",
+        "methods": [],
+        "displayName": "Upload",
+        "definedInFile": "./src/components/Upload/Upload.tsx",
+        "actualName": "Upload",
+        "exportName": "Upload",
+        "props": {
+          "trigger": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'area' | 'button'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'area'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'button'"
+                }
+              ]
+            },
+            "description": "area — пунктирная область для перетаскивания, button — кнопка «Загрузить».",
+            "defaultValue": {
+              "value": "'area'",
+              "computed": false
+            }
+          },
+          "title": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Заголовок области / подпись кнопки. По умолчанию «Загрузить файлы» / «Загрузить»."
+          },
+          "hint": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": "Подсказка под заголовком области. По умолчанию — из accept и maxSize."
+          },
+          "maxSize": {
+            "required": false,
+            "tsType": {
+              "name": "number"
+            },
+            "description": "Максимальный размер одного файла, МБ."
+          },
+          "size": {
+            "required": false,
+            "tsType": {
+              "name": "union",
+              "raw": "'s' | 'm' | 'l'",
+              "elements": [
+                {
+                  "name": "literal",
+                  "value": "'s'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'m'"
+                },
+                {
+                  "name": "literal",
+                  "value": "'l'"
+                }
+              ]
+            },
+            "description": "Размер кнопки (trigger=\"button\"): s 30, m 36, l 48 — как у Button.",
+            "defaultValue": {
+              "value": "'m'",
+              "computed": false
+            }
+          },
+          "status": {
+            "required": false,
+            "tsType": {
+              "name": "literal",
+              "value": "'error'"
+            },
+            "description": "Ошибка снаружи (например, файл обязателен): красная рамка и текст под областью."
+          },
+          "errorMessage": {
+            "required": false,
+            "tsType": {
+              "name": "ReactNode"
+            },
+            "description": ""
+          },
+          "loading": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Кнопка в состоянии загрузки (trigger=\"button\").",
+            "defaultValue": {
+              "value": "false",
+              "computed": false
+            }
+          },
+          "showList": {
+            "required": false,
+            "tsType": {
+              "name": "boolean"
+            },
+            "description": "Показывать список файлов. По умолчанию — да.",
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            }
+          },
+          "onView": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(file: UploadFile) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "UploadFile"
+                    },
+                    "name": "file"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": "Кнопки «Посмотреть» и «Скачать» у загруженного файла."
+          },
+          "onDownload": {
+            "required": false,
+            "tsType": {
+              "name": "signature",
+              "type": "function",
+              "raw": "(file: UploadFile) => void",
+              "signature": {
+                "arguments": [
+                  {
+                    "type": {
+                      "name": "UploadFile"
+                    },
+                    "name": "file"
+                  }
+                ],
+                "return": {
+                  "name": "void"
+                }
+              }
+            },
+            "description": ""
+          },
+          "multiple": {
+            "defaultValue": {
+              "value": "true",
+              "computed": false
+            },
+            "required": false
+          }
+        },
+        "composes": [
+          "Omit"
+        ]
+      },
+      "stories": [
+        {
+          "id": "ui-kit-upload--playground",
+          "name": "Playground",
+          "snippet": "const Playground = () => <Upload\n    trigger=\"area\"\n    accept=\".pdf\"\n    maxSize={50}\n    customRequest={({ file, onProgress, onSuccess, onError }) => {\n      let percent = 0;\n      const failing = (file as File).name.toLowerCase().includes('ошибка');\n      const timer = setInterval(() => {\n        percent += 12;\n        onProgress?.({ percent: Math.min(percent, 100) });\n        if (failing && percent >= 48) {\n          clearInterval(timer);\n          onError?.(new Error('Сервер не принял файл'));\n        } else if (percent >= 100) {\n          clearInterval(timer);\n          onSuccess?.('ok');\n        }\n      }, 250);\n      return { abort: () => clearInterval(timer) };\n    }}\n    onView={() => undefined}\n    onDownload={() => undefined} />;"
+        },
+        {
+          "id": "ui-kit-upload--with-files",
+          "name": "С файлами",
+          "snippet": "const WithFiles = () => <Upload\n    trigger=\"area\"\n    accept=\".pdf\"\n    maxSize={50}\n    customRequest={({ file, onProgress, onSuccess, onError }) => {\n      let percent = 0;\n      const failing = (file as File).name.toLowerCase().includes('ошибка');\n      const timer = setInterval(() => {\n        percent += 12;\n        onProgress?.({ percent: Math.min(percent, 100) });\n        if (failing && percent >= 48) {\n          clearInterval(timer);\n          onError?.(new Error('Сервер не принял файл'));\n        } else if (percent >= 100) {\n          clearInterval(timer);\n          onSuccess?.('ok');\n        }\n      }, 250);\n      return { abort: () => clearInterval(timer) };\n    }}\n    onView={() => undefined}\n    onDownload={() => undefined}\n    defaultFileList={[\n      { uid: '1', name: 'Исполнительная схема.pdf', status: 'done' },\n      { uid: '2', name: 'Акт освидетельствования скрытых работ.pdf', status: 'uploading', percent: 40 },\n      { uid: '3', name: 'Сертификат на арматуру.pdf', status: 'error' },\n    ]} />;"
+        },
+        {
+          "id": "ui-kit-upload--states",
+          "name": "Состояния области",
+          "snippet": "const States = () => <div style={{ display: 'grid', gap: 24 }}>\n    <Upload\n        trigger=\"area\"\n        accept=\".pdf\"\n        maxSize={50}\n        customRequest={({ file, onProgress, onSuccess, onError }) => {\n          let percent = 0;\n          const failing = (file as File).name.toLowerCase().includes('ошибка');\n          const timer = setInterval(() => {\n            percent += 12;\n            onProgress?.({ percent: Math.min(percent, 100) });\n            if (failing && percent >= 48) {\n              clearInterval(timer);\n              onError?.(new Error('Сервер не принял файл'));\n            } else if (percent >= 100) {\n              clearInterval(timer);\n              onSuccess?.('ok');\n            }\n          }, 250);\n          return { abort: () => clearInterval(timer) };\n        }}\n        onView={() => undefined}\n        onDownload={() => undefined} />\n    <Upload\n        trigger=\"area\"\n        accept=\".pdf\"\n        maxSize={50}\n        customRequest={({ file, onProgress, onSuccess, onError }) => {\n          let percent = 0;\n          const failing = (file as File).name.toLowerCase().includes('ошибка');\n          const timer = setInterval(() => {\n            percent += 12;\n            onProgress?.({ percent: Math.min(percent, 100) });\n            if (failing && percent >= 48) {\n              clearInterval(timer);\n              onError?.(new Error('Сервер не принял файл'));\n            } else if (percent >= 100) {\n              clearInterval(timer);\n              onSuccess?.('ok');\n            }\n          }, 250);\n          return { abort: () => clearInterval(timer) };\n        }}\n        onView={() => undefined}\n        onDownload={() => undefined}\n        disabled />\n    <Upload\n        trigger=\"area\"\n        accept=\".pdf\"\n        maxSize={50}\n        customRequest={({ file, onProgress, onSuccess, onError }) => {\n          let percent = 0;\n          const failing = (file as File).name.toLowerCase().includes('ошибка');\n          const timer = setInterval(() => {\n            percent += 12;\n            onProgress?.({ percent: Math.min(percent, 100) });\n            if (failing && percent >= 48) {\n              clearInterval(timer);\n              onError?.(new Error('Сервер не принял файл'));\n            } else if (percent >= 100) {\n              clearInterval(timer);\n              onSuccess?.('ok');\n            }\n          }, 250);\n          return { abort: () => clearInterval(timer) };\n        }}\n        onView={() => undefined}\n        onDownload={() => undefined}\n        maxCount={1}\n        defaultFileList={[{ uid: 'a', name: 'Договор подряда.pdf', status: 'done' }]} />\n    <Upload\n        trigger=\"area\"\n        accept=\".pdf\"\n        maxSize={50}\n        customRequest={({ file, onProgress, onSuccess, onError }) => {\n          let percent = 0;\n          const failing = (file as File).name.toLowerCase().includes('ошибка');\n          const timer = setInterval(() => {\n            percent += 12;\n            onProgress?.({ percent: Math.min(percent, 100) });\n            if (failing && percent >= 48) {\n              clearInterval(timer);\n              onError?.(new Error('Сервер не принял файл'));\n            } else if (percent >= 100) {\n              clearInterval(timer);\n              onSuccess?.('ok');\n            }\n          }, 250);\n          return { abort: () => clearInterval(timer) };\n        }}\n        onView={() => undefined}\n        onDownload={() => undefined}\n        status=\"error\"\n        errorMessage=\"Загрузите хотя бы один документ\" />\n</div>;"
+        },
+        {
+          "id": "ui-kit-upload--one-file",
+          "name": "Один файл",
+          "snippet": "const OneFile = () => <Upload\n    trigger=\"area\"\n    accept=\".pdf\"\n    maxSize={50}\n    customRequest={({ file, onProgress, onSuccess, onError }) => {\n      let percent = 0;\n      const failing = (file as File).name.toLowerCase().includes('ошибка');\n      const timer = setInterval(() => {\n        percent += 12;\n        onProgress?.({ percent: Math.min(percent, 100) });\n        if (failing && percent >= 48) {\n          clearInterval(timer);\n          onError?.(new Error('Сервер не принял файл'));\n        } else if (percent >= 100) {\n          clearInterval(timer);\n          onSuccess?.('ok');\n        }\n      }, 250);\n      return { abort: () => clearInterval(timer) };\n    }}\n    onView={() => undefined}\n    onDownload={() => undefined}\n    maxCount={1}\n    multiple={false} />;"
+        },
+        {
+          "id": "ui-kit-upload--button",
+          "name": "Кнопка",
+          "snippet": "const Button = () => <div style={{ display: 'grid', gap: 16 }}>\n    <div\n        style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            size=\"s\"\n            showList={false} />\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            size=\"m\"\n            showList={false} />\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            size=\"l\"\n            showList={false} />\n    </div>\n    <div\n        style={{ display: 'flex', gap: 12, alignItems: 'flex-start', flexWrap: 'wrap' }}>\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            loading\n            showList={false} />\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            disabled\n            showList={false} />\n        <Upload\n            trigger=\"button\"\n            accept=\".pdf\"\n            maxSize={50}\n            customRequest={({ file, onProgress, onSuccess, onError }) => {\n              let percent = 0;\n              const failing = (file as File).name.toLowerCase().includes('ошибка');\n              const timer = setInterval(() => {\n                percent += 12;\n                onProgress?.({ percent: Math.min(percent, 100) });\n                if (failing && percent >= 48) {\n                  clearInterval(timer);\n                  onError?.(new Error('Сервер не принял файл'));\n                } else if (percent >= 100) {\n                  clearInterval(timer);\n                  onSuccess?.('ok');\n                }\n              }, 250);\n              return { abort: () => clearInterval(timer) };\n            }}\n            onView={() => undefined}\n            onDownload={() => undefined}\n            status=\"error\"\n            errorMessage=\"Прикрепите документ\"\n            showList={false} />\n    </div>\n</div>;"
+        },
+        {
+          "id": "ui-kit-upload--button-with-files",
+          "name": "Кнопка с файлами",
+          "snippet": "const ButtonWithFiles = () => <Upload\n    trigger=\"button\"\n    accept=\".pdf\"\n    maxSize={50}\n    customRequest={({ file, onProgress, onSuccess, onError }) => {\n      let percent = 0;\n      const failing = (file as File).name.toLowerCase().includes('ошибка');\n      const timer = setInterval(() => {\n        percent += 12;\n        onProgress?.({ percent: Math.min(percent, 100) });\n        if (failing && percent >= 48) {\n          clearInterval(timer);\n          onError?.(new Error('Сервер не принял файл'));\n        } else if (percent >= 100) {\n          clearInterval(timer);\n          onSuccess?.('ok');\n        }\n      }, 250);\n      return { abort: () => clearInterval(timer) };\n    }}\n    onView={() => undefined}\n    onDownload={() => undefined}\n    defaultFileList={FILES.slice(0, 1)} />;",
+          "warning": "Incomplete snippet: `FILES` could not be resolved statically."
+        },
+        {
+          "id": "ui-kit-upload--in-card",
+          "name": "В карточке",
+          "snippet": "const InCard = () => <div style={{ padding: 24, background: 'var(--bg-grey-page-full)' }}>\n    <Surface padding={24}>\n        <div style={{ display: 'grid', gap: 24, fontFamily: 'Inter, sans-serif' }}>\n            <div style={{ display: 'grid', gap: 12 }}>\n                <div\n                    style={{ fontSize: 18, fontWeight: 500, color: 'var(--text-black-primary)' }}>Дополнительные документы</div>\n                <div style={{ fontSize: 14, color: 'var(--text-black-secondary)' }}>По необходимости вы можете прикрепить дополнительные файлы</div>\n            </div>\n            <Upload\n                trigger=\"area\"\n                accept=\".pdf\"\n                maxSize={50}\n                customRequest={({ file, onProgress, onSuccess, onError }) => {\n                  let percent = 0;\n                  const failing = (file as File).name.toLowerCase().includes('ошибка');\n                  const timer = setInterval(() => {\n                    percent += 12;\n                    onProgress?.({ percent: Math.min(percent, 100) });\n                    if (failing && percent >= 48) {\n                      clearInterval(timer);\n                      onError?.(new Error('Сервер не принял файл'));\n                    } else if (percent >= 100) {\n                      clearInterval(timer);\n                      onSuccess?.('ok');\n                    }\n                  }, 250);\n                  return { abort: () => clearInterval(timer) };\n                }}\n                onView={() => undefined}\n                onDownload={() => undefined}\n                defaultFileList={FILES.slice(0, 1)} />\n        </div>\n    </Surface>\n</div>;"
+        }
+      ],
+      "import": "import { Surface, Upload } from 'praktis-ui-kit';"
+    },
     "ui-kit-breadcrumbs": {
       "id": "ui-kit-breadcrumbs",
       "name": "Breadcrumbs",
@@ -8987,6 +9202,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 1769
+    "durationMs": 2227
   }
 }

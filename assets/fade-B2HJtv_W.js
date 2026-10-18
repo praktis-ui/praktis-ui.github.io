@@ -1,0 +1,4 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{F as t}from"./useToken-3MqBqLGt.js";import{f as n,p as r}from"./es-B2G_HUbM.js";import{t as i}from"./Keyframes-CLa4VEFA.js";var a,o,s;function c(){return(c=e((()=>{t(),r(),a=new i(`antFadeIn`,{"0%":{opacity:0},"100%":{opacity:1}}),o=new i(`antFadeOut`,{"0%":{opacity:1},"100%":{opacity:0}}),s=(e,t=!1)=>{let{antCls:r}=e,i=`${r}-fade`,s=t?`&`:``;return[n(i,a,o,e.motionDurationMid,t),{[`
+        ${s}${i}-enter,
+        ${s}${i}-appear
+      `]:{opacity:0,animationTimingFunction:`linear`},[`${s}${i}-leave`]:{animationTimingFunction:`linear`}}]}})))()}export{c as n,s as t};
