@@ -1,4 +1,4 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{n,t as r}from"./Select-BKUZqVBu.js";var i,a,o,s,c,l,u,d,f,p,m,h,g,_,v,y,b,x,S;function C(){return(C=e((()=>{n(),i=t(),a={title:`UI Kit/Поля и выбор/Select`,id:`ui-kit-select`,component:r,parameters:{layout:`padded`,docs:{description:{component:`
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{n,t as r}from"./Select-CXEnx_2m.js";var i,a,o,s,c,l,u,d,f,p,m,h,g,_,v,y,b,x,S;function C(){return(C=e((()=>{n(),i=t(),a={title:`UI Kit/Поля и выбор/Select`,id:`ui-kit-select`,component:r,parameters:{layout:`padded`,docs:{description:{component:`
 Источник — Figma UI Kit «Практис»: компонент Select (node 814:2546/2547). Та же обвязка
 (label/required/infoText/errorMessage через InputChrome) и те же border-токены \`border/input-*\`,
 что у **UI Kit/Input** (\`default\`/\`hover\`/\`focus\`/\`error\`/\`disabled\`) — применены на все

@@ -8083,6 +8083,11 @@
           "id": "ui-kit-emptystate-errorpage--server-error",
           "name": "500 — что-то пошло не так",
           "snippet": "const ServerError = () => <ServerErrorDemo />;"
+        },
+        {
+          "id": "ui-kit-emptystate-errorpage--maintenance",
+          "name": "503 — технические работы",
+          "snippet": "const Maintenance = () => <ErrorPage code={503} />;"
         }
       ],
       "import": "import { ErrorPage } from 'praktis-ui-kit';"
@@ -9202,6 +9207,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 2227
+    "durationMs": 3304
   }
 }

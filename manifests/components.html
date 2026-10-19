@@ -620,13 +620,13 @@
 <header>
   <div class="wrap">
     <h1>Manifest Debugger</h1>
-    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/70 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">70/70 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/70 without API description</a><span class="filter-pill ok" aria-disabled="true">351 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">2/351 incomplete snippets</a></div>
+    <div class="summary"><a class="filter-pill all" data-k="all" href="#filter-all">All</a><a class="filter-pill err" data-k="errors" href="#filter-errors">10/70 API errors</a><a class="filter-pill info" data-k="infos" href="#filter-infos">70/70 infos</a><a class="filter-pill" data-k="no-api" href="#filter-no-api">4/70 without API description</a><span class="filter-pill ok" aria-disabled="true">352 stories ok</span><a class="filter-pill info" data-k="story-warnings" href="#filter-story-warnings">2/352 incomplete snippets</a></div>
   </div>
 </header>
 <main>
   <div class="wrap">
     <div class="note info" style="margin-bottom: 16px;">
-            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>2.2s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
+            <strong>Tip:</strong> You are using <code>react-docgen</code> (the default). Generation took <strong>3.3s</strong>. For higher quality prop types, consider switching to <code>react-docgen-typescript</code> in your <code>main.ts</code>:
             <pre><code>typescript: {
   reactDocgen: 'react-docgen-typescript',
 }</code></pre>
@@ -4494,7 +4494,7 @@ title: ReactNode</code></pre>
       <div class="badges">
         <span class="badge">no API description</span>
         <label for="c-17-ui-kit-emptystate-errorpage-info" class="badge info as-toggle">1 info</label>
-        <label for="c-17-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">2 stories</label>
+        <label for="c-17-ui-kit-emptystate-errorpage-stories" class="badge ok as-toggle">3 stories</label>
         
         
       </div>
@@ -4559,6 +4559,16 @@ title: ReactNode</code></pre>
               
               
               <pre><code>const ServerError = () =&gt; &lt;ServerErrorDemo /&gt;;</code></pre>
+              
+            </div>
+            <div class="note ok">
+              <div class="row">
+                <span class="ex-name">503 — технические работы</span>
+                <span class="badge ok">story ok</span>
+              </div>
+              
+              
+              <pre><code>const Maintenance = () =&gt; &lt;ErrorPage code={503} /&gt;;</code></pre>
               
             </div>
         </div>

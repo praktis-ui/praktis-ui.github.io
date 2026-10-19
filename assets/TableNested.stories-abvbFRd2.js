@@ -1,4 +1,4 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./Table-6wACVCba.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import"./figma-colors-lO-pgkJ7.js";import{i,n as a,r as o,t as s}from"./tableExampleData-C9zxzDXQ.js";var c,l,u,d;function f(){return(f=e((()=>{t(),i(),c=r(),l={title:`UI Kit/Данные/Table/Вложенная таблица`,id:`ui-kit-table-nested`,parameters:{layout:`padded`,docs:{description:{component:`
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./Table-CfBNG84a.js";import{t as r}from"./jsx-runtime-DeHZSEgm.js";import"./figma-colors-lO-pgkJ7.js";import{i,n as a,r as o,t as s}from"./tableExampleData-C9zxzDXQ.js";var c,l,u,d;function f(){return(f=e((()=>{t(),i(),c=r(),l={title:`UI Kit/Данные/Table/Вложенная таблица`,id:`ui-kit-table-nested`,parameters:{layout:`padded`,docs:{description:{component:`
 Таблица в таблице. Источник — Figma UI Kit «Практис», пример «Журнал входного контроля материалов»
 (node 15215:19569): строки — накладные (ТТН), под раскрытой строкой — таблица её материалов.
 

@@ -1,4 +1,4 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{n,t as r}from"./MultiSelect-jM9CKdqY.js";var i,a,o,s,c,l,u,d,f,p,m,h,g,_,v;function y(){return(y=e((()=>{n(),i=t(),a={title:`UI Kit/Поля и выбор/MultiSelect`,id:`ui-kit-multiselect`,component:r,parameters:{layout:`padded`,docs:{description:{component:`
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./jsx-runtime-DeHZSEgm.js";import{n,t as r}from"./MultiSelect-D-2clvrN.js";var i,a,o,s,c,l,u,d,f,p,m,h,g,_,v;function y(){return(y=e((()=>{n(),i=t(),a={title:`UI Kit/Поля и выбор/MultiSelect`,id:`ui-kit-multiselect`,component:r,parameters:{layout:`padded`,docs:{description:{component:`
 Источник — Figma UI Kit «Практис»: **Select / Multi** (node 1148:2420).
 
 Построен на **UI Kit/Select**: та же обвязка (label / required / infoText / errorMessage), те же
